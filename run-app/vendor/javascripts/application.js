@@ -12,8 +12,4 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require agency
-//= require agency.min
-//= require contact_me
-//= require jqBootstrapValidation
 //= require_tree .
