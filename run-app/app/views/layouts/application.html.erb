@@ -1,15 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <title>RunApp</title>
-    <%= csrf_meta_tags %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    
+    <!-- Bootstrap core CSS -->
+    <link src="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom fonts for this template -->
+    <link url("vendor/font-awesome/css/font-awesome.min.css") rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    
+    <!-- Custom styles for this template -->
+    <link src="stylesheets/landing-page.css" rel="stylesheet">
+    
   </head>
 
   <body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse bg-light navbar-fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#" style="color: white;">RunApp</a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse navbarResponsive">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#" style="color: white;">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style="color: white;">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style="color: white;">Contáctenos</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href = "#" style="color: yellow;">Registrarse</a></li>
+            <li><a href = "#" style="color: yellow;">Entrar</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
     <%= yield %>
+    
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
@@ -17,17 +61,28 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
     
-    
+    <% if false %>    
     <p class="navbar-text pull-right">
-    <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
+    </p>
     <% end %>
-</p>
+    
+    
+    
+    <!-- Bootstrap core JavaScript -->
+    <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/jquery/jquery.min.js"></script>
+    <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/popper/popper.min.js"></script>
+    <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/bootstrap/js/bootstrap.min.js"></script>
+    
+    
+    
     
   </body>
 </html>
