@@ -3,7 +3,7 @@
     <div class="container">
         <div class="intro-message">
             <h1>RunApp</h1>
-            <h3>A Template by Start Bootstrap</h3>
+            <h3>Bienvenido a RunApp, la mejor aplicacion de carpooling</h3>
             <hr class="intro-divider">
             <ul class="list-inline intro-social-buttons">
                 <li class="list-inline-item">
@@ -33,65 +33,135 @@
 </header>
 
 <!-- Page Content -->
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Servicios</h2>
+            </div>
+        </div>
+        <br><br/>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <%= image_tag("innovation.png", width: '110', height: '110', alt: 'Car', class: "logo") %>
+                </span>
+                <br><br/>
+                <h4 class="service-heading">Innovación</h4>
+                <p class="text-muted">Comparte tu vehiculo y genera una ayuda para los demas y para ti en cuanto a gastos y tiempo </p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <%= image_tag("responsive.png", width: '110', height: '110', alt: 'Car', class: "logo") %>
+                </span>
+                <br><br/>
+                <h4 class="service-heading">Diseño</h4>
+                <p class="text-muted">Para que  puedas usar nuestra app desde cualquier dispositivo sin problemas de vistas por el tamaño de los dispositivos</p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <%= image_tag("security.png", width: '110', height: '110', alt: 'Car', class: "logo") %>
+                </span>
+                <br><br/>
+                <h4 class="service-heading">Seguridad</h4>
+                <p class="text-muted">Gracias a las validaciones por medio del correo institucional y los codigos de confirmacion, te ofrecemos un mayor nivel de seguridad</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Team -->
 <section class="content-section-a">
     <div class="container">
         <div class="row">
-            <div class="col-lg-5 ml-auto">
-                <hr class="section-heading-spacer">
-                <div class="clearfix"></div>
-                <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-                <p class="lead">A special thanks to
-                    <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>
-                    for providing the photographs that you see in this template. Visit their website to become a member.
-                </p>
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Nuestro equipo</h2>
             </div>
-            <div class="col-lg-5 mr-auto">
-                <img class="img-fluid" url('ipad.png') alt="">
+        </div>
+        <br><br/>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="team-member">
+                    <h4>Miguel Angel Borja</h4>
+                    <%= image_tag("team/borja.png", width: '150', height: '150', alt: 'Miguel Angel Borja', class: "mx-auto img-circle") %>
+                    <br><br/>
+                    <h5 class="text-muted">ScrumMaster</h5>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="team-member">
+                    <h4>Camilo Rueda</h4>
+                    <%= image_tag("team/rueda.png", width: '150', height: '150', alt: 'Camilo Rueda', class: "mx-auto img-circle") %>
+                    <br><br/>
+                    <p class="text-muted">Desarrollador</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="team-member">
+                    <h4>Santiago Marquez</h4>
+                    <%= image_tag("team/smo.jpg", width: '150', height: '150', alt: 'Santiago Márquez', class: "mx-auto img-circle") %>
+                    <br><br/>
+                    <p class="text-muted">Desarrollador</p>
+                </div>
+            </div>
+            <div class="col-sm-3 text-center">
+                <div class="team-member">
+                    <h4>Miguel Villamil</h4>
+                    <%= image_tag("team/villamil.jpg", width: '150', height: '150', alt: 'Miguel Villamil', class: "mx-auto img-circle") %>
+                    <br></br>
+                    <p class="text-muted">Desarrollador</p>
+                </div>
             </div>
         </div>
     </div>
-    <!-- /.container -->
 </section>
 
-<section class="content-section-b">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 mr-auto order-lg-2">
-                <hr class="section-heading-spacer">
-                <div class="clearfix"></div>
-                <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-                <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by
-                    <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!
-                </p>
-            </div>
-            <div class="col-lg-5 ml-auto order-lg-1">
-                <img class="img-fluid" url('dog.png') alt="">
-            </div>
-        </div>
-    </div>
-    <!-- /.container -->
-</section>
 
-<!-- /.content-section-b -->
-<section class="content-section-a">
-    <div class="container">
+<!-- Contact -->
+    <section class="content-section-b" id="contact">
+      <div class="container">
         <div class="row">
-            <div class="col-lg-5 ml-auto">
-                <hr class="section-heading-spacer">
-                <div class="clearfix"></div>
-                <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                <p class="lead">This template features the 'Lato' font, part of the
-                    <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as
-                    <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.
-                </p>
-            </div>
-            <div class="col-lg-5 mr-auto ">
-                <img class="img-fluid" url('phones.png') alt="">
-            </div>
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Contáctenos</h2>
+          </div>
         </div>
-    </div>
-    <!-- /.container -->
-</section>
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="contactForm" name="sentMessage" novalidate>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" id="nombre" style="background-color: #e7e7e7;" type="text" placeholder="Nombre *" required data-validation-required-message="Por favor ingrese su nombre.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="email" style="background-color: #e7e7e7;" type="email" placeholder="Email *" required data-validation-required-message="Por favor ingrese su email.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="telefono" style="background-color: #e7e7e7;" type="tel" placeholder="Telefono *" required data-validation-required-message="Por favor ingrese su numero de telefono.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <textarea class="form-control" id="mensaje" style="background-color: #e7e7e7;" placeholder="Ingrese su mensaje *" required data-validation-required-message="Por favor ingrese su mensaje."></textarea>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <button id="sendMessageButton" class="btn btn-xl" type="submit">Enviar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
 <!-- /.content-section-a -->
 <aside class="banner">
