@@ -218,11 +218,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise
-<<<<<<< HEAD
-  font-awesome-rails
-=======
   font-awesome-sass (~> 4.4.0)
->>>>>>> sprint-2-fixViews
   jbuilder (~> 2.5)
   jquery-easing-rails
   less-rails-bootstrap
