@@ -9,10 +9,10 @@ end
 gem 'devise'
 
 # custom theme requirements
-gem 'therubyracer'
-gem 'less-rails-bootstrap'
-gem 'jquery-easing-rails'
-gem "font-awesome-rails"
+#gem 'therubyracer'
+#gem 'less-rails-bootstrap'
+#gem 'jquery-easing-rails'
+#gem "font-awesome-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
