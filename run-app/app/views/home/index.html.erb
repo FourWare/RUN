@@ -2,28 +2,28 @@
 <header class="intro-header">
     <div class="container">
         <div class="intro-message">
-            <h1>RunApp</h1>
-            <h3>Bienvenido a RunApp, la mejor aplicacion de carpooling</h3>
+            <h1><%= @app %></h1>
+            <h3>Bienvenido a <%= @app %>, la mejor aplicacion de carpooling</h3>
             <hr class="intro-divider">
             <ul class="list-inline intro-social-buttons">
                 <li class="list-inline-item">
-                    <a href="https://twitter.com/runappUnal" class="btn btn-secondary btn-lg">
+                    <a href="https://twitter.com/runappUnal" class="btn btn-secondary btn-lg" target="_blank">
                         <button type="button" class="btn btn-md">
                             <%= image_tag("twitter.png", width: '25', height: '25', alt: 'twitter', class: "logo") %> Twitter
                         </button>
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="https://github.com/FourWare/RUN" class="btn btn-secondary btn-lg">
+                    <a href="https://github.com/FourWare/RUN" class="btn btn-secondary btn-lg" target="_blank">
                         <button type="button" class="btn btn-md">
-                            <%= image_tag("github.png", width: '25', height: '25', alt: 'twitter', class: "logo") %> GitHub
+                            <%= image_tag("github.png", width: '25', height: '25', alt: 'github', class: "logo") %> GitHub
                         </button>
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="https://www.facebook.com/groups/MateriasyElectivasFacilesUN2.0/" class="btn btn-secondary btn-lg">
+                    <a href="https://www.facebook.com/groups/MateriasyElectivasFacilesUN2.0/" class="btn btn-secondary btn-lg" target="_blank">
                         <button type="button" class="btn btn-md">
-                            <%= image_tag("facebook.png", width: '25', height: '25', alt: 'twitter', class: "logo") %> Facebook
+                            <%= image_tag("facebook.png", width: '25', height: '25', alt: 'facebook', class: "logo") %> Facebook
                         </button>
                     </a>
                 </li>
@@ -33,11 +33,11 @@
 </header>
 
 <!-- Page Content -->
-<section id="services">
+<section class="content-section-b" id="servicios">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Servicios</h2>
+                <h1 class="section-heading">Servicios</h1>
             </div>
         </div>
         <br><br/>
@@ -72,44 +72,41 @@
 
 
 <!-- Team -->
-<section class="content-section-a">
+<section class="content-section-a" id="nosotros">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Nuestro equipo</h2>
+                <h1 class="section-heading">Nuestro equipo</h1>
+                <h4 class="section-subheading text-muted">Miembros de la Universidad Nacional de Colombia.</h4>
             </div>
         </div>
         <br><br/>
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-3 text-center">
                 <div class="team-member">
+                    <%= image_tag("team/borja.png", alt: 'Miguel Angel Borja', class: "mx-auto img-circle") %>
                     <h4>Miguel Angel Borja</h4>
-                    <%= image_tag("team/borja.png", width: '150', height: '150', alt: 'Miguel Angel Borja', class: "mx-auto img-circle") %>
-                    <br><br/>
-                    <h5 class="text-muted">ScrumMaster</h5>
+                    <p class="text-muted">ScrumMaster</p>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-3 text-center">
                 <div class="team-member">
+                    <%= image_tag("team/rueda.png", alt: 'Camilo Rueda', class: "mx-auto img-circle") %>
                     <h4>Camilo Rueda</h4>
-                    <%= image_tag("team/rueda.png", width: '150', height: '150', alt: 'Camilo Rueda', class: "mx-auto img-circle") %>
-                    <br><br/>
-                    <p class="text-muted">Desarrollador</p>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="team-member">
-                    <h4>Santiago Marquez</h4>
-                    <%= image_tag("team/smo.jpg", width: '150', height: '150', alt: 'Santiago Márquez', class: "mx-auto img-circle") %>
-                    <br><br/>
                     <p class="text-muted">Desarrollador</p>
                 </div>
             </div>
             <div class="col-sm-3 text-center">
                 <div class="team-member">
+                    <%= image_tag("team/smo.jpg", alt: 'Santiago Márquez', class: "mx-auto img-circle") %>
+                    <h4>Santiago Marquez</h4>
+                    <p class="text-muted">Desarrollador</p>
+                </div>
+            </div>
+            <div class="col-sm-3 text-center">
+                <div class="team-member">
+                    <%= image_tag("team/villamil.jpg", alt: 'Miguel Villamil', class: "mx-auto img-circle") %>
                     <h4>Miguel Villamil</h4>
-                    <%= image_tag("team/villamil.jpg", width: '150', height: '150', alt: 'Miguel Villamil', class: "mx-auto img-circle") %>
-                    <br></br>
                     <p class="text-muted">Desarrollador</p>
                 </div>
             </div>
@@ -119,119 +116,88 @@
 
 
 <!-- Contact -->
-    <section class="content-section-b" id="contact">
-      <div class="container">
+<section class="banner" id="contactenos">
+    <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Contáctenos</h2>
-          </div>
+            <div class="col-lg-12 text-center">
+                <h1 class="section-heading">Contáctenos</h1>
+            </div>
         </div>
         <div class="row">
-          <div class="col-lg-12">
-            <form id="contactForm" name="sentMessage" novalidate>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input class="form-control" id="nombre" style="background-color: #e7e7e7;" type="text" placeholder="Nombre *" required data-validation-required-message="Por favor ingrese su nombre.">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control" id="email" style="background-color: #e7e7e7;" type="email" placeholder="Email *" required data-validation-required-message="Por favor ingrese su email.">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control" id="telefono" style="background-color: #e7e7e7;" type="tel" placeholder="Telefono *" required data-validation-required-message="Por favor ingrese su numero de telefono.">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <textarea class="form-control" id="mensaje" style="background-color: #e7e7e7;" placeholder="Ingrese su mensaje *" required data-validation-required-message="Por favor ingrese su mensaje."></textarea>
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-                <div class="clearfix"></div>
-                <div class="col-lg-12 text-center">
-                  <div id="success"></div>
-                  <button id="sendMessageButton" class="btn btn-xl" type="submit">Enviar</button>
-                </div>
-              </div>
-            </form>
+            <div class="col-lg-12">
+                <form id="contactForm" name="sentMessage" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="nombre" style="background-color: white;" type="text" placeholder="Nombre *" required data-validation-required-message="Por favor ingrese su nombre.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="email" style="background-color: white;" type="email" placeholder="Email *" required data-validation-required-message="Por favor ingrese su email.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="telefono" style="background-color: white;" type="tel" placeholder="Telefono *" required data-validation-required-message="Por favor ingrese su numero de telefono.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea class="form-control" id="message" placeholder="Ingrese su mensaje *" required data-validation-required-message="Please enter a message."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12 text-center">
+                            <div id="success"></div>
+                            <button id="sendMessageButton" class="btn btn-primary btn-lg" type="submit">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">Twitter</a>
+              </li>
+              &middot;
+              <li class="list-inline-item">
+                <a href="#">GitHub</a>
+              </li>
+              &middot;
+              <li class="list-inline-item">
+                <a href="#">Facebook</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              <li class="list-inline-item">
+                <% if user_signed_in? %>
+                    Logged in as <strong><%= current_user.email %></strong>.
+                    <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+                    <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                <% else %>
+                    <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
+                    <%= link_to "Entrar", new_user_session_path, :class => 'navbar-link'  %>
+                <% end %>
+              </li>
+              
+            </ul>
           </div>
         </div>
       </div>
-    </section>
+    </footer>
 
-
-<!-- /.content-section-a -->
-<aside class="banner">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 my-auto">
-                <h2>Connect to Start Bootstrap:</h2>
-            </div>
-            <div class="col-lg-6 my-auto">
-                <ul class="list-inline banner-social-buttons">
-                    <li class="list-inline-item">
-                        <a href="#" class="btn btn-secondary btn-lg">
-                            <i class="fa fa-twitter fa-fw"></i>
-                            <span class="network-name">Twitter</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#" class="btn btn-secondary btn-lg">
-                            <i class="fa fa-github fa-fw"></i>
-                            <span class="network-name">Github</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#" class="btn btn-secondary btn-lg">
-                            <i class="fa fa-linkedin fa-fw"></i>
-                            <span class="network-name">Linkedin</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- /.container -->
-</aside>
-    <!-- /.banner -->
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <ul class="list-inline">
-            <li class="list-inline-item">
-                <a href="#">Inicio</a>
-            </li>
-            <li class="footer-menu-divider list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-                <a href="#about">Nosotros</a>
-            </li>
-            <li class="footer-menu-divider list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-                <a href="#services">Servicios</a>
-            </li>
-            <li class="footer-menu-divider list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-                <a href="#contact">Contáctenos</a>
-            </li>
-        </ul>
-        <ul class="navbar-right">
-            <p class="navbar-text pull-right">
-                <% if user_signed_in? %>
-                    Logged in as <strong><%= current_user.email %></strong>.
-                    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-                    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-                <% else %>
-                    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-                    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-                <% end %>
-            </p>
-        </ul>
-        <p class="copyright text-muted small">Copyright &copy; RunApp 2017. All Rights Reserved</p>
-    </div>
-</footer>
-    
-    

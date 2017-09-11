@@ -30,8 +30,10 @@ body, h1, h2, h3, h4, h5, h6 {
 
 .intro-message>h1 {
   margin: 0;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+  text-shadow: 5px 5px 10px black;
   font-size: 5em;
+  border: double 5px;
+  border-radius: 50px;
 }
 
 .intro-divider {
@@ -41,7 +43,7 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .intro-message>h3 {
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 3px black;
 }
 
 .intro-social-buttons i {
@@ -76,12 +78,12 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .content-section-a {
-  padding: 50px 0;
+  padding: 80px 0;
   background-color: #f8f8f8;
 }
 
 .content-section-b {
-  padding: 50px 0;
+  padding: 80px 0;
   border-top: 1px solid #e7e7e7;
   border-bottom: 1px solid #e7e7e7;
 }
@@ -141,6 +143,20 @@ body, h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.team-member {
+  margin-bottom: 50px;
+  text-align: center; }
+  .team-member img {
+    width: 225px;
+    height: 225px;
+    border: 7px solid white; }
+  .team-member h4 {
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-transform: none; }
+  .team-member p {
+    margin-top: 0; 
+}
 
 section#contact {
   background-color: #222222;
@@ -188,9 +204,21 @@ section#contact {
 }
 
 footer {
-  padding: 50px 0;
-  background-color: #f8f8f8;
-}
+  padding: 25px 0;
+  text-align: center; }
+  footer span.copyright {
+    font-size: 90%;
+    line-height: 40px;
+    text-transform: none;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: uppercase; }
+  footer ul.quicklinks {
+    font-size: 90%;
+    line-height: 40px;
+    margin-bottom: 0;
+    text-transform: none;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: uppercase; }
 
 p.copyright {
   margin: 15px 0 0;
