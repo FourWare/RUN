@@ -161,43 +161,93 @@
 
 
 <!-- Footer -->
-    <footer>
-      <div class="container">
+<footer>
+    <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            <span class="copyright">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
-          </div>
-          <div class="col-md-4">
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">Twitter</a>
-              </li>
-              &middot;
-              <li class="list-inline-item">
-                <a href="#">GitHub</a>
-              </li>
-              &middot;
-              <li class="list-inline-item">
-                <a href="#">Facebook</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <ul class="list-inline quicklinks">
-              <li class="list-inline-item">
-                <% if user_signed_in? %>
-                    Logged in as <strong><%= current_user.email %></strong>.
-                    <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
-                    <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-                <% else %>
-                    <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
-                    <%= link_to "Entrar", new_user_session_path, :class => 'navbar-link'  %>
-                <% end %>
-              </li>
-              
-            </ul>
-          </div>
+            <div class="col-md-4">
+                <span class="copyright">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                    <li class="list-inline-item">
+                        <a href="#">Twitter</a>
+                    </li>
+                    &middot;
+                    <li class="list-inline-item">
+                        <a href="#">GitHub</a>
+                    </li>
+                    &middot;
+                    <li class="list-inline-item">
+                        <a href="#">Facebook</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline quicklinks">
+                    <li class="list-inline-item">
+                        <% if user_signed_in? %>
+                            Logged in as <strong><%= current_user.email %></strong>.
+                            <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+                            <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                        <% else %>
+                            <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
+                            <%= link_to "Entrar", new_user_session_path, :class => 'navbar-link'  %>
+                        <% end %>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </footer>
+    </div>
+</footer>
 
+<div id="myModal" class="modal" style="background-color: rgba(0, 0, 0, 0.7);">
+    <div class="container" style="width: 40%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <div class="row">
+            <form class="modal-content animate" action="/action_page.php">
+                    <div class="modal-header">
+                        <span onclick="document.getElementById('myModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <h3 style="text-align: center;">Ingresa a <%= @app %></h3>
+                    </div>
+                    <div class="modal-body">
+                        <%= form_for(resource, as: resource_name, url: session_path(resource_name), name: "login_form") do |f| %>
+                            <div class="form-group">
+	                            <%= f.label :email, class: 'control-label', id: 'email', style: 'width: 100%' %>
+	                            <%= f.email_field :email, autofocus: true, placeholder: 'usuario@unal.edu.co', type: 'text', class: 'form-control' %>
+	                        </div>
+                            <div class="form-group clearfix">
+                                <%= f.label :password, class: 'control-label',  for: 'password' %>
+                                <%= f.password_field :password, autocomplete: "off", type: 'password', class: 'form-control', name: 'passwd', style: 'width: 100%;' %>
+	                        </div>
+	                        <% if devise_mapping.rememberable? -%>
+	                            <div class="field">
+	                                <%= f.check_box :remember_me %>
+	                                <%= f.label :remember_me %>
+	                            </div>
+	                        <% end -%>
+                            <div class="form-group">
+	        	                <div class="actions col-md-12 text-center">
+	          	                    <%= f.submit "Entrar", class: "btn btn-primary btn-lg", type: 'submit' %>
+	                            </div>
+	                         </div>
+                        <% end %>                      
+                        <div class="modal-footer">
+                            ¿Eres nuevo en <%= @app %>?
+                            <a href="#" class="btn btn-primary">Regístrate</a>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
