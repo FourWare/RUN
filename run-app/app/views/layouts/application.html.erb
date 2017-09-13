@@ -20,13 +20,14 @@
     
     <!-- Custom styles for this template -->
     <link src="stylesheets/landing-page.css" rel="stylesheet">
+    <link src="stylesheets/modalStyle.css" rel="stylesheet">
     
   </head>
 
   <body>
     
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse bg-light navbar-fixed-top">
+    <nav class="navbar navbar-inverse bg-light navbar-fixed-top" style="background-color: black;">
       <div class="container">
         <a class="navbar-brand" href="#" style="color: white;"><%= @app %></a>
         <button class="navbar-toggle" data-toggle="collapse" data-target=".navResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,9 +45,9 @@
               <a class="nav-link" href="#contactenos" style="color: white;">Contáctenos</a>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href = "#" style="color: yellow;">Registrarse</a></li>
-            <li><a onclick="document.getElementById('myModal').style.display='block'" style="color: yellow;">Entrar</a></li>
+          <ul class="nav navbar-nav ml-auto navbar-right" style="width: 30%;">
+            <li class="nav-item" style="margin: 3%"><button class="btn btn-success" id="btnLoginRegister" onclick="document.getElementById('myModal').style.display='block'">Entrar</button></li>
+            <li class="nav-item" style="margin: 3%"><button class="btn btn-primary" id="btnLoginRegister" onclick="document.getElementById('myModal2').style.display='block'">Registrarme</button></li>
           </ul>
         </div>
       </div>
