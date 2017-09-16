@@ -21,6 +21,7 @@
     <!-- Custom styles for this template -->
     <link src="stylesheets/landing-page.css" rel="stylesheet">
     <link src="stylesheets/modalStyle.css" rel="stylesheet">
+    <link src="stylesheets/login-register.css" rel="stylesheet">
     
   </head>
 
@@ -29,39 +30,30 @@
     <!-- Navigation -->
     <nav class="navbar navbar-inverse bg-light navbar-fixed-top" style="background-color: black;">
       <div class="container">
-        <a class="navbar-brand" href="#" style="color: white;"><%= @app %></a>
+        <a class="navbar-brand" href="/" style="color: white;"><%= @app %></a>
         <button class="navbar-toggle" data-toggle="collapse" data-target=".navResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="icon-bar"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-lin" href="#servicios" style="color: white;">Servicios</a>
+              <a class="nav-lin" href="/#servicios" style="color: white;">Servicios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#nosotros" style="color: white;">Nosotros</a>
+              <a class="nav-link" href="/#nosotros" style="color: white;">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contactenos" style="color: white;">Contáctenos</a>
+              <a class="nav-link" href="/#contactenos" style="color: white;">Contáctenos</a>
             </li>
           </ul>
           <ul class="nav navbar-nav ml-auto navbar-right" style="width: 30%;">
-            <li class="nav-item" style="margin: 3%"><button class="btn btn-success" id="btnLoginRegister" onclick="document.getElementById('myModal').style.display='block'">Entrar</button></li>
-            <li class="nav-item" style="margin: 3%"><button class="btn btn-primary" id="btnLoginRegister" onclick="document.getElementById('myModal2').style.display='block'">Registrarme</button></li>
+            <li class="nav-item" style="margin: 3%"><button class="btn btn-success" id="btnLoginRegister" onclick="location.href='/home/entrar'">Entrar</button></li>
           </ul>
         </div>
       </div>
     </nav>
     
     <%= yield %>
-    
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-    
     
     <!-- Bootstrap core JavaScript -->
     <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/jquery/jquery.min.js"></script>

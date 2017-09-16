@@ -1,9 +1,16 @@
 class HomeController < ApplicationController
   def index
-    @app = 'RunApp'
+    @app = "RunApp"
+    render :layout => 'home-layout'
   end
+  
   def entrar
+    @app = "RunApp"
+    render :layout => 'entrar'
   end
-  def registrarse
+  
+  def registro
+    @app = "RunApp"
+    render :layout => 'registro'
   end
 end

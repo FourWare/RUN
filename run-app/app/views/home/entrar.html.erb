@@ -1,43 +1,34 @@
-<div class="container">
-  	<div class="jumbotron">
-			<h1>RunApp</h1>
-			<p> Inicion de sesión</p>
-		</div>
-	</div>
-
-<!-- primer cuadro de texto, titulo, descripcion -->
-	<div class="container">
-		<div class="jumbotron">
-			
-			<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-	        <div class="form-group">
-	          <%= f.label :email, class: 'control-label' %>
-	          <%= f.email_field :email, autofocus: true, placeholder: 'user@unal.edu.co', type: 'text', class: 'form-control' %>
-	        </div>
-
-	        <div class="form-group clearfix">
-	          <%= f.label :password, class: 'control-label',  for: 'password' %>
-	          <%= f.password_field :password, autocomplete: "off", type: 'password', class: 'form-control' %>
-	        </div>
-
-	        <% if devise_mapping.rememberable? -%>
-	          <div class="field">
-	            <%= f.check_box :remember_me %>
-	            <%= f.label :remember_me %>
-	          </div>
-	        <% end -%>
-
-					<div class="form-group">
-	        	<div class="actions col-md-12 text-center">
-	          	<%= f.submit "Log In", class: "btn btn-primary btn-lg", type: 'submit' %>
-	          </div>
-	         </div>
-
-          <div class="devise-links">
+<div class="container" style="background-color: rgba(0, 0, 0, 0.7);">
+    <div class="wthree-form" id="myModalRegister" style="width: 40%; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <h2 style="text-align: center; font-size: ">Inicia sesión</h2>
+        <div class="w3l-login form">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name), name: "login_form") do |f| %>
+                <div class="form-sub-w3">
+	                <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'text', required: "" %>
+	            </div>
+	            <div class="form-sub-w3 form-group clearfix">
+                    <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
+	            </div>
+	            <% if devise_mapping.rememberable? -%>
+	                <div class="check_box">
+	                    <%= f.check_box :remember_me, id: 'checkboxRegister', type: 'checkbox', class: 'checkbox', style: "display: inline-block;" %>
+	                    <%= f.label :__recordarme, style: "color: white;" %>
+	                </div>
+	            <% end -%>
+	            <div class="actions submit-agileits">
+	                <%= f.submit "Log In", id: "submitRegister", class: "btn btn-success btn-lg", type: 'submit' %>
+	                <% if notice %>
+      					<p class="alert alert-success"><%= notice %></p>
+    				<% end %>
+		    		<% if alert %>
+		      			<p class="alert alert-danger"><%= alert %></p>
+		    		<% end %>
+				</div>
+            <% end %>
+            <a id="aRegister" href="#">¿Eres nuevo en <%= @app %>? Regístrate</a>
+            <div class="devise-links">
 	          <%= render "devise/shared/links" %>
 	        </div>
-	      <% end %>
-	      
-			</div>
-	</div>
+		</div>
+    </div>
+</div>

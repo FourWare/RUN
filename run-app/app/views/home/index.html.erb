@@ -5,6 +5,7 @@
             <h1><%= @app %></h1>
             <h3>Bienvenido a <%= @app %>, la mejor aplicacion de carpooling</h3>
             <hr class="intro-divider">
+            <h3 style="color: white;">Encuentra a <%= @app %> en: </h3>
             <ul class="list-inline intro-social-buttons">
                 <li class="list-inline-item">
                     <a href="https://twitter.com/runappUnal" class="btn btn-secondary btn-lg" target="_blank">
@@ -187,8 +188,10 @@
                             <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
                             <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
                         <% else %>
-                            <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
-                            <%= link_to "Entrar", new_user_session_path, :class => 'navbar-link'  %>
+                            <li class="nav-item"><button class="btn btn-default" onclick="document.getElementById('myModal').style.display='block'">Entrar</button></li>
+                            &middot;
+                            <li class="nav-item"><button class="btn btn-default" onclick="document.getElementById('myModal2').style.display='block'">Registrarme</button></li>
+                            
                         <% end %>
                     </li>
                 </ul>
@@ -210,7 +213,7 @@
 	                <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'text', required: "" %>
 	            </div>
 	            <div class="form-sub-w3 form-group clearfix">
-                    <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', name: 'password', placeholder: 'Contraseña', required: "" %>
+                    <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
 	            </div>
 	            <% if devise_mapping.rememberable? -%>
 	                <div class="check_box">
@@ -248,10 +251,10 @@
 	                <% if @minimum_password_length %>
                         <em>(<%= @minimum_password_length %> characters minimum)</em>
                     <% end %><br />
-                    <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', name: 'password', placeholder: 'Contraseña', required: "" %>
+                    <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
 	            </div>
 	            <div class="form-sub-w3 form-group clearfix">
-	                <%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister', name: 'password', placeholder: 'Confirmación contraseña', required: "" %>
+	                <%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Confirmación contraseña', required: "" %>
 	            </div>
 	            <div class="actions submit-agileits">
 	                <%= f.submit "Registrarse", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit' %>
