@@ -1,3 +1,29 @@
+<!-- Navigation -->
+<nav class="navbar navbar-inverse bg-light navbar-fixed-top" style="background-color: black;">
+	<div class="container">
+    	<a class="navbar-brand" href="/" style="color: white;"><%= @app %></a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        	<span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+        	<ul class="nav navbar-nav ml-auto">
+            	<li class="nav-item">
+              		<a class="nav-lin" href="/#servicios" style="color: white;">Servicios</a>
+            	</li>
+            	<li class="nav-item">
+              		<a class="nav-link" href="/#nosotros" style="color: white;">Nosotros</a>
+            	</li>
+            	<li class="nav-item">
+              		<a class="nav-link" href="/#contactenos" style="color: white;">Contáctanos</a>
+            	</li>
+          	</ul>
+          	<ul class="nav navbar-nav ml-auto navbar-right" style="width: 30%;">
+            	<li class="nav-item" style="margin: 3%"><button class="btn btn-primary" id="btnLoginRegister" onclick="location.href='/home/registro'">Registrarme</button></li>
+          	</ul>
+        </div>
+    </div>
+</nav>
+
 <div class="container" style="background-color: rgba(0, 0, 0, 0.7);">
     <div class="wthree-form" id="myModalRegister" style="width: 40%; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
         <h2 style="text-align: center; font-size: ">Inicia sesión</h2>
@@ -25,7 +51,6 @@
 		    		<% end %>
 				</div>
             <% end %>
-            <a id="aRegister" href="#">¿Eres nuevo en <%= @app %>? Regístrate</a>
             <div class="devise-links">
 	          <%= render "devise/shared/links" %>
 	        </div>
