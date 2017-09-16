@@ -13,4 +13,9 @@ class HomeController < ApplicationController
     @app = "RunApp"
     render :layout => 'registro'
   end
+  
+  def recuperacion_contrasena
+    @app = "RunApp"
+    render :layout => 'recuperacion_contrasena'
+  end
 end

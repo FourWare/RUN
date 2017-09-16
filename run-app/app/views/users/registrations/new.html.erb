@@ -35,7 +35,7 @@
 			<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 		    <%= devise_error_messages! %>
 		    <div class="form-sub-w3">
-	        <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'text', required: "" %>
+	        <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
 	      </div>
 	      <div class="form-sub-w3 form-group clearfix">
 	        <% if @minimum_password_length %>
@@ -50,7 +50,7 @@
 	        <%= f.submit "Registrarse", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit' %>
 				</div>
 			  <div class="devise-links">
-	        <%= render "devise/shared/links" %>
+	        <%= link_to "¿Ya eres miembro de RunApp? Ingresa", new_session_path(resource_name) %><br />  
 	      </div>
       <% end %>
 		</div>
