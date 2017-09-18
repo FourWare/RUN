@@ -5,6 +5,9 @@
 			<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 		    <%= devise_error_messages! %>
 		    <div class="form-sub-w3">
+	        <%= f.email_field :user_name, id: 'usernameRegister', autofocus: true, placeholder: 'Nombre', type: 'text', required: "" %>
+	      </div>
+		    <div class="form-sub-w3">
 	        <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
 	      </div>
 	      <div class="form-sub-w3 form-group clearfix">
