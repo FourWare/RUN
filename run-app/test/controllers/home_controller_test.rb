@@ -20,5 +20,5 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get home_recuperacion_contrasena_url
     assert_response :success
   end
-
+  
 end

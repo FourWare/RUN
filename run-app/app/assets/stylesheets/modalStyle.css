@@ -121,6 +121,13 @@
 	color: lightblue;
 }
 
+.date-select {
+	display: inline-block;
+	width: 30%;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+}
+
 /*--responsive--*/
 @media(max-width:1920px){
 	input[type="text"], input[type="password"]{
