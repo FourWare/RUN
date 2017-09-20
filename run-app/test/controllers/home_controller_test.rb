@@ -21,9 +21,4 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
   
-  test "should get nueva_contrasena" do
-    get home_nueva_contrasena_url
-    assert_response :success
-  end
-
 end

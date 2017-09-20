@@ -18,7 +18,4 @@ class HomeController < ApplicationController
     @app = "RunApp"
     render :layout => 'recuperacion_contrasena'
   end
-  
-  def nueva_contrasena
-  end
 end
