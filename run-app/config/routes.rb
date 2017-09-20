@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   get 'home/nueva_contrasena'
+  get 'users/eventCreate'
   get 'home/recuperacion_contrasena' => 'home#recuperacion_contrasena'
   get 'home/registro'
   get '/home/entrar'
