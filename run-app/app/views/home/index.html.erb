@@ -192,91 +192,95 @@
     </div>
 </footer>
 
-<div id="myModal" class="modal" style="background-color: rgba(0, 0, 0, 0.7);">
-    <div class="wthree-form" id="myModalRegister" style="width: 40%; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-        <button type="button btn-lg" class="close">
-            <span class="close glyphicon glyphicon-remove-sign" onclick="document.getElementById('myModal').style.display='none'"></span>
-        </button>
-    
-        <h2 style="text-align: center; font-size: ">Inicia sesión</h2>
-        <div class="w3l-login form">
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name), name: "login_form") do |f| %>
-                <div class="form-sub-w3">
-	                <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
-	            </div>
-	            <div class="form-sub-w3 form-group clearfix">
-                    <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
-	            </div>
-	            <% if devise_mapping.rememberable? -%>
-	                <div class="check_box">
-	                    <%= f.check_box :remember_me, id: 'checkboxRegister', type: 'checkbox', class: 'checkbox', style: "display: inline-block;" %>
-	                    <%= f.label :__recordarme, style: "color: white;" %>
-	                </div>
-	            <% end -%>
-	            <div class="actions submit-agileits">
-	                <%= f.submit "Entrar", id: "submitRegister", class: "btn btn-success btn-lg", type: 'submit' %>
-				</div>
-            <% end %>
-            <div class="devise-links">
-                <%= link_to "¿Eres nuevo en RunApp? Regístrate", new_registration_path(resource_name) %><br />
-	          	<%= link_to "¿Olvidaste tu contraseña?", new_password_path(resource_name) %><br />
-	        </div>
+<div id="myModal" class="modal" role="dialog" style="overflow-y: auto; background-color: rgba(0, 0, 0, 0.7);">
+    <div class="modal-dialog">
+        <div class="wthree-form" id="myModalRegister" style="width: 80%;">
+            <button type="button btn-lg" class="close">
+                <span class="close glyphicon glyphicon-remove-sign" onclick="document.getElementById('myModal').style.display='none'"></span>
+            </button>
+        
+            <h2 style="text-align: center; font-size: ">Inicia sesión</h2>
+            <div class="w3l-login form">
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name), name: "login_form") do |f| %>
+                    <div class="form-sub-w3">
+    	                <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
+    	            </div>
+    	            <div class="form-sub-w3 form-group clearfix">
+                        <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
+    	            </div>
+    	            <% if devise_mapping.rememberable? -%>
+    	                <div class="check_box">
+    	                    <%= f.check_box :remember_me, id: 'checkboxRegister', type: 'checkbox', class: 'checkbox', style: "display: inline-block;" %>
+    	                    <%= f.label :__recordarme, style: "color: white;" %>
+    	                </div>
+    	            <% end -%>
+    	            <div class="actions submit-agileits">
+    	                <%= f.submit "Entrar", id: "submitRegister", class: "btn btn-success btn-lg", type: 'submit' %>
+    				</div>
+                <% end %>
+                <div class="devise-links">
+                    <%= link_to "¿Eres nuevo en RunApp? Regístrate", new_registration_path(resource_name) %><br />
+    	          	<%= link_to "¿Olvidaste tu contraseña?", new_password_path(resource_name) %><br />
+    	        </div>
+            </div>
         </div>
 	</div>
 </div>    
 
 
-<div id="myModal2" class="modal" style="background-color: rgba(0, 0, 0, 0.7);">
-    <div class="wthree-form" id="myModalRegister" style="width: 40%; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-        <button type="button btn-lg" class="close">
-            <span class="close glyphicon glyphicon-remove-sign" onclick="document.getElementById('myModal2').style.display='none'"></span>
-        </button>
-    
-        <h2 style="text-align: center; font-size: ">Regístrate</h2>
-        <div class="w3l-login form">
-			<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-		        <%= devise_error_messages! %>
-			    <div class="form-sub-w3">
-		        	<%= f.text_field :name, id: 'usernameRegister', autofocus: true, placeholder: 'Nombre', type: 'text', required: "" %>
-		      	</div>
-		      	<div class="form-sub-w3">
-		        	<%= f.text_field :nick, id: 'usernameRegister', autofocus: true, placeholder: 'Nick', type: 'text', required: "" %>
-		      	</div>
-		      	<div class="form-sub-w3">
-		        	<%= f.text_field :career, id: 'usernameRegister', autofocus: true, placeholder: 'Carrera', type: 'text', required: "" %>
-		      	</div>
-		      	<div class="form-sub-w3">
-		      		<em style="color: white; display: block;">Fecha de nacimiento</em>
-		      		<%= f.date_select :date_of_birth, { 
-		      			:order => [:day, :month, :year], 
-		      			:start_year => Time.now.year - 15, 
-		      			:end_year => 1950, 
-		      			:prompt => {
-		      				day: 'Día', month: 'Mes', year: 'Año'
-		      			}},
-		      			{:class => "form-control date-select"}
-		        	%>
-		        	<br></br>
-		      	</div>
-			    <div class="form-sub-w3">
-		        	<%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
-		      	</div>
-		      	<div class="form-sub-w3 form-group clearfix">
-	          		<%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
-		          	<% if @minimum_password_length %>
-		            	<em style="color: red;">(<%= @minimum_password_length %> characters minimum)</em>
-		          	<% end %><br />
-			    </div>
-		      	<div class="form-sub-w3 form-group clearfix">
-		        	<%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Confirmación contraseña', required: "" %>
-		      	</div>
-	            <div class="actions submit-agileits">
-	                <%= f.submit "Registrarme", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit' %>
-				</div>
-				<div class="devise-links">
-	                <%= link_to "¿Ya eres miembro de RunApp? Ingresa", new_session_path(resource_name) %><br />
-	            </div>
-            <% end %>
-		</div>
+<div id="myModal2" class="modal" role="dialog" style="overflow-y: auto; background-color: rgba(0, 0, 0, 0.7);">
+    <div class="modal-dialog">
+        <div class="wthree-form" id="myModalRegister" style="width: 80%;">
+            <button type="button btn-lg" class="close">
+                <span class="close glyphicon glyphicon-remove-sign" onclick="document.getElementById('myModal2').style.display='none'"></span>
+            </button>
+        
+            <h2 style="text-align: center; font-size: ">Regístrate</h2>
+            <div class="w3l-login form">
+    			<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    		        <%= devise_error_messages! %>
+    			    <div class="form-sub-w3">
+    		        	<%= f.text_field :name, id: 'usernameRegister', autofocus: true, placeholder: 'Nombre', type: 'text', required: "" %>
+    		      	</div>
+    		      	<div class="form-sub-w3">
+    		        	<%= f.text_field :nick, id: 'usernameRegister', autofocus: true, placeholder: 'Nick', type: 'text', required: "" %>
+    		      	</div>
+    		      	<div class="form-sub-w3">
+    		        	<%= f.text_field :career, id: 'usernameRegister', autofocus: true, placeholder: 'Carrera', type: 'text', required: "" %>
+    		      	</div>
+    		      	<div class="form-sub-w3">
+    		      		<em style="color: white; display: block;">Fecha de nacimiento</em>
+    		      		<%= f.date_select :date_of_birth, { 
+    		      			:order => [:day, :month, :year], 
+    		      			:start_year => Time.now.year - 15, 
+    		      			:end_year => 1950, 
+    		      			:prompt => {
+    		      				day: 'Día', month: 'Mes', year: 'Año'
+    		      			}},
+    		      			{:class => "form-control date-select"}
+    		        	%>
+    		        	<br></br>
+    		      	</div>
+    			    <div class="form-sub-w3">
+    		        	<%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
+    		      	</div>
+    		      	<div class="form-sub-w3 form-group clearfix">
+    	          		<%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
+    		          	<% if @minimum_password_length %>
+    		            	<em style="color: red;">(<%= @minimum_password_length %> characters minimum)</em>
+    		          	<% end %><br />
+    			    </div>
+    		      	<div class="form-sub-w3 form-group clearfix">
+    		        	<%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Confirmación contraseña', required: "" %>
+    		      	</div>
+    	            <div class="actions submit-agileits">
+    	                <%= f.submit "Registrarme", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit' %>
+    				</div>
+    				<div class="devise-links">
+    	                <%= link_to "¿Ya eres miembro de RunApp? Ingresa", new_session_path(resource_name) %><br />
+    	            </div>
+                <% end %>
+    		</div>
+    	</div>
     </div>    
 </div>
