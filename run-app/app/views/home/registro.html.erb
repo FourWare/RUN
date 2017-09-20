@@ -1,28 +1,30 @@
-<div class="container" style="background-color: rgba(0, 0, 0, 0.7);">
-  <div class="wthree-form" id="myModalRegister" style="width: 40%; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-    <h2 style="text-align: center; font-size: ">Regístrate</h2>
-    <div class="w3l-login form">
-			<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-		    <%= devise_error_messages! %>
-		    <div class="form-sub-w3">
-	        <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
-	      </div>
-	      <div class="form-sub-w3 form-group clearfix">
-	        <% if @minimum_password_length %>
-            <em style="color: red;">(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
-	      </div>
-	      <div class="form-sub-w3 form-group clearfix">
-	        <%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Confirmación contraseña', required: "" %>
-	      </div>
-	      <div class="actions submit-agileits">
-	        <%= f.submit "Registrarme", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit' %>
-				</div>
-			  <div class="devise-links">
-	      	<%= link_to "¿Ya eres miembro de RunApp? Ingresa", new_session_path(resource_name) %><br />  
-	      </div>
-      <% end %>
+<div class="container" style="overflow-y: auto;">
+  <div class="modal-dialog">
+		<div class="wthree-form" id="myModalRegister" style="width: 100%;">
+	    <h2 style="text-align: center; font-size: ">Regístrate</h2>
+	    <div class="w3l-login form">
+				<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+			    <%= devise_error_messages! %>
+			    <div class="form-sub-w3">
+		        <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
+		      </div>
+		      <div class="form-sub-w3 form-group clearfix">
+		        <% if @minimum_password_length %>
+	            <em style="color: red;">(<%= @minimum_password_length %> characters minimum)</em>
+	          <% end %><br />
+	          <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
+		      </div>
+		      <div class="form-sub-w3 form-group clearfix">
+		        <%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Confirmación contraseña', required: "" %>
+		      </div>
+		      <div class="actions submit-agileits">
+		        <%= f.submit "Registrarme", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit' %>
+					</div>
+				  <div class="devise-links">
+		      	<%= link_to "¿Ya eres miembro de RunApp? Ingresa", new_session_path(resource_name) %><br />  
+		      </div>
+	      <% end %>
+			</div>
 		</div>
   </div>    
 </div>
