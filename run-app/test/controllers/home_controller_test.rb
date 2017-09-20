@@ -20,5 +20,10 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get home_recuperacion_contrasena_url
     assert_response :success
   end
+  
+  test "should get nueva_contrasena" do
+    get home_nueva_contrasena_url
+    assert_response :success
+  end
 
 end
