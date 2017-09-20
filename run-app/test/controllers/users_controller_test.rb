@@ -5,5 +5,10 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get users_show_url
     assert_response :success
   end
+  
+  test "should get eventCreate" do
+    get users_eventCreate_url
+    assert_response :success
+  end
 
 end

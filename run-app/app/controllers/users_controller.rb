@@ -3,4 +3,7 @@ class UsersController < ApplicationController
   end
   def mainPage
   end
+  def eventCreate
+    render :layout => 'eventCreate'
+  end
 end
