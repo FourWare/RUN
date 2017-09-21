@@ -5,6 +5,25 @@
 </div>
 
 <script type="text/javascript">
+
+var directionsDisplay = new google.maps.DirectionsRenderer();
+var directionsService = new google.maps.DirectionsService();
+
+function calcRoute() {
+  var origin    = markers[0].getPosition();
+  var destination = markers[1].getPosition();
+  var request = {
+      origin:      origin,
+      destination: destination,
+      travelMode:  google.maps.TravelMode.DRIVING
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+      console.log("OK");
+    }
+  });
+}
 var markers = [];
 handler = Gmaps.build('Google');
 handler.buildMap({ internal: {id: 'mapEventCreate'}, 
@@ -20,10 +39,7 @@ placeMarker(new google.maps.LatLng(4.635540,-74.082807));
   placeMarker(event.latLng);
   console.log("add");
 });
-google.maps.event.addListener(markers, 'rightlclick', function() {
-    removeMarker(markers);
-    console.log("remove");
-});
+
 var delMarker = function (markerPar) {
     removeMarker(markerPar);
     
@@ -35,7 +51,13 @@ function placeMarker(location) {
         draggable: true
     });
     markers.push(marker);
-    console.log(markers);
+    //console.log(marker.getPosition().lat());
+    if (markers.length > 1){
+      calcRoute();
+    }
+    google.maps.event.addListener(marker, 'click', function(event) {
+      marker.setMap(null);
+    });
 }
 </script>
 
