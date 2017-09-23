@@ -21,4 +21,9 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
   
+  test "should get editar_perfil" do
+    get home_editar_perfil_url
+    assert_response :success
+  end
+
 end

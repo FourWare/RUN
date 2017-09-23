@@ -176,7 +176,7 @@
                 <ul class="list-inline quicklinks">
                     <li class="list-inline-item" style="color:black;">
                         <% if user_signed_in? %>
-                            <strong  style="text-transform: capitalize;"><%= current_user.name %></strong> |
+                            <strong  style="text-transform: capitalize;"><%= @password %></strong> |
                             <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
                             <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
                         <% else %>

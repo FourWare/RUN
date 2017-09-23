@@ -18,4 +18,9 @@ class HomeController < ApplicationController
     @app = "RunApp"
     render :layout => 'recuperacion_contrasena'
   end
+  
+  def editar_perfil
+    @app = "RunApp"
+    render :layout => 'home-layout'
+  end
 end
