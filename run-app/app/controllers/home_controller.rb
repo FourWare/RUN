@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!, :only => [:editar_perfil]
   def index
     @app = "RunApp"
     render :layout => 'home-layout'

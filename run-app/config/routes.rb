@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'admin/home'
+
   get "home/editar_perfil"
   get 'users/eventCreate'
   get 'home/recuperacion_contrasena' => 'home#recuperacion_contrasena'
