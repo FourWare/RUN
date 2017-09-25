@@ -22,7 +22,6 @@ function calcRoute() {
     if (status == google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(response);
       directionsDisplay.setMap(handler.getMap());
-      console.log("OK");
     }
   });
   
@@ -41,11 +40,9 @@ placeMarker(new google.maps.LatLng(4.635540,-74.082807));
 
   google.maps.event.addListener(handler.getMap(), 'click', function(event) {
   placeMarker(event.latLng);
-  console.log("add");
 });
 directionsDisplay.addListener(directionsDisplay, 'directions_changed', function() {
         computeTotalDistance(directionsDisplay.getDirections());
-        console.log(directionsDisplay);
       });
 
 var delMarker = function (markerPar) {
@@ -59,7 +56,6 @@ function placeMarker(location) {
         draggable: true
     });
     markers.push(marker);
-    //console.log(marker.getPosition().lat());
     if (markers.length == 2){
       calcRoute();
     }
