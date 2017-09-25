@@ -18,4 +18,9 @@ class HomeController < ApplicationController
     @app = "RunApp"
     render :layout => 'recuperacion_contrasena'
   end
+  
+   def show
+    @app = "RunApp"
+    #render :layout => 'recuperacion_contrasena'
+  end
 end

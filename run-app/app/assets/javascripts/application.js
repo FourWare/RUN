@@ -16,4 +16,6 @@
 //= require agency.min
 //= require contact_me
 //= require jqBootstrapValidation
+//= require underscore
+//= require gmaps/google
 //= require_tree .
