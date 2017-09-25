@@ -23,4 +23,10 @@ class HomeController < ApplicationController
     @app = "RunApp"
     #render :layout => 'recuperacion_contrasena'
   end
+  
+  def salir
+    @app = "RunApp"
+    render :layout => 'entrar'  
+  end
+  
 end
