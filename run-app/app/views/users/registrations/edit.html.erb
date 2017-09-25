@@ -1,43 +1,133 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title><%= @app %></title>
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    
+    <!-- Bootstrap core CSS -->
+    <link src="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom fonts for this template -->
+    <link url("vendor/font-awesome/css/font-awesome.min.css") rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    
+    <!-- Custom styles for this template -->
+    <link src="stylesheets/landing-page.css" rel="stylesheet">
+    <link src="stylesheets/modalStyle.css" rel="stylesheet">
+    
+  </head>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <body>
+    <nav class="navbar navbar-inverse bg-light navbar-fixed-top" style="background-color: black;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" onclick="document.getElementById('myNavBar').style.display='inline-block'">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="/#" style="color: white;"><%= @app %></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavBar">
+          <ul class="nav navbar-nav">
+            <li>
+              <a class="nav-lin" href="/#servicios" style="color: white;">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#nosotros" style="color: white;">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#contactenos" style="color: white;">Contáctanos</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right" style="width: 30%;">
+            <% if user_signed_in? %>
+              <% if current_user.profile_image.nil? %>
+                <li> 
+                  <%= link_to current_user.name, edit_user_registration_path, :class => 'navbar-link' %>
+                </li>
+                <li> <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+              <% else %>
+                <li><%= link_to edit_user_registration_path, :class => 'navbar-link' do %>
+                      <%= image_tag(current_user.profile_image, width: '30', height: '30', class: 'image-circle') %> -
+                      <%= current_user.name %>
+                      <% end %>
+                </li>
+                <li> <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+              <% end %>
+            <% else %>
+              <li class="nav-item" style="margin: 3%;"><button class="btn btn-success" id="btnLoginRegister" onclick="document.getElementById('myModal').style.display='block'">Entrar</button></li>
+              <li class="nav-item" style="margin: 3%;"><button class="btn btn-primary" id="btnLoginRegister" onclick="document.getElementById('myModal2').style.display='block'">Registrarme</button></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="container" style="overflow-y: auto;">
+    <div class="modal-dialog">
+        <div class="wthree-form" id="myModalRegister" style="width: 80%;">
+		    <h2 style="text-align: center; font-size: ">Editar perfil <%= current_user.nick %> </h2>
+		    <div class="w3l-login form">
+		        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  				    <%= devise_error_messages! %>
+  				    <div class="form-sub-w3">
+  				      <br></br>
+  				      <p>Nombre</p>
+  			        <%= f.text_field :name, id: 'usernameRegister', value: current_user.name, autofocus: true, type: 'text', required: "" %>
+  			      </div>
+  			      <div class="form-sub-w3">
+  			        <p>Carrera</p>
+  			        <%= f.text_field :career, id: 'usernameRegister', autofocus: true,  value: current_user.career, type: 'text' %>
+  			      </div>
+  			      <div class="form-sub-w3">
+  			        <%= f.label :Fecha_de_nacimiento %>
+  			        <%= f.text_field :date_of_birth, id: 'usernameRegister', autofocus: true,  value: current_user.date_of_birth, type: 'text' %>
+  			      </div>
+  			      <div class="form-sub-w3">
+  			        <p>Contraseña <i>(Déjalo en blanco si no quieres cambiarla.)</i></p>
+  			        <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister' %>
+    			      <% if @minimum_password_length %>
+    			        <br />
+                  <em><%= @minimum_password_length %> characters minimum</em>
+                <% end %>
+    			    </div>
+  			      <div class="form-sub-w3 form-group clearfix">
+  			        <label>Confirmar contraseña</label>
+  			        <%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister' %>
+  			      </div>
+  			      <div class="form-sub-w3 form-group clearfix">
+  			        <label>Contraseña actual <i>(Necesitamos tu contraseña actual para confirmar cambios.)</i></label>
+  			        <%= f.password_field :current_password, autocomplete: "off", type: 'password', id: 'passwordRegister' %>
+  			      </div>
+  			      <div class="actions submit-agileits">
+  			        <%= f.submit "Guardar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block' %>
+  					  </div>
+  					  <%= link_to "/" do %>
+                <%= f.submit "Cancelar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block' %>
+              <% end %>
+		        <% end %>
+		      	
+		      	<h3>Eliminar cuenta</h3>
+                <p>¿Inconforme? 
+                    <%= button_to "Eliminar", registration_path(resource_name), data: { confirm: "¿Estás seguro?" }, method: :delete, id: "submitRegister", class: "btn btn-primary btn-lg" %>
+                </p>
+			  </div>
+		  </div>
+  	</div>    
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+    
+    <!-- Bootstrap core JavaScript -->
+    <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/jquery/jquery.min.js"></script>
+    <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/popper/popper.min.js"></script>
+    <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/bootstrap/js/bootstrap.min.js"></script>
+    
+  </body>
+</html>

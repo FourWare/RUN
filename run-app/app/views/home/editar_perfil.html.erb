@@ -1,0 +1,58 @@
+<div class="container" style="overflow-y: auto;">
+    <div class="modal-dialog">
+        <div class="wthree-form" id="myModalRegister" style="width: 80%;">
+		    <h2 style="text-align: center; font-size: ">Editar perfil <%= current_user.nick %> </h2>
+		    <div class="w3l-login form">
+		        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+				    <%= devise_error_messages! %>
+				    <div class="form-sub-w3">
+				        <br></br>
+				        <p>Nombre</p>
+			        	<%= f.text_field :name, id: 'usernameRegister', value: current_user.name, autofocus: true, type: 'text', required: "" %>
+			      	</div>
+			      	
+			      	<div class="form-sub-w3">
+			      	    <p>Carrera</p>
+			        	<%= f.text_field :career, id: 'usernameRegister', autofocus: true,  value: current_user.career, type: 'text' %>
+			      	</div>
+			      	
+			      	<div class="form-sub-w3">
+			      	    <%= f.label :Fecha_de_nacimiento %>
+			        	<%= f.text_field :date_of_birth, id: 'usernameRegister', autofocus: true,  value: current_user.date_of_birth, type: 'text' %>
+			      	</div>
+			      	
+			      	<div class="form-sub-w3">
+			      	    <p>Contraseña <i>(Déjalo en blanco si no quieres cambiarla.)</i></p>
+			        	<%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister' %>
+			        	<% if @minimum_password_length %>
+			        	    <br />
+                                <em><%= @minimum_password_length %> characters minimum</em>
+                        <% end %>
+			      	</div>
+			      	
+			      	<div class="form-sub-w3 form-group clearfix">
+			      	    <label>Confirmar contraseña</label>
+			        	<%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister' %>
+			      	</div>
+			      	
+			      	<div class="form-sub-w3 form-group clearfix">
+			      	    <label>Contraseña actual <i>(Necesitamos tu contraseña actual para confirmar cambios.)</i></label>
+			        	<%= f.password_field :current_password, autocomplete: "off", type: 'password', id: 'passwordRegister' %>
+			      	</div>
+			      	<div class="actions submit-agileits">
+			        	<%= f.submit "Guardar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block' %>
+					</div>
+					<%= link_to "/" do %>
+                        <%= f.submit "Cancelar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block' %>
+                    <% end %>
+		      	<% end %>
+		      	
+		      	<h3>Eliminar cuenta</h3>
+                <p>¿Inconforme? 
+                    <%= button_to "Eliminar", registration_path(resource_name), data: { confirm: "¿Estás seguro?" }, method: :delete,  id: "submitRegister", class: "btn btn-primary btn-lg" %>
+                </p>
+		      	
+			</div>
+		</div>
+  	</div>    
+</div>

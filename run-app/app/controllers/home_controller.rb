@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!, :only => [:editar_perfil]
   def index
     @app = "RunApp"
     render :layout => 'home-layout'
@@ -17,5 +18,10 @@ class HomeController < ApplicationController
   def recuperacion_contrasena
     @app = "RunApp"
     render :layout => 'recuperacion_contrasena'
+  end
+  
+  def editar_perfil
+    @app = "RunApp"
+    render :layout => 'editar_perfil'
   end
 end
