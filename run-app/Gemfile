@@ -6,9 +6,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-<<<<<<< HEAD
-gem 'rails_12factor', group: :production
-=======
 # Gema para login
 gem 'devise'
 
@@ -24,7 +21,8 @@ gem 'will_paginate-bootstrap'
 
 # Gema para autenticación con red social
 gem 'omniauth-facebook'
->>>>>>> sprint-2
+
+gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
