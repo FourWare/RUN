@@ -126,32 +126,29 @@
             <div class="col-lg-12">
                 <form id="contactForm" name="sentMessage" novalidate>
                     <div class="row">
-                        <%= form_tag(send_email_url) do %>
+                        <%= form_for @contact do |f| %>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <%= text_field :name, id: "nombre", autofocus: true, type: 'text', style: "background-color: white; width: 100%; color: black;", placeholder: "Nombre *", required: "Por favor ingresa tu nombre." %>
+                                    <%= f.text_field :name, :required => true, class: 'form-control', style: "background-color: white; width: 100%; color: black;", placeholder: "Nombre *" %>
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <%= f.email_field :email, :required => true, class: 'form-control', placeholder: 'Correo *', style: "background-color: white; width: 100%; color: black;" %>
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <%= email_field_tag :email, nil, class: 'form-control', placeholder: 'Your Email Address' %>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <%= text_field_tag :phone, nil, class: 'form-control', placeholder: 'Your Email Address' %>
+                                    <%= f.text_field :phone, :required => true, class: 'form-control', placeholder: 'Teléfono *', style: "background-color: white; width: 100%; color: black;" %>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <%= text_area_tag :message, nil, class: 'form-control', rows: 4, placeholder: 'Comments...' %>
+                                    <%= f.text_area :message, :required => true, class: 'form-control', rows: 4, placeholder: 'Mensaje', style: "background-color: white; width: 100%; color: black;" %>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                            <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <%= submit_tag nil, class: 'btn btn-default btn-about pull-right' %>
-                                <button id="sendMessageButton" class="btn btn-primary btn-lg" type="submit" onclick='User.contact_us_email(self).deliver_now'>Enviar</button>
+                                <%= f.submit "Enviar", class: "btn btn-primary btn-lg", type: "submit" %>
                             </div>
                         <% end %>
                     </div>
@@ -186,7 +183,6 @@
                             <li class="nav-item"><button class="btn btn-default" onclick="document.getElementById('myModal').style.display='block'">Entrar</button></li>
                             &middot;
                             <li class="nav-item"><button class="btn btn-default" onclick="document.getElementById('myModal2').style.display='block'">Registrarme</button></li>
-                            
                         <% end %>
                     </li>
                 </ul>
