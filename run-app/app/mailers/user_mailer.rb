@@ -6,4 +6,9 @@ class UserMailer < ApplicationMailer
         #Adjuntar documentos:  attachments["backgroundEmail.jpg"] = File.read("#{Rails.root}/app/assets/images/backgroundEmail.jpg")
         mail(to: user.email, subject: 'Bienvenido a RunApp', from: 'runapp@mysite.com')
     end
+    
+    def contact_us_email(user)
+        mail(to: 'runappunal@gmail.com', subject: 'Quejas y reclamos de ' + user.name, from: user.email)
+    end
+    
 end
