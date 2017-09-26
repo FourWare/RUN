@@ -21,6 +21,9 @@ gem 'will_paginate-bootstrap'
 # Gema para autenticación con red social
 gem 'omniauth-facebook'
 
+# Gema para enviar comentarios desde los usuarios
+gem 'mail_form'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use Puma as the app server

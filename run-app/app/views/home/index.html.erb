@@ -126,31 +126,34 @@
             <div class="col-lg-12">
                 <form id="contactForm" name="sentMessage" novalidate>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" id="nombre" style="background-color: white; width: 100%" type="text" placeholder="Nombre *" required data-validation-required-message="Por favor ingresa tu nombre.">
-                                <p class="help-block text-danger"></p>
+                        <%= form_tag(send_email_url) do %>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <%= text_field :name, id: "nombre", autofocus: true, type: 'text', style: "background-color: white; width: 100%; color: black;", placeholder: "Nombre *", required: "Por favor ingresa tu nombre." %>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <%= email_field_tag :email, nil, class: 'form-control', placeholder: 'Your Email Address' %>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <%= text_field_tag :phone, nil, class: 'form-control', placeholder: 'Your Email Address' %>
+                                    <p class="help-block text-danger"></p>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <input class="form-control" id="email" style="background-color: white;" type="email" placeholder="Email *" required data-validation-required-message="Por favor ingresa tu email.">
-                                <p class="help-block text-danger"></p>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <%= text_area_tag :message, nil, class: 'form-control', rows: 4, placeholder: 'Comments...' %>
+                                    <p class="help-block text-danger"></p>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <input class="form-control" id="telefono" style="background-color: white;" type="tel" placeholder="Telefono *" required data-validation-required-message="Por favor ingresa tu numero de telefono.">
-                                <p class="help-block text-danger"></p>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <%= submit_tag nil, class: 'btn btn-default btn-about pull-right' %>
+                                <button id="sendMessageButton" class="btn btn-primary btn-lg" type="submit" onclick='User.contact_us_email(self).deliver_now'>Enviar</button>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <textarea class="form-control" id="message" placeholder="Ingresa tu mensaje *" required data-validation-required-message="Please enter a message."></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="col-lg-12 text-center">
-                            <div id="success"></div>
-                            <button id="sendMessageButton" class="btn btn-primary btn-lg" type="submit" onclick='User.contact_us_email(self).deliver_now'>Enviar</button>
-                        </div>
+                        <% end %>
                     </div>
                 </form>
             </div>

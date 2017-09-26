@@ -1,0 +1,24 @@
+<h1 class="page_title">Hola</h1>
+
+<div class="skinny_wrapper wrapper_padding">
+    <%= form_for @contact do |f| %>
+    
+        <%= f.text_field :name, :required => true %>
+        
+        <br>
+        
+        <%= f.email_field :email, :required => true %>
+        
+        <br>
+        
+        <%= f.text_field :phone, :required => false %>
+        
+        <br>
+        
+        <%= f.text_area :message, :as => :text, :required => true %>
+        
+        </br>
+        <%= f.submit 'Send message', :class => "btn btn-primary" %>
+        
+  <% end %>
+</div>
