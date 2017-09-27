@@ -28,4 +28,16 @@ class UsersController < ApplicationController
       render :new_contactanos
     end
   end
+  
+  def confirm_email
+    user = User.find_by_confirm_token(params[:id])
+    if user_params
+      user.email_activate
+      flash[:notice] = "Tu cuenta ha sido confirmada con éxito."
+      redirect_to root_url
+    else
+      flash[:alert] = "Error: El usuario no existe."
+      redirect_to root_url
+    end
+  
 end
