@@ -9,6 +9,9 @@ end
 # Gema para login
 gem 'devise'
 
+# Gema para generación de datos
+gem 'faker'
+
 # Gema para Bootstrap
 gem 'bootstrap-sass'
 
@@ -21,6 +24,9 @@ gem 'will_paginate-bootstrap'
 
 # Gema para autenticación con red social
 gem 'omniauth-facebook'
+
+# Gema para enviar comentarios desde los usuarios
+gem 'mail_form'
 
 gem 'rails_12factor', group: :production
 

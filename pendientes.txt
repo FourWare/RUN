@@ -1,0 +1,8 @@
+editar perfil:
+
+* Añadir foto a editar perfil
+* Configurar editar perfil para facebook
+
+* +/- Correo de confirmación de registro
+* Faker para fecha de nacimiento
+* Areglar landing page de admin

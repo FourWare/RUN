@@ -4,7 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
+  #validates_format_of :email, with: /\@unal.edu.co/, message: 'debe ser de la Universidad Nacional de Colombia.'
+  validates_uniqueness_of :nick
+
+  before_create :confirmation_token
   after_create :welcome_email
+  
   def welcome_email
     UserMailer.welcome_email(self).deliver_now
   end
@@ -29,5 +34,20 @@ class User < ApplicationRecord
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
     end
+  end
+  
+  private
+  
+  def confirmation_token 
+    if self.confirm_token.blank?
+      self.confirm_token = SecureRandom.urlsafe_base64.to_s
+    end
+    UserMailer.registration_confirmation(self).deliver_now
+  end
+  
+  def email_activate
+    self.email_confirmed = true
+    self.confirm_token = nil
+    save!(:validate => false)
   end
 end

@@ -46,6 +46,15 @@
             <li class="nav-item">
               <a class="nav-link" href="#contactenos" style="color: white;">Contáctanos</a>
             </li>
+            
+            <% if user_signed_in? %>
+              <% if current_user.email == "runappunal@gmail.com" %>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin/home" style="color: white;">Usuarios</a>
+                </li>
+              <% end %>
+            <% end %>
+            
           </ul>
           <ul class="nav navbar-nav navbar-right" style="width: 30%;">
             <% if user_signed_in? %>
@@ -79,7 +88,6 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    
     
     <!-- Bootstrap core JavaScript -->
     <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/jquery/jquery.min.js"></script>

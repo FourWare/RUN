@@ -2,6 +2,11 @@ class HomeController < ApplicationController
   before_action :authenticate_user!, :only => [:editar_perfil]
   def index
     @app = "RunApp"
+    @contact = Contact.new(params[:contact])
+    @contact.request = request
+    if @contact.deliver
+      flash.now[:notice] = 'Thank you for your message. We will contact you soon!'
+    end
     render :layout => 'home-layout'
   end
   

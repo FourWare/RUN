@@ -10,5 +10,15 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get users_eventCreate_url
     assert_response :success
   end
+  
+  test "should get new contactanos" do
+    get users_new_contactanos_url
+    assert_response :success
+  end
+  
+  test "should get create_contactanos" do
+    get users_create_contactanos_url
+    assert_response :success
+  end
 
 end
