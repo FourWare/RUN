@@ -6,6 +6,28 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Gema para login
+gem 'devise'
+
+# Gema para generación de datos
+gem 'faker'
+
+# Gema para Bootstrap
+gem 'bootstrap-sass'
+
+# Gema para iconos y fuentes
+gem 'font-awesome-sass', '~> 4.4.0'
+
+# Gema para paginación
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'will_paginate-bootstrap'
+
+# Gema para autenticación con red social
+gem 'omniauth-facebook'
+
+# Gema para enviar comentarios desde los usuarios
+gem 'mail_form'
+
 gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
