@@ -8,6 +8,9 @@ end
 # Gema para login
 gem 'devise'
 
+# Gema para generación de datos
+gem 'faker'
+
 # Gema para Bootstrap
 gem 'bootstrap-sass'
 
