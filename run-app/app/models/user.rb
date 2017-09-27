@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
+  validates_format_of :email, with: /\@unal.edu.co/, message: 'Aplicación para miembros de la Universidad Nacional de Colombia'
+
   after_create :welcome_email
   def welcome_email
     UserMailer.welcome_email(self).deliver_now
