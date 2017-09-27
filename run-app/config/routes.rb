@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  
+  get '/contactanos' => 'users#create_contactanos'
+  get '/contactanos' => 'users#new_contactanos'
   get 'admin/home'
   get "home/editar_perfil"
   get 'users/eventCreate'
