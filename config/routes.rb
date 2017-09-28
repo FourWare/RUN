@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   
   
-  get '/runappunal/usuarios' => 'admin#usuarios'
-  get '/runappunal/inicio' => 'admin#home'
   get '/contactanos' => 'users#create_contactanos'
   get '/contactanos' => 'users#new_contactanos'
-  get "home/editar_perfil"
-  get 'users/eventCreate'
+  get 'admin/home'
+  get 'home/editar_perfil'
+  get 'usuario/crear_evento' => 'users#eventCreate'
+  get 'usuario/inicio' => 'users#show'
   get 'home/recuperacion_contrasena' => 'home#recuperacion_contrasena'
   get 'home/registro'
   get '/home/entrar'

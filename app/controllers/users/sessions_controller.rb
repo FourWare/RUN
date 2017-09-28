@@ -1,4 +1,4 @@
-class Users::SessionsController < Devise::SessionsController
+class users::SessionsController < Devise::SessionsController
   def create
     super do |resource|
       BackgroundWorker.trigger(resource)

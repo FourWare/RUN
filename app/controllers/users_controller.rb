@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, :only => [:new_contactanos, :create_contactanos]
+  before_action :authenticate_user!, :only => [:new_contactanos, :create_contactanos, :show, :eventCreate]
   
   def show
-    render :layout => 'mailer'
+    render :layout => 'show_layout'
   end
   
   def mainPage

@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
-ruby '2.4.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+#gemas mapas
+gem 'gmaps4rails'
+gem 'geocoder'
 # Gema para login
 gem 'devise'
 
@@ -14,6 +15,10 @@ gem 'faker'
 
 # Gema para Bootstrap
 gem 'bootstrap-sass'
+
+gem 'gmaps4rails'
+
+gem 'geocoder'
 
 # Gema para iconos y fuentes
 gem 'font-awesome-sass', '~> 4.4.0'
@@ -27,8 +32,6 @@ gem 'omniauth-facebook'
 
 # Gema para enviar comentarios desde los usuarios
 gem 'mail_form'
-
-gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
@@ -51,19 +54,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Gema para login
-gem 'devise'
-
-# Gema para Bootstrap
-gem 'bootstrap-sass'
-
-# Gema para iconos y fuentes
-gem 'font-awesome-sass', '~> 4.4.0'
-
-# Gema para paginación
-gem 'will_paginate', '~> 3.1', '>= 3.1.6'
-
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
