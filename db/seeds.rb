@@ -9,7 +9,7 @@ Carrer = ["Ingeniería Agronómica","Ingenieria de Sistemas","Artes plásticas",
           "Arquitectura","Cine y Televisión","Diseño Industrial","Música","Música Instrumental",
           "Ingeniería Mecatrónica","Ingeniería Civil","Ingeniería Química","Ingeniería Industrial"," Enfermería"]
          
-1.times do
+100.times do
     user = User.new
     
     name = Faker::Name.first_name
