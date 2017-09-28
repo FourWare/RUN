@@ -39,5 +39,5 @@ class UsersController < ApplicationController
       flash[:alert] = "Error: El usuario no existe."
       redirect_to root_url
     end
-  
+  end
 end
