@@ -14,6 +14,10 @@ gem 'faker'
 # Gema para Bootstrap
 gem 'bootstrap-sass'
 
+gem 'gmaps4rails'
+
+gem 'geocoder'
+
 # Gema para iconos y fuentes
 gem 'font-awesome-sass', '~> 4.4.0'
 

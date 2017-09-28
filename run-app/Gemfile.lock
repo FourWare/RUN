@@ -82,9 +82,11 @@ GEM
     ffi (1.9.18)
     font-awesome-sass (4.4.0)
       sass (>= 3.2)
+    geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     hashie (3.5.6)
+    gmaps4rails (2.1.2)
     i18n (0.8.6)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -231,6 +233,8 @@ DEPENDENCIES
   devise
   faker
   font-awesome-sass (~> 4.4.0)
+  geocoder
+  gmaps4rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mail_form
