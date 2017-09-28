@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, :only => [:new_contactanos, :create_contactanos]
+  before_action :authenticate_user!, :only => [:new_contactanos, :create_contactanos, :show, :eventCreate]
   
   def show
     render :layout => 'show_layout'
@@ -39,5 +39,5 @@ class UsersController < ApplicationController
       flash[:alert] = "Error: El usuario no existe."
       redirect_to root_url
     end
-  
+  end
 end
