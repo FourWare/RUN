@@ -14,7 +14,7 @@
 * Funcionalidad de enviar correo de quejas o sugerencias (contáctenos) por parte del usuario logueado (Miguel Borja)
 * Funcionalidad de crear evento con google maps (Miguel Villamil)
 
-## Implementación de Gemas
+## Implementación Gemas
  
 * Implementación de gema will_paginate para que el administrador pueda observar los usuarios (Miguel Borja)
 * Implementación de gema mailer para el registro de una cuenta (confirmación de cuenta e email de bienvenida),
