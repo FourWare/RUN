@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title><%= @app %></title>
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    
+    <!-- Bootstrap core CSS -->
+    <link src="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom fonts for this template -->
+    <link url("vendor/font-awesome/css/font-awesome.min.css") rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    
+    <!-- Custom styles for this template -->
+    <link src="stylesheets/landing-page.css" rel="stylesheet">
+    <link src="stylesheets/modalStyle.css" rel="stylesheet">
+    <link src="stylesheets/login-register.css" rel="stylesheet">
+    
+  </head>
+
+  <body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse bg-light navbar-fixed-top" style="background-color: black;">
+      <div class="container">
+        <a class="navbar-brand" href="/" style="color: white;"><%= @app %></a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-lin" href="/#servicios" style="color: white;">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#nosotros" style="color: white;">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#contactenos" style="color: white;">Contáctanos</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav ml-auto navbar-right" style="width: 30%;">
+            <li class="nav-item" style="margin: 3%"><button class="btn btn-primary" id="btnLoginRegister" onclick="location.href='/home/registro'">Registrarme</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <%= yield %>
+    
+    <!-- Bootstrap core JavaScript -->
+    <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/jquery/jquery.min.js"></script>
+    <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/popper/popper.min.js"></script>
+    <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/bootstrap/js/bootstrap.min.js"></script>
+    
+  </body>
+</html>
