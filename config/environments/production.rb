@@ -112,4 +112,6 @@ Rails.application.configure do
     host: 'https://runappunal.herokuapp.com/'
   }
   
+  config.assets.compile = true
+  
 end
