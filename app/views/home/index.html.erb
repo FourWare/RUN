@@ -1,285 +1,293 @@
-<!-- Header -->
-<header class="intro-header">
-    <div class="container">
-        <div class="intro-message">
-            <h1><%= @app %></h1>
-            <h3>Bienvenido a <%= @app %>, la mejor aplicacion de carpooling</h3>
-            <hr class="intro-divider">
-            <h3 style="color: white;">Encuentra a <%= @app %> en: </h3>
-            <ul class="list-inline intro-social-buttons">
-                <li class="list-inline-item">
-                    <a href="https://twitter.com/runappUnal" class="btn btn-secondary btn-lg" target="_blank">
-                        <button type="button" class="btn btn-md">
-                            <%= image_tag("twitter.png", width: '25', height: '25', alt: 'twitter', class: "logo") %> Twitter
-                        </button>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://github.com/FourWare/RUN" class="btn btn-secondary btn-lg" target="_blank">
-                        <button type="button" class="btn btn-md">
-                            <%= image_tag("github.png", width: '25', height: '25', alt: 'github', class: "logo") %> GitHub
-                        </button>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://www.facebook.com/groups/MateriasyElectivasFacilesUN2.0/" class="btn btn-secondary btn-lg" target="_blank">
-                        <button type="button" class="btn btn-md">
-                            <%= image_tag("facebook.png", width: '25', height: '25', alt: 'facebook', class: "logo") %> Facebook
-                        </button>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</header>
-
-<!-- Page Content -->
-<section class="content-section-b" id="servicios">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h1 class="section-heading" style="color: white">Servicios</h1>
-            </div>
-        </div>
-        <br><br/>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <%= image_tag("innovation.png", width: '110', height: '110', alt: 'Car', class: "logo") %>
-                </span>
-                <br><br/>
-                <h4 class="service-heading text-muted" style="border-bottom: solid;">Innovación</h4>
-                <p class="text-muted">Comparte tu vehiculo y genera una ayuda para los demas y para ti en cuanto a gastos y tiempo </p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <%= image_tag("responsive.png", width: '110', height: '110', alt: 'Car', class: "logo") %>
-                </span>
-                <br><br/>
-                <h4 class="service-heading text-muted" style="border-bottom: solid;">Diseño</h4>
-                <p class="text-muted">Para que  puedas usar nuestra app desde cualquier dispositivo sin problemas de vistas por el tamaño de los dispositivos</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <%= image_tag("security.png", width: '110', height: '110', alt: 'Car', class: "logo") %>
-                </span>
-                <br><br/>
-                <h4 class="service-heading text-muted" style="border-bottom: solid;">Seguridad</h4>
-                <p class="text-muted">Gracias a las validaciones por medio del correo institucional y los codigos de confirmacion, te ofrecemos un mayor nivel de seguridad</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Team -->
-<section class="content-section-a" id="nosotros">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h1 class="section-heading">Nuestro equipo</h1>
-                <h4 class="section-subheading text-muted">Miembros de la Universidad Nacional de Colombia.</h4>
-            </div>
-        </div>
-        <br><br/>
-        <div class="row">
-            <div class="col-sm-3 text-center">
-                <div class="team-member">
-                    <%= image_tag("team/borja.png", alt: 'Miguel Angel Borja', class: "mx-auto img-circle") %>
-                    <h4 style="color: black;">Miguel Angel Borja</h4>
-                    <p class="text-muted">ScrumMaster</p>
-                </div>
-            </div>
-            <div class="col-sm-3 text-center">
-                <div class="team-member">
-                    <%= image_tag("team/rueda.png", alt: 'Camilo Rueda', class: "mx-auto img-circle") %>
-                    <h4 style="color: black;">Camilo Rueda</h4>
-                    <p class="text-muted">Desarrollador</p>
-                </div>
-            </div>
-            <div class="col-sm-3 text-center">
-                <div class="team-member">
-                    <%= image_tag("team/smo.jpg", alt: 'Santiago Márquez', class: "mx-auto img-circle") %>
-                    <h4 style="color: black;">Santiago Marquez</h4>
-                    <p class="text-muted">Desarrollador</p>
-                </div>
-            </div>
-            <div class="col-sm-3 text-center">
-                <div class="team-member">
-                    <%= image_tag("team/villamil.jpg", alt: 'Miguel Villamil', class: "mx-auto img-circle") %>
-                    <h4 style="color: black;">Miguel Villamil</h4>
-                    <p class="text-muted">Desarrollador</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact -->
-<section class="banner" id="contactenos">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h1 class="section-heading" style="color: white;">Contáctanos</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <form id="contactForm" name="sentMessage" novalidate>
-                    <div class="row">
-                        <%= form_for @contact do |f| %>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <%= f.text_field :name, :required => true, class: 'form-control', style: "background-color: white; width: 100%; color: black;", placeholder: "Nombre *" %>
-                                    
-                                </div>
-                                <div class="form-group">
-                                    <%= f.email_field :email, :required => true, class: 'form-control', placeholder: 'Correo *', style: "background-color: white; width: 100%; color: black;" %>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <%= f.text_field :phone, :required => true, class: 'form-control', placeholder: 'Teléfono *', style: "background-color: white; width: 100%; color: black;" %>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <%= f.text_area :message, :required => true, class: 'form-control', rows: 4, placeholder: 'Mensaje', style: "background-color: white; width: 100%; color: black;" %>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 text-center">
-                                <%= f.submit "Enviar", class: "btn btn-primary btn-lg", type: "submit" %>
-                            </div>
-                        <% end %>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <span class="copyright">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
-            </div>
-            <div class="col-md-4">
-                <ul class="list-inline social-buttons">
+<% if user_signed_in? %>
+    <% if current_user.email == "runappunal@gmail.com" %>
+        <script type="text/javascript">
+            window.location.href="/runappunal/inicio"
+        </script>
+    <% end %>
+<% else %>
+    <!-- Header -->
+    <header class="intro-header">
+        <div class="container">
+            <div class="intro-message">
+                <h1><%= @app %></h1>
+                <h3>Bienvenido a <%= @app %>, la mejor aplicacion de carpooling</h3>
+                <hr class="intro-divider">
+                <h3 style="color: white;">Encuentra a <%= @app %> en: </h3>
+                <ul class="list-inline intro-social-buttons">
                     <li class="list-inline-item">
-                        <a href="http://unal.edu.co/" target="_blank">Universidad Nacional de Colombia</a>
+                        <a href="https://twitter.com/runappUnal" class="btn btn-secondary btn-lg" target="_blank">
+                            <button type="button" class="btn btn-md">
+                                <%= image_tag("twitter.png", width: '25', height: '25', alt: 'twitter', class: "logo") %> Twitter
+                            </button>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://github.com/FourWare/RUN" class="btn btn-secondary btn-lg" target="_blank">
+                            <button type="button" class="btn btn-md">
+                                <%= image_tag("github.png", width: '25', height: '25', alt: 'github', class: "logo") %> GitHub
+                            </button>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/groups/MateriasyElectivasFacilesUN2.0/" class="btn btn-secondary btn-lg" target="_blank">
+                            <button type="button" class="btn btn-md">
+                                <%= image_tag("facebook.png", width: '25', height: '25', alt: 'facebook', class: "logo") %> Facebook
+                            </button>
+                        </a>
                     </li>
                 </ul>
             </div>
-            <div class="col-md-4">
-                <ul class="list-inline quicklinks">
-                    <li class="list-inline-item" style="color:black;">
-                        <% if user_signed_in? %>
-                            <strong  style="text-transform: capitalize;"><%= current_user.name %> (<%= current_user.provider %>)</strong> |
-                            <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
-                            <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-                        <% else %>
-                            <li class="nav-item"><button class="btn btn-default" onclick="document.getElementById('myModal').style.display='block'">Entrar</button></li>
-                            &middot;
-                            <li class="nav-item"><button class="btn btn-default" onclick="document.getElementById('myModal2').style.display='block'">Registrarme</button></li>
-                        <% end %>
-                    </li>
-                </ul>
+        </div>
+    </header>
+    
+    <!-- Page Content -->
+    <section class="content-section-b" id="servicios">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="section-heading" style="color: white">Servicios</h1>
+                </div>
+            </div>
+            <br><br/>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <%= image_tag("innovation.png", width: '110', height: '110', alt: 'Car', class: "logo") %>
+                    </span>
+                    <br><br/>
+                    <h4 class="service-heading text-muted" style="border-bottom: solid;">Innovación</h4>
+                    <p class="text-muted">Comparte tu vehiculo y genera una ayuda para los demas y para ti en cuanto a gastos y tiempo </p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <%= image_tag("responsive.png", width: '110', height: '110', alt: 'Car', class: "logo") %>
+                    </span>
+                    <br><br/>
+                    <h4 class="service-heading text-muted" style="border-bottom: solid;">Diseño</h4>
+                    <p class="text-muted">Para que  puedas usar nuestra app desde cualquier dispositivo sin problemas de vistas por el tamaño de los dispositivos</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <%= image_tag("security.png", width: '110', height: '110', alt: 'Car', class: "logo") %>
+                    </span>
+                    <br><br/>
+                    <h4 class="service-heading text-muted" style="border-bottom: solid;">Seguridad</h4>
+                    <p class="text-muted">Gracias a las validaciones por medio del correo institucional y los codigos de confirmacion, te ofrecemos un mayor nivel de seguridad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team -->
+    <section class="content-section-a" id="nosotros">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="section-heading">Nuestro equipo</h1>
+                    <h4 class="section-subheading text-muted">Miembros de la Universidad Nacional de Colombia.</h4>
+                </div>
+            </div>
+            <br><br/>
+            <div class="row">
+                <div class="col-sm-3 text-center">
+                    <div class="team-member">
+                        <%= image_tag("team/borja.png", alt: 'Miguel Angel Borja', class: "mx-auto img-circle") %>
+                        <h4 style="color: black;">Miguel Angel Borja</h4>
+                        <p class="text-muted">ScrumMaster</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <div class="team-member">
+                        <%= image_tag("team/rueda.png", alt: 'Camilo Rueda', class: "mx-auto img-circle") %>
+                        <h4 style="color: black;">Camilo Rueda</h4>
+                        <p class="text-muted">Desarrollador</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <div class="team-member">
+                        <%= image_tag("team/smo.jpg", alt: 'Santiago Márquez', class: "mx-auto img-circle") %>
+                        <h4 style="color: black;">Santiago Marquez</h4>
+                        <p class="text-muted">Desarrollador</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <div class="team-member">
+                        <%= image_tag("team/villamil.jpg", alt: 'Miguel Villamil', class: "mx-auto img-circle") %>
+                        <h4 style="color: black;">Miguel Villamil</h4>
+                        <p class="text-muted">Desarrollador</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section class="banner" id="contactenos">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="section-heading" style="color: white;">Contáctanos</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="contactForm" name="sentMessage" novalidate>
+                        <div class="row">
+                            <%= form_for @contact do |f| %>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <%= f.text_field :name, :required => true, class: 'form-control', style: "background-color: white; width: 100%; color: black;", placeholder: "Nombre *" %>
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <%= f.email_field :email, :required => true, class: 'form-control', placeholder: 'Correo *', style: "background-color: white; width: 100%; color: black;" %>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <%= f.text_field :phone, :required => true, class: 'form-control', placeholder: 'Teléfono *', style: "background-color: white; width: 100%; color: black;" %>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <%= f.text_area :message, :required => true, class: 'form-control', rows: 4, placeholder: 'Mensaje', style: "background-color: white; width: 100%; color: black;" %>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                    <%= f.submit "Enviar", class: "btn btn-primary btn-lg", type: "submit" %>
+                                </div>
+                            <% end %>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item">
+                            <a href="http://unal.edu.co/" target="_blank">Universidad Nacional de Colombia</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item" style="color:black;">
+                            <% if user_signed_in? %>
+                                <strong  style="text-transform: capitalize;"><%= current_user.name %> (<%= current_user.provider %>)</strong> |
+                                <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+                                <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                            <% else %>
+                                <li class="nav-item"><button class="btn btn-default" onclick="document.getElementById('myModal').style.display='block'">Entrar</button></li>
+                                &middot;
+                                <li class="nav-item"><button class="btn btn-default" onclick="document.getElementById('myModal2').style.display='block'">Registrarme</button></li>
+                            <% end %>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="myModal" class="modal" role="dialog" style="overflow-y: auto; background-color: rgba(0, 0, 0, 0.7);">
+        <div class="modal-dialog">
+            <div class="wthree-form" id="myModalRegister" style="width: 80%;">
+                <button type="button btn-lg" class="close">
+                    <span class="close glyphicon glyphicon-remove-sign" onclick="document.getElementById('myModal').style.display='none'"></span>
+                </button>
+                <h2 style="text-align: center; font-size: ">Inicia sesión</h2>
+                <div class="w3l-login form">
+                    <%= form_for(resource, as: resource_name, url: session_path(resource_name), name: "login_form") do |f| %>
+                        <div class="form-sub-w3">
+        	                <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
+        	            </div>
+        	            <div class="form-sub-w3 form-group clearfix">
+                            <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
+        	            </div>
+        	            <% if devise_mapping.rememberable? -%>
+        	                <div class="check_box">
+        	                    <%= f.check_box :remember_me, id: 'checkboxRegister', type: 'checkbox', class: 'checkbox', style: "display: inline-block;" %>
+        	                    <%= f.label :__recordarme, style: "color: white;" %>
+        	                </div>
+        	            <% end -%>
+        	            <div class="actions submit-agileits">
+        	                <%= f.submit "Entrar", id: "submitRegister", class: "btn btn-success btn-lg", type: 'submit' %>
+        				</div>
+                    <% end %>
+                    <div class="devise-links">
+                        <%= link_to "También puedes ingresar con Facebook", user_facebook_omniauth_authorize_path %><br />
+    	            	<%= link_to "¿Eres nuevo en RunApp? Regístrate", new_registration_path(resource_name) %><br />
+    		          	<%= link_to "¿Olvidaste tu contraseña?", new_password_path(resource_name) %><br />
+        	        </div>
+                </div>
+            </div>
+    	</div>
+    </div>    
+    
+    
+    <div id="myModal2" class="modal" role="dialog" style="overflow-y: auto; background-color: rgba(0, 0, 0, 0.7);">
+        <div class="modal-dialog">
+            <div class="wthree-form" id="myModalRegister" style="width: 80%;">
+                <button type="button btn-lg" class="close">
+                    <span class="close glyphicon glyphicon-remove-sign" onclick="document.getElementById('myModal2').style.display='none'"></span>
+                </button>
+            
+                <h2 style="text-align: center; font-size: ">Regístrate</h2>
+                <div class="w3l-login form">
+        			<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        		        <%= devise_error_messages! %>
+        			    <div class="form-sub-w3">
+        		        	<%= f.text_field :name, id: 'usernameRegister', autofocus: true, placeholder: 'Nombre', type: 'text', required: "" %>
+        		      	</div>
+        		      	<div class="form-sub-w3">
+        		        	<%= f.text_field :nick, id: 'usernameRegister', autofocus: true, placeholder: 'Nick', type: 'text', required: "" %>
+        		      	</div>
+        		      	<div class="form-sub-w3">
+        		        	<%= f.text_field :career, id: 'usernameRegister', autofocus: true, placeholder: 'Carrera', type: 'text', required: "" %>
+        		      	</div>
+        		      	<div class="form-sub-w3">
+        		      		<em style="color: white; display: block;">Fecha de nacimiento</em>
+        		      		<%= f.date_select :date_of_birth, { 
+        		      			:order => [:day, :month, :year], 
+        		      			:start_year => Time.now.year - 15, 
+        		      			:end_year => 1950, 
+        		      			:prompt => {
+        		      				day: 'Día', month: 'Mes', year: 'Año'
+        		      			}},
+        		      			{:class => "form-control date-select"}
+        		        	%>
+        		        	<br></br>
+        		      	</div>
+        			    <div class="form-sub-w3">
+        		        	<%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
+        		      	</div>
+        		      	<div class="form-sub-w3 form-group clearfix">
+        	          		<%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
+        		          	<% if @minimum_password_length %>
+        		            	<em style="color: red;">(<%= @minimum_password_length %> characters minimum)</em>
+        		          	<% end %><br />
+        			    </div>
+        		      	<div class="form-sub-w3 form-group clearfix">
+        		        	<%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Confirmación contraseña', required: "" %>
+        		      	</div>
+        	            <div class="actions submit-agileits">
+        	                <%= f.submit "Registrarme", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit' %>
+        				</div>
+        				<div class="devise-links">
+        	                <%= link_to "¿Ya eres miembro de RunApp? Ingresa", new_session_path(resource_name) %><br />
+        	            </div>
+                    <% end %>
+        		</div>
             </div>
         </div>
     </div>
-</footer>
-
-<div id="myModal" class="modal" role="dialog" style="overflow-y: auto; background-color: rgba(0, 0, 0, 0.7);">
-    <div class="modal-dialog">
-        <div class="wthree-form" id="myModalRegister" style="width: 80%;">
-            <button type="button btn-lg" class="close">
-                <span class="close glyphicon glyphicon-remove-sign" onclick="document.getElementById('myModal').style.display='none'"></span>
-            </button>
-            <h2 style="text-align: center; font-size: ">Inicia sesión</h2>
-            <div class="w3l-login form">
-                <%= form_for(resource, as: resource_name, url: session_path(resource_name), name: "login_form") do |f| %>
-                    <div class="form-sub-w3">
-    	                <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
-    	            </div>
-    	            <div class="form-sub-w3 form-group clearfix">
-                        <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
-    	            </div>
-    	            <% if devise_mapping.rememberable? -%>
-    	                <div class="check_box">
-    	                    <%= f.check_box :remember_me, id: 'checkboxRegister', type: 'checkbox', class: 'checkbox', style: "display: inline-block;" %>
-    	                    <%= f.label :__recordarme, style: "color: white;" %>
-    	                </div>
-    	            <% end -%>
-    	            <div class="actions submit-agileits">
-    	                <%= f.submit "Entrar", id: "submitRegister", class: "btn btn-success btn-lg", type: 'submit' %>
-    				</div>
-                <% end %>
-                <div class="devise-links">
-                    <%= link_to "También puedes ingresar con Facebook", user_facebook_omniauth_authorize_path %><br />
-	            	<%= link_to "¿Eres nuevo en RunApp? Regístrate", new_registration_path(resource_name) %><br />
-		          	<%= link_to "¿Olvidaste tu contraseña?", new_password_path(resource_name) %><br />
-    	        </div>
-            </div>
-        </div>
-	</div>
-</div>    
-
-
-<div id="myModal2" class="modal" role="dialog" style="overflow-y: auto; background-color: rgba(0, 0, 0, 0.7);">
-    <div class="modal-dialog">
-        <div class="wthree-form" id="myModalRegister" style="width: 80%;">
-            <button type="button btn-lg" class="close">
-                <span class="close glyphicon glyphicon-remove-sign" onclick="document.getElementById('myModal2').style.display='none'"></span>
-            </button>
-        
-            <h2 style="text-align: center; font-size: ">Regístrate</h2>
-            <div class="w3l-login form">
-    			<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    		        <%= devise_error_messages! %>
-    			    <div class="form-sub-w3">
-    		        	<%= f.text_field :name, id: 'usernameRegister', autofocus: true, placeholder: 'Nombre', type: 'text', required: "" %>
-    		      	</div>
-    		      	<div class="form-sub-w3">
-    		        	<%= f.text_field :nick, id: 'usernameRegister', autofocus: true, placeholder: 'Nick', type: 'text', required: "" %>
-    		      	</div>
-    		      	<div class="form-sub-w3">
-    		        	<%= f.text_field :career, id: 'usernameRegister', autofocus: true, placeholder: 'Carrera', type: 'text', required: "" %>
-    		      	</div>
-    		      	<div class="form-sub-w3">
-    		      		<em style="color: white; display: block;">Fecha de nacimiento</em>
-    		      		<%= f.date_select :date_of_birth, { 
-    		      			:order => [:day, :month, :year], 
-    		      			:start_year => Time.now.year - 15, 
-    		      			:end_year => 1950, 
-    		      			:prompt => {
-    		      				day: 'Día', month: 'Mes', year: 'Año'
-    		      			}},
-    		      			{:class => "form-control date-select"}
-    		        	%>
-    		        	<br></br>
-    		      	</div>
-    			    <div class="form-sub-w3">
-    		        	<%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
-    		      	</div>
-    		      	<div class="form-sub-w3 form-group clearfix">
-    	          		<%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
-    		          	<% if @minimum_password_length %>
-    		            	<em style="color: red;">(<%= @minimum_password_length %> characters minimum)</em>
-    		          	<% end %><br />
-    			    </div>
-    		      	<div class="form-sub-w3 form-group clearfix">
-    		        	<%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Confirmación contraseña', required: "" %>
-    		      	</div>
-    	            <div class="actions submit-agileits">
-    	                <%= f.submit "Registrarme", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit' %>
-    				</div>
-    				<div class="devise-links">
-    	                <%= link_to "¿Ya eres miembro de RunApp? Ingresa", new_session_path(resource_name) %><br />
-    	            </div>
-                <% end %>
-    		</div>
-        </div>
-    </div>
-</div>
+<% end %>
