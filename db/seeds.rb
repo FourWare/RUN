@@ -12,16 +12,16 @@ Carrer = ["Ingeniería Agronómica","Ingenieria de Sistemas","Artes plásticas",
 1.times do
     user = User.new
     
-    name = Faker::Name.name
+    name = Faker::Name.first_name
     lastname = Faker::Name.last_name
     nick = name + rand(100..999).to_s
     
     user.assign_attributes({ 
         :name => name + " " + lastname, 
-        :nick => nick, 
+        :nick => nick.downcase, 
         :career => Carrer[rand(Carrer.length)],
-        :email => name + lastname  + '@unal.edu.co', 
-        :date_of_birth=> Faker::Date.birthday(18,65),
+        :email => nick + "@unal.edu.co", 
+        :date_of_birth=> Faker::Date.birthday(15, 67),
         :password => '123456'
     })
     user.save!
