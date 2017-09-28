@@ -1,0 +1,10 @@
+Para el día 27 de Septiembre de 2017, los avances del proyecto fueron los siguientes:
+    
+    - Se reordenaron las carpetas del proyecto, pues esto estaba generando muchos problemas en el despliegue a Heroku, pues existían carpetas
+      que generaban conflictos en Heroku.
+    - Con ese ordenamiento de carpetas, se procedió a la configuración de un archivo necesario para el despliegue a Heroku: Procfile, que se encarga
+      de decirle a Heroku que el server sea configurado con Puma.rb
+    - También, se modificó el archivo Puma.rb, siguiendo una guía de la página principal de Heroku.
+    - Además, se configuró el archivo: config/environments/production, pues fue necesario para el correcto funcionamiento de los mailers en Heroku.
+    - Otra de las modificaciones importantes que se realizaron, fue la de todos los archivos controllers/users, pues generaba error en Heroku ya que
+      la clase estaba con nombre: 'users' y por tanto se cambió a 'Users'.

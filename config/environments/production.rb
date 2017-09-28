@@ -88,4 +88,28 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = true
+  
+  # Change mail delivery to either :smtp, :sendmail, :filex, :test
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "heroku.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "runappunal@gmail.com",
+    password: "runappunal220172"
+  }
+  
+  config.action_mailer.perform_caching = false
+  
+  config.action_mailer.default_url_options = { 
+    host: 'https://runappunal.herokuapp.com/'
+  }
+  
 end
