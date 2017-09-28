@@ -1,15 +1,11 @@
-#map {
-    position: relative;
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome.css";
+
+#wraper{
+    text-align: center;
 }
 
-#map:after {
-    width: 22px;
-    height: 40px;
-    display: block;
-    content: ' ';
-    position: absolute;
-    top: 50%; left: 50%;
-    margin: -40px 0 0 -11px;
-    background: url('https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi_hdpi.png');
-    background-size: 22px 40px;
+#mapEventCreate{
+    display: inline-block;
 }
