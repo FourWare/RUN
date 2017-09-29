@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20170927152456) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "nick"
-    t.string "career"
+    t.string "career", default: false
     t.datetime "date_of_birth"
     t.string "provider"
     t.string "uid"
