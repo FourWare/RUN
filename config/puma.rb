@@ -22,6 +22,7 @@ end
 # and maximum; this matches the default thread size of Active Record.
 #
 
+
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
 # the concurrency of the application would be max `threads` * `workers`.
@@ -60,3 +61,4 @@ end
 #
 
 # Allow puma to be restarted by `rails restart` command.
+

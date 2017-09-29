@@ -24,9 +24,12 @@ class HomeController < ApplicationController
     @app = "RunApp"
     render :layout => 'recuperacion_contrasena'
   end
+<<<<<<< HEAD
   
   def editar_perfil
     @app = "RunApp"
     render :layout => 'editar_perfil'
   end
+=======
+>>>>>>> sprint-2-villamil
 end

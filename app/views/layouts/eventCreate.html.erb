@@ -25,55 +25,44 @@
 
     <!-- Custom styles for this template -->
     <link src="stylesheets/eventCreate.css" rel="stylesheet">
+
   </head>
 
   <body>
+<!-- Navigation -->
     <nav class="navbar navbar-inverse bg-light navbar-fixed-top" style="background-color: black;">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">RunApp</a>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" onclick="document.getElementById('myNavBar').style.display='inline-block'">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>                        
-          </button>
-          <a class="navbar-brand" href="/" style="color: white;"><%= @app %></a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="/contactanos">Contactanos</a></li>
-        </ul>
-        <div class="collapse navbar-collapse" id="myNavBar">
-        
-          <ul class="nav navbar-nav navbar-right" style="width: 30%;">
-            <li> 
-              <%= link_to current_user.name, edit_user_registration_path, :class => 'navbar-link' %>
+      <div class="container">
+        <a class="navbar-brand" href="#" style="color: white;"><%= @app %></a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-lin" href="#servicios" style="color: white;">Servicios</a>
             </li>
-            <li> 
-              <%= link_to "Mis vehículos", "#", :class => 'navbar-link'  %>
+            <li class="nav-item">
+              <a class="nav-link" href="#nosotros" style="color: white;">Nosotros</a>
             </li>
-            <li> 
-              <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+            <li class="nav-item">
+              <a class="nav-link" href="#contactenos" style="color: white;">Contáctanos</a>
             </li>
+          </ul>
+          <ul class="nav navbar-nav ml-auto navbar-right" style="width: 30%;">
+            <li class="nav-item" style="margin: 3%"><button class="btn btn-success" id="btnLoginRegister" onclick="document.getElementById('myModal').style.display='block'">Entrar</button></li>
+            <li class="nav-item" style="margin: 3%"><button class="btn btn-primary" id="btnLoginRegister" onclick="document.getElementById('myModal2').style.display='block'">Registrarme</button></li>
           </ul>
         </div>
       </div>
     </nav>
-   
     <%= yield %>
-    
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-    
-     <!-- Bootstrap core JavaScript -->
+
+
+
+
+     <!--Bootstrap core JavaScript -->
     <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/jquery/jquery.min.js"></script>
     <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/popper/popper.min.js"></script>
     <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
   </body>
 </html>

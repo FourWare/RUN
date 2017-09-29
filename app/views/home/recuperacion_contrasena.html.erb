@@ -4,6 +4,7 @@
         <div class="w3l-login form">
             <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
             <%= devise_error_messages! %>
+
                 <div class="form-sub-w3">
 	                <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
 	            </div>
