@@ -5,14 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-5.times do
+
+Carreras = ["Ingeniería Sistemas y Computación", "Ingeniería eléctrica", "Ingeniería mecánica", "Medicina", 
+                "Artes plásticas", "Música", "Agronomía", "Derecho", "Ciencias económicas", "Biología"]
+
+100.times do
     user = User.new
     
+    name = Faker::Name.first_name
+    lastname = Faker::Name.last_name
+    nick = name + rand(1..999).to_s
+    
     user.assign_attributes({ 
-        :name => Faker::Name.name, 
-        :nick => Faker::Name.first_name, 
-        :career => Faker::University.name, 
-        :email => Faker::Name.first_name + '@unal.edu.co', 
+        :name => name + lastname, 
+        :nick => nick, 
+        :career => Carreras.sample,
+        :email => nick + '@unal.edu.co', 
         :password => '123456' 
     })
     user.save!
