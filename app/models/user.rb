@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
-  validates_format_of :email, with: /\@unal.edu.co/, message: 'debe ser de la Universidad Nacional de Colombia.'
+  #validates_format_of :email, with: /\@unal.edu.co/, message: 'debe ser de la Universidad Nacional de Colombia.'
   validates_uniqueness_of :nick
 
   before_create :confirmation_token
