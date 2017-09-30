@@ -1,4 +1,4 @@
-class AddFieldsToUsers < ActiveRecord::Migration[5.1]
+class ResetFieldsToUsers < ActiveRecord::Migration[5.1]
   def change
     revome_column :users, :name, :string
     remove_column :users, :nick, :string
