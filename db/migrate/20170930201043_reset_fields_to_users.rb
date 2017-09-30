@@ -1,10 +1,10 @@
 class ResetFieldsToUsers < ActiveRecord::Migration[5.1]
   def change
-    revome_column :users, :name, :string
-    remove_column :users, :nick, :string
-    remove_column :users, :career, :string
-    remove_column :users, :date_of_birth, :datetime
-    remove_column :users, :provider, :string
-    remove_column :users, :uid, :string
+    add_column :users, :name, :string
+    add_column :users, :nick, :string
+    add_column :users, :career, :string
+    add_column :users, :date_of_birth, :datetime
+    add_column :users, :provider, :string
+    add_column :users, :uid, :string
   end
 end
