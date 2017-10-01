@@ -9,7 +9,7 @@
 Carreras = ["Ingeniería Sistemas y Computación", "Ingeniería eléctrica", "Ingeniería mecánica", "Medicina", 
                 "Artes plásticas", "Música", "Agronomía", "Derecho", "Ciencias económicas", "Biología"]
 
-100.times do
+10.times do
     user = User.new
     
     name = Faker::Name.first_name
@@ -20,6 +20,7 @@ Carreras = ["Ingeniería Sistemas y Computación", "Ingeniería eléctrica", "In
         :name => name + lastname, 
         :nick => nick, 
         :career => Carreras.sample,
+        :date_of_birth => Faker::Date.birthday(15, 50),
         :email => nick + '@unal.edu.co', 
         :password => '123456' 
     })
