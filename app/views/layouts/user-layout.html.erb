@@ -11,25 +11,25 @@
     <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
     <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script> <!-- only if you need custom infoboxes -->
 
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
-   
+    
     <!-- Bootstrap core CSS -->
     <link src="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <!-- Custom fonts for this template -->
     <link url("vendor/font-awesome/css/font-awesome.min.css") rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
+    
     <!-- Custom styles for this template -->
-    <link src="stylesheets/eventCreate.css" rel="stylesheet">
-
+    <link src="stylesheets/landing-page.css" rel="stylesheet">
+    <link src="stylesheets/modalStyle.css" rel="stylesheet">
+    
   </head>
 
   <body>
-<!-- Navigation -->
     <nav class="navbar navbar-inverse bg-light navbar-fixed-top" style="background-color: black;">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -39,7 +39,6 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-          <a class="navbar-brand" href="/" style="color: white;"><%= @app %></a>
         </div>
         <ul class="nav navbar-nav">
           <li class="active"><a href="/contactanos">Contactanos</a></li>
@@ -47,25 +46,44 @@
         <div class="collapse navbar-collapse" id="myNavBar">
         
           <ul class="nav navbar-nav navbar-right" style="width: 30%;">
-            <li> 
-              <%= link_to current_user.name, edit_user_registration_path, :class => 'navbar-link' %>
-            </li>
-            <li> 
-              <%= link_to "Mis vehículos", "#", :class => 'navbar-link'  %>
-            </li>
-            <li> 
-              <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-            </li>
+            <% if current_user.avatar.nil? %>
+              <li>
+                <%= link_to edit_user_registration_path, :class => 'navbar-link' do %>
+                  <%= image_tag("default-avatar.jpg", width: '30', height: '30', class: 'image-circle') %> -
+                  <%= current_user.name %>
+                <% end %>
+              </li>
+              <li> <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+            <% else %>
+              <li>
+                <%= link_to edit_user_registration_path, :class => 'navbar-link' do %>
+                  <%= image_tag(current_user.avatar, width: '30', height: '30', class: 'image-circle') %> -
+                  <%= current_user.name %>
+                <% end %>
+              </li>
+              <li> <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+            <% end %>
           </ul>
         </div>
       </div>
     </nav>
-    
+   
     <%= yield %>
-
-     <!--Bootstrap core JavaScript -->
+    
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    
+     <!-- Bootstrap core JavaScript -->
     <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/jquery/jquery.min.js"></script>
     <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/popper/popper.min.js"></script>
     <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    
   </body>
 </html>

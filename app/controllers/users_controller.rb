@@ -2,19 +2,22 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, :only => [:new_contactanos, :create_contactanos, :show, :eventCreate]
   
   def show
-    render :layout => 'show_layout'
+    @app = "RunApp"
+    render :layout => 'user-layout'
   end
   
   def mainPage
   end
   
   def eventCreate
-    render :layout => 'eventCreate'
+    @app = "RunApp"
+    render :layout => 'user-layout'
   end
   
   def new_contactanos
     @app = "RunApp"
     @contact = Contact.new
+    render :layout => 'user-layout'
   end
   
   def create_contactanos
