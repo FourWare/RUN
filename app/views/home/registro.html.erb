@@ -5,12 +5,20 @@
 		    <div class="w3l-login form">
 					<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 				    <%= devise_error_messages! %>
+				    <br></br>
 				    <div class="form-sub-w3">
-				    	<%= f.label :avatar do %>
-	    					<%= f.file_field :avatar %>
-	    					<%= f.hidden_field :avatar_cache %>
-	    				<% end %>
-			    	</div>
+				    	<div class="row">
+						    <div class="col-xs-6">
+						    	<%= image_tag("default-avatar.jpg", class: "img-rounded", alt: "Default Avatar", width: "150", height:"136") %>
+						    </div>
+						    <div class="col-xs-6">
+						    	<%= f.label :avatar, class: "carrier-wave-field", label: "S" do %>
+						    		<%= f.file_field :avatar %>
+	    							<%= f.hidden_field :avatar_cache %>
+	    						<% end %>
+	    					</div>
+						</div>
+        			</div>
 				    <div class="form-sub-w3">
 			        	<%= f.text_field :name, id: 'usernameRegister', autofocus: true, placeholder: 'Nombre', type: 'text', required: "" %>
 			      	</div>
