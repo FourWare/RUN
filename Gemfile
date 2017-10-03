@@ -34,6 +34,9 @@ gem 'omniauth-facebook'
 # Gema para enviar comentarios desde los usuarios
 gem 'mail_form'
 
+# Gema para cargar archivos
+gem 'carrierwave', '~> 1.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use Puma as the app server

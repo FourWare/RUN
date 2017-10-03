@@ -9,7 +9,7 @@
 Carreras = ["Ingeniería Sistemas y Computación", "Ingeniería eléctrica", "Ingeniería mecánica", "Medicina", 
                 "Artes plásticas", "Música", "Agronomía", "Derecho", "Ciencias económicas", "Biología"]
 
-10.times do
+30.times do
     user = User.new
     
     name = Faker::Name.first_name
