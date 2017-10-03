@@ -3,92 +3,73 @@
         <div class="wthree-form" id="myModalRegister" style="width: 100%;">
 		    <h2 style="text-align: center; font-size: ">Regístrate</h2>
 		    <div class="w3l-login form">
-					<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-				    <%= devise_error_messages! %>
-				    <br></br>
-				    <div class="form-sub-w3">
-				    	<div class="row">
-				    		<div class="col-sm-4 text-center">
-					        	<%= image_tag("default-avatar.jpg", class: "img-rounded", alt: "Default Avatar", width: "150", height:"136") %>
-						    	<br></br>
-					            <%= f.label :avatar, class: "carrier-wave-field" do %>
-						    		<%= f.file_field :avatar, title: "Please choose file" %>
-	    							<%= f.hidden_field :avatar_cache %>
-	    						<% end %>
-					            <div class="form-group">
-					            	<hr>
-					            	<div class="actions submit-agileits">
-			        					<%= f.submit "Registrarme", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', style: "width: 100%;" %>
-									</div>
-									<div class="devise-links", style: "width: 100%;">
-			      						<%= link_to "¿Ya eres miembro de RunApp? Ingresa", new_session_path(resource_name) %><br />  
+					<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :multipart => true) do |f| %>
+				    	<%= devise_error_messages! %>
+				    	<br></br>
+				    	<div class="form-sub-w3">
+				    		<div class="row">
+					    		<div class="col-sm-12 text-center">
+						        	<em style="color: white; display: block;">Si deseas, escoge tu foto de perfil.</em>
+						            <%= f.label :avatar, class: "carrier-wave-field" do %>
+							    		<%= f.file_field :avatar, title: "Please choose file" %>
+		    							<%= f.hidden_field :avatar_cache %>
+		    						<% end %>
+						       	</div>
+					     	</div>
+					     	<div class="row">
+    							<div class="col-sm-6 form-sub-w3">
+					        		<%= f.text_field :name, id: 'usernameRegister', autofocus: true, placeholder: 'Nombre', type: 'text', required: "", style: "width: 100%;" %>
+			      				</div>
+			      				<div class="col-sm-6 form-sub-w3">
+			      					<%= f.text_field :nick, id: 'usernameRegister', autofocus: true, placeholder: 'Nick', type: 'text', required: "", style: "width: 100%;" %>
+			      				</div>
+					      	</div>
+					     	<div class="row">
+					      		<div class="col-sm-6 form-sub-w3">
+					        		<%= f.text_field :career, id: 'usernameRegister', autofocus: true, placeholder: 'Carrera', type: 'text', required: "", style: "width: 100%;" %>
+			      				</div>
+					        	<div class="col-sm-6 form-sub-w3">
+					        		<em style="color: white; display: block;">Fecha de nacimiento</em>
+			      					<%= f.date_select :date_of_birth, { 
+			      						:order => [:day, :month, :year], 
+								    	:start_year => Time.now.year - 15, 
+								    	:end_year => 1950, 
+									    :prompt => {
+									    	day: 'Día', month: 'Mes', year: 'Año'
+									    }},
+									    {:class => "form-control date-select"}
+								 	%>
+								 	<br></br>
+			      				</div>
+					    	</div>
+					        <div class="row">
+					        	<div class="col-sm-12">
+					            	<div class="form-sub-w3">
+			        					<%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
 			      					</div>
-					          	</div>
+					            </div>
+					      	</div>
+					        <div class="row">
+					        	<div class="col-sm-12 form-sub-w3">
+					            	<%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
+								    <% if @minimum_password_length %>
+								    	<em style="color: red;">(<%= @minimum_password_length %> characters minimum)</em>
+								    <% end %><br />
+					            </div>
 					        </div>
-					        <div class="col-sm-8">
-					        	<div class="row">
-					            	<div class="col-sm-12">
-					              		<div class="form-sub-w3">
-			        			  			<%= f.text_field :name, id: 'usernameRegister', autofocus: true, placeholder: 'Nombre', type: 'text', required: "" %>
-			      						</div>
-					            	</div>
-					            </div>
-					            <div class="row">
-					            	<div class="col-sm-12">
-					            		<div class="form-sub-w3">
-			        			  			<%= f.text_field :nick, id: 'usernameRegister', autofocus: true, placeholder: 'Nick', type: 'text', required: "" %>
-			      				 		</div>
-					            	</div>
-					          	</div>
-					          	<div class="row">
-					            	<div class="col-sm-12">
-					              		<div class="form-sub-w3">
-			        						<%= f.text_field :career, id: 'usernameRegister', autofocus: true, placeholder: 'Carrera', type: 'text', required: "" %>
-			      						</div>
-					            	</div>
-					          	</div>
-					          	<div class="row">
-					            	<div class="col-sm-12">
-					              		<div class="form-sub-w3">
-			      							<em style="color: white; display: block;">Fecha de nacimiento</em>
-			      							<%= f.date_select :date_of_birth, { 
-			      								:order => [:day, :month, :year], 
-								      			:start_year => Time.now.year - 15, 
-								      			:end_year => 1950, 
-								      			:prompt => {
-								      				day: 'Día', month: 'Mes', year: 'Año'
-								      			}},
-								      			{:class => "form-control date-select"}
-								        	%>
-			        						<br></br>
-			      						</div>
-					            	</div>
-					          	</div>
-					          	<div class="row">
-					            	<div class="col-sm-12">
-					              		<div class="form-sub-w3">
-			        						<%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
-			      						</div>
-					            	</div>
-					            </div>
-					            <div class="row">
-					            	<div class="col-sm-12">
-					              		<div class="form-sub-w3">
-											<%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
-								          	<% if @minimum_password_length %>
-								            	<em style="color: red;">(<%= @minimum_password_length %> characters minimum)</em>
-								          	<% end %><br />			      						
-								        </div>
-					            	</div>
-					            </div>
-					            <div class="row">
-					            	<div class="col-sm-12">
-					              		<div class="form-sub-w3">
-			        						<%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Confirmación contraseña', required: "" %>
-								        </div>
-					            	</div>
-					            </div>
-					          	
+					        <div class="row">
+					        	<div class="col-sm-12 form-sub-w3">
+					            	<%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Confirmación contraseña', required: "" %>
+								</div>
+					        </div>
+					        <div class="form-group">
+					        	<hr>
+					            <div class="actions submit-agileits">
+			        				<%= f.submit "Registrarme", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', style: "width: 50%;" %>
+								</div>
+								<div class="devise-links", style: "width: 50%;">
+			      					<%= link_to "¿Ya eres miembro de RunApp? Ingresa", new_session_path(resource_name) %><br />  
+			      				</div>
 					        </div>
 					    </div>
 	      			</div>
