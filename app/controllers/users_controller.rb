@@ -43,4 +43,8 @@ class UsersController < ApplicationController
       redirect_to root_url
     end
   end
+  
+  def myCars
+    render :layout => 'user-layout'
+  end
 end

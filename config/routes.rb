@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'users/myCars'
+
   get '/contactanos' => 'users#create_contactanos'
   get '/contactanos' => 'users#new_contactanos'
   get 'admin/home'
