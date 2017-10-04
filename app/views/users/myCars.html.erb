@@ -1,2 +1,65 @@
-<h1>Users#myCars</h1>
-<p>Find me in app/views/users/myCars.html.erb</p>
+ <html>
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+</style>
+<div class="container" style="overflow-y: auto;"  style="width: 50%"> 
+
+    <br><br><br>
+    <h3>Mis vehículo</h3>
+    
+    <div style="width: 50%">
+      <form >
+        <label for="fname">Placa </label>
+        <input type="text" id="fname" name="Placa" >
+    
+        <label for="tipo">Marca</label>
+        <input type="text" id="lname" name="tipo" .">
+        
+        <label for="tipo">Modelo</label>
+        <input type="text" id="lname" name="tipo" .">
+        
+        <label for="tipo">Color</label>
+        <input type="text" id="lname" name="tipo" .">
+    
+        <label for="country">Tipo</label>
+        <select id="country" name="tipo" style="color: black">
+          <option value="Camion">Camion</option>
+          <option value="Carro">Carro</option>
+          <option value="Camioneta">Camioneta</option>
+        </select>
+             <br>
+            <br>
+        <input type="submit" value="Submit" style="backgroundcolor: blue">
+        
+      </form>
+    </div>
+</div>
+    
+    
+
+ 
