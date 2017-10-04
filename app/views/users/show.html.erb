@@ -1,4 +1,4 @@
-<div class="container" style="background-color: lightblue;">
+<div class="container">
   <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 10%;">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -45,33 +45,60 @@
   </div>
   <hr>
   </br>
-  <div class="row">
-        <div class="col-lg-4">
+  <div class="row" style="color: white;">
+        <div class="col-lg-4" style="background-color: rgba(0,0,0,0.3);">
+          <br>
           <%= image_tag("icon-car.png", class: "img-circle", alt: "Mis vehículos", width: "140", height: "140") %>
           <h2>Mis vehículos</h2>
           <p>Podrás ver, agregar, elimnar y modificar tus vehículos que compartirás con los miembros de la Universidad Nacional de Colombia.</p>
           <%= link_to "/usuario/mis-vehículos" do %>
-            <button id="submitRegister" class="btn btn-primary btn-lg">Ver</button>
+            <button id="submitRegister" class="btn btn-primary btn-lg" style="border: solid white; color: white;">Ver</button>
           <% end %>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
+        <vr>
+        <div class="col-lg-4" style="background-color: rgba(0,0,0,0.3)">
+         <br>
           <%= image_tag("icon-event-create.png", class: "img-circle", alt: "Mis vehículos", width: "140", height: "140") %>
           <h2>Crear evento</h2>
           <p>Si cuentas con un vehículo y quieres compartirlo con otro miembro de la Universidad Nacional de Colombia, crea un evento para que ellos puedan acceder.</p>
           <%= link_to "/usuario/mis-vehículos" do %>
-            <button id="submitRegister" class="btn btn-primary btn-lg">Crear</button>
+            <button id="submitRegister" class="btn btn-primary btn-lg" style="border: solid white; color: white;">Crear</button>
           <% end %>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
+        <div class="col-lg-4" style="background-color: rgba(0,0,0,0.3)">
+          <br>
           <%= image_tag("icon-event-search.png", class: "img-circle", alt: "Mis vehículos", width: "140", height: "140") %>
           <h2>Buscar evento</h2>
           <p>Si buscas un viaje más seguro, cómodo y en buena compañía, accede a alguno de los eventos creados por miembros de la Universidad Nacional de Colombia.</p>
           <%= link_to "/usuario/mis-vehículos" do %>
-            <button id="submitRegister" class="btn btn-primary btn-lg">Buscar</button>
+            <button id="submitRegister" class="btn btn-primary btn-lg" style="border: solid white; color: white;">Buscar</button>
           <% end %>
         </div>
       </div>
+      
+  <!-- Footer -->
 </div>
+
+<footer style="background-color: rgba(255,255,255,0.8)">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+               
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                    <li class="list-inline-item">
+                        <a href="http://unal.edu.co/" target="_blank">Universidad Nacional de Colombia</a> <br>
+                        <span class="copyright">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+           
+            </div>
+        </div>
+    </div>
+</footer>    
 
 
 
