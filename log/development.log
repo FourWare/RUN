@@ -1,0 +1,78 @@
+Started GET "/home/registro" for 181.130.112.86 at 2017-10-04 02:03:02 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#registro as HTML
+  Rendering home/registro.html.erb within layouts/registro
+  Rendered home/registro.html.erb within layouts/registro (370.1ms)
+Completed 200 OK in 735ms (Views: 724.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/home/entrar" for 181.130.112.86 at 2017-10-04 02:03:15 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#entrar as HTML
+  Rendering home/entrar.html.erb within layouts/entrar
+  Rendered home/entrar.html.erb within layouts/entrar (12.4ms)
+Completed 200 OK in 172ms (Views: 170.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 181.130.112.86 at 2017-10-04 02:03:24 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1kwse0kb2TOsR/bUigDnktRf7+kUts53Fsq17jO+GVqp4PZdnrfTCzeijrcIvq/P5GznDLj+Yh0VwYPl4HAoUA==", "user"=>{"email"=>"miaborjaac@unal.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "miaborjaac@unal.edu.co"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-10-04 02:03:24.511532"], ["last_sign_in_at", "2017-10-03 20:45:12.830014"], ["sign_in_count", 3], ["updated_at", "2017-10-04 02:03:24.513541"], ["id", 174]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-miguelangelborja-1.c9users.io/
+Completed 302 Found in 543ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-04 02:03:25 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (10.6ms)
+Completed 200 OK in 76ms (Views: 68.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-04 02:03:25 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (58.8ms)
+Completed 200 OK in 142ms (Views: 139.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home/editar_perfil" for 181.130.112.86 at 2017-10-04 02:03:30 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#editar_perfil as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering home/editar_perfil.html.erb within layouts/user-layout
+  Rendered home/editar_perfil.html.erb within layouts/user-layout (4.0ms)
+Completed 200 OK in 121ms (Views: 118.9ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/home" for 181.130.112.86 at 2017-10-04 02:03:36 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aynRU8+ukXTmmInXRFDVE7u6jY+Qpu+KrxX2NqfdZGp+mpenqCAEppr+Pu4idL2u9ztVQm4MX2lkc41qUZitVg==", "user"=>{"avatar_cache"=>"", "nick"=>"miaborjaac", "name"=>"Miguel Angel Borja Acevedo", "career"=>"Ingeniería de Sistemas y Computación", "date_of_birth"=>"1993-08-28 00:00:00 UTC", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Guardar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."nick" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["nick", "miaborjaac"], ["id", 174], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (78.3ms)
+Completed 200 OK in 256ms (Views: 98.6ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/home" for 181.130.112.86 at 2017-10-04 02:06:10 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C7YuO6wPGu5pqmJ53CHowq+agdYJI96X98/MWFkl0wP6UBrfO82UcDTd2NEOyik9y84fli4pgu4N6+DSePyWRQ==", "user"=>{"avatar_cache"=>"", "nick"=>"miaborjaac", "name"=>"Miguel Angel Borja Acevedo", "career"=>"Ingeniería de Sistemas y Computación", "date_of_birth"=>"1993-08-28 00:00:00 UTC", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Guardar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."nick" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["nick", "miaborjaac"], ["id", 174], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (76.6ms)
+Completed 200 OK in 264ms (Views: 95.4ms | ActiveRecord: 0.9ms)
