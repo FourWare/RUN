@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :routes
   get '/contactanos' => 'users#create_contactanos'
   get '/contactanos' => 'users#new_contactanos'
   get 'admin/home'

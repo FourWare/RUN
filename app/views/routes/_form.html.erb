@@ -1,0 +1,65 @@
+<%= form_with(model: route, local: true,:html => { :onsubmit => "return false;" }) do |form| %>
+  <% if route.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(route.errors.count, "error") %> prohibited this route from being saved:</h2>
+
+      <ul>
+      <% route.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :route_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :route_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :from_lat %>
+    <%= form.text_field :from_lat, id: :route_from_lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :from_lng %>
+    <%= form.text_field :from_lng, id: :route_from_lng %>
+  </div>
+
+  <div class="field">
+    <%= form.label :to_lat %>
+    <%= form.text_field :to_lat, id: :route_to_lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :to_lng %>
+    <%= form.text_field :to_lng, id: :route_to_lng %>
+  </div>
+
+  <div class="field">
+    <%= form.label :waypoints %>
+    <%= form.text_field :waypoints, id: :route_waypoints %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure %>
+    <%= form.datetime_select :departure, id: :route_departure %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cost %>
+    <%= form.text_field :cost, id: :route_cost %>
+  </div>
+<div id="wraper" >
+  <div id="mapEventCreate" style='width: 600px; height: 400px;'></div>
+</div>
+  <div class="actions">
+   
+    <%= link_to 'Save', "#", :onclick  => "getData();" %>
+  </div>
+<% end %>
