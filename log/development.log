@@ -75,4 +75,327 @@ Processing by Devise::RegistrationsController#update as HTML
   [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."nick" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["nick", "miaborjaac"], ["id", 174], ["LIMIT", 1]]
   Rendering users/registrations/edit.html.erb within layouts/application
   Rendered users/registrations/edit.html.erb within layouts/application (76.6ms)
-Completed 200 OK in 264ms (Views: 95.4ms | ActiveRecord: 0.9ms)
+Completed 200 OK in 264ms (Views: 95.4ms | ActiveRecord: 0.9ms)Started GET "/" for 168.176.55.16 at 2017-10-04 20:36:32 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (792.7ms)
+Completed 200 OK in 1494ms (Views: 910.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/home/entrar" for 168.176.55.16 at 2017-10-04 20:36:51 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7hqVdVg7VQSwXQok4P4rXepRhc5fYatVoaB9h1zkp3bCdALMd3Tu2VAdvU8BuF0+fUHy5wp04q/nle7AzGOFcw==", "user"=>{"email"=>"miaborjaac@unal.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "miaborjaac@unal.edu.co"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-10-04 20:36:51.697003"], ["last_sign_in_at", "2017-10-04 02:03:24.511532"], ["current_sign_in_ip", "168.176.55.16"], ["sign_in_count", 4], ["updated_at", "2017-10-04 20:36:51.699319"], ["id", 174]]
+  [1m[35m (28.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-miguelangelborja-1.c9users.io/
+Completed 302 Found in 332ms (ActiveRecord: 29.2ms)
+
+
+Started GET "/" for 168.176.55.16 at 2017-10-04 20:36:51 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (6.5ms)
+Completed 200 OK in 117ms (Views: 113.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/inicio" for 168.176.55.16 at 2017-10-04 20:36:52 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (90.1ms)
+Completed 200 OK in 311ms (Views: 263.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/usuario/mis-veh%C3%ADculos" for 168.176.55.16 at 2017-10-04 20:37:01 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/usuario/mis-veh%C3%ADculos"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/usuario/inicio" for 168.176.55.16 at 2017-10-04 20:37:04 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (6.4ms)
+Completed 200 OK in 87ms (Views: 83.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home/editar_perfil" for 168.176.55.16 at 2017-10-04 20:37:11 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#editar_perfil as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering home/editar_perfil.html.erb within layouts/user-layout
+  Rendered home/editar_perfil.html.erb within layouts/user-layout (12.8ms)
+Completed 200 OK in 81ms (Views: 77.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home/editar_perfil" for 168.176.55.16 at 2017-10-04 20:38:39 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#editar_perfil as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering home/editar_perfil.html.erb within layouts/user-layout
+  Rendered home/editar_perfil.html.erb within layouts/user-layout (5.4ms)
+Completed 200 OK in 83ms (Views: 80.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home/editar_perfil" for 168.176.55.16 at 2017-10-04 20:39:26 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#editar_perfil as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering home/editar_perfil.html.erb within layouts/user-layout
+  Rendered home/editar_perfil.html.erb within layouts/user-layout (3.4ms)
+Completed 200 OK in 66ms (Views: 63.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 168.176.55.16 at 2017-10-04 20:40:00 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (6.2ms)
+Completed 200 OK in 140ms (Views: 137.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/inicio" for 168.176.55.16 at 2017-10-04 20:40:00 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (8.7ms)
+Completed 200 OK in 96ms (Views: 93.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 168.176.55.16 at 2017-10-04 20:40:10 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (4.6ms)
+Completed 200 OK in 78ms (Views: 76.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/inicio" for 168.176.55.16 at 2017-10-04 20:40:11 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (6.7ms)
+Completed 200 OK in 87ms (Views: 84.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 168.176.55.16 at 2017-10-04 20:40:14 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (6.5ms)
+Completed 200 OK in 562ms (Views: 91.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/inicio" for 168.176.55.16 at 2017-10-04 20:40:14 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (6.2ms)
+Completed 200 OK in 112ms (Views: 109.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/inicio" for 168.176.55.16 at 2017-10-04 20:41:35 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (6.9ms)
+Completed 200 OK in 102ms (Views: 99.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/inicio" for 168.176.55.16 at 2017-10-04 20:43:50 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (13.1ms)
+Completed 200 OK in 223ms (Views: 220.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/crear_evento" for 168.176.55.16 at 2017-10-04 20:43:52 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#eventCreate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/eventCreate.html.erb within layouts/user-layout
+  Rendered users/eventCreate.html.erb within layouts/user-layout (0.6ms)
+Completed 200 OK in 95ms (Views: 92.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/contactanos" for 168.176.55.16 at 2017-10-04 20:44:29 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create_contactanos as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/new_contactanos.html.erb within layouts/application
+  Rendered users/new_contactanos.html.erb within layouts/application (72.7ms)
+Completed 200 OK in 97ms (Views: 93.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contactanos" for 168.176.55.16 at 2017-10-04 20:46:45 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create_contactanos as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/new_contactanos.html.erb within layouts/application
+  Rendered users/new_contactanos.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 192ms (Views: 167.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/contactanos" for 168.176.55.16 at 2017-10-04 20:47:37 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create_contactanos as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/new_contactanos.html.erb within layouts/application
+  Rendered users/new_contactanos.html.erb within layouts/application (83.1ms)
+Completed 200 OK in 114ms (Views: 109.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/contactanos" for 168.176.55.16 at 2017-10-04 20:52:49 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create_contactanos as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/new_contactanos.html.erb within layouts/application
+  Rendered users/new_contactanos.html.erb within layouts/application (74.4ms)
+Completed 200 OK in 99ms (Views: 95.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/contactanos" for 168.176.55.16 at 2017-10-04 20:53:35 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create_contactanos as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/new_contactanos.html.erb within layouts/application
+  Rendered users/new_contactanos.html.erb within layouts/application (61.5ms)
+Completed 200 OK in 195ms (Views: 164.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/contactanos" for 168.176.55.16 at 2017-10-04 20:56:14 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create_contactanos as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/new_contactanos.html.erb within layouts/application
+  Rendered users/new_contactanos.html.erb within layouts/application (60.8ms)
+Completed 200 OK in 86ms (Views: 82.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 168.176.55.16 at 2017-10-04 20:56:31 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (4.4ms)
+Completed 200 OK in 63ms (Views: 60.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/inicio" for 168.176.55.16 at 2017-10-04 20:56:31 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (7.6ms)
+Completed 200 OK in 81ms (Views: 78.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/crear_evento" for 168.176.55.16 at 2017-10-04 20:57:03 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#eventCreate as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/eventCreate.html.erb within layouts/user-layout
+  Rendered users/eventCreate.html.erb within layouts/user-layout (0.8ms)
+Completed 200 OK in 69ms (Views: 66.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 168.176.55.16 at 2017-10-04 20:57:32 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (4.6ms)
+Completed 200 OK in 78ms (Views: 75.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/inicio" for 168.176.55.16 at 2017-10-04 20:57:32 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (10.4ms)
+Completed 200 OK in 86ms (Views: 83.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contactanos" for 168.176.55.16 at 2017-10-04 20:59:45 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create_contactanos as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/new_contactanos.html.erb within layouts/application
+  Rendered users/new_contactanos.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 83ms (Views: 79.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/inicio" for 168.176.55.16 at 2017-10-04 20:59:46 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (8.9ms)
+Completed 200 OK in 68ms (Views: 64.8ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/home/logout" for 168.176.55.16 at 2017-10-04 20:59:59 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AuViPaE/FFBlzjgKtB0ABpLRzOuivpng4PnwzG8bGLaQxOeb54E0CDhpWbsvEVqmGhjZ4ZdqnsJeYpxY+Z9/qw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-miguelangelborja-1.c9users.io/
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 168.176.55.16 at 2017-10-04 21:00:00 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (14.7ms)
+Completed 200 OK in 84ms (Views: 82.6ms | ActiveRecord: 0.0ms)
+
+
