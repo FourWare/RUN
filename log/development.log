@@ -76,5 +76,3 @@ Processing by Devise::RegistrationsController#update as HTML
   Rendering users/registrations/edit.html.erb within layouts/application
   Rendered users/registrations/edit.html.erb within layouts/application (76.6ms)
 Completed 200 OK in 264ms (Views: 95.4ms | ActiveRecord: 0.9ms)
-
-
