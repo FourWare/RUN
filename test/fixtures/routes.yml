@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  from_lat: 1.5
+  from_lng: 1.5
+  to_lat: 1.5
+  to_lng: 1.5
+  waypoints: 
+  departure: 2017-10-04 19:55:29
+  cost: 1.5
+
+two:
+  title: MyString
+  description: MyString
+  from_lat: 1.5
+  from_lng: 1.5
+  to_lat: 1.5
+  to_lng: 1.5
+  waypoints: 
+  departure: 2017-10-04 19:55:29
+  cost: 1.5
