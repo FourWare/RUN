@@ -10,7 +10,6 @@ class CreateRoutes < ActiveRecord::Migration[5.1]
       t.column :waypoints, :json
       t.datetime :departure
       t.float :cost
-
       t.timestamps
     end
   end

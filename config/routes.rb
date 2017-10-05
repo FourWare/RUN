@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get 'home/recuperacion_contrasena' => 'home#recuperacion_contrasena'
   get 'home/registro'
   get '/home/entrar'
-  get '/routes'
   
   root to: 'home#index'
   
