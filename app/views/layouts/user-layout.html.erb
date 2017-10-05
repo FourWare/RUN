@@ -69,6 +69,38 @@
    
     <%= yield %>
     
+    <footer style="bottom: 0px; background-color: rgba(255, 255, 255, 0.8);">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="http://unal.edu.co/" target="_blank">Universidad Nacional de Colombia</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              <li class="list-inline-item" style="color:black;">
+                <% if user_signed_in? %>
+                  <strong  style="text-transform: capitalize;"><%= current_user.name %> (<%= current_user.provider %>)</strong> |
+                  <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+                  <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                <% else %>
+                  <li class="nav-item"><button class="btn btn-default" onclick="document.getElementById('myModal').style.display='block'">Entrar</button></li>
+                  &middot;
+                  <li class="nav-item"><button class="btn btn-default" onclick="document.getElementById('myModal2').style.display='block'">Registrarme</button></li>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+        
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
