@@ -1,4 +1,5 @@
-<div class="container">
+</br>
+<div class="container" style="background-color: rgba(0,0,0,0.7)">
     <h2 style="text-align: center;">Editar perfil</h2>
   	<hr>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -6,7 +7,12 @@
   	<div class="row">
         <div class="col-md-3">
           <div class="text-center">
-            <%= image_tag(current_user.avatar, width: '250', height: '250', class: 'image-circle') %>
+            
+            <% if current_user.avatar.present? == false %>
+              <%= image_tag("default-avatar.jpg", width: '250', height: '250', class: 'image-circle') %>
+            <% else %>
+              <%= image_tag(current_user.avatar, width: '250', height: '250', class: 'image-circle') %>
+            <% end %>
             <em style="color: white; display: block;">Si deseas, cambia tu foto de perfil.</em>
   					<%= f.label :avatar, class: "carrier-wave-field" do %>
   					  <%= f.file_field :avatar %>
