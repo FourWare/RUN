@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 20171004195529) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
     t.string "profile_image"
     t.boolean "email_confirmed", default: false
     t.string "confirm_token"
+    t.string "name"
     t.string "nick"
     t.string "career"
     t.datetime "date_of_birth"
