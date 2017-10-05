@@ -26,7 +26,6 @@
   </head>
 
   <body>
-    
     <!-- Navigation -->
     <nav class="navbar navbar-inverse bg-light navbar-fixed-top" style="background-color: black;">
       <div class="container">
@@ -35,7 +34,25 @@
           <span class="icon-bar"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          
+          <ul class="nav navbar-nav">
+            <li>
+              <a class="nav-lin" href="/#servicios" style="color: white;">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#nosotros" style="color: white;">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#contactenos" style="color: white;">Contáctanos</a>
+            </li>
+            
+            <% if user_signed_in? %>
+              <% if current_user.email == "runappunal@gmail.com" %>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin/home" style="color: white;">Usuarios</a>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
           <ul class="nav navbar-nav ml-auto navbar-right" style="width: 30%;">
             <li class="nav-item" style="margin: 3%"><button class="btn btn-primary" id="btnLoginRegister" onclick="location.href='/home/registro'">Registrarme</button></li>
           </ul>
