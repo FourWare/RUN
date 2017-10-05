@@ -1,4 +1,4 @@
-<%= form_with(model: route, local: true,:html => { :onsubmit => "return false;" }) do |form| %>
+<%= form_with(model: route, local: true,:html => { :onsubmit => "return false;", :id => "route_form" }) do |form| %>
   <% if route.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(route.errors.count, "error") %> prohibited this route from being saved:</h2>
@@ -60,6 +60,6 @@
 </div>
   <div class="actions">
    
-    <%= link_to 'Save', "#", :onclick  => "getData();" %>
+    <%= link_to 'Save', '#', :onclick  => "getData();" %>
   </div>
 <% end %>

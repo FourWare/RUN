@@ -82,10 +82,27 @@ function getData(){
   to_lat = directionsDisplay.getDirections().routes[0].legs[0].end_location.lat();
   to_lng = directionsDisplay.getDirections().routes[0].legs[0].end_location.lng();
   waypoints = directionsDisplay.getDirections().routes[0].legs[0].via_waypoints;
+  var watpnts = {};
+  // for (i = 0; i < waypoints.length; i++) { 
+  //   watpnts.push({
+  //     id: i,
+  //     lat: waypoints[i].lat(),
+  //     lng: waypoints[i].lng(),
+  //     });
+  // }
+  document.getElementById("route_from_lat").value = from_lat;
+  document.getElementById("route_from_lng").value = from_lng;
+  document.getElementById("route_to_lat").value = to_lat;
+  document.getElementById("route_to_lng").value = to_lng;
   console.log(from_lat);
   console.log(from_lng);
   console.log(to_lat);
   console.log(to_lng);
   console.log(waypoints);
+  console.log(waypoints.length);
+  console.log(watpnts);
+  document.getElementById("route_form").submit();
 }
 </script>
+
+<button type="button" onclick="getData()" class="btn btn-primary">debug!</button>
