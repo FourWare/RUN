@@ -1,6 +1,6 @@
 <div class="container" style="overflow-y: auto;">
     <div class="modal-dialog">
-        <div class="wthree-form" id="myModalRegister" style="width: 80%;">
+        <div class="wthree-form" id="myModalRegister" style="width: 80%; background-color: rgba(0, 0, 0, 0.9)">
 	        <h2 style="text-align: center; font-size: ">Inicia sesión</h2>
 	        <div class="w3l-login form">
 	            <%= form_for(resource, as: resource_name, url: session_path(resource_name), name: "login_form") do |f| %>
@@ -17,7 +17,7 @@
 		                </div>
 		            <% end -%>
 		            <div class="actions submit-agileits">
-		                <%= f.submit "Entrar", id: "submitRegister", class: "btn btn-success btn-lg", type: 'submit' %>
+		                <%= f.submit "Entrar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit' %>
 		                <% if notice %>
 	      					<p class="alert alert-success"><%= notice %></p>
 	    				<% end %>

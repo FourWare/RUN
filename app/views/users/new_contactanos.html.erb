@@ -39,7 +39,17 @@
           <li class="active"><a href="/contactanos">Contactanos</a></li>
         </ul>
         <div class="collapse navbar-collapse" id="myNavBar">
-        
+          <ul class="nav navbar-nav">
+           
+            <% if user_signed_in? %>
+              <% if current_user.email == "runappunal@gmail.com" %>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin/home" style="color: white;">Usuarios</a>
+                </li>
+              <% end %>
+            <% end %>
+            
+          </ul>
           <ul class="nav navbar-nav navbar-right" style="width: 30%;">
             <% if current_user.avatar.present? == false %>
               <li>
