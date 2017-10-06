@@ -28,24 +28,23 @@
     <%= will_paginate @users, 
         renderer: BootstrapPagination::Rails, 
         :previous_label => "Anterior",
-        :next_label => "Siguiente" 
+        :next_label => "Siguiente",
+        :container => true
     %>
 <% else %>
-    <div class="container" style="background-color: lightgray; width: 100%; height: 100%; color:white">
-        <div class="container">
-            <br></br> <br></br> <br></br> 
-            <div class="container" style="background-color: #F84444; width: 90%; height: 40%; color:white">
-                <div id="spam">
-                    <h1>Acceso denegado</h1>
-                    <p>Solo los administradores pueden acceder.<br/><br/>
-                </div>
-                <div class="container" style="background-color: gray; width: 90%; height: 50%; color:white">
-                    <br><br>
-                    <h4><p>Vuelva a la página de inicio<br/></h4>
-                    <a href = "/"><button id="submitRegister" class="btn btn-primary btn-lg" type="submit">Atras</button></a>
-                    <br><br>
-                </div>
-            </div>    
-        </div>
+    <div class="container">
+        <br></br> <br></br> <br></br> 
+        <div class="container" style="background-color: #F84444; width: 90%; height: 40%; color:white">
+            <div id="spam">
+                <h1>Acceso denegado</h1>
+                <p>Solo los administradores pueden acceder.<br/><br/>
+            </div>
+            <div class="container" style="background-color: gray; width: 90%; height: 50%; color:white">
+                <br><br>
+                <h4><p>Vuelva a la página de inicio<br/></h4>
+                <a href = "/"><button id="submitRegister" class="btn btn-primary btn-lg" type="submit">Atras</button></a>
+                <br><br>
+            </div>
+        </div>    
     </div>
 <% end %>

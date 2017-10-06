@@ -27,6 +27,6 @@ class HomeController < ApplicationController
   
   def editar_perfil
     @app = "RunApp"
-    render :layout => 'editar_perfil'
+    render :layout => 'user-layout'
   end
 end
