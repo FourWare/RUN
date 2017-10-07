@@ -5,21 +5,24 @@ class RoutesController < ApplicationController
   # GET /routes.json
   def index
     @routes = Route.all
+    render :layout => 'user-layout'
   end
 
   # GET /routes/1
   # GET /routes/1.json
   def show
+    render :layout => 'user-layout'
   end
 
   # GET /routes/new
   def new
     @route = Route.new
-    render :layout => 'show_routes'
+    render :layout => 'user-layout'
   end
 
   # GET /routes/1/edit
   def edit
+    render :layout => 'user-layout'
   end
 
   # POST /routes

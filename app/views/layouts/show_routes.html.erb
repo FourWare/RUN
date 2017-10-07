@@ -29,7 +29,42 @@
   </head>
 
   <body>
-
+    <nav class="navbar navbar-inverse bg-light navbar-fixed-top" style="background-color: black;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">RunApp</a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" onclick="document.getElementById('myNavBar').style.display='inline-block'">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/contactanos">Contactanos</a></li>
+        </ul>
+        <div class="collapse navbar-collapse" id="myNavBar">
+        
+          <ul class="nav navbar-nav navbar-right" style="width: 30%;">
+            <% if current_user.avatar.present? == false %>
+              <li>
+                <%= link_to edit_user_registration_path, :class => 'navbar-link' do %>
+                  <%= image_tag("default-avatar.jpg", width: '30', height: '30', class: 'image-circle') %> -
+                  <%= current_user.name %>
+                <% end %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to edit_user_registration_path, :class => 'navbar-link' do %>
+                  <%= image_tag(current_user.avatar, width: '30', height: '30', class: 'image-circle') %> -
+                  <%= current_user.name %>
+                <% end %>
+              </li>
+            <% end %>
+            <li> <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     
     <%= yield %>
 
