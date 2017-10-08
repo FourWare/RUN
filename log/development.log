@@ -3769,3 +3769,79 @@ Processing by HomeController#registro as HTML
 Completed 200 OK in 78ms (Views: 77.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 186.29.183.225 at 2017-10-08 01:33:41 +0000
+Cannot render console from 186.29.183.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 175], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (545.9ms)
+Completed 200 OK in 1163ms (Views: 649.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 186.29.183.225 at 2017-10-08 01:33:45 +0000
+Cannot render console from 186.29.183.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (19.6ms)
+Completed 200 OK in 150ms (Views: 147.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 186.29.183.225 at 2017-10-08 01:33:52 +0000
+Cannot render console from 186.29.183.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ScRpVyyFLOlmk3xjRyh2SZz3ZOzjyNOYzM7knQjNEywqk8r/gaYH2gl0V22LXye4mAxblYMs1n22JKHtZQiXUw==", "user"=>{"email"=>"smarquezo@unal.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "smarquezo@unal.edu.co"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-10-08 01:33:52.886861"], ["current_sign_in_ip", "186.29.183.225"], ["sign_in_count", 2], ["updated_at", "2017-10-08 01:33:52.888837"], ["id", 3]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-miguelangelborja-1.c9users.io/
+Completed 302 Found in 530ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/" for 186.29.183.225 at 2017-10-08 01:33:53 +0000
+Cannot render console from 186.29.183.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (5.7ms)
+Completed 200 OK in 71ms (Views: 68.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/inicio" for 186.29.183.225 at 2017-10-08 01:33:54 +0000
+Cannot render console from 186.29.183.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (5.6ms)
+Completed 200 OK in 79ms (Views: 76.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/crear_evento" for 186.29.183.225 at 2017-10-08 01:33:59 +0000
+Cannot render console from 186.29.183.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#eventCreate as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/eventCreate.html.erb within layouts/user-layout
+  Rendered users/eventCreate.html.erb within layouts/user-layout (1.2ms)
+Completed 200 OK in 192ms (Views: 189.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/home/logout" for 186.29.183.225 at 2017-10-08 01:35:02 +0000
+Cannot render console from 186.29.183.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rRKXngh29AbYToFkNqJTq29HKf4fVGzfBjLIpzlKAOnHLMhvGkG+SkA7K6uTQKE5sA0y1s7o1cdfXt1kWa7VJw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-miguelangelborja-1.c9users.io/
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 186.29.183.225 at 2017-10-08 01:35:02 +0000
+Cannot render console from 186.29.183.225! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (29.1ms)
+Completed 200 OK in 98ms (Views: 90.9ms | ActiveRecord: 0.0ms)
+
+
