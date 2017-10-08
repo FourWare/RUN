@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   
-  get '/contactanos' => 'users#create_contactanos'
-  get '/contactanos' => 'users#new_contactanos'
+  get 'usuario/contactanos' => 'users#create_contactanos'
+  get 'usuario/contactanos' => 'users#new_contactanos'
   get 'admin/home'
-  get 'home/editar_perfil'
+  get 'usuario/editar_perfil' => 'home#editar_perfil'
   get 'usuario/crear_evento' => 'users#eventCreate'
   get 'usuario/inicio' => 'users#show'
   get 'home/recuperacion_contrasena' => 'home#recuperacion_contrasena'
