@@ -935,3 +935,542 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 83ms (Views: 81.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 190.24.59.60 at 2017-10-07 23:34:19 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 175], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (518.4ms)
+Completed 200 OK in 1133ms (Views: 621.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 190.24.59.60 at 2017-10-07 23:34:26 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (118.6ms)
+Completed 200 OK in 640ms (Views: 214.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/home/entrar" for 190.24.59.60 at 2017-10-07 23:34:56 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0ubrVYfD431O8gk67gR9QcgsVpepCwxYMR7cK+KX/guxsUj9KuDITiEVIjQicyywzNdp7snvCb1L9Jlbj1J6dA==", "user"=>{"email"=>"smarquezo@unal.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "smarquezo@unal.edu.co"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0ubrVYfD431O8gk67gR9QcgsVpepCwxYMR7cK+KX/guxsUj9KuDITiEVIjQicyywzNdp7snvCb1L9Jlbj1J6dA==", "user"=>{"email"=>"smarquezo@unal.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 228ms (Views: 72.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/registro" for 190.24.59.60 at 2017-10-07 23:36:07 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#registro as HTML
+  Rendering home/registro.html.erb within layouts/registro
+  Rendered home/registro.html.erb within layouts/registro (4.8ms)
+Completed 200 OK in 106ms (Views: 105.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home" for 190.24.59.60 at 2017-10-07 23:36:37 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CWQsbw7OMgw+wXOjGV3p3Ke6tp7lwTHJojP7RvsoeMtqM4/Ho+0ZP1EmWK3VKrgto0GJ54UlNCzY2b42lu38tA==", "user"=>{"avatar_cache"=>"", "name"=>"Santiago", "nick"=>"santiago", "career"=>"sistemas", "date_of_birth(3i)"=>"12", "date_of_birth(2i)"=>"10", "date_of_birth(1i)"=>"1988", "email"=>"smarquezo@unal.edu.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Registrarme"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "smarquezo@unal.edu.co"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."nick" = ? LIMIT ?[0m  [["nick", "santiago"], ["LIMIT", 1]]
+  Rendering user_mailer/registration_confirmation.html.erb within layouts/mailer
+  Rendered user_mailer/registration_confirmation.html.erb within layouts/mailer (1.5ms)
+UserMailer#registration_confirmation: processed outbound mail in 399.0ms
+Sent mail to smarquezo@unal.edu.co (1294.1ms)
+Date: Sat, 07 Oct 2017 23:36:38 +0000
+From: runappunal@gmail.com
+To: smarquezo@unal.edu.co
+Message-ID: <59d965061bc71_c0117660b4277d@miguelangelborja-run-app-5335597.mail>
+Subject: =?UTF-8?Q?Confirmaci=C3=B3n_de_cuenta?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:=
+//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+" />
+  <title>RunApp</title>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0"/>
+</head>
+<body style=3D"margin: 0; padding: 0;">
+    <table align=3D"center" border=3D"1" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"600">
+        <tr>
+            <td align=3D"center" bgcolor=3D"#000000" style=3D"padding: 40=
+px 0 30px 0;">
+                <img alt=3D"Creating Email Magic" width=3D"450" height=3D=
+"230" style=3D"display: block;" src=3D"https://image.ibb.co/b8OK65/backgr=
+ound_Email.jpg" />
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor=3D"#ffffff" style=3D"padding: 40px 30px 40px 30px=
+;">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%">
+                    <tr>
+                        <td style=3D"color: #153643; font-family: Arial, =
+sans-serif; font-size: 20px; line-height: 20px;">
+                            <b>Confirma tu registro a RunApp</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style=3D"padding: 20px 0 20px 0;">
+                            Bienvenido a RunApp, para acceder a nuestros =
+servicios confirma tu registro haciendo clic en el siguiente enlace:
+                            =
+
+                            <p><a href=3D"http://run-app-miguelangelborja=
+-1.c9users.io/users/H9HT-LEa6M-b-Y0nNWrSsg/confirm_email">Confirmar regis=
+tro a RunApp.</a></p>
+                        =
+
+                            <p>Si tu no realizaste esta petici=C3=B3n, po=
+r favor ignora este mensaje.</p>
+                            =
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor=3D"#ee4c50" style=3D"padding: 30px 30px 30px 30px=
+;">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%">
+                    <tr>
+                        <td style=3D"color: #ffffff; font-family: Arial, =
+sans-serif; font-size: 14px;" width=3D"75%">
+                            Tambi=C3=A9n puedes seguir a &reg; RunApp en:=
+
+                        </td>
+                        <td align=3D"right">
+                            <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0">
+                                <tr>
+                                    <td>
+                                        <a href=3D"https://github.com/Fou=
+rWare/RUN" target=3D"_blank">
+                                            <img width=3D"38" height=3D"3=
+8" alt=3D"github" style=3D"display: block;" border=3D"0" src=3D"http://ww=
+w.freeiconspng.com/uploads/git-github-hub-icon-25.png" />
+                                        </a>
+                                    </td>
+                                    <td style=3D"font-size: 0; line-heigh=
+t: 0;" width=3D"20">&nbsp;</td>
+                                    <td>
+                                        <a href=3D"https://twitter.com/ru=
+nappUnal" target=3D"_blank">
+                                            <img width=3D"47" height=3D"4=
+7" alt=3D"twitter" style=3D"display: block;" border=3D"0" src=3D"https://=
+cdn1.iconfinder.com/data/icons/iconza-circle-social/64/697029-twitter-512=
+.png" />
+                                        </a>
+                                    </td>
+                                    <td style=3D"font-size: 0; line-heigh=
+t: 0;" width=3D"20">&nbsp;</td>
+                                    <td>
+                                        <a href=3D"https://www.facebook.c=
+om/groups/MateriasyElectivasFacilesUN2.0/" target=3D"_blank">
+                                            <img width=3D"35" height=3D"3=
+5" alt=3D"facebook" style=3D"display: block;" border=3D"0" src=3D"https:/=
+/cdn4.iconfinder.com/data/icons/miu-gloss-social/60/facebook-512.png" />
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
+  </body>
+</html>
+
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "confirm_token", "nick", "career", "date_of_birth") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "smarquezo@unal.edu.co"], ["encrypted_password", "$2a$11$Uix2IAwWHPGaU1pC9RKRxe/R7rMXvwCXTvodsDGzEw09Z1naEBLrm"], ["created_at", "2017-10-07 23:36:37.538117"], ["updated_at", "2017-10-07 23:36:37.538117"], ["name", "Santiago"], ["confirm_token", "H9HT-LEa6M-b-Y0nNWrSsg"], ["nick", "santiago"], ["career", "sistemas"], ["date_of_birth", "1988-10-12 00:00:00"]]
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (6.9ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.6ms)
+UserMailer#welcome_email: processed outbound mail in 24.9ms
+Sent mail to smarquezo@unal.edu.co (1338.5ms)
+Date: Sat, 07 Oct 2017 23:36:39 +0000
+From: runapp@mysite.com
+To: smarquezo@unal.edu.co
+Message-ID: <59d965076c1a3_c0117660b429df@miguelangelborja-run-app-5335597.mail>
+Subject: Bienvenido a RunApp
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_59d9650769af9_c0117660b428c";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_59d9650769af9_c0117660b428c
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, smarquezo@unal.edu.co
+===============================================
+ 
+You have successfully signed up to example.com.
+ 
+To login to the site, just follow this link: https://run-app-miguelangelborja-1.c9users.io/home/entrar.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_59d9650769af9_c0117660b428c
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:=
+//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+" />
+  <title>RunApp</title>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0"/>
+</head>
+<body style=3D"margin: 0; padding: 0;">
+
+  <table align=3D"center" border=3D"1" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"600">
+    <tr>
+      <td align=3D"center" bgcolor=3D"#000000" style=3D"padding: 40px 0 3=
+0px 0;">
+        <img alt=3D"Creating Email Magic" width=3D"450" height=3D"230" st=
+yle=3D"display: block;" src=3D"https://image.ibb.co/b8OK65/background_Ema=
+il.jpg" />
+      </td>
+    </tr>
+    <tr>
+      <td bgcolor=3D"#ffffff" style=3D"padding: 40px 30px 40px 30px;">
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%">
+          <tr>
+            <td style=3D"color: #153643; font-family: Arial, sans-serif; =
+font-size: 20px; line-height: 20px;">
+              <b>=C2=A1Registro exitoso!</b>
+            </td>
+          </tr>
+          <tr>
+            <td style=3D"padding: 20px 0 20px 0;">
+              Hola <b style=3D"font-size: 20px;"><em>Santiago</em></b>, t=
+e damos la bienvenida a RunApp. Tu registro fue exitoso.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wid=
+th=3D"100%">
+                <tr>
+                  <td width=3D"260" valign=3D"top">
+                    <table border=3D"1" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+                      <tr>
+                        <td>
+                          <a href=3D"https://run-app-miguelangelborja-1.c=
+9users.io" target=3D"_blank">
+                            <img alt=3D"Home Page RunApp" width=3D"100%" =
+height=3D"140" style=3D"display: block;" src=3D"https://www.poweredbysear=
+ch.com/wp-content/uploads/2014/05/25LandngPageElements.png" />
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style=3D"padding: 25px 0 10px 0; text-align: =
+center;">
+                          Encuentra m=C3=A1s informaci=C3=B3n en la p=C3=A1=
+gina principal de RunApp.
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td style=3D"font-size: 0; line-height: 0;" width=3D"20=
+">
+                    &nbsp;
+                  </td>
+                  <td width=3D"260" valign=3D"top">
+                    <table border=3D"1" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+                      <tr>
+                        <td>
+                          <a href=3D"https://run-app-miguelangelborja-1.c=
+9users.io/home/entrar" target=3D"_blank">
+                            <img alt=3D"Home Page RunApp" width=3D"100%" =
+height=3D"140" style=3D"display: block;" src=3D"http://www.psdgraphics.co=
+m/file/password-protected-icon.jpg" />
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style=3D"padding: 25px 0 10px 0; text-align: =
+center;">
+                          Ingresa con tu nueva cuenta a lo que te ofrece =
+RunApp.
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td bgcolor=3D"#ee4c50" style=3D"padding: 30px 30px 30px 30px;">
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%">
+          <tr>
+            <td style=3D"color: #ffffff; font-family: Arial, sans-serif; =
+font-size: 14px;" width=3D"75%">
+              Tambi=C3=A9n puedes seguir a &reg; RunApp en:
+            </td>
+            <td align=3D"right">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                <tr>
+                  <td>
+                    <a href=3D"https://github.com/FourWare/RUN" target=3D=
+"_blank">
+                      <img width=3D"38" height=3D"38" alt=3D"github" styl=
+e=3D"display: block;" border=3D"0" src=3D"http://www.freeiconspng.com/upl=
+oads/git-github-hub-icon-25.png" />
+                    </a>
+                  </td>
+                  <td style=3D"font-size: 0; line-height: 0;" width=3D"20=
+">&nbsp;</td>
+                  <td>
+                    <a href=3D"https://twitter.com/runappUnal" target=3D"=
+_blank">
+                      <img width=3D"47" height=3D"47" alt=3D"twitter" sty=
+le=3D"display: block;" border=3D"0" src=3D"https://cdn1.iconfinder.com/da=
+ta/icons/iconza-circle-social/64/697029-twitter-512.png" />
+                    </a>
+                  </td>
+                  <td style=3D"font-size: 0; line-height: 0;" width=3D"20=
+">&nbsp;</td>
+                  <td>
+                    <a href=3D"https://www.facebook.com/groups/MateriasyE=
+lectivasFacilesUN2.0/" target=3D"_blank">
+                      <img width=3D"35" height=3D"35" alt=3D"facebook" st=
+yle=3D"display: block;" border=3D"0" src=3D"https://cdn4.iconfinder.com/d=
+ata/icons/miu-gloss-social/60/facebook-512.png" />
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_59d9650769af9_c0117660b428c--
+
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2017-10-07 23:36:40.790972"], ["last_sign_in_at", "2017-10-07 23:36:40.790972"], ["current_sign_in_ip", "190.24.59.60"], ["last_sign_in_ip", "190.24.59.60"], ["updated_at", "2017-10-07 23:36:40.791766"], ["id", 175]]
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-miguelangelborja-1.c9users.io/
+Completed 302 Found in 3456ms (ActiveRecord: 23.4ms)
+
+
+Started GET "/" for 190.24.59.60 at 2017-10-07 23:36:40 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 175], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (10.9ms)
+Completed 200 OK in 155ms (Views: 152.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/inicio" for 190.24.59.60 at 2017-10-07 23:36:42 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 175], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (15.3ms)
+Completed 200 OK in 170ms (Views: 160.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/usuario/mis-veh%C3%ADculos" for 190.24.59.60 at 2017-10-07 23:36:49 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/usuario/mis-veh%C3%ADculos"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/usuario/inicio" for 190.24.59.60 at 2017-10-07 23:36:51 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 175], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (22.3ms)
+Completed 200 OK in 393ms (Views: 381.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/crear_evento" for 190.24.59.60 at 2017-10-07 23:36:56 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#eventCreate as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 175], ["LIMIT", 1]]
+  Rendering users/eventCreate.html.erb within layouts/user-layout
+  Rendered users/eventCreate.html.erb within layouts/user-layout (3.4ms)
+Completed 200 OK in 228ms (Views: 225.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/mis-veh%C3%ADculos" for 190.24.59.60 at 2017-10-07 23:37:01 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/usuario/mis-veh%C3%ADculos"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/usuario/inicio" for 190.24.59.60 at 2017-10-07 23:37:02 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 175], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (10.4ms)
+Completed 200 OK in 142ms (Views: 139.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 190.24.59.60 at 2017-10-08 00:08:25 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 175], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (5.0ms)
+Completed 200 OK in 64ms (Views: 61.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/inicio" for 190.24.59.60 at 2017-10-08 00:08:25 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 175], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (5.9ms)
+Completed 200 OK in 65ms (Views: 62.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 190.24.59.60 at 2017-10-08 00:08:50 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 175], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (4.7ms)
+Completed 200 OK in 61ms (Views: 59.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/inicio" for 190.24.59.60 at 2017-10-08 00:08:50 +0000
+Cannot render console from 190.24.59.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 175], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (5.4ms)
+Completed 200 OK in 66ms (Views: 63.7ms | ActiveRecord: 0.3ms)
+
+
