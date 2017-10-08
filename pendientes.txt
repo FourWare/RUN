@@ -4,4 +4,3 @@ editar perfil:
 
 * +/- Correo de confirmación de registro
 * Areglar landing page de admin
-* Cambiar fuentes de la aplicación
