@@ -3096,3 +3096,66 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 85ms (Views: 82.5ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 190.84.108.15 at 2017-10-09 15:56:12 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (690.4ms)
+Completed 200 OK in 1365ms (Views: 836.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 190.84.108.15 at 2017-10-09 15:56:22 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (113.6ms)
+Completed 200 OK in 612ms (Views: 240.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 190.84.108.15 at 2017-10-09 15:56:29 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (15.2ms)
+Completed 200 OK in 84ms (Views: 82.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/auth/facebook" for 190.84.108.15 at 2017-10-09 15:56:48 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/home/auth/facebook" for 190.84.108.15 at 2017-10-09 15:56:49 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/home/auth/facebook/callback?code=AQDIHSi33QDBjD7HNjA42BL-hRD-V6TflvfmPX94aj310580RyCq9RfZEFw-_xUJrIgGcLVSzQp7bBwH3zfyi6RWLuVNGE3ev5u8X1Y74WJiSAwJt-E8QB3Yhn6SHYtnI0LUNLln0M4Ts2sWpGNVGfRcfKxNluc8HoZQqJMF0QxUhx8vCkGbO60H3RBoKIBpWfFnqQhjWZMv1jHttb6ombjeSW0NSzXxZfHxmUXd7nnGqln5gshEHSAAKrVYX7Bmb_zHkChfweacbvjq2a-ANXsDskoth5I9ZEymNV9ESj0WjtXpK4cy1sfCdTqVl6gIcw0&state=dbbe51c15a16b11b17f6afd803713c1ee8cdb777247b3215" for 190.84.108.15 at 2017-10-09 15:56:50 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#facebook as HTML
+  Parameters: {"code"=>"AQDIHSi33QDBjD7HNjA42BL-hRD-V6TflvfmPX94aj310580RyCq9RfZEFw-_xUJrIgGcLVSzQp7bBwH3zfyi6RWLuVNGE3ev5u8X1Y74WJiSAwJt-E8QB3Yhn6SHYtnI0LUNLln0M4Ts2sWpGNVGfRcfKxNluc8HoZQqJMF0QxUhx8vCkGbO60H3RBoKIBpWfFnqQhjWZMv1jHttb6ombjeSW0NSzXxZfHxmUXd7nnGqln5gshEHSAAKrVYX7Bmb_zHkChfweacbvjq2a-ANXsDskoth5I9ZEymNV9ESj0WjtXpK4cy1sfCdTqVl6gIcw0", "state"=>"dbbe51c15a16b11b17f6afd803713c1ee8cdb777247b3215"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "10155089636070819"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 0.4ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/models/user.rb:33:in `strptime'
+app/models/user.rb:33:in `block in from_omniauth'
+app/models/user.rb:28:in `from_omniauth'
+app/controllers/sessions_controller.rb:11:in `facebook'
+Started GET "/home/auth/facebook" for 190.84.108.15 at 2017-10-09 15:57:13 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/home/auth/facebook" for 190.84.108.15 at 2017-10-09 15:57:13 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/home/auth/facebook/callback?code=AQDBShyyhYx22s7SopDBF-YToCIw9Y4Ghy7H8tUPPM-EljAo1PLSx7R9_w27CcNwMpwmuJkiygOgQLh-Ug8VgFvIbH7mBbv7596Hvfz77W2P3ahylMHdwTeEVYSS4pftIFGtA59W_hbcZOkPyz0Dyfd4fcePjq0aDrmIBeDiUnDgzN28kH2EuTH3CSicOkVxuilo4ti_Uw7cMhKRWHlu5wACm6Fi5PC9poAmACevtWlX0MQT4I-4ljgFYvFCPCPdQP9SKHyqZDau8EwCqVy20iBDVfhMv8yQagfrfZh7mNWEPfPZCi3J5XeK3mO2MctWOhw&state=8fca6293915ff9b2d10f0278dd73c6c30b3f152d47e760f5" for 190.84.108.15 at 2017-10-09 15:57:14 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#facebook as HTML
+  Parameters: {"code"=>"AQDBShyyhYx22s7SopDBF-YToCIw9Y4Ghy7H8tUPPM-EljAo1PLSx7R9_w27CcNwMpwmuJkiygOgQLh-Ug8VgFvIbH7mBbv7596Hvfz77W2P3ahylMHdwTeEVYSS4pftIFGtA59W_hbcZOkPyz0Dyfd4fcePjq0aDrmIBeDiUnDgzN28kH2EuTH3CSicOkVxuilo4ti_Uw7cMhKRWHlu5wACm6Fi5PC9poAmACevtWlX0MQT4I-4ljgFYvFCPCPdQP9SKHyqZDau8EwCqVy20iBDVfhMv8yQagfrfZh7mNWEPfPZCi3J5XeK3mO2MctWOhw", "state"=>"8fca6293915ff9b2d10f0278dd73c6c30b3f152d47e760f5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "facebook"], ["uid", "10155089636070819"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 152ms (ActiveRecord: 1.1ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/models/user.rb:33:in `strptime'
+app/models/user.rb:33:in `block in from_omniauth'
+app/models/user.rb:28:in `from_omniauth'
+app/controllers/sessions_controller.rb:11:in `facebook'
