@@ -1,0 +1,123 @@
+</br>
+
+<div class="container" style="background-color: rgba(0,0,0,0.7); width: 90%;">
+  <h2 style="text-align: center;">Crear ruta</h2>
+  <hr>
+  <%= form_with(model: route, local: true,:html => { :onsubmit => "return false;", :id => "route_form" }) do |form| %>
+	  <% if route.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(route.errors.count, "error") %> Prohibido guardar la ruta.</h2>
+        <ul>
+          <% route.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  	<div class="row">
+        <div class="col-md-6 personal-info">
+          <h3>Información de la nueva ruta</h3>
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <div class="col-lg-12">
+                <label class="col-lg-4 control-label">Título:</label>
+                <%= form.text_field :title, class: "form-control", id: :route_title, autofocus: true, type: 'text', required: "" %>
+              </div>
+            </div>
+            <br></br>
+            <div class="form-group">
+              <div class="col-lg-12">
+                <label class="col-lg-4 control-label">Descripción:</label>
+                <%= form.text_field :description, class: "form-control", id: :route_description, autofocus: true, type: 'text' %>
+              </div>
+            </div>
+            <br></br>
+            <div class="form-group">
+              <div class="col-lg-12">
+                <label class="col-lg-4 control-label">Latitud origen:</label>
+                <%= form.text_field :from_lat, class: "form-control", id: :route_from_lat, autofocus: true, required: "" %>
+              </div>
+            </div>
+            <br></br>
+            <div class="form-group">
+              <div class="col-lg-12">
+                <label class="col-lg-4 control-label">Longitud origen:</label>
+                <%= form.text_field :from_lng, class: "form-control", id: :route_from_lng, autofocus: true, required: "" %>
+              </div>
+            </div>
+            <br></br>
+            <div class="form-group">
+              <div class="col-lg-12">
+                <label class="col-lg-4 control-label">Latitud destino:</label>
+                <%= form.text_field :to_lat, class: "form-control", id: :route_to_lat, autofocus: true, required: "" %>
+              </div>
+            </div>
+            <br></br>
+            <div class="form-group">
+              <div class="col-lg-12">
+                <label class="col-lg-4 control-label">Longitud destino:</label>
+                <%= form.text_field :to_lng, class: "form-control", id: :route_to_lng, autofocus: true, required: "" %>
+              </div>
+            </div>
+            <br></br>
+            <div class="form-group">
+              <div class="col-lg-12">
+                <label class="col-lg-4 control-label">Puntos de recorrido:</label>
+                <%= form.text_field :waypoints, class: "form-control", id: :route_waypoints, autofocus: true, required: "" %>
+              </div>
+            </div>
+            <br></br>
+            <div class="form-group">
+              <div class="col-lg-12">
+                <label class="col-lg-4 control-label">Costo:</label>
+                <%= form.text_field :cost, class: "form-control", id: :route_cost, autofocus: true, required: "" %>
+              </div>
+            </div>
+            <br></br>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <label class="col-lg-12">Salida:</label>
+                </br>
+                <%= form.datetime_select :departure, { 
+			      						:order => [:day, :month, :year], 
+								    	  :start_year => Time.now.year + 1, 
+								    	  :end_year => Time.now.year, 
+									      :prompt => {
+									    	  day: 'Día', month: 'Mes', year: 'Año', hour: 'Hora', minute: 'Minuto'
+									      }},
+									      {:class => "form-control date-select", required: "", id: :route_departure}
+								 	%>
+              </div>
+            </div>
+            <br></br>
+            <br></br>
+            <br></br>
+          </form>
+        </div>
+        
+        <div class="col-md-6 personal-info">
+          <div id="wraper" >
+            <div id="mapEventCreate" style='width: 600px; height: 400px;'></div>
+          </div>
+          <hr>
+          <div class="form-group">
+            <div class="col-lg-3">
+            </div>
+            <div class="col-lg-3">
+              <%= link_to "/" do %>
+                <%= form.submit "Crear", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style: "width: 100%;", :onclick  => "getData();" %>
+              <% end %>
+            </div>
+            <div class="col-lg-3">
+              <%= link_to "/" do %>
+                <%= form.submit "Cancelar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style: "width: 100%;" %>
+              <% end %>
+            </div>
+            <div class="col-lg-3">
+            </div>
+          </div>
+        </div>
+        <button type="button" onclick="getData()" class="btn btn-primary">debug!</button>
+      </div>
+  <% end %>
+</div>
