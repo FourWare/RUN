@@ -4,7 +4,8 @@ class RoutesController < ApplicationController
   # GET /routes
   # GET /routes.json
   def index
-    @routes = Route.all
+    @routes = Route.paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    #@routes = Route.all
     render :layout => 'user-layout'
   end
 

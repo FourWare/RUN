@@ -104,20 +104,19 @@
             <div class="col-lg-3">
             </div>
             <div class="col-lg-3">
-              <%= link_to "/" do %>
-                <%= form.submit "Crear", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style: "width: 100%;", :onclick  => "getData();" %>
+              <%= link_to "/routes" do %>
+                <button type="button" id="submitRegister" class="btn btn-primary btn-lg" style="width: 100%;" onclick="getData();">Crear</button>
               <% end %>
             </div>
             <div class="col-lg-3">
               <%= link_to "/" do %>
-                <%= form.submit "Cancelar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style: "width: 100%;" %>
+                <button type="button" id="submitRegister" class="btn btn-primary btn-lg" style="width: 100%;" display="inline-block">Cancelar</button>
               <% end %>
             </div>
             <div class="col-lg-3">
             </div>
           </div>
         </div>
-        <button type="button" onclick="getData()" class="btn btn-primary">debug!</button>
       </div>
   <% end %>
 </div>
