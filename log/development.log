@@ -1441,3 +1441,70 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 139ms (Views: 135.2ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/usuario/inicio" for 168.176.239.36 at 2017-10-09 15:38:07 +0000
+Cannot render console from 168.176.239.36! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (295.8ms)
+Completed 200 OK in 517ms (Views: 441.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/usuario/inicio" for 168.176.239.31 at 2017-10-09 15:38:22 +0000
+Cannot render console from 168.176.239.31! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (103.3ms)
+Completed 200 OK in 297ms (Views: 257.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/routes/new" for 168.176.239.31 at 2017-10-09 15:38:25 +0000
+Cannot render console from 168.176.239.31! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#new as HTML
+  Rendering routes/new.html.erb within layouts/user-layout
+  Rendered routes/_form.html.erb (384.8ms)
+  Rendered routes/new.html.erb within layouts/user-layout (386.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+Completed 200 OK in 491ms (Views: 471.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/usuario/crear_evento" for 168.176.239.32 at 2017-10-09 15:38:42 +0000
+Cannot render console from 168.176.239.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"crear_evento"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (7.8ms)
+Completed 200 OK in 103ms (Views: 100.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/crear_evento" for 168.176.239.36 at 2017-10-09 15:39:59 +0000
+Cannot render console from 168.176.239.36! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#eventCreate as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/eventCreate.html.erb within layouts/user-layout
+  Rendered users/eventCreate.html.erb within layouts/user-layout (0.7ms)
+Completed 200 OK in 131ms (Views: 101.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/usuario/inicio" for 168.176.239.33 at 2017-10-09 15:41:05 +0000
+Cannot render console from 168.176.239.33! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (13.3ms)
+Completed 200 OK in 307ms (Views: 234.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/usuario/contactanos" for 168.176.239.35 at 2017-10-09 15:41:09 +0000
+Cannot render console from 168.176.239.35! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"contactanos"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (11.4ms)
+Completed 200 OK in 162ms (Views: 158.2ms | ActiveRecord: 0.5ms)
+
+

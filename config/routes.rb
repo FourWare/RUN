@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   
+  root to: 'home#index'
+  
   resources :routes
   get 'usuario/contactanos' => 'users#create_contactanos'
   get 'usuario/contactanos' => 'users#new_contactanos'
-  get '/contactanos' => 'users#create_contactanos'
-  get '/contactanos' => 'users#new_contactanos'
   get 'admin/home'
   get 'usuario/editar_perfil' => 'home#editar_perfil'
   get 'usuario/crear_evento' => 'users#eventCreate'
@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   get 'home/registro'
   get '/home/entrar'
   
-  root to: 'home#index'
   
   resources :contacts, only: [:new, :create]
   resources :users do
