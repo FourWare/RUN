@@ -1,43 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Routes</h1>
+<h1>Bucador de rutas</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>From lat</th>
-      <th>From lng</th>
-      <th>To lat</th>
-      <th>To lng</th>
-      <th>Waypoints</th>
-      <th>Departure</th>
-      <th>Cost</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @routes.each do |route| %>
+<div class="container" style="background-color: lightgray; padding: 1%;">
+  <table class="table table-striped table-bordered table-hover" style="border: solid black;">
+    <thead style="background-color: #373a3c; color: white;">
       <tr>
-        <td><%= route.title %></td>
-        <td><%= route.description %></td>
-        <td><%= route.from_lat %></td>
-        <td><%= route.from_lng %></td>
-        <td><%= route.to_lat %></td>
-        <td><%= route.to_lng %></td>
-        <td><%= route.waypoints %></td>
-        <td><%= route.departure %></td>
-        <td><%= route.cost %></td>
-        <td><%= link_to 'Show', route %></td>
-        <td><%= link_to 'Edit', edit_route_path(route) %></td>
-        <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th style="text-align:center;">Título</th>
+        <th style="text-align:center;">Descripción</th>
+        <th style="text-align:center;">Latitud origen</th>
+        <th style="text-align:center;">Longitud origen</th>
+        <th style="text-align:center;">Latitud destino</th>
+        <th style="text-align:center;">Longitud destino</th>
+        <th style="text-align:center;">Puntos de recorrido</th>
+        <th style="text-align:center;">Costo</th>
+        <th style="text-align:center;">Salida</th>
+        <th colspan="3">Opciones</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Route', new_route_path %>
+    </thead>
+    <tbody>
+      <% @routes.each do |route| %>
+        <tr>
+          <td style="text-align:center;"><%= route.title %></td>
+          <td style="text-align:center;"><%= route.description %></td>
+          <td style="text-align:center;"><%= route.from_lat %></td>
+          <td style="text-align:center;"><%= route.from_lng %></td>
+          <td style="text-align:center;"><%= route.to_lat %></td>
+          <td style="text-align:center;"><%= route.to_lng %></td>
+          <td style="text-align:center;"><%= route.waypoints %></td>
+          <td style="text-align:center;"><%= route.cost %></td>
+          <td style="text-align:center;"><%= route.departure %></td>
+          <td style="text-align:center;"><%= link_to 'Ver', route %></td>
+          <td style="text-align:center;"><%= link_to 'Editar', edit_route_path(route) %></td>
+          <td style="text-align:center;"><%= link_to 'Eliminar', route, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</br>
