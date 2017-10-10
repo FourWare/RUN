@@ -1,0 +1,50 @@
+</br>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @route.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @route.description %>
+</p>
+
+<p>
+  <strong>From lat:</strong>
+  <%= @route.from_lat %>
+</p>
+
+<p>
+  <strong>From lng:</strong>
+  <%= @route.from_lng %>
+</p>
+
+<p>
+  <strong>To lat:</strong>
+  <%= @route.to_lat %>
+</p>
+
+<p>
+  <strong>To lng:</strong>
+  <%= @route.to_lng %>
+</p>
+
+<p>
+  <strong>Waypoints:</strong>
+  <%= @route.waypoints %>
+</p>
+
+<p>
+  <strong>Departure:</strong>
+  <%= @route.departure %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @route.cost %>
+</p>
+
+<%= link_to 'Edit', edit_route_path(@route) %> |
+<%= link_to 'Back', routes_path %>
