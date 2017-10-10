@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get '/home/auth/google_oauth2/callback' => 'users#show'
   resources :routes
   get 'usuario/contactanos' => 'users#create_contactanos'
   get 'usuario/contactanos' => 'users#new_contactanos'
