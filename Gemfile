@@ -16,6 +16,7 @@ gem 'faker'
 
 # Gema para Bootstrap
 gem 'bootstrap-sass'
+gem 'bootstrap-social-rails'
 
 gem 'gmaps4rails'
 
@@ -30,6 +31,7 @@ gem 'will_paginate-bootstrap'
 
 # Gema para autenticación con red social
 gem 'omniauth-facebook'
+gem "omniauth-google-oauth2"
 
 # Gema para enviar comentarios desde los usuarios
 gem 'mail_form'
