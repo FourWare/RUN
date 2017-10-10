@@ -51,8 +51,8 @@
 	padding: 0.5em;
 	color: #fff;
 	border-bottom: 2px solid green;
-	font-family: 'Righteous', cursive;
-}
+	font-family: "Helvetica Neue", Helvetica;
+} 	
 
 #passwordRegister, #usernameRegister{
 	font-size: 1em;
@@ -64,7 +64,7 @@
 	border: 2px solid #fff;
 	outline: none;
 	box-sizing: border-box;
-	font-family: 'Righteous', cursive;
+	font-family: "Helvetica Neue", Helvetica;
 	color: black;
 }
 
@@ -81,7 +81,7 @@
 	cursor: pointer;
 	width: 30%;
 	box-sizing: border-box;
-	font-family: 'Righteous', cursive;
+	font-family: "Helvetica Neue", Helvetica;
 	-webkit-transition: 0.5s all;
 	-moz-transition: 0.5s all;
 	-o-transition: 0.5s all;
@@ -101,7 +101,7 @@
 	cursor: pointer;
 	background-color: transparent;
 	color: #fff;
-	font-family: 'Righteous', cursive;
+	font-family: "Helvetica Neue", Helvetica;
 	-webkit-transition: 0.5s all;
 	-moz-transition: 0.5s all;
 	-o-transition: 0.5s all;
@@ -114,7 +114,7 @@
 	color: blue;
 	text-decoration: none;
 	letter-spacing: 1px;
-	font-family: 'Righteous', cursive;
+	font-family: "Helvetica Neue", Helvetica;
 }
 
 #aRegister:hover{

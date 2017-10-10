@@ -24,105 +24,177 @@
     
   </head>
 
-  <body>
+  <body style="background-image: url(/assets/background-user.jpg);">
     <nav class="navbar navbar-inverse bg-light navbar-fixed-top" style="background-color: black;">
-      <div class="container-fluid">
+      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" onclick="document.getElementById('myNavBar').style.display='inline-block'">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-          <a class="navbar-brand" href="/#" style="color: white;"><%= @app %></a>
+          <a class="navbar-brand" href="/" style="color: white;">RunApp</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavBar">
           <ul class="nav navbar-nav">
-            <li>
-              <a class="nav-lin" href="/#servicios" style="color: white;">Servicios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/#nosotros" style="color: white;">Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/#contactenos" style="color: white;">Contáctanos</a>
-            </li>
+            <li class="active"><a href="/usuario/contactanos">Contactanos</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right" style="width: 30%;">
-            <% if user_signed_in? %>
-              <% if current_user.profile_image.nil? %>
-                <li> 
-                  <%= link_to current_user.name, edit_user_registration_path, :class => 'navbar-link' %>
-                </li>
-                <li> <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-              <% else %>
-                <li><%= link_to edit_user_registration_path, :class => 'navbar-link' do %>
-                      <%= image_tag(current_user.profile_image, width: '30', height: '30', class: 'image-circle') %> -
-                      <%= current_user.name %>
-                      <% end %>
-                </li>
-                <li> <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-              <% end %>
+            <% if current_user.avatar.present? == false %>
+              <li>
+                <%= link_to "/usuario/editar_perfil", :class => 'navbar-link' do %>
+                  <%= image_tag("default-avatar.jpg", width: '30', height: '30', class: 'image-circle') %> -
+                  <%= current_user.name %>
+                <% end %>
+              </li>
             <% else %>
-              <li class="nav-item" style="margin: 3%;"><button class="btn btn-success" id="btnLoginRegister" onclick="document.getElementById('myModal').style.display='block'">Entrar</button></li>
-              <li class="nav-item" style="margin: 3%;"><button class="btn btn-primary" id="btnLoginRegister" onclick="document.getElementById('myModal2').style.display='block'">Registrarme</button></li>
+              <li>
+                <%= link_to "/usuario/editar_perfil", :class => 'navbar-link' do %>
+                  <%= image_tag(current_user.avatar, width: '30', height: '30', class: 'image-circle') %> -
+                  <%= current_user.name %>
+                <% end %>
+              </li>
             <% end %>
+            <li> <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
           </ul>
         </div>
       </div>
     </nav>
     
-    <div class="container" style="overflow-y: auto;">
-    <div class="modal-dialog">
-        <div class="wthree-form" id="myModalRegister" style="width: 80%;">
-		    <h2 style="text-align: center; font-size: ">Editar perfil <%= current_user.nick %> </h2>
-		    <div class="w3l-login form">
-		        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  				    <%= devise_error_messages! %>
-  				    <div class="form-sub-w3">
-  				      <br></br>
-  				      <p>Nombre</p>
-  			        <%= f.text_field :name, id: 'usernameRegister', value: current_user.name, autofocus: true, type: 'text', required: "" %>
-  			      </div>
-  			      <div class="form-sub-w3">
-  			        <p>Carrera</p>
-  			        <%= f.text_field :career, id: 'usernameRegister', autofocus: true,  value: current_user.career, type: 'text' %>
-  			      </div>
-  			      <div class="form-sub-w3">
-  			        <%= f.label :Fecha_de_nacimiento %>
-  			        <%= f.text_field :date_of_birth, id: 'usernameRegister', autofocus: true,  value: current_user.date_of_birth, type: 'text' %>
-  			      </div>
-  			      <div class="form-sub-w3">
-  			        <p>Contraseña <i>(Déjalo en blanco si no quieres cambiarla.)</i></p>
-  			        <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister' %>
-    			      <% if @minimum_password_length %>
-    			        <br />
-                  <em><%= @minimum_password_length %> characters minimum</em>
-                <% end %>
-    			    </div>
-  			      <div class="form-sub-w3 form-group clearfix">
-  			        <label>Confirmar contraseña</label>
-  			        <%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister' %>
-  			      </div>
-  			      <div class="form-sub-w3 form-group clearfix">
-  			        <label>Contraseña actual <i>(Necesitamos tu contraseña actual para confirmar cambios.)</i></label>
-  			        <%= f.password_field :current_password, autocomplete: "off", type: 'password', id: 'passwordRegister' %>
-  			      </div>
-  			      <div class="actions submit-agileits">
-  			        <%= f.submit "Guardar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block' %>
-  					  </div>
-  					  <%= link_to "/" do %>
-                <%= f.submit "Cancelar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block' %>
+    </br>
+    <div class="container" style="background-color: rgba(0,0,0,0.7)">
+      <h2 style="text-align: center;">Editar perfil</h2>
+    	<hr>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+	      <em style="color: red;"><%= devise_error_messages! %></em>
+  	    <div class="row">
+          <div class="col-md-3">
+            <div class="text-center">
+              <% if current_user.avatar.present? == false %>
+                <%= image_tag("default-avatar.jpg", width: '250', height: '250', class: 'image-circle') %>
+              <% else %>
+                <%= image_tag(current_user.avatar, width: '250', height: '250', class: 'image-circle') %>
               <% end %>
-		        <% end %>
-		      	
-		      	<h3>Eliminar cuenta</h3>
-                <p>¿Inconforme? 
-                    <%= button_to "Eliminar", registration_path(resource_name), data: { confirm: "¿Estás seguro?" }, method: :delete, id: "submitRegister", class: "btn btn-primary btn-lg" %>
-                </p>
-			  </div>
-		  </div>
-  	</div>    
-  </div>
+              <em style="color: white; display: block;">Si deseas, cambia tu foto de perfil.</em>
+    					<%= f.label :avatar, class: "carrier-wave-field" do %>
+    					  <%= f.file_field :avatar %>
+    		    		<%= f.hidden_field :avatar_cache %>
+    		      <% end %>
+            </div>
+          </div>
+          <div class="col-md-9 personal-info">
+            <h3>Información personal</h3>
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <div class="col-lg-12">
+                  <label class="col-lg-2 control-label"></br>Nick:</label>
+                  <%= f.text_field :nick, class: "form-control", id: 'usernameRegister', value: current_user.nick, autofocus: true, type: 'text', readonly: true, required: "" %>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-12">
+                  <label class="col-lg-2 control-label"></br>Nombre:</label>
+                  <%= f.text_field :name, class: "form-control", id: 'usernameRegister', value: current_user.name, autofocus: true, type: 'text', required: "" %>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-12">
+                  <label class="col-lg-2 control-label"></br>Carrera:</label>
+                  <%= f.text_field :career, class: "form-control", id: 'usernameRegister', value: current_user.career, autofocus: true, type: 'text', required: "" %>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-12">
+                  <label class="col-lg-2 control-label">Fecha de nacimiento:</label>
+                  <%= f.text_field :date_of_birth, class: "form-control", id: 'usernameRegister', value: current_user.date_of_birth, autofocus: true, type: 'text', required: "" %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-12 control-label">Para cambiar tu contraseña, llena los siguientes espacios. <i>(Déjalo en blanco si no quieres cambiarla.)</label> </br>
+                <div class="col-lg-12">
+                  <label class="col-lg-2 control-label">Nueva contraseña:</label>
+                  <%= f.password_field :password, class: "form-control", autocomplete: "off", type: 'password', id: 'passwordRegister' %>
+  			        	<% if @minimum_password_length %>
+  			        	  <br />
+                    <em><%= @minimum_password_length %> characters minimum</em>
+                  <% end %>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-12">
+                  <label class="col-lg-2 control-label">Confirmar nueva contraseña:</label>
+                  <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off", type: 'password', id: 'passwordRegister' %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-12 control-label">Para confirmar tus cambios, ingresa tu contraseña actual.</label> </br>
+                <div class="col-lg-12">
+                  <label class="col-lg-2 control-label">Contraseña actual:</label>
+                  <%= f.password_field :current_password, class: "form-control", autocomplete: "off", type: 'password', id: 'passwordRegister' %>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-3">
+                </div>
+                <div class="col-lg-3">
+                  <%= f.submit "Guardar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style: "width: 100%;" %>
+                </div>
+                <div class="col-lg-3">
+                  <%= link_to "/" do %>
+                    <%= f.submit "Cancelar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style: "width: 100%;" %>
+                  <% end %>
+                </div>
+                <div class="col-lg-3">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      <% end %>
+      <hr>
+      <h3>Eliminar cuenta</h3>
+      <p>¿Estás inconforme con RunApp? En el siguiente botón podrás eliminar tu cuenta. 
+        <%= button_to "Eliminar cuenta", registration_path(resource_name), data: { confirm: "¿Estás seguro?" }, method: :delete,  id: "submitRegister", class: "btn btn-primary", style: "width: 12em; font-size: 1em;" %>
+      </p>
+      <div class="alert alert-warning alert-dismissable">
+        <a class="panel-close close" data-dismiss="alert">×</a> 
+        <i class="fa fa-coffee"></i>
+        <strong>¡Atención!</strong> Si eliminas tu cuenta se perderán todos tus datos.
+      </div>
+    </div>
+    
+    <footer style="position: relative; bottom: -5%;  background-color: rgba(255, 255, 255, 0.8);">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="http://unal.edu.co/" target="_blank">Universidad Nacional de Colombia</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              <li class="list-inline-item" style="color:black;">
+                <% if user_signed_in? %>
+                  <strong  style="text-transform: capitalize;"><%= current_user.name %> (<%= current_user.provider %>)</strong> |
+                  <%= link_to 'Editar perfil', "/usuario/editar_perfil", :class => 'navbar-link' %> |
+                  <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                <% else %>
+                  <li class="nav-item"><button class="btn btn-default" onclick="document.getElementById('myModal').style.display='block'">Entrar</button></li>
+                  &middot;
+                  <li class="nav-item"><button class="btn btn-default" onclick="document.getElementById('myModal2').style.display='block'">Registrarme</button></li>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
     
     <!-- Bootstrap core JavaScript -->
     <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/jquery/jquery.min.js"></script>

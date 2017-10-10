@@ -1,108 +1,118 @@
-<div class="container">
-  <h1>Bienvenido a RunApp</h1>
-  <p>Selecciona la opcion que desees</p> 
-  <br>
+<div class="container" style="width:100%; padding: 0%;" style="max-width: 100%; height: 550px !important;">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <%= image_tag("carousel1.png", alt: 'Crear evento',style: "width:100%; height: 550px !important;") %>
+      </div>
+      <div class="item">
+        <%= image_tag("carousel2.png", alt: 'Buscar evento',style: "width:100%; height: 550px !important;") %>
+      </div>
+      <div class="item">
+        <%= image_tag("carousel3.png", alt: 'Buscar evento',style: "width:100%; height: 550px !important;") %>
+      </div>
+      <% if false %>
+      <div class="item">
+        <%= image_tag("c3.PNG", alt: 'Seleccion de puntos',style: "width:100%;") %>
+        <div class="carousel-caption">
+        
+        </div>
+      </div>
+      <div class="item">
+        <%= image_tag("c4.PNG", alt: 'Mis vehiculos',style: "width:100%;") %>
+        <div class="carousel-caption">
+        
+        </div>
+      </div>
+      <div class="item active">
+        <%= image_tag("c5.PNG", alt: 'Buscar evento',style: "width:100%;") %>
+        <div class="carousel-caption">
+        
+        </div>
+      </div>
+      <div class="item active">
+        <%= image_tag("c6.PNG", alt: 'Editar perfil',style: "width:100%;") %>
+        <div class="carousel-caption">
+        
+        </div>
+      </div>
+      <div class="item active">
+        <%= image_tag("c7.PNG", alt: 'Contactanos',style: "width:100%;") %>
+        <div class="carousel-caption">
+        
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+  
+  
+  <hr>
+  </br>
+  
+<div class="container">  
+  <div class="row" style="color: white;">
+        <div class="col-lg-4" style="background-color: rgba(0,0,0,0.3);">
+          <br>
+          <%= image_tag("icon-car.png", class: "img-circle", alt: "Mis vehículos", width: "140", height: "140") %>
+          <h2>Mis vehículos</h2>
+          <p>Podrás ver, agregar, eliminar y modificar tus vehículos (carros, motos, bicicletas, etc...), que compartirás con los miembros de la Universidad Nacional de Colombia.</p>
+          <%= link_to "/usuario/mis-vehículos" do %>
+            <button id="submitRegister" class="btn btn-primary btn-lg" style="border: solid white; color: white;">Ver</button>
+          <% end %>
+        </div>
+        <vr>
+        <div class="col-lg-4" style="background-color: rgba(0,0,0,0.3)">
+         <br>
+          <%= image_tag("icon-event-create.png", class: "img-circle", alt: "Mis vehículos", width: "140", height: "140") %>
+          <h2>Crear ruta</h2>
+          <p>Si cuentas con un vehículo y quieres compartirlo con otro miembro de la Universidad Nacional de Colombia, crea un evento para que ellos puedan acceder.</p>
+          <%= link_to new_route_path do %>
+            <button id="submitRegister" class="btn btn-primary btn-lg" style="border: solid white; color: white;">Crear</button>
+          <% end %>
+        </div>
+        <div class="col-lg-4" style="background-color: rgba(0,0,0,0.3)">
+          <br>
+          <%= image_tag("icon-event-search.png", class: "img-circle", alt: "Mis vehículos", width: "140", height: "140") %>
+          <h2>Buscar ruta</h2>
+          <p>Si buscas un viaje más seguro, cómodo y en buena compañía, accede a alguno de los eventos creados por miembros de la Universidad Nacional de Colombia.</p>
+            <button id="submitRegister" class="btn btn-primary btn-lg" style="border: solid white; color: white;" onclick="document.getElementById('myModal-Route').style.display='block'">Buscar</button>
+        </div>
+      </div>
 </div>
 
-<div class="container-fluid" style="height: 95%;">
-  <div class="row">
-    <div class="col-sm-4">
-    	<div class="row">
-        	<div class="col-sm-2" >
-        	     <div class="item">
-                    <%= image_tag("unal.png", alt: 'Escudo Unal') %>
-                 </div>
-        	</div>
-            <div class="col-sm-12" >
-               
-              <br> <br>
-              <br> <br>
-              <%= link_to "Crear evento", "/usuario/crear_evento", class: "btn btn-info btn-lg", type: "button"  %> 
-              <br> <br>
-              <%= link_to "Buscar evento", "#", class: "btn btn-info btn-lg", type: "button"  %> 
-	        </div>
-            <div class="col-sm-4" ></div>
-        </div>
-	</div>
-
-    <div class="col-sm-4">
-        <br>
-        <div class="container">
-            <h3>Funcionalidades</h3>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#myCarousel" data-slide-to="1"></li>
-                  <li data-target="#myCarousel" data-slide-to="2"></li>
-                  <li data-target="#myCarousel" data-slide-to="3"></li>
-                </ol>
-    
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-            
-                  <div class="item active">
-                    <%= image_tag("carousel1.png", alt: 'Crear evento',style: "width:100%;") %>
-                    <div class="carousel-caption">
-                      <h3>Crear evento</h3>
-                     </div>
-                  </div>
-    
-                  <div class="item">
-                    <%= image_tag("carousel2.png", alt: 'Seleccion de puntos',style: "width:100%;") %>
-                    <div class="carousel-caption">
-                      <h3>Seleccionar puntos de partida y destino</h3>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <%= image_tag("carousel3.png", alt: 'Buscar evento',style: "width:100%;") %>
-                    <div class="carousel-caption">
-                      <h3>Buscar evento</h3>
-                    </div>
-                  </div>
-                
-                  <div class="item">
-                    <%= image_tag("carousel4.png", alt: 'Perfil',style: "width:100%;") %>
-                    <div class="carousel-caption">
-                      <h3>Perfil</h3>
-                    </div>
-                  </div>
-               </div>
-    
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
+<div id="myModal-Route" class="modal" role="dialog" style="overflow-y: auto; background-color: rgba(0, 0, 0, 0.7);">
+  <div class="modal-dialog" style="top: 10%;">
+    <div class="wthree-form" id="myModalRegister" style="width: 80%; background-color: rgba(0, 0, 0, 0.9);">
+      <button type="button btn-lg" class="close">
+        <span class="close glyphicon glyphicon-remove-sign" onclick="document.getElementById('myModal-Route').style.display='none'"></span>
+      </button>
+      <h3 style="text-align: center;">Buscador de rutas</h2>
+      <hr>
+      <div class="w3l-login form">
+        <%= link_to "/#" do %>
+          <button id="submitRegister" class="btn btn-primary btn-lg" style="border: solid white; color: white; width: 50%;">Mis rutas</button>
+        <% end %>
+        </br>
+        <%= link_to "/routes" do %>
+          <button id="submitRegister" class="btn btn-primary btn-lg" style="border: solid white; color: white; width: 50%;">Otras rutas</button>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-               
-            </div>
-            <div class="col-md-4">
-                <ul class="list-inline social-buttons">
-                    <li class="list-inline-item">
-                        <a href="http://unal.edu.co/" target="_blank">Universidad Nacional de Colombia</a> <br>
-                        <span class="copyright">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-           
-            </div>
-        </div>
-    </div>
-</footer>

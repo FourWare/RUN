@@ -1,58 +1,103 @@
-<div class="container" style="overflow-y: auto;">
-    <div class="modal-dialog">
-        <div class="wthree-form" id="myModalRegister" style="width: 80%;">
-		    <h2 style="text-align: center; font-size: ">Editar perfil <%= current_user.nick %> </h2>
-		    <div class="w3l-login form">
-		        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-				    <%= devise_error_messages! %>
-				    <div class="form-sub-w3">
-				        <br></br>
-				        <p>Nombre</p>
-			        	<%= f.text_field :name, id: 'usernameRegister', value: current_user.name, autofocus: true, type: 'text', required: "" %>
-			      	</div>
-			      	
-			      	<div class="form-sub-w3">
-			      	    <p>Carrera</p>
-			        	<%= f.text_field :career, id: 'usernameRegister', autofocus: true,  value: current_user.career, type: 'text' %>
-			      	</div>
-			      	
-			      	<div class="form-sub-w3">
-			      	    <%= f.label :Fecha_de_nacimiento %>
-			        	<%= f.text_field :date_of_birth, id: 'usernameRegister', autofocus: true,  value: current_user.date_of_birth, type: 'text' %>
-			      	</div>
-			      	
-			      	<div class="form-sub-w3">
-			      	    <p>Contraseña <i>(Déjalo en blanco si no quieres cambiarla.)</i></p>
-			        	<%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister' %>
+</br>
+<div class="container" style="background-color: rgba(0,0,0,0.7)">
+    <h2 style="text-align: center;">Editar perfil</h2>
+  	<hr>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+	  <%= devise_error_messages! %>
+  	<div class="row">
+        <div class="col-md-3">
+          <div class="text-center">
+            
+            <% if current_user.avatar.present? == false %>
+              <%= image_tag("default-avatar.jpg", width: '250', height: '250', class: 'image-circle') %>
+            <% else %>
+              <%= image_tag(current_user.avatar, width: '250', height: '250', class: 'image-circle') %>
+            <% end %>
+            <em style="color: white; display: block;">Si deseas, cambia tu foto de perfil.</em>
+  					<%= f.label :avatar, class: "carrier-wave-field" do %>
+  					  <%= f.file_field :avatar %>
+  		    		<%= f.hidden_field :avatar_cache %>
+  		      <% end %>
+          </div>
+        </div>
+        
+        <div class="col-md-9 personal-info">
+          <h3>Información personal</h3>
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <div class="col-lg-12">
+                <label class="col-lg-2 control-label"></br>Nick:</label>
+                <%= f.text_field :nick, class: "form-control", id: 'usernameRegister', value: current_user.nick, autofocus: true, type: 'text', readonly: true, required: "" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-12">
+                <label class="col-lg-2 control-label"></br>Nombre:</label>
+                <%= f.text_field :name, class: "form-control", id: 'usernameRegister', value: current_user.name, autofocus: true, type: 'text', required: "" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-12">
+                <label class="col-lg-2 control-label"></br>Carrera:</label>
+                <%= f.text_field :career, class: "form-control", id: 'usernameRegister', value: current_user.career, autofocus: true, type: 'text', required: "" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-12">
+                <label class="col-lg-2 control-label">Fecha de nacimiento:</label>
+                <%= f.text_field :date_of_birth, class: "form-control", id: 'usernameRegister', value: current_user.date_of_birth, autofocus: true, type: 'text', required: "" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-12 control-label">Para cambiar tu contraseña, llena los siguientes espacios. <i>(Déjalo en blanco si no quieres cambiarla.)</label> </br>
+              <div class="col-lg-12">
+                <label class="col-lg-2 control-label">Nueva contraseña:</label>
+                <%= f.password_field :password, class: "form-control", autocomplete: "off", type: 'password', id: 'passwordRegister' %>
 			        	<% if @minimum_password_length %>
-			        	    <br />
-                                <em><%= @minimum_password_length %> characters minimum</em>
-                        <% end %>
-			      	</div>
-			      	
-			      	<div class="form-sub-w3 form-group clearfix">
-			      	    <label>Confirmar contraseña</label>
-			        	<%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister' %>
-			      	</div>
-			      	
-			      	<div class="form-sub-w3 form-group clearfix">
-			      	    <label>Contraseña actual <i>(Necesitamos tu contraseña actual para confirmar cambios.)</i></label>
-			        	<%= f.password_field :current_password, autocomplete: "off", type: 'password', id: 'passwordRegister' %>
-			      	</div>
-			      	<div class="actions submit-agileits">
-			        	<%= f.submit "Guardar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block' %>
-					</div>
-					<%= link_to "/" do %>
-                        <%= f.submit "Cancelar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block' %>
-                    <% end %>
-		      	<% end %>
-		      	
-		      	<h3>Eliminar cuenta</h3>
-                <p>¿Inconforme? 
-                    <%= button_to "Eliminar", registration_path(resource_name), data: { confirm: "¿Estás seguro?" }, method: :delete,  id: "submitRegister", class: "btn btn-primary btn-lg" %>
-                </p>
-		      	
-			</div>
-		</div>
-  	</div>    
+			        	  <br />
+                  <em><%= @minimum_password_length %> characters minimum</em>
+                <% end %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-12">
+                <label class="col-lg-2 control-label">Confirmar nueva contraseña:</label>
+                <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off", type: 'password', id: 'passwordRegister' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-12 control-label">Para confirmar tus cambios, ingresa tu contraseña actual.</label> </br>
+              <div class="col-lg-12">
+                <label class="col-lg-2 control-label">Contraseña actual:</label>
+                <%= f.password_field :current_password, class: "form-control", autocomplete: "off", type: 'password', id: 'passwordRegister' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-3">
+              </div>
+              <div class="col-lg-3">
+                <%= f.submit "Guardar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style: "width: 100%;" %>
+              </div>
+              <div class="col-lg-3">
+                <%= link_to "/" do %>
+                  <%= f.submit "Cancelar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style: "width: 100%;" %>
+                <% end %>
+              </div>
+              <div class="col-lg-3">
+              </div>
+            </div>
+          </form>
+        </div>
+    </div>
+  <% end %>
+  <hr>
+  <h3>Eliminar cuenta</h3>
+  <p>¿Estás inconforme con RunApp? En el siguiente botón podrás eliminar tu cuenta. 
+    <%= button_to "Eliminar cuenta", registration_path(resource_name), data: { confirm: "¿Estás seguro?" }, method: :delete,  id: "submitRegister", class: "btn btn-primary", style: "width: 12em; font-size: 1em;" %>
+  </p>
+  <div class="alert alert-warning alert-dismissable">
+    <a class="panel-close close" data-dismiss="alert">×</a> 
+    <i class="fa fa-coffee"></i>
+    <strong>¡Atención!</strong> Si eliminas tu cuenta se perderán todos tus datos.
+  </div>
 </div>

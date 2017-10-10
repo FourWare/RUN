@@ -1,22 +1,22 @@
-<div class="container" style="background-color: rgba(0, 0, 0, 0.7);">
-    <div class="wthree-form" id="myModalRegister" style="width: 40%; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-        <h3 style="text-align: center;">Recupera tu contraseña</h3>
-        <div class="w3l-login form">
-            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-            <%= devise_error_messages! %>
-
-                <div class="form-sub-w3">
-	                <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
+<div class="container" style="overflow-y: auto;" >
+    <div class="modal-dialog">
+        <div class="wthree-form" id="myModalRegister" style="width: 100%; background-color: rgba(0, 0, 0, 0.9)">
+		    <h2 style="text-align: center; font-size: ">Recupera tu contraseña</h2>
+		    <div class="w3l-login form">
+		        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                    <%= devise_error_messages! %>
+                    <div class="form-sub-w3">
+	                    <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
+	                </div>
+                    <div class="actions submit-agileits">
+	                    <%= f.submit "Recuperar", id: "submitRegister", class: "btn btn-success btn-lg", type: 'submit' %>
+	                </div>
+                <% end %>
+                <div class="devise-links">
+                    <%= link_to "¿Ya eres miembro de RunApp? Ingresa", new_session_path(resource_name) %><br />  
+            	    <%= link_to "¿Eres nuevo en RunApp? Regístrate", new_registration_path(resource_name) %><br />
 	            </div>
-            
-                <div class="actions submit-agileits">
-	                <%= f.submit "Recuperar", id: "submitRegister", class: "btn btn-success btn-lg", type: 'submit' %>
-	            </div>
-            <% end %>
-            <div class="devise-links">
-                <%= link_to "¿Ya eres miembro de RunApp? Ingresa", new_session_path(resource_name) %><br />  
-            	<%= link_to "¿Eres nuevo en RunApp? Regístrate", new_registration_path(resource_name) %><br />
-	        </div>
+		    </div>
 		</div>
     </div>
 </div>
