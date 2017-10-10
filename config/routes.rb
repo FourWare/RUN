@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :cars
   get 'users/myCars'
 
   get '/contactanos' => 'users#create_contactanos'

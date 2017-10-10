@@ -27,14 +27,22 @@ input[type=submit]:hover {
 
 
 </style>
-<div class="container" style="overflow-y: auto;"  style="width: 50%"> 
+<div class="container" style="overflow-y: auto;color:white"  style="width: 50%"> 
 
     <br><br><br>
-    <h3>Mis vehículo</h3>
-    
-    <div style="width: 50%">
-      <form >
-        <label for="fname">Placa </label>
+    <h2 >Mis vehículos</h2>
+    <br><br><br>
+    <div style="width: 30%">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+        <h3>¿Quieres agregar un vehículo nuevo ?</h3>
+        <br>
+        
+        <div class="form-sub-w3">
+  			<br></br>
+  		    <label for="placa" >Placa </label>
+  			<%= f.text_field :placa, id: 'PlacaVehiculo', value: current_user.name, autofocus: true, type: 'text', required: "" %>
+  	    </div>
         <input type="text" id="fname" name="Placa" >
     
         <label for="tipo">Marca</label>
@@ -54,7 +62,7 @@ input[type=submit]:hover {
         </select>
              <br>
             <br>
-        <input type="submit" value="Submit" style="backgroundcolor: blue">
+        <input type="submit" value="Agregar Vehiculo" >
         
       </form>
     </div>
