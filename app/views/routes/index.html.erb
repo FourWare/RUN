@@ -1,0 +1,45 @@
+<h1 style="color: #155892;">Rutas creadas por otros usuarios</h1>
+
+<div class="container table-responsive" style="background-color: lightgray; padding: 1%; width: 95%;">
+  <table class="table table-striped table-bordered table-hover" style="border: solid black; ">
+    <thead style="background-color: #373a3c; color: white;">
+      <tr>
+        <th style="text-align:center;">Título</th>
+        <th style="text-align:center;">Descripción</th>
+        <th style="text-align:center;">Latitud origen</th>
+        <th style="text-align:center;">Longitud origen</th>
+        <th style="text-align:center;">Latitud destino</th>
+        <th style="text-align:center;">Longitud destino</th>
+        <th style="text-align:center;">Puntos de recorrido</th>
+        <th style="text-align:center;">Costo</th>
+        <th style="text-align:center;">Salida</th>
+        <th style="text-align:center;" colspan="3">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @routes.each do |route| %>
+        <tr>
+          <td style="text-align:center; color: black;"><%= route.title %></td>
+          <td style="text-align:center; color: black;"><%= route.description %></td>
+          <td style="text-align:center; color: black;"><%= route.from_lat %></td>
+          <td style="text-align:center; color: black;"><%= route.from_lng %></td>
+          <td style="text-align:center; color: black;"><%= route.to_lat %></td>
+          <td style="text-align:center; color: black;"><%= route.to_lng %></td>
+          <td style="text-align:center; color: black;"><%= route.waypoints %></td>
+          <td style="text-align:center; color: black;">$<%= route.cost %></td>
+          <td style="text-align:center; color: black;"><%= route.departure %></td>
+          <td style="text-align:center; color: black;"><%= link_to 'Ver', route %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</br>
+
+<p id="notice"><%= notice %></p>
+
+<%= will_paginate @routes, 
+  renderer: BootstrapPagination::Rails, 
+  :previous_label => "Anterior",
+  :next_label => "Siguiente" 
+%>
