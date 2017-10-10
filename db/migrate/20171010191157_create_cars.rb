@@ -8,7 +8,7 @@ class CreateCars < ActiveRecord::Migration[5.1]
       t.integer :capacidad
 
       t.timestamps
-      self.primary_key = "placa"
+      #self.primary_key = :placa
     end
   end
 end

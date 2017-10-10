@@ -1,0 +1,531 @@
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRoutes (20171004195529)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "routes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "from_lat" float, "from_lng" float, "to_lat" float, "to_lng" float, "waypoints" json, "departure" datetime, "cost" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171004195529"]]
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCars (20171010191157)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCars (20171010191157)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCars (20171010191157)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCars (20171010191157)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "cars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "placa" varchar, "tipo" varchar, "modelo" varchar, "color" varchar, "capacidad" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171010191157"]]
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/cars" for 190.84.108.15 at 2017-10-10 20:28:45 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 1153ms (Views: 1130.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/cars/new" for 190.84.108.15 at 2017-10-10 20:29:03 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/_form.html.erb (906.1ms)
+  Rendered cars/new.html.erb within layouts/application (909.7ms)
+Completed 200 OK in 1221ms (Views: 1150.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/cars" for 190.84.108.15 at 2017-10-10 20:29:43 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pw4AAFlFdLUY/kE8PUYfV/GMO/N8mX+qa+Cmxfqx9Kc7J7tze84IJAr82eWXkIxOd/w/+Jllol4VzqkLc2Zp7Q==", "car"=>{"placa"=>"vh4", "tipo"=>"carro", "modelo"=>"95", "color"=>"rojo", "capacidad"=>"3"}, "commit"=>"Create Car"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "cars" ("placa", "tipo", "modelo", "color", "capacidad", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["placa", "vh4"], ["tipo", "carro"], ["modelo", "95"], ["color", "rojo"], ["capacidad", 3], ["created_at", "2017-10-10 20:29:43.649833"], ["updated_at", "2017-10-10 20:29:43.649833"]]
+  [1m[35m (17.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-camilo-miguelangelborja.c9users.io/cars/1
+Completed 302 Found in 42ms (ActiveRecord: 19.3ms)
+
+
+Started GET "/cars/1" for 190.84.108.15 at 2017-10-10 20:29:43 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCar Load (0.6ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 132ms (Views: 114.1ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mCar Load (2.2ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddIdUserFieldToCars (20171010203217)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cars" ADD "id_user" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171010203217"]]
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mCar Load (1.9ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."nick" = ? LIMIT ?[0m  [["nick", " crcruedaal"], ["LIMIT", 11]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "crcruedaal@unal.edu.co"], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "crcruedaal@unal.edu.co"], ["LIMIT", 11]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 190.84.108.15 at 2017-10-10 20:39:41 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 175], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (428.6ms)
+Completed 200 OK in 1216ms (Views: 554.8ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/home/entrar" for 190.84.108.15 at 2017-10-10 20:40:15 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/3oCjw3mA5UJXz77v9JXYoiDRVTEW8qYVjjouCmQbeQfYchDc2ykEEL+Mw/ZoHv/HQQdwUmzzt8lrirbVC9LLw==", "user"=>{"email"=>"crcruedaal@unal.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (8.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "crcruedaal@unal.edu.co"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 61ms (ActiveRecord: 10.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/3oCjw3mA5UJXz77v9JXYoiDRVTEW8qYVjjouCmQbeQfYchDc2ykEEL+Mw/ZoHv/HQQdwUmzzt8lrirbVC9LLw==", "user"=>{"email"=>"crcruedaal@unal.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (53.2ms)
+Completed 200 OK in 709ms (Views: 472.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/registro" for 190.84.108.15 at 2017-10-10 20:40:28 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#registro as HTML
+  Rendering home/registro.html.erb within layouts/registro
+  Rendered home/registro.html.erb within layouts/registro (14.1ms)
+Completed 200 OK in 159ms (Views: 157.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home" for 190.84.108.15 at 2017-10-10 20:41:50 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8BE0Kg0gvhwLylrTkIh/QxX21JAZwW96gN0wwttSzQAQCv7mc6oZmUBrVyf2+lPegHGMBZQpaz3zS/Khpu3ryw==", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f252344a800 @tempfile=#<Tempfile:/tmp/RackMultipart20171010-5747-x3qwtc.jpg>, @original_filename="spain.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"spain.jpg\"\r\nContent-Type: image/jpeg\r\n">, "avatar_cache"=>"", "name"=>"Camilo Rueda", "nick"=>"crcruedaal", "career"=>"IngSitemas", "date_of_birth(3i)"=>"25", "date_of_birth(2i)"=>"8", "date_of_birth(1i)"=>"1993", "email"=>"crcruedaal@unal.edu.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Registrarme"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "crcruedaal@unal.edu.co"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."nick" = ? LIMIT ?[0m  [["nick", "crcruedaal"], ["LIMIT", 1]]
+  Rendering user_mailer/registration_confirmation.html.erb within layouts/mailer
+  Rendered user_mailer/registration_confirmation.html.erb within layouts/mailer (5.5ms)
+UserMailer#registration_confirmation: processed outbound mail in 435.0ms
+Sent mail to crcruedaal@unal.edu.co (2077.6ms)
+Date: Tue, 10 Oct 2017 20:41:51 +0000
+From: runappunal@gmail.com
+To: crcruedaal@unal.edu.co
+Message-ID: <59dd308fbcabd_16732728c4073668@miguelangelborja-run-app-camilo-5470997.mail>
+Subject: =?UTF-8?Q?Confirmaci=C3=B3n_de_cuenta?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:=
+//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+" />
+  <title>RunApp</title>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0"/>
+</head>
+<body style=3D"margin: 0; padding: 0;">
+    <table align=3D"center" border=3D"1" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"600">
+        <tr>
+            <td align=3D"center" bgcolor=3D"#000000" style=3D"padding: 40=
+px 0 30px 0;">
+                <img alt=3D"Creating Email Magic" width=3D"450" height=3D=
+"230" style=3D"display: block;" src=3D"https://image.ibb.co/b8OK65/backgr=
+ound_Email.jpg" />
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor=3D"#ffffff" style=3D"padding: 40px 30px 40px 30px=
+;">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%">
+                    <tr>
+                        <td style=3D"color: #153643; font-family: Arial, =
+sans-serif; font-size: 20px; line-height: 20px;">
+                            <b>Confirma tu registro a RunApp</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style=3D"padding: 20px 0 20px 0;">
+                            Bienvenido a RunApp, para acceder a nuestros =
+servicios confirma tu registro haciendo clic en el siguiente enlace:
+                            =
+
+                            <p><a href=3D"http://run-app-miguelangelborja=
+-1.c9users.io/users/zwwftzy-8slhKcInJa2MFQ/confirm_email">Confirmar regis=
+tro a RunApp.</a></p>
+                        =
+
+                            <p>Si tu no realizaste esta petici=C3=B3n, po=
+r favor ignora este mensaje.</p>
+                            =
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor=3D"#ee4c50" style=3D"padding: 30px 30px 30px 30px=
+;">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%">
+                    <tr>
+                        <td style=3D"color: #ffffff; font-family: Arial, =
+sans-serif; font-size: 14px;" width=3D"75%">
+                            Tambi=C3=A9n puedes seguir a &reg; RunApp en:=
+
+                        </td>
+                        <td align=3D"right">
+                            <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0">
+                                <tr>
+                                    <td>
+                                        <a href=3D"https://github.com/Fou=
+rWare/RUN" target=3D"_blank">
+                                            <img width=3D"38" height=3D"3=
+8" alt=3D"github" style=3D"display: block;" border=3D"0" src=3D"http://ww=
+w.freeiconspng.com/uploads/git-github-hub-icon-25.png" />
+                                        </a>
+                                    </td>
+                                    <td style=3D"font-size: 0; line-heigh=
+t: 0;" width=3D"20">&nbsp;</td>
+                                    <td>
+                                        <a href=3D"https://twitter.com/ru=
+nappUnal" target=3D"_blank">
+                                            <img width=3D"47" height=3D"4=
+7" alt=3D"twitter" style=3D"display: block;" border=3D"0" src=3D"https://=
+cdn1.iconfinder.com/data/icons/iconza-circle-social/64/697029-twitter-512=
+.png" />
+                                        </a>
+                                    </td>
+                                    <td style=3D"font-size: 0; line-heigh=
+t: 0;" width=3D"20">&nbsp;</td>
+                                    <td>
+                                        <a href=3D"https://www.facebook.c=
+om/groups/MateriasyElectivasFacilesUN2.0/" target=3D"_blank">
+                                            <img width=3D"35" height=3D"3=
+5" alt=3D"facebook" style=3D"display: block;" border=3D"0" src=3D"https:/=
+/cdn4.iconfinder.com/data/icons/miu-gloss-social/60/facebook-512.png" />
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
+  </body>
+</html>
+
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "confirm_token", "nick", "career", "date_of_birth", "avatar") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "crcruedaal@unal.edu.co"], ["encrypted_password", "$2a$11$ThR5QOZWDZOrMdaVgOoPsuDvCxATc0MM6SSsvXakqif87zuPk/xsi"], ["created_at", "2017-10-10 20:41:50.851249"], ["updated_at", "2017-10-10 20:41:50.851249"], ["name", "Camilo Rueda"], ["confirm_token", "zwwftzy-8slhKcInJa2MFQ"], ["nick", "crcruedaal"], ["career", "IngSitemas"], ["date_of_birth", "1993-08-25 00:00:00"], ["avatar", "spain.jpg"]]
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (1.7ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.4ms)
+UserMailer#welcome_email: processed outbound mail in 20.5ms
+Sent mail to crcruedaal@unal.edu.co (1020.4ms)
+Date: Tue, 10 Oct 2017 20:41:53 +0000
+From: runapp@mysite.com
+To: crcruedaal@unal.edu.co
+Message-ID: <59dd3091d5802_16732728c40738a@miguelangelborja-run-app-camilo-5470997.mail>
+Subject: Bienvenido a RunApp
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_59dd3091d3c70_16732728c4073745";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_59dd3091d3c70_16732728c4073745
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, crcruedaal@unal.edu.co
+===============================================
+ 
+You have successfully signed up to example.com.
+ 
+To login to the site, just follow this link: https://run-app-miguelangelborja-1.c9users.io/home/entrar.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_59dd3091d3c70_16732728c4073745
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http:=
+//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+" />
+  <title>RunApp</title>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0"/>
+</head>
+<body style=3D"margin: 0; padding: 0;">
+
+  <table align=3D"center" border=3D"1" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"600">
+    <tr>
+      <td align=3D"center" bgcolor=3D"#000000" style=3D"padding: 40px 0 3=
+0px 0;">
+        <img alt=3D"Creating Email Magic" width=3D"450" height=3D"230" st=
+yle=3D"display: block;" src=3D"https://image.ibb.co/b8OK65/background_Ema=
+il.jpg" />
+      </td>
+    </tr>
+    <tr>
+      <td bgcolor=3D"#ffffff" style=3D"padding: 40px 30px 40px 30px;">
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%">
+          <tr>
+            <td style=3D"color: #153643; font-family: Arial, sans-serif; =
+font-size: 20px; line-height: 20px;">
+              <b>=C2=A1Registro exitoso!</b>
+            </td>
+          </tr>
+          <tr>
+            <td style=3D"padding: 20px 0 20px 0;">
+              Hola <b style=3D"font-size: 20px;"><em>Camilo Rueda</em></b=
+>, te damos la bienvenida a RunApp. Tu registro fue exitoso.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wid=
+th=3D"100%">
+                <tr>
+                  <td width=3D"260" valign=3D"top">
+                    <table border=3D"1" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+                      <tr>
+                        <td>
+                          <a href=3D"https://run-app-miguelangelborja-1.c=
+9users.io" target=3D"_blank">
+                            <img alt=3D"Home Page RunApp" width=3D"100%" =
+height=3D"140" style=3D"display: block;" src=3D"https://www.poweredbysear=
+ch.com/wp-content/uploads/2014/05/25LandngPageElements.png" />
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style=3D"padding: 25px 0 10px 0; text-align: =
+center;">
+                          Encuentra m=C3=A1s informaci=C3=B3n en la p=C3=A1=
+gina principal de RunApp.
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td style=3D"font-size: 0; line-height: 0;" width=3D"20=
+">
+                    &nbsp;
+                  </td>
+                  <td width=3D"260" valign=3D"top">
+                    <table border=3D"1" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+                      <tr>
+                        <td>
+                          <a href=3D"https://run-app-miguelangelborja-1.c=
+9users.io/home/entrar" target=3D"_blank">
+                            <img alt=3D"Home Page RunApp" width=3D"100%" =
+height=3D"140" style=3D"display: block;" src=3D"http://www.psdgraphics.co=
+m/file/password-protected-icon.jpg" />
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style=3D"padding: 25px 0 10px 0; text-align: =
+center;">
+                          Ingresa con tu nueva cuenta a lo que te ofrece =
+RunApp.
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td bgcolor=3D"#ee4c50" style=3D"padding: 30px 30px 30px 30px;">
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%">
+          <tr>
+            <td style=3D"color: #ffffff; font-family: Arial, sans-serif; =
+font-size: 14px;" width=3D"75%">
+              Tambi=C3=A9n puedes seguir a &reg; RunApp en:
+            </td>
+            <td align=3D"right">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                <tr>
+                  <td>
+                    <a href=3D"https://github.com/FourWare/RUN" target=3D=
+"_blank">
+                      <img width=3D"38" height=3D"38" alt=3D"github" styl=
+e=3D"display: block;" border=3D"0" src=3D"http://www.freeiconspng.com/upl=
+oads/git-github-hub-icon-25.png" />
+                    </a>
+                  </td>
+                  <td style=3D"font-size: 0; line-height: 0;" width=3D"20=
+">&nbsp;</td>
+                  <td>
+                    <a href=3D"https://twitter.com/runappUnal" target=3D"=
+_blank">
+                      <img width=3D"47" height=3D"47" alt=3D"twitter" sty=
+le=3D"display: block;" border=3D"0" src=3D"https://cdn1.iconfinder.com/da=
+ta/icons/iconza-circle-social/64/697029-twitter-512.png" />
+                    </a>
+                  </td>
+                  <td style=3D"font-size: 0; line-height: 0;" width=3D"20=
+">&nbsp;</td>
+                  <td>
+                    <a href=3D"https://www.facebook.com/groups/MateriasyE=
+lectivasFacilesUN2.0/" target=3D"_blank">
+                      <img width=3D"35" height=3D"35" alt=3D"facebook" st=
+yle=3D"display: block;" border=3D"0" src=3D"https://cdn4.iconfinder.com/d=
+ata/icons/miu-gloss-social/60/facebook-512.png" />
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_59dd3091d3c70_16732728c4073745--
+
+  [1m[35m (156.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2017-10-10 20:41:55.062302"], ["last_sign_in_at", "2017-10-10 20:41:55.062302"], ["current_sign_in_ip", "190.84.108.15"], ["last_sign_in_ip", "190.84.108.15"], ["updated_at", "2017-10-10 20:41:55.063325"], ["id", 176]]
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-camilo-miguelangelborja.c9users.io/
+Completed 302 Found in 4435ms (ActiveRecord: 171.5ms)
+
+
+Started GET "/" for 190.84.108.15 at 2017-10-10 20:41:55 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (11.7ms)
+Completed 200 OK in 202ms (Views: 186.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/inicio" for 190.84.108.15 at 2017-10-10 20:41:57 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (14.2ms)
+Completed 200 OK in 330ms (Views: 326.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cars" for 190.84.108.15 at 2017-10-10 20:43:42 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 224ms (Views: 210.3ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."nick" = ? LIMIT ?[0m  [["nick", "crcruedaal"], ["LIMIT", 11]]
