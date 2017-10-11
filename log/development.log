@@ -1,0 +1,304 @@
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 06:12:59 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.3) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCars (20171010191157)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "cars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "placa" varchar, "tipo" varchar, "modelo" varchar, "color" varchar, "capacidad" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171010191157"]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIdUserFieldToCars (20171010203217)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cars" ADD "id_user" integer[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171010203217"]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddImageToCar (20171010211221)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "cars" ADD "image" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171010211221"]]
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddMarcaToCars (20171010223704)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "cars" ADD "marca" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171010223704"]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 06:13:23 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (2.9ms)
+Completed 200 OK in 644ms (Views: 594.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-11 06:13:29 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (27.2ms)
+Completed 200 OK in 706ms (Views: 195.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-11 06:13:30 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (6.6ms)
+Completed 200 OK in 76ms (Views: 74.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 06:14:30 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (1.7ms)
+Completed 200 OK in 70ms (Views: 67.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 181.130.112.86 at 2017-10-11 06:14:33 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (11.8ms)
+  Rendered cars/new.html.erb within layouts/user-layout (15.4ms)
+Completed 200 OK in 98ms (Views: 87.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 06:14:49 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (1.9ms)
+Completed 200 OK in 83ms (Views: 72.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 181.130.112.86 at 2017-10-11 06:14:50 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (13.4ms)
+  Rendered cars/new.html.erb within layouts/user-layout (14.8ms)
+Completed 200 OK in 110ms (Views: 95.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 06:15:52 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hU28U2H8oiQYutNmdMKmAULzu5F7poVoL8lkfZCFKgzwJXWA4pUBK6NkPICoBq81S7XuOu1Jo6H+TttuwfXaoA==", "car"=>{"image_cache"=>"", "placa"=>"CZY-908", "tipo"=>"Carro", "modelo"=>"2009", "marca"=>"Renault", "color"=>"Gris", "capacidad"=>"4", "id_user"=>"174"}, "commit"=>"Crear"}
+Unpermitted parameter: :image_cache
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cars" ("placa", "tipo", "modelo", "color", "capacidad", "created_at", "updated_at", "id_user", "marca") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["placa", "CZY-908"], ["tipo", "Carro"], ["modelo", "2009"], ["color", "Gris"], ["capacidad", 4], ["created_at", "2017-10-11 06:15:52.728708"], ["updated_at", "2017-10-11 06:15:52.728708"], ["id_user", 174], ["marca", "Renault"]]
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-miguelangelborja-1.c9users.io/usuario/mis-vehiculos/1
+Completed 302 Found in 35ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/usuario/mis-vehiculos/1" for 181.130.112.86 at 2017-10-11 06:15:52 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/show.html.erb within layouts/user-layout
+  Rendered cars/show.html.erb within layouts/user-layout (4.0ms)
+Completed 200 OK in 77ms (Views: 71.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 06:16:01 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (3.1ms)
+Completed 200 OK in 72ms (Views: 69.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/mis-vehiculos/1" for 181.130.112.86 at 2017-10-11 06:16:17 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/show.html.erb within layouts/user-layout
+  Rendered cars/show.html.erb within layouts/user-layout (3.7ms)
+Completed 200 OK in 74ms (Views: 71.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 06:16:21 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (3.0ms)
+Completed 200 OK in 72ms (Views: 70.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-11 06:16:41 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (4.6ms)
+Completed 200 OK in 85ms (Views: 83.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-11 06:16:41 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (7.1ms)
+Completed 200 OK in 78ms (Views: 75.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/routes/new" for 181.130.112.86 at 2017-10-11 06:16:47 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#new as HTML
+  Rendering routes/new.html.erb within layouts/user-layout
+  Rendered routes/_form.html.erb (6.8ms)
+  Rendered routes/new.html.erb within layouts/user-layout (8.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+Completed 200 OK in 90ms (Views: 76.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-11 06:16:51 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (4.3ms)
+Completed 200 OK in 78ms (Views: 75.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-11 06:16:51 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (6.8ms)
+Completed 200 OK in 78ms (Views: 76.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-11 06:16:56 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (4.4ms)
+Completed 200 OK in 411ms (Views: 70.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-11 06:16:57 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (6.9ms)
+Completed 200 OK in 81ms (Views: 78.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/routes" for 181.130.112.86 at 2017-10-11 06:17:01 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/index.html.erb within layouts/user-layout (3.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+Completed 200 OK in 90ms (Views: 85.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-11 06:17:04 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (4.2ms)
+Completed 200 OK in 72ms (Views: 69.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-11 06:17:05 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (7.1ms)
+Completed 200 OK in 76ms (Views: 73.5ms | ActiveRecord: 0.3ms)
+
+

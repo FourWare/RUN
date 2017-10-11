@@ -1,6 +1,3 @@
-editar perfil:
-
-* Configurar editar perfil para facebook
-
 * +/- Correo de confirmación de registro
 * Areglar landing page de admin
+* Funcionalidad de vehículo, antes debe estar logueado
