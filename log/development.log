@@ -7003,3 +7003,584 @@ Processing by CarsController#index as HTML
 Completed 200 OK in 133ms (Views: 130.1ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/usuario/editar_perfil" for 190.84.108.15 at 2017-10-11 05:57:41 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#editar_perfil as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering home/editar_perfil.html.erb within layouts/user-layout
+  Rendered home/editar_perfil.html.erb within layouts/user-layout (7.4ms)
+Completed 200 OK in 129ms (Views: 125.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/home/logout" for 190.84.108.15 at 2017-10-11 05:58:03 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Vvt0UpUMaujtLxzFRi9mQonLtvnSjUoG+yiR6WW3ZwSc1H9/FOWMdohCDtAO9qHFdjEuYNH0OjifNQ0UfSQOoA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-camilo-miguelangelborja.c9users.io/
+Completed 302 Found in 212ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 190.84.108.15 at 2017-10-11 05:58:03 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (54.7ms)
+Completed 200 OK in 165ms (Views: 157.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 190.84.108.15 at 2017-10-11 06:01:07 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TinscogP70wHBLzbOAP1EZhQL8YXWzeStox0zhyTJUeJ9euK0Ny8YctlwxN7IYACVjkU28q+W2dOlNVQCqa5ZQ==", "user"=>{"email"=>"crcruedaal@unal.edu.co", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "crcruedaal@unal.edu.co"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2017-10-11 06:01:07.517154"], ["updated_at", "2017-10-11 06:01:07.518946"], ["id", 176]]
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 3], ["current_sign_in_at", "2017-10-11 06:01:07.537092"], ["last_sign_in_at", "2017-10-10 20:52:34.887768"], ["updated_at", "2017-10-11 06:01:07.540448"], ["id", 176]]
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-camilo-miguelangelborja.c9users.io/
+Completed 302 Found in 228ms (ActiveRecord: 23.9ms)
+
+
+Started GET "/" for 190.84.108.15 at 2017-10-11 06:01:07 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (7.9ms)
+Completed 200 OK in 143ms (Views: 138.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/inicio" for 190.84.108.15 at 2017-10-11 06:01:09 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (12.6ms)
+Completed 200 OK in 119ms (Views: 116.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/mis-vehiculos/" for 190.84.108.15 at 2017-10-11 06:01:20 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 176]]
+  Rendered cars/index.html.erb within layouts/user-layout (4.0ms)
+Completed 200 OK in 234ms (Views: 230.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:01:23 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (12.2ms)
+  Rendered cars/new.html.erb within layouts/user-layout (14.7ms)
+Completed 200 OK in 244ms (Views: 242.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:03:38 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (23.3ms)
+  Rendered cars/new.html.erb within layouts/user-layout (24.7ms)
+Completed 200 OK in 261ms (Views: 259.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:07:13 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (19.7ms)
+  Rendered cars/new.html.erb within layouts/user-layout (21.2ms)
+Completed 200 OK in 168ms (Views: 166.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:07:41 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (7.8ms)
+  Rendered cars/new.html.erb within layouts/user-layout (9.3ms)
+Completed 200 OK in 264ms (Views: 261.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:08:47 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (18.7ms)
+  Rendered cars/new.html.erb within layouts/user-layout (20.2ms)
+Completed 200 OK in 126ms (Views: 124.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 06:09:18 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (5.7ms)
+Completed 200 OK in 137ms (Views: 133.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:11:00 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  Rendered cars/_form.html.erb (16.5ms)
+  Rendered cars/new.html.erb within layouts/user-layout (18.4ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    46:                 <br></br>
+    47:                 <%= f.text_field :tipo, class: "form-control", id: 'usernameRegister', autofocus: true, type: 'text', required: "" %>
+    48:               </div>
+    49:             <% form_for @entry do |f| %>
+    50:               <%= f.text_field :name %>
+    51:               <%= f.select :temperature, [['Hot','hot'],['Medium','medium'],['Cold','cold']] %>
+    52:               <%= f.submit %>
+  
+app/views/cars/_form.html.erb:49:in `block in _app_views_cars__form_html_erb___3168036832464102036_69886051812100'
+app/views/cars/_form.html.erb:5:in `_app_views_cars__form_html_erb___3168036832464102036_69886051812100'
+app/views/cars/new.html.erb:1:in `_app_views_cars_new_html_erb__1469395930631994680_69886051834100'
+app/controllers/cars_controller.rb:21:in `new'
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:11:22 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  Rendered cars/_form.html.erb (5.1ms)
+  Rendered cars/new.html.erb within layouts/user-layout (6.4ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    46:                 <br></br>
+    47:                 <%= f.text_field :tipo, class: "form-control", id: 'usernameRegister', autofocus: true, type: 'text', required: "" %>
+    48:               </div>
+    49:             <% form_for @cars do |f| %>
+    50:               <%= f.text_field :name %>
+    51:               <%= f.select :temperature, [['Hot','hot'],['Medium','medium'],['Cold','cold']] %>
+    52:               <%= f.submit %>
+  
+app/views/cars/_form.html.erb:49:in `block in _app_views_cars__form_html_erb___3168036832464102036_69886050881400'
+app/views/cars/_form.html.erb:5:in `_app_views_cars__form_html_erb___3168036832464102036_69886050881400'
+app/views/cars/new.html.erb:1:in `_app_views_cars_new_html_erb__1469395930631994680_69886050945560'
+app/controllers/cars_controller.rb:21:in `new'
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:12:27 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (36.2ms)
+  Rendered cars/new.html.erb within layouts/user-layout (42.1ms)
+Completed 200 OK in 315ms (Views: 313.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:13:46 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (7.3ms)
+  Rendered cars/new.html.erb within layouts/user-layout (8.5ms)
+Completed 200 OK in 212ms (Views: 211.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:14:15 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  Rendered cars/_form.html.erb (2.2ms)
+  Rendered cars/new.html.erb within layouts/user-layout (4.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/cars/_form.html.erb:48: syntax error, unexpected keyword_class, expecting ')'
+carro'],['Cold','cold']] class: "form-control", id: 'usernam
+                              ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:48: syntax error, unexpected ',', expecting ')'
+cold']] class: "form-control", id: 'usernameRegister', autof
+                              ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:48: syntax error, unexpected ',', expecting ')'
+trol", id: 'usernameRegister', autofocus: true, type: 'text'
+                              ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:48: Can't assign to true
+ameRegister', autofocus: true, type: 'text', required: "" );
+                              ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:48: syntax error, unexpected ',', expecting ')'
+autofocus: true, type: 'text', required: "" );@output_buffer
+                              ^):
+  
+app/views/cars/_form.html.erb:48: syntax error, unexpected keyword_class, expecting ')'
+app/views/cars/_form.html.erb:48: syntax error, unexpected ',', expecting ')'
+app/views/cars/_form.html.erb:48: syntax error, unexpected ',', expecting ')'
+app/views/cars/_form.html.erb:48: Can't assign to true
+app/views/cars/_form.html.erb:48: syntax error, unexpected ',', expecting ')'
+app/views/cars/new.html.erb:1:in `_app_views_cars_new_html_erb__1469395930631994680_69886031699700'
+app/controllers/cars_controller.rb:21:in `new'
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:14:34 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (8.2ms)
+  Rendered cars/new.html.erb within layouts/user-layout (10.6ms)
+Completed 200 OK in 122ms (Views: 120.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:15:03 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  Rendered cars/_form.html.erb (1.9ms)
+  Rendered cars/new.html.erb within layouts/user-layout (3.1ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/cars/_form.html.erb:48: syntax error, unexpected ')', expecting =>
+o','carro'],['Cold','cold']] );@output_buffer.safe_append='
+                              ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:109: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:113: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:115: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/cars/_form.html.erb:48: syntax error, unexpected ')', expecting =>
+app/views/cars/_form.html.erb:109: syntax error, unexpected keyword_end, expecting ')'
+app/views/cars/_form.html.erb:113: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/cars/_form.html.erb:115: syntax error, unexpected keyword_end, expecting ')'
+app/views/cars/new.html.erb:1:in `_app_views_cars_new_html_erb__1469395930631994680_69886032530620'
+app/controllers/cars_controller.rb:21:in `new'
+Started GET "/usuario/mis-vehiculos/" for 190.84.108.15 at 2017-10-11 06:15:43 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 176]]
+  Rendered cars/index.html.erb within layouts/user-layout (2.9ms)
+Completed 200 OK in 160ms (Views: 156.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:15:49 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  Rendered cars/_form.html.erb (1.6ms)
+  Rendered cars/new.html.erb within layouts/user-layout (3.1ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/cars/_form.html.erb:48: syntax error, unexpected ')'
+ld']],class: "form-control", );@output_buffer.safe_append='
+                              ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:109: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:113: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:115: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/cars/_form.html.erb:48: syntax error, unexpected ')'
+app/views/cars/_form.html.erb:109: syntax error, unexpected keyword_end, expecting ')'
+app/views/cars/_form.html.erb:113: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/cars/_form.html.erb:115: syntax error, unexpected keyword_end, expecting ')'
+app/views/cars/new.html.erb:1:in `_app_views_cars_new_html_erb__1469395930631994680_69886052478540'
+app/controllers/cars_controller.rb:21:in `new'
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:16:23 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  Rendered cars/_form.html.erb (15.5ms)
+  Rendered cars/new.html.erb within layouts/user-layout (16.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/cars/_form.html.erb:48: syntax error, unexpected ')'
+ld']],class: "form-control", );@output_buffer.safe_append='
+                              ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:109: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:113: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:115: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/cars/_form.html.erb:48: syntax error, unexpected ')'
+app/views/cars/_form.html.erb:109: syntax error, unexpected keyword_end, expecting ')'
+app/views/cars/_form.html.erb:113: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/cars/_form.html.erb:115: syntax error, unexpected keyword_end, expecting ')'
+app/views/cars/new.html.erb:1:in `_app_views_cars_new_html_erb__1469395930631994680_10806140'
+app/controllers/cars_controller.rb:21:in `new'
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:17:29 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (7.8ms)
+  Rendered cars/new.html.erb within layouts/user-layout (9.0ms)
+Completed 200 OK in 177ms (Views: 176.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:18:04 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (11.2ms)
+  Rendered cars/new.html.erb within layouts/user-layout (12.5ms)
+Completed 200 OK in 179ms (Views: 177.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:19:21 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  Rendered cars/_form.html.erb (5.6ms)
+  Rendered cars/new.html.erb within layouts/user-layout (7.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/cars/_form.html.erb:48: syntax error, unexpected ')', expecting =>
+ntrol", [['Moto'],['Carro']] );@output_buffer.safe_append='
+                              ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:109: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:113: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:115: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/cars/_form.html.erb:48: syntax error, unexpected ')', expecting =>
+app/views/cars/_form.html.erb:109: syntax error, unexpected keyword_end, expecting ')'
+app/views/cars/_form.html.erb:113: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/cars/_form.html.erb:115: syntax error, unexpected keyword_end, expecting ')'
+app/views/cars/new.html.erb:1:in `_app_views_cars_new_html_erb__1469395930631994680_29363480'
+app/controllers/cars_controller.rb:21:in `new'
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:20:31 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (7.3ms)
+  Rendered cars/new.html.erb within layouts/user-layout (8.6ms)
+Completed 200 OK in 175ms (Views: 173.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:22:23 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  Rendered cars/_form.html.erb (10.1ms)
+  Rendered cars/new.html.erb within layouts/user-layout (13.2ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Moto):
+    44:               <div class="col-lg-6">
+    45:                 <label class="col-lg-2 control-label"></br>Tipo:</label>
+    46:                 <br></br>
+    47:                 <%= f.select :tipo,[Moto,Carro], class: "form-control", id: 'usernameRegister', autofocus: true, type: 'text', required: "" %>
+    48:                 
+    49:                 
+    50:               </div>
+  
+app/views/cars/_form.html.erb:47:in `block in _app_views_cars__form_html_erb___3168036832464102036_69886066254520'
+app/views/cars/_form.html.erb:5:in `_app_views_cars__form_html_erb___3168036832464102036_69886066254520'
+app/views/cars/new.html.erb:1:in `_app_views_cars_new_html_erb__1469395930631994680_69886066312020'
+app/controllers/cars_controller.rb:21:in `new'
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:23:52 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (7.8ms)
+  Rendered cars/new.html.erb within layouts/user-layout (9.1ms)
+Completed 200 OK in 168ms (Views: 166.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:26:55 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  Rendered cars/_form.html.erb (1.8ms)
+  Rendered cars/new.html.erb within layouts/user-layout (3.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/cars/_form.html.erb:48: syntax error, unexpected =>, expecting '}'
+['Moto'],['Carro']] {:class => "form-control date-select"});
+                              ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:48: syntax error, unexpected '}', expecting ')'
+=> "form-control date-select"});@output_buffer.safe_append='
+                              ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:109: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:113: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:115: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/cars/_form.html.erb:48: syntax error, unexpected =>, expecting '}'
+app/views/cars/_form.html.erb:48: syntax error, unexpected '}', expecting ')'
+app/views/cars/_form.html.erb:109: syntax error, unexpected keyword_end, expecting ')'
+app/views/cars/_form.html.erb:113: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/cars/_form.html.erb:115: syntax error, unexpected keyword_end, expecting ')'
+app/views/cars/new.html.erb:1:in `_app_views_cars_new_html_erb__1469395930631994680_30660640'
+app/controllers/cars_controller.rb:21:in `new'
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:27:23 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  Rendered cars/_form.html.erb (1.9ms)
+  Rendered cars/new.html.erb within layouts/user-layout (3.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/cars/_form.html.erb:48: syntax error, unexpected =>, expecting '}'
+['Moto'],['Carro']] {:class => "form-control"});@output_buff
+                              ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:48: syntax error, unexpected '}', expecting ')'
+']] {:class => "form-control"});@output_buffer.safe_append='
+                              ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:109: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:113: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:115: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/cars/_form.html.erb:48: syntax error, unexpected =>, expecting '}'
+app/views/cars/_form.html.erb:48: syntax error, unexpected '}', expecting ')'
+app/views/cars/_form.html.erb:109: syntax error, unexpected keyword_end, expecting ')'
+app/views/cars/_form.html.erb:113: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/cars/_form.html.erb:115: syntax error, unexpected keyword_end, expecting ')'
+app/views/cars/new.html.erb:1:in `_app_views_cars_new_html_erb__1469395930631994680_69886136129000'
+app/controllers/cars_controller.rb:21:in `new'
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:27:38 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  Rendered cars/_form.html.erb (1.8ms)
+  Rendered cars/new.html.erb within layouts/user-layout (3.1ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/cars/_form.html.erb:48: syntax error, unexpected =>, expecting '}'
+['Moto'],['Carro']] {:class => "form-control"});@output_buff
+                              ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:48: syntax error, unexpected '}', expecting ')'
+']] {:class => "form-control"});@output_buffer.safe_append='
+                              ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:109: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:113: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/ubuntu/workspace/app/views/cars/_form.html.erb:115: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/cars/_form.html.erb:48: syntax error, unexpected =>, expecting '}'
+app/views/cars/_form.html.erb:48: syntax error, unexpected '}', expecting ')'
+app/views/cars/_form.html.erb:109: syntax error, unexpected keyword_end, expecting ')'
+app/views/cars/_form.html.erb:113: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/cars/_form.html.erb:115: syntax error, unexpected keyword_end, expecting ')'
+app/views/cars/new.html.erb:1:in `_app_views_cars_new_html_erb__1469395930631994680_69886138257800'
+app/controllers/cars_controller.rb:21:in `new'
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:28:08 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (7.8ms)
+  Rendered cars/new.html.erb within layouts/user-layout (9.2ms)
+Completed 200 OK in 178ms (Views: 176.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:29:45 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (8.1ms)
+  Rendered cars/new.html.erb within layouts/user-layout (9.5ms)
+Completed 200 OK in 128ms (Views: 126.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:30:35 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  Rendered cars/_form.html.erb (10.7ms)
+  Rendered cars/new.html.erb within layouts/user-layout (12.5ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for [["Moto"], ["Carro"]]:Array):
+    45:                 <label class="col-lg-2 control-label"></br>Tipo:</label>
+    46:                 <br></br>
+    47:                 <%= f.text_field :tipo, class: "form-control", id: 'usernameRegister', autofocus: true, type: 'text', required: "" %>
+    48:                 <%= f.select :tipo,{:class => "form-control", :id=>'usernameRegister', :autofocus=> true, :type=>'text',:required=> ""}, [['Moto'],['Carro']]%>
+    49:                 
+    50:               </div>
+    51:             
+  
+app/views/cars/_form.html.erb:48:in `block in _app_views_cars__form_html_erb___3168036832464102036_69886041145620'
+app/views/cars/_form.html.erb:5:in `_app_views_cars__form_html_erb___3168036832464102036_69886041145620'
+app/views/cars/new.html.erb:1:in `_app_views_cars_new_html_erb__1469395930631994680_69886041600840'
+app/controllers/cars_controller.rb:21:in `new'
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 06:31:05 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (13.0ms)
+  Rendered cars/new.html.erb within layouts/user-layout (14.9ms)
+Completed 200 OK in 302ms (Views: 295.8ms | ActiveRecord: 0.6ms)
+
+
