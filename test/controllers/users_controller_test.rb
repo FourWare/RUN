@@ -20,10 +20,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get users_create_contactanos_url
     assert_response :success
   end
-  
-  test "should get myCars" do
-    get users_myCars_url
-    assert_response :success
-  end
-
 end

@@ -1,18 +1,19 @@
 Rails.application.routes.draw do
   
-  get '/home/auth/google_oauth2/callback' => 'users#show'
   resources :routes
-  get 'usuario/contactanos' => 'users#create_contactanos'
-  get 'usuario/contactanos' => 'users#new_contactanos'
-  resources :cars
-  get 'users/myCars'
-
-  get 'admin/home'
-  get 'usuario/editar_perfil' => 'home#editar_perfil'
-  get 'usuario/crear_evento' => 'users#eventCreate'
-  get 'usuario/inicio' => 'users#show'
-  get 'home/recuperacion_contrasena' => 'home#recuperacion_contrasena'
-  get 'home/registro'
+  resources :cars, :path => "usuario/mis-vehiculos", :path_names => { :new => 'crear-vehiculo', :edit => 'editar', :show => 'a' }
+  
+  get '/usuario/contactanos' => 'users#create_contactanos'
+  get '/usuario/contactanos' => 'users#new_contactanos'
+  get '/usuario/editar_perfil' => 'home#editar_perfil'
+  get '/usuario/crear_evento' => 'users#eventCreate'
+  get '/usuario/inicio' => 'users#show'
+  
+  get '/admin/home'
+  
+  get '/home/auth/google_oauth2/callback' => 'users#show'
+  get '/home/recuperacion_contrasena' => 'home#recuperacion_contrasena'
+  get '/home/registro'
   get '/home/entrar'
   
   root to: 'home#index'

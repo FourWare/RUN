@@ -4,21 +4,26 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.all
+    @cars = Car.where(:id_user => current_user.id).all
+    render :layout => 'user-layout'
   end
 
   # GET /cars/1
   # GET /cars/1.json
   def show
+    @id_user = User.find(current_user.id)
+    render :layout => 'user-layout'
   end
 
   # GET /cars/new
   def new
     @car = Car.new
+    render :layout => 'user-layout'
   end
 
   # GET /cars/1/edit
   def edit
+    render :layout => 'user-layout'
   end
 
   # POST /cars
@@ -69,6 +74,6 @@ class CarsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def car_params
-      params.require(:car).permit(:placa, :tipo, :modelo, :color, :capacidad)
+      params.require(:car).permit(:placa, :tipo, :modelo, :marca, :color, :capacidad, :image, :id_user)
     end
 end

@@ -1,42 +1,102 @@
-<%= form_with(model: car, local: true) do |form| %>
-  <% if car.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
-
-      <ul>
-      <% car.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+</br>
+<div class="container" style="background-color: rgba(0,0,0,0.7)">
+  <h2 style="text-align: center;">Crear un nuevo vehículo</h2>
+  <hr>
+  <%= form_with(model: @car,local: true) do |f| %>
+	  <% if car.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(car.errors.count, "error") %> No se pudo guardar el carro</h2>
+        <ul>
+          <% car.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  	<div class="row">
+        <div class="col-md-12">
+          <div class="text-center">
+            <% if @car.image.present? == false %>
+              <%= image_tag("default-car.jpg", width: '250', height: '250', class: 'image-circle') %>
+            <% else %>
+              <%= image_tag(@car.image, width: '250', height: '250', class: 'image-circle') %>
+            <% end %>
+            <em style="color: white; display: block;">Si deseas, cambia la foto de tu carro.</em>
+  					<%= f.label :image, class: "carrier-wave-field" do %>
+  					  <%= f.file_field :image %>
+  		    		<%= f.hidden_field :image_cache %>
+  		      <% end %>
+          </div>
+        </div>
+        
+        <div class="col-md-12 personal-info">
+          <hr>
+          <h3>Información del vehículo</h3>
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-2 control-label"></br>Placa:</label>
+                <br></br>
+                <%= f.text_field :placa, class: "form-control", id: 'usernameRegister', autofocus: true, type: 'text', required: "" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-2 control-label"></br>Tipo:</label>
+                <br></br>
+                <%= f.text_field :tipo, class: "form-control", id: 'usernameRegister', autofocus: true, type: 'text', required: "" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-2 control-label"></br>Modelo:</label>
+                <br></br>
+                <%= f.text_field :modelo, class: "form-control", id: 'usernameRegister', autofocus: true, type: 'text', required: "" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-2 control-label"></br>Marca:</label>
+                <br></br>
+                <%= f.text_field :marca, class: "form-control", id: 'usernameRegister', autofocus: true, type: 'text', required: "" %>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-2 control-label"></br>Color:</label>
+                <br></br>
+                <%= f.text_field :color, class: "form-control", id: 'usernameRegister', autofocus: true, type: 'text', required: "" %>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-2 control-label"></br>Capacidad:</label>
+                <br></br>
+                <%= f.text_field :capacidad, class: "form-control", id: 'usernameRegister', autofocus: true, type: 'text', required: "" %>
+              </div>
+            </div>
+            
+            <%= f.hidden_field :id_user, :value => current_user.id %>
+            
+            <div class="form-group">
+              <div class="col-lg-3">
+              </div>
+              <div class="col-lg-3">
+                  <%= f.submit "Crear", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style:"width: 100%;"%>
+              </div>
+              <div class="col-lg-3">
+                <%= link_to cars_path do %>
+                  <%= f.submit "Cancelar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style: "width: 100%;" %>
+                <% end %>
+              </div>
+              <div class="col-lg-3">
+              </div>
+            </div>
+          </form>
+        </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :placa %>
-    <%= form.text_field :placa, id: :car_placa %>
-  </div>
-
-  <div class="field">
-    <%= form.label :tipo %>
-    <%= form.text_field :tipo, id: :car_tipo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :modelo %>
-    <%= form.text_field :modelo, id: :car_modelo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :color %>
-    <%= form.text_field :color, id: :car_color %>
-  </div>
-
-  <div class="field">
-    <%= form.label :capacidad %>
-    <%= form.number_field :capacidad, id: :car_capacidad %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <hr>
+</div>
