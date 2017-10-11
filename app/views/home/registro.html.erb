@@ -1,6 +1,6 @@
 <div class="container" style="overflow-y: auto;" >
     <div class="modal-dialog">
-        <div class="wthree-form" id="myModalRegister" style="width: 100%;">
+        <div class="wthree-form" id="myModalRegister" style="width: 100%; background-color: rgba(0, 0, 0, 0.9)">
 		    <h2 style="text-align: center; font-size: ">Regístrate</h2>
 		    <div class="w3l-login form">
 					<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :multipart => true) do |f| %>
@@ -78,3 +78,36 @@
 		</div>
   	</div>    
 </div>
+
+	<!-- Footer -->
+    <footer style="position: relative; bottom: -5%;  background-color: rgba(255, 255, 255, 0.8);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item">
+                            <a href="http://unal.edu.co/" target="_blank">Universidad Nacional de Colombia</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item" style="color:black;">
+                            <% if user_signed_in? %>
+                                <strong  style="text-transform: capitalize;"><%= current_user.name %> (<%= current_user.provider %>)</strong> |
+                                <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+                                <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                            <% else %>
+                            	<%= link_to "/home/entrar" do %>
+                            		<li class="nav-item"><button class="btn btn-default">Entrar</button></li>
+                            	<% end %>
+                            <% end %>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
