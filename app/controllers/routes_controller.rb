@@ -4,7 +4,7 @@ class RoutesController < ApplicationController
   # GET /routes
   # GET /routes.json
   def index
-    @routes = Route.paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    @routes = Route.where.not(:id_user => current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
     #@routes = Route.all
     render :layout => 'user-layout'
   end
@@ -17,6 +17,7 @@ class RoutesController < ApplicationController
 
   # GET /routes/new
   def new
+    @myCars = Car.where(:id_user => current_user.id)
     @route = Route.new
     render :layout => 'user-layout'
   end
@@ -66,6 +67,11 @@ class RoutesController < ApplicationController
     end
   end
 
+  def show_my_routes
+    @routes = Route.where(:id_user => current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    render :layout => 'user-layout'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_route
@@ -74,6 +80,6 @@ class RoutesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def route_params
-      params.require(:route).permit(:title, :description, :from_lat, :from_lng, :to_lat, :to_lng, :waypoints, :departure, :cost)
+      params.require(:route).permit(:title, :description, :from_lat, :from_lng, :to_lat, :to_lng, :waypoints, :departure, :cost, :id_user)
     end
 end

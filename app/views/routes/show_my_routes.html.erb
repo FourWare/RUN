@@ -1,4 +1,4 @@
-<h1 style="color: #155892;">Todas las rutas</h1>
+<h1 style="color: #155892;">Mis rutas</h1>
 
 <div class="container table-responsive" style="background-color: lightgray; padding: 1%; width: 95%;">
   <table class="table table-striped table-bordered table-hover" style="border: solid black; ">
@@ -29,6 +29,9 @@
           <td style="text-align:center; color: black;">$<%= route.cost %></td>
           <td style="text-align:center; color: black;"><%= route.departure %></td>
           <td style="text-align:center; color: black;"><%= link_to 'Ver detalles', route %></td>
+          <td style="text-align:center; color: black;">
+              <%= link_to 'Eliminar', route, method: :delete, data: { confirm: '¿Estás seguro de eliminar esta ruta?' } %>
+          </td>
         </tr>
       <% end %>
     </tbody>
