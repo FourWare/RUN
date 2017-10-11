@@ -5,7 +5,6 @@ class RoutesController < ApplicationController
   # GET /routes.json
   def index
     @routes = Route.where.not(:id_user => current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
-    #@routes = Route.all
     render :layout => 'user-layout'
   end
 
