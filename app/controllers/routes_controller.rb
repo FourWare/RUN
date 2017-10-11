@@ -65,7 +65,7 @@ class RoutesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   def show_my_routes
     @routes = Route.where(:id_user => current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
     render :layout => 'user-layout'
@@ -79,6 +79,6 @@ class RoutesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def route_params
-      params.require(:route).permit(:title, :description, :from_lat, :from_lng, :to_lat, :to_lng, :waypoints, :departure, :cost, :id_user)
+      params.require(:route).permit(:title, :description, :from_lat, :from_lng, :to_lat, :to_lng, :waypoints, :departure, :cost, :id_user, :car)
     end
 end
