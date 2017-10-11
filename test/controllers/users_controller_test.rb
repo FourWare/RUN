@@ -20,5 +20,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get users_create_contactanos_url
     assert_response :success
   end
-
 end

@@ -1,53 +1,31 @@
-<div class="container" style="width:100%; padding: 0%;" style="max-width: 100%; height: 550px !important;">
+<div class="container" style="width:80%; padding: 0%;" style="max-width: 100%; height: 550px !important;">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
     </ol>
     <!-- Wrapper for slides -->
+    <br>
     <div class="carousel-inner">
       <div class="item active">
+        <%= image_tag("bienvenido.png", alt: 'Bienvenidos',style: "width:100%; height: 550px !important;") %>
+      </div>
+      <div class="item">
         <%= image_tag("carousel1.png", alt: 'Crear evento',style: "width:100%; height: 550px !important;") %>
+      </div>
+      <div class="item">
+        <%= image_tag("carousel4.png", alt: 'Crear evento',style: "width:100%; height: 550px !important;") %>
       </div>
       <div class="item">
         <%= image_tag("carousel2.png", alt: 'Buscar evento',style: "width:100%; height: 550px !important;") %>
       </div>
       <div class="item">
-        <%= image_tag("carousel3.png", alt: 'Buscar evento',style: "width:100%; height: 550px !important;") %>
+        <%= image_tag("carousel3.png", alt: 'Vehiculos',style: "width:100%; height: 550px !important;") %>
       </div>
-      <% if false %>
-      <div class="item">
-        <%= image_tag("c3.PNG", alt: 'Seleccion de puntos',style: "width:100%;") %>
-        <div class="carousel-caption">
-        
-        </div>
-      </div>
-      <div class="item">
-        <%= image_tag("c4.PNG", alt: 'Mis vehiculos',style: "width:100%;") %>
-        <div class="carousel-caption">
-        
-        </div>
-      </div>
-      <div class="item active">
-        <%= image_tag("c5.PNG", alt: 'Buscar evento',style: "width:100%;") %>
-        <div class="carousel-caption">
-        
-        </div>
-      </div>
-      <div class="item active">
-        <%= image_tag("c6.PNG", alt: 'Editar perfil',style: "width:100%;") %>
-        <div class="carousel-caption">
-        
-        </div>
-      </div>
-      <div class="item active">
-        <%= image_tag("c7.PNG", alt: 'Contactanos',style: "width:100%;") %>
-        <div class="carousel-caption">
-        
-        </div>
-      </div>
-      <% end %>
+     
     </div>
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -72,7 +50,7 @@
           <%= image_tag("icon-car.png", class: "img-circle", alt: "Mis vehículos", width: "140", height: "140") %>
           <h2>Mis vehículos</h2>
           <p>Podrás ver, agregar, eliminar y modificar tus vehículos (carros, motos, bicicletas, etc...), que compartirás con los miembros de la Universidad Nacional de Colombia.</p>
-          <%= link_to "/usuario/mis-vehículos" do %>
+          <%= link_to "/usuario/mis-vehiculos" do %>
             <button id="submitRegister" class="btn btn-primary btn-lg" style="border: solid white; color: white;">Ver</button>
           <% end %>
         </div>
