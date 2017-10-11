@@ -5312,3 +5312,1694 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 132ms (Views: 127.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/usuario/editar_perfil" for 190.84.108.15 at 2017-10-11 04:10:35 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#editar_perfil as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering home/editar_perfil.html.erb within layouts/user-layout
+  Rendered home/editar_perfil.html.erb within layouts/user-layout (19.2ms)
+Completed 200 OK in 631ms (Views: 558.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 190.84.108.15 at 2017-10-11 04:10:41 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (6.0ms)
+Completed 200 OK in 902ms (Views: 103.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/inicio" for 190.84.108.15 at 2017-10-11 04:10:42 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (107.1ms)
+Completed 200 OK in 335ms (Views: 254.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/cars" for 190.84.108.15 at 2017-10-11 04:11:25 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/cars"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/usuario/mis-veh%C3%ADculos" for 190.84.108.15 at 2017-10-11 04:11:33 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/usuario/mis-veh%C3%ADculos"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/usuario/inicio" for 190.84.108.15 at 2017-10-11 04:11:36 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (9.6ms)
+Completed 200 OK in 300ms (Views: 297.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:12:20 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (33.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 145ms (Views: 132.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/usuario/mis-vehiculos/6" for 190.84.108.15 at 2017-10-11 04:12:28 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering cars/show.html.erb within layouts/user-layout
+  Rendered cars/show.html.erb within layouts/user-layout (8.1ms)
+Completed 200 OK in 207ms (Views: 162.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:13:23 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (3.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 184ms (Views: 182.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/routes" for 190.84.108.15 at 2017-10-11 04:14:24 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/index.html.erb within layouts/user-layout (4.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 147ms (Views: 140.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 190.84.108.15 at 2017-10-11 04:19:03 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (9.1ms)
+Completed 200 OK in 891ms (Views: 128.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/inicio" for 190.84.108.15 at 2017-10-11 04:19:05 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (10.4ms)
+Completed 200 OK in 111ms (Views: 109.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/vehiculos" for 190.84.108.15 at 2017-10-11 04:19:18 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/usuario/vehiculos"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:19:34 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (3.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 187ms (Views: 185.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:22:02 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  Rendered cars/index.html.erb within layouts/user-layout (4.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    26:       </tr>
+    27:     </thead>
+    28:     <tbody>
+    29:       <% @routes.each do |route| %>
+    30:         <tr>
+    31:           <td style="text-align:center; color: black;"><%= route.title %></td>
+    32:           <td style="text-align:center; color: black;"><%= route.description %></td>
+  
+app/views/cars/index.html.erb:29:in `_app_views_cars_index_html_erb___1203315145282167483_69886036283540'
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:25:54 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (3988.2ms)
+Completed 500 Internal Server Error in 4008ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `route' for #<#<Class:0x007f1f3a523b30>:0x007f1f39e9a3e0>
+Did you mean?  _routes
+               @_routes):
+    26:           <td style="text-align:center; color: black;"><%= car.marca %></td>
+    27:           <td style="text-align:center; color: black;"><%= car.placa %></td>
+    28:           
+    29:           <td style="text-align:center; color: black;"><%= link_to 'Ver', route %></td>
+    30:         </tr>
+    31:       <% end %>
+    32:     </tbody>
+  
+app/views/cars/index.html.erb:29:in `block in _app_views_cars_index_html_erb___1203315145282167483_69886046160900'
+app/views/cars/index.html.erb:23:in `_app_views_cars_index_html_erb___1203315145282167483_69886046160900'
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:26:32 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (22.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (34.1ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 22.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Car::ActiveRecord_Relation:0x007f1f39858a18>):
+    36: 
+    37: <p id="notice"><%= notice %></p>
+    38: 
+    39: <%= will_paginate @routes, 
+    40:   renderer: BootstrapPagination::Rails, 
+    41:   :previous_label => "Anterior",
+    42:   :next_label => "Siguiente" 
+  
+app/views/cars/index.html.erb:39:in `_app_views_cars_index_html_erb___1203315145282167483_69886042834260'
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:26:50 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (3.0ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (73.7ms)
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Car::ActiveRecord_Relation:0x007f1f3c655d30>):
+    36: 
+    37: <p id="notice"><%= notice %></p>
+    38: 
+    39: <%= will_paginate @cars, 
+    40:   renderer: BootstrapPagination::Rails, 
+    41:   :previous_label => "Anterior",
+    42:   :next_label => "Siguiente" 
+  
+app/views/cars/index.html.erb:39:in `_app_views_cars_index_html_erb___1203315145282167483_69886066991140'
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:28:36 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (9.1ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (40.7ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 9.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Car::ActiveRecord_Relation:0x007f1f38b2d320>):
+    36: 
+    37: <p id="notice"><%= notice %></p>
+    38: 
+    39: <%= will_paginate @cars, 
+    40:   renderer: BootstrapPagination::Rails, 
+    41:   :previous_label => "Anterior",
+    42:   :next_label => "Siguiente" 
+  
+app/views/cars/index.html.erb:39:in `_app_views_cars_index_html_erb___1203315145282167483_69886035972200'
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:29:56 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (5.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (41.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 330ms (Views: 314.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:32:49 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  Rendered cars/index.html.erb within layouts/user-layout (540.9ms)
+Completed 500 Internal Server Error in 582ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/cars/index.html.erb:33: unknown regexp options - td
+/home/ubuntu/workspace/app/views/cars/index.html.erb:33: unmatched close parenthesis: /td>
+          <td style="text-align:center; color: black;"><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } );@output_buffer.safe_append='</
+/home/ubuntu/workspace/app/views/cars/index.html.erb:36: syntax error, unexpected '<'
+        </tr>
+         ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:38: unknown regexp options - tbdy
+/home/ubuntu/workspace/app/views/cars/index.html.erb:39: syntax error, unexpected '<'
+  </table>
+   ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:40: unknown regexp options - dv
+/home/ubuntu/workspace/app/views/cars/index.html.erb:41: syntax error, unexpected '<'
+</br>
+ ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:43: unknown regexp option - p
+/home/ubuntu/workspace/app/views/cars/index.html.erb:53: syntax error, unexpected '<'
+<h1>Cars</h1>
+ ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:58: unknown regexp options - th
+/home/ubuntu/workspace/app/views/cars/index.html.erb:59: syntax error, unexpected '<'
+      <th>Tipo</th>
+       ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:60: unknown regexp options - th
+/home/ubuntu/workspace/app/views/cars/index.html.erb:61: syntax error, unexpected '<'
+      <th>Marca</th>
+       ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:62: unknown regexp options - th
+/home/ubuntu/workspace/app/views/cars/index.html.erb:63: syntax error, unexpected '<'
+      <th>Capacidad</th>
+       ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:64: unknown regexp options - th
+/home/ubuntu/workspace/app/views/cars/index.html.erb:65: syntax error, unexpected '<'
+      <th colspan="3"></th>
+       ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:65: syntax error, unexpected '<'
+      <th colspan="3"></th>
+                       ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:66: unknown regexp options - tr
+/home/ubuntu/workspace/app/views/cars/index.html.erb:67: syntax error, unexpected '<'
+  </thead>
+   ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:72: unknown regexp options - td
+/home/ubuntu/workspace/app/views/cars/index.html.erb:73: syntax error, unexpected '<'
+        <td>'.freeze;@output_buffer.app
+         ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:74: unknown regexp options - td
+/home/ubuntu/workspace/app/views/cars/index.html.erb:75: syntax error, unexpected '<'
+        <td>'.freeze;@output_buffer.app
+         ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:76: unknown regexp options - td
+/home/ubuntu/workspace/app/views/cars/index.html.erb:77: syntax error, unexpected '<'
+        <td>'.freeze;@output_buffer.app
+         ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:78: unknown regexp options - td
+/home/ubuntu/workspace/app/views/cars/index.html.erb:79: syntax error, unexpected '<'
+        <td>'.freeze;@output_buffer.app
+         ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:79: syntax error, unexpected tCONSTANT, expecting ')'
+_buffer.append=( link_to 'Show', car );@output_buffer.safe_a
+                              ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:80: unknown regexp options - td
+/home/ubuntu/workspace/app/views/cars/index.html.erb:81: syntax error, unexpected '<'
+        <td>'.freeze;@output_buffer.app
+         ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:81: syntax error, unexpected tCONSTANT, expecting ')'
+ffer.append=( link_to 'Destroy', car, method: :delete, data:
+                              ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:81: syntax error, unexpected tCONSTANT, expecting ')'
+:delete, data: { confirm: 'Are you sure?' } );@output_buffer
+                              ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:82: unknown regexp options - tr
+/home/ubuntu/workspace/app/views/cars/index.html.erb:85: unknown regexp options - tabl
+/home/ubuntu/workspace/app/views/cars/index.html.erb:87: syntax error, unexpected '<'
+/home/ubuntu/workspace/app/views/cars/index.html.erb:89: syntax error, unexpected tCONSTANT, expecting ')'
+t_buffer.append=( link_to 'New Car', new_car_path );
+                              ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:91: unterminated string meets end of file
+/home/ubuntu/workspace/app/views/cars/index.html.erb:91: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/cars/index.html.erb:33: unknown regexp options - td
+app/views/cars/index.html.erb:33: unmatched close parenthesis: /td>
+app/views/cars/index.html.erb:36: syntax error, unexpected '<'
+app/views/cars/index.html.erb:38: unknown regexp options - tbdy
+app/views/cars/index.html.erb:39: syntax error, unexpected '<'
+app/views/cars/index.html.erb:40: unknown regexp options - dv
+app/views/cars/index.html.erb:41: syntax error, unexpected '<'
+app/views/cars/index.html.erb:43: unknown regexp option - p
+app/views/cars/index.html.erb:53: syntax error, unexpected '<'
+app/views/cars/index.html.erb:58: unknown regexp options - th
+app/views/cars/index.html.erb:59: syntax error, unexpected '<'
+app/views/cars/index.html.erb:60: unknown regexp options - th
+app/views/cars/index.html.erb:61: syntax error, unexpected '<'
+app/views/cars/index.html.erb:62: unknown regexp options - th
+app/views/cars/index.html.erb:63: syntax error, unexpected '<'
+app/views/cars/index.html.erb:64: unknown regexp options - th
+app/views/cars/index.html.erb:65: syntax error, unexpected '<'
+app/views/cars/index.html.erb:65: syntax error, unexpected '<'
+app/views/cars/index.html.erb:66: unknown regexp options - tr
+app/views/cars/index.html.erb:67: syntax error, unexpected '<'
+app/views/cars/index.html.erb:72: unknown regexp options - td
+app/views/cars/index.html.erb:73: syntax error, unexpected '<'
+app/views/cars/index.html.erb:74: unknown regexp options - td
+app/views/cars/index.html.erb:75: syntax error, unexpected '<'
+app/views/cars/index.html.erb:76: unknown regexp options - td
+app/views/cars/index.html.erb:77: syntax error, unexpected '<'
+app/views/cars/index.html.erb:78: unknown regexp options - td
+app/views/cars/index.html.erb:79: syntax error, unexpected '<'
+app/views/cars/index.html.erb:79: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/cars/index.html.erb:80: unknown regexp options - td
+app/views/cars/index.html.erb:81: syntax error, unexpected '<'
+app/views/cars/index.html.erb:81: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/cars/index.html.erb:81: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/cars/index.html.erb:82: unknown regexp options - tr
+app/views/cars/index.html.erb:85: unknown regexp options - tabl
+app/views/cars/index.html.erb:87: syntax error, unexpected '<'
+app/views/cars/index.html.erb:89: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/cars/index.html.erb:91: unterminated string meets end of file
+app/views/cars/index.html.erb:91: syntax error, unexpected end-of-input, expecting ')'
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:33:24 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  Rendered cars/index.html.erb within layouts/user-layout (11.2ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/cars/index.html.erb:33: unknown regexp options - td
+/home/ubuntu/workspace/app/views/cars/index.html.erb:33: unmatched close parenthesis: /td>
+          <td style="text-align:center; color: black;"><%=  );@output_buffer.safe_append='</
+/home/ubuntu/workspace/app/views/cars/index.html.erb:36: syntax error, unexpected '<'
+        </tr>
+         ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:38: unknown regexp options - tbdy
+/home/ubuntu/workspace/app/views/cars/index.html.erb:39: syntax error, unexpected '<'
+  </table>
+   ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:40: unknown regexp options - dv
+/home/ubuntu/workspace/app/views/cars/index.html.erb:41: syntax error, unexpected '<'
+</br>
+ ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:43: unknown regexp option - p
+/home/ubuntu/workspace/app/views/cars/index.html.erb:53: syntax error, unexpected '<'
+<h1>Cars</h1>
+ ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:58: unknown regexp options - th
+/home/ubuntu/workspace/app/views/cars/index.html.erb:59: syntax error, unexpected '<'
+      <th>Tipo</th>
+       ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:60: unknown regexp options - th
+/home/ubuntu/workspace/app/views/cars/index.html.erb:61: syntax error, unexpected '<'
+      <th>Marca</th>
+       ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:62: unknown regexp options - th
+/home/ubuntu/workspace/app/views/cars/index.html.erb:63: syntax error, unexpected '<'
+      <th>Capacidad</th>
+       ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:64: unknown regexp options - th
+/home/ubuntu/workspace/app/views/cars/index.html.erb:65: syntax error, unexpected '<'
+      <th colspan="3"></th>
+       ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:65: syntax error, unexpected '<'
+      <th colspan="3"></th>
+                       ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:66: unknown regexp options - tr
+/home/ubuntu/workspace/app/views/cars/index.html.erb:67: syntax error, unexpected '<'
+  </thead>
+   ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:72: unknown regexp options - td
+/home/ubuntu/workspace/app/views/cars/index.html.erb:73: syntax error, unexpected '<'
+        <td>'.freeze;@output_buffer.app
+         ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:74: unknown regexp options - td
+/home/ubuntu/workspace/app/views/cars/index.html.erb:75: syntax error, unexpected '<'
+        <td>'.freeze;@output_buffer.app
+         ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:76: unknown regexp options - td
+/home/ubuntu/workspace/app/views/cars/index.html.erb:77: syntax error, unexpected '<'
+        <td>'.freeze;@output_buffer.app
+         ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:78: unknown regexp options - td
+/home/ubuntu/workspace/app/views/cars/index.html.erb:79: syntax error, unexpected '<'
+        <td>'.freeze;@output_buffer.app
+         ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:79: syntax error, unexpected tCONSTANT, expecting ')'
+_buffer.append=( link_to 'Show', car );@output_buffer.safe_a
+                              ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:80: unknown regexp options - td
+/home/ubuntu/workspace/app/views/cars/index.html.erb:81: syntax error, unexpected '<'
+        <td>'.freeze;@output_buffer.app
+         ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:81: syntax error, unexpected tCONSTANT, expecting ')'
+ffer.append=( link_to 'Destroy', car, method: :delete, data:
+                              ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:81: syntax error, unexpected tCONSTANT, expecting ')'
+:delete, data: { confirm: 'Are you sure?' } );@output_buffer
+                              ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:82: unknown regexp options - tr
+/home/ubuntu/workspace/app/views/cars/index.html.erb:85: unknown regexp options - tabl
+/home/ubuntu/workspace/app/views/cars/index.html.erb:87: syntax error, unexpected '<'
+/home/ubuntu/workspace/app/views/cars/index.html.erb:89: syntax error, unexpected tCONSTANT, expecting ')'
+t_buffer.append=( link_to 'New Car', new_car_path );
+                              ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:91: unterminated string meets end of file
+/home/ubuntu/workspace/app/views/cars/index.html.erb:91: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/cars/index.html.erb:33: unknown regexp options - td
+app/views/cars/index.html.erb:33: unmatched close parenthesis: /td>
+app/views/cars/index.html.erb:36: syntax error, unexpected '<'
+app/views/cars/index.html.erb:38: unknown regexp options - tbdy
+app/views/cars/index.html.erb:39: syntax error, unexpected '<'
+app/views/cars/index.html.erb:40: unknown regexp options - dv
+app/views/cars/index.html.erb:41: syntax error, unexpected '<'
+app/views/cars/index.html.erb:43: unknown regexp option - p
+app/views/cars/index.html.erb:53: syntax error, unexpected '<'
+app/views/cars/index.html.erb:58: unknown regexp options - th
+app/views/cars/index.html.erb:59: syntax error, unexpected '<'
+app/views/cars/index.html.erb:60: unknown regexp options - th
+app/views/cars/index.html.erb:61: syntax error, unexpected '<'
+app/views/cars/index.html.erb:62: unknown regexp options - th
+app/views/cars/index.html.erb:63: syntax error, unexpected '<'
+app/views/cars/index.html.erb:64: unknown regexp options - th
+app/views/cars/index.html.erb:65: syntax error, unexpected '<'
+app/views/cars/index.html.erb:65: syntax error, unexpected '<'
+app/views/cars/index.html.erb:66: unknown regexp options - tr
+app/views/cars/index.html.erb:67: syntax error, unexpected '<'
+app/views/cars/index.html.erb:72: unknown regexp options - td
+app/views/cars/index.html.erb:73: syntax error, unexpected '<'
+app/views/cars/index.html.erb:74: unknown regexp options - td
+app/views/cars/index.html.erb:75: syntax error, unexpected '<'
+app/views/cars/index.html.erb:76: unknown regexp options - td
+app/views/cars/index.html.erb:77: syntax error, unexpected '<'
+app/views/cars/index.html.erb:78: unknown regexp options - td
+app/views/cars/index.html.erb:79: syntax error, unexpected '<'
+app/views/cars/index.html.erb:79: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/cars/index.html.erb:80: unknown regexp options - td
+app/views/cars/index.html.erb:81: syntax error, unexpected '<'
+app/views/cars/index.html.erb:81: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/cars/index.html.erb:81: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/cars/index.html.erb:82: unknown regexp options - tr
+app/views/cars/index.html.erb:85: unknown regexp options - tabl
+app/views/cars/index.html.erb:87: syntax error, unexpected '<'
+app/views/cars/index.html.erb:89: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/cars/index.html.erb:91: unterminated string meets end of file
+app/views/cars/index.html.erb:91: syntax error, unexpected end-of-input, expecting ')'
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:33:39 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  Rendered cars/index.html.erb within layouts/user-layout (28.5ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/cars/index.html.erb:36: unknown regexp options - tr
+/home/ubuntu/workspace/app/views/cars/index.html.erb:37: syntax error, unexpected '<'
+      <% end );@output_buffer.safe_ap
+       ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:70: syntax error, unexpected keyword_do_block, expecting keyword_end
+'.freeze;     @cars.each do |car| 
+                           ^
+/home/ubuntu/workspace/app/views/cars/index.html.erb:92: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/cars/index.html.erb:36: unknown regexp options - tr
+app/views/cars/index.html.erb:37: syntax error, unexpected '<'
+app/views/cars/index.html.erb:70: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/cars/index.html.erb:92: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:34:03 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (4.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 140ms (Views: 137.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuario/mis-vehiculos/6" for 190.84.108.15 at 2017-10-11 04:34:18 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCar Load (53.9ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering cars/show.html.erb within layouts/user-layout
+  Rendered cars/show.html.erb within layouts/user-layout (94.6ms)
+Completed 200 OK in 349ms (Views: 238.4ms | ActiveRecord: 54.8ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:34:59 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (5.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 120ms (Views: 118.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:35:56 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (6.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 275ms (Views: 272.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:37:29 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (8.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 173ms (Views: 170.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:39:44 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (7.8ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    24:       <% @cars.each do |car| %>
+    25:         <tr>
+    26:           <td style="text-align:center; color: black;">
+    27:             <% if @car.image.present? == false %>
+    28:               <%= image_tag("default-avatar.jpg", width: '550', height: '300', class: 'image-circle') %>
+    29:             <% else %>
+    30:               <%= image_tag(@car.image, width: '550', height: '300', class: 'image-circle') %>
+  
+app/views/cars/index.html.erb:27:in `block in _app_views_cars_index_html_erb___1203315145282167483_69886038981900'
+app/views/cars/index.html.erb:24:in `_app_views_cars_index_html_erb___1203315145282167483_69886038981900'
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:40:35 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (7.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 191ms (Views: 189.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:41:23 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (13.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 135ms (Views: 132.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:41:35 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (8.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 116ms (Views: 114.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:43:10 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (6.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 109ms (Views: 107.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:43:40 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (9.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 279ms (Views: 276.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:43:57 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (5.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 169ms (Views: 167.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:44:14 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (7.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 118ms (Views: 116.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:45:40 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  Rendered cars/index.html.erb within layouts/user-layout (1.5ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/cars/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/cars/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:46:25 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  Rendered cars/index.html.erb within layouts/user-layout (4.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/cars/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/cars/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:47:05 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (446.7ms)
+Completed 500 Internal Server Error in 449ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00000002dc4068>:0x007f1f394a5470>):
+    51: 
+    52: <div class="col-lg-3">
+    53:     <%= link_to cars_path do %>
+    54:     <%= f.submit "Volver", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style: "width: 100%;" %>
+    55:     <% end %>
+    56: </div>
+    57: 
+  
+app/views/cars/index.html.erb:54:in `block in _app_views_cars_index_html_erb___1203315145282167483_69886040913300'
+app/views/cars/index.html.erb:53:in `_app_views_cars_index_html_erb___1203315145282167483_69886040913300'
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:48:20 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (441.5ms)
+Completed 500 Internal Server Error in 445ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007f1f3a523b30>:0x007f1f3c890b68>):
+    42:         
+    43:         <div class="col-lg-3">
+    44:           <%= link_to cars_path do %>
+    45:           <%= f.submit "Volver", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style: "width: 100%;" %>
+    46:           <% end %>
+    47:         </div>
+    48:   
+  
+app/views/cars/index.html.erb:45:in `block (2 levels) in _app_views_cars_index_html_erb___1203315145282167483_69886068158560'
+app/views/cars/index.html.erb:44:in `block in _app_views_cars_index_html_erb___1203315145282167483_69886068158560'
+app/views/cars/index.html.erb:25:in `_app_views_cars_index_html_erb___1203315145282167483_69886068158560'
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:48:39 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (17.2ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `submit' for #<Car:0x007f1f38c28fb8>):
+    42:         
+    43:         <div class="col-lg-3">
+    44:           <%= link_to cars_path do %>
+    45:           <%= car.submit "Volver", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style: "width: 100%;" %>
+    46:           <% end %>
+    47:         </div>
+    48:   
+  
+app/views/cars/index.html.erb:45:in `block (2 levels) in _app_views_cars_index_html_erb___1203315145282167483_69886036779280'
+app/views/cars/index.html.erb:44:in `block in _app_views_cars_index_html_erb___1203315145282167483_69886036779280'
+app/views/cars/index.html.erb:25:in `_app_views_cars_index_html_erb___1203315145282167483_69886036779280'
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:49:49 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (5.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"cars", :id=>nil}, missing required keys: [:id]):
+    41:         
+    42:         
+    43:               <div class="col-lg-3">
+    44:                 <%= link_to edit_car_path(@car) do %>
+    45:                   <button id="submitRegister" class="btn btn-primary btn-lg" type='submit' display='inline-block' style="width: 100%;" >Editar</button>
+    46:                 <% end %>
+    47:               </div>
+  
+app/views/cars/index.html.erb:44:in `block in _app_views_cars_index_html_erb___1203315145282167483_69886038423660'
+app/views/cars/index.html.erb:25:in `_app_views_cars_index_html_erb___1203315145282167483_69886038423660'
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:50:48 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (11.9ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "/usuario/mis-vehiculos/crear-vehiculo":String):
+    41:         
+    42:         
+    43:               <div class="col-lg-3">
+    44:                 <%= link_to 'New Car', new_car_path  do %>
+    45:                   <button id="submitRegister" class="btn btn-primary btn-lg" type='submit' display='inline-block' style="width: 100%;" >Editar</button>
+    46:                 <% end %>
+    47:               </div>
+  
+app/views/cars/index.html.erb:44:in `block in _app_views_cars_index_html_erb___1203315145282167483_69885963796840'
+app/views/cars/index.html.erb:25:in `_app_views_cars_index_html_erb___1203315145282167483_69885963796840'
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:51:35 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (8.3ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "/usuario/mis-vehiculos/crear-vehiculo":String):
+    41:         
+    42:         
+    43:               <div class="col-lg-3">
+    44:                 <%= link_to 'New Car', new_car_path  do %>
+    45:                   <button id="submitRegister" class="btn btn-primary btn-lg" type='submit' display='inline-block' style="width: 100%;" >Editar</button>
+    46:                 <% end %>
+    47:               </div>
+  
+app/views/cars/index.html.erb:44:in `block in _app_views_cars_index_html_erb___1203315145282167483_69886051936200'
+app/views/cars/index.html.erb:25:in `_app_views_cars_index_html_erb___1203315145282167483_69886051936200'
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:52:18 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  Rendered cars/index.html.erb within layouts/user-layout (1.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/cars/index.html.erb:107: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/cars/index.html.erb:107: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:53:02 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (10.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "/usuario/mis-vehiculos/crear-vehiculo":String):
+    41:         
+    42:         
+    43:               <div class="col-lg-3">
+    44:                 <%= link_to 'New Car', new_car_path  do %>
+    45:                   <button id="submitRegister" class="btn btn-primary btn-lg" type='submit' display='inline-block' style="width: 100%;" >Editar</button>
+    46:                 <% end %>
+    47:               </div>
+  
+app/views/cars/index.html.erb:44:in `block in _app_views_cars_index_html_erb___1203315145282167483_69886035687560'
+app/views/cars/index.html.erb:25:in `_app_views_cars_index_html_erb___1203315145282167483_69886035687560'
+app/controllers/cars_controller.rb:8:in `index'
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:53:27 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (6.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 145ms (Views: 143.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 04:53:58 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (8.4ms)
+  Rendered cars/new.html.erb within layouts/user-layout (9.7ms)
+Completed 200 OK in 108ms (Views: 107.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:54:18 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wbFrFTvaCiIVHmxOfgd0kGlq8XJ2Mwlp8uAdPXJEpPSpQ8QKRhia3UHxHmMvjpWHa+Uv36m2t05hyP0hAjrLUA==", "car"=>{"image_cache"=>"", "placa"=>"a", "tipo"=>"b", "modelo"=>"c", "marca"=>"d", "color"=>"d", "capacidad"=>"2", "id_user"=>"176"}, "commit"=>"Crear"}
+Unpermitted parameter: :image_cache
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "cars" ("placa", "tipo", "modelo", "color", "capacidad", "created_at", "updated_at", "id_user", "marca") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["placa", "a"], ["tipo", "b"], ["modelo", "c"], ["color", "d"], ["capacidad", 2], ["created_at", "2017-10-11 04:54:18.908503"], ["updated_at", "2017-10-11 04:54:18.908503"], ["id_user", 176], ["marca", "d"]]
+  [1m[35m (20.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-camilo-miguelangelborja.c9users.io/usuario/mis-vehiculos/8
+Completed 302 Found in 34ms (ActiveRecord: 21.2ms)
+
+
+Started GET "/usuario/mis-vehiculos/8" for 190.84.108.15 at 2017-10-11 04:54:19 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering cars/show.html.erb within layouts/user-layout
+  Rendered cars/show.html.erb within layouts/user-layout (14.4ms)
+Completed 200 OK in 133ms (Views: 128.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:54:24 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (7.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 111ms (Views: 109.5ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/usuario/mis-vehiculos/8" for 190.84.108.15 at 2017-10-11 04:54:30 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"p+dR8DL74Ddg6XyM6FYqLXBO01RSlqUhQvG9BIY+86ttyFrdsxIGqQWEbpmgj+2qj7RLzVHv1R8m7CH5nq2aDw==", "id"=>"8"}
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "cars" WHERE "cars"."id" = ?[0m  [["id", 8]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-camilo-miguelangelborja.c9users.io/usuario/mis-vehiculos
+Completed 302 Found in 193ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:54:30 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (13.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 198ms (Views: 195.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:55:47 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (6.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 172ms (Views: 170.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 04:55:53 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (23.8ms)
+  Rendered cars/new.html.erb within layouts/user-layout (25.3ms)
+Completed 200 OK in 227ms (Views: 225.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:56:05 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EMYz8ETX5vA6kP1XaZTEQBohb2bQUwT40nMOl6X1DY14NJzvORV2D25/j3o4HSVXGK6xyw/Wut9BW+6L1YtiKQ==", "car"=>{"image_cache"=>"", "placa"=>"a", "tipo"=>"a", "modelo"=>"a", "marca"=>"a", "color"=>"a", "capacidad"=>"2", "id_user"=>"176"}, "commit"=>"Crear"}
+Unpermitted parameter: :image_cache
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "cars" ("placa", "tipo", "modelo", "color", "capacidad", "created_at", "updated_at", "id_user", "marca") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["placa", "a"], ["tipo", "a"], ["modelo", "a"], ["color", "a"], ["capacidad", 2], ["created_at", "2017-10-11 04:56:05.597989"], ["updated_at", "2017-10-11 04:56:05.597989"], ["id_user", 176], ["marca", "a"]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-camilo-miguelangelborja.c9users.io/usuario/mis-vehiculos/9
+Completed 302 Found in 24ms (ActiveRecord: 14.3ms)
+
+
+Started GET "/usuario/mis-vehiculos/9" for 190.84.108.15 at 2017-10-11 04:56:05 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering cars/show.html.erb within layouts/user-layout
+  Rendered cars/show.html.erb within layouts/user-layout (5.4ms)
+Completed 200 OK in 128ms (Views: 123.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:56:09 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (8.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 137ms (Views: 134.8ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/usuario/mis-vehiculos/9" for 190.84.108.15 at 2017-10-11 04:56:14 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"q4CkBOaLAPioFzNbo9JFjwG5lK5oCMod7zw9O6tfoENhr68pZ2LmZs16IU7rC4II/kMMN2txuiOLIaHGs8zJ5w==", "id"=>"9"}
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "cars" WHERE "cars"."id" = ?[0m  [["id", 9]]
+  [1m[35m (165.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-camilo-miguelangelborja.c9users.io/usuario/mis-vehiculos
+Completed 302 Found in 176ms (ActiveRecord: 166.0ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:56:14 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (8.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 132ms (Views: 130.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:56:39 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (5.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 132ms (Views: 130.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 04:56:43 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (7.2ms)
+  Rendered cars/new.html.erb within layouts/user-layout (8.5ms)
+Completed 200 OK in 177ms (Views: 175.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:56:53 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AC9lRwQKehd8fbbfPUMmscu14qIGOGiKG7RYvFid8Clo3cpYecjq6CiSxPJsysemyTo8D9m91q2InLigKOOfjQ==", "car"=>{"image_cache"=>"", "placa"=>"a", "tipo"=>"a", "modelo"=>"a", "marca"=>"a", "color"=>"a", "capacidad"=>"2", "id_user"=>"176"}, "commit"=>"Crear"}
+Unpermitted parameter: :image_cache
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cars" ("placa", "tipo", "modelo", "color", "capacidad", "created_at", "updated_at", "id_user", "marca") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["placa", "a"], ["tipo", "a"], ["modelo", "a"], ["color", "a"], ["capacidad", 2], ["created_at", "2017-10-11 04:56:53.820961"], ["updated_at", "2017-10-11 04:56:53.820961"], ["id_user", 176], ["marca", "a"]]
+  [1m[35m (45.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-camilo-miguelangelborja.c9users.io/usuario/mis-vehiculos/10
+Completed 302 Found in 52ms (ActiveRecord: 46.5ms)
+
+
+Started GET "/usuario/mis-vehiculos/10" for 190.84.108.15 at 2017-10-11 04:56:54 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering cars/show.html.erb within layouts/user-layout
+  Rendered cars/show.html.erb within layouts/user-layout (5.9ms)
+Completed 200 OK in 148ms (Views: 143.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:56:57 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (9.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 133ms (Views: 131.1ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/usuario/mis-vehiculos/10" for 190.84.108.15 at 2017-10-11 04:57:04 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pFzb5auYWqPPZRyoN5S3RBcZHRXJeyZ4s4yE33UugD1uc9DIKnG8PaoIDr1/TXDD6OOFjMoCVkbXkRgibb3pmQ==", "id"=>"10"}
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[31mDELETE FROM "cars" WHERE "cars"."id" = ?[0m  [["id", 10]]
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-camilo-miguelangelborja.c9users.io/usuario/mis-vehiculos
+Completed 302 Found in 88ms (ActiveRecord: 15.5ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 04:57:05 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.9ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (8.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 160ms (Views: 157.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-11 04:57:33 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (119.4ms)
+Completed 200 OK in 232ms (Views: 227.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 181.130.112.86 at 2017-10-11 04:57:50 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5qnWBXsKVF0I1l7ayKaEFtP0C/cETcOEtc9cPSJG6UONete+VRPcRfop1Ox3G2LTKb1fYIOaC25rD63vWxfnXA==", "user"=>{"email"=>"miaborjaac@unal.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "miaborjaac@unal.edu.co"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-10-11 04:57:50.648127"], ["last_sign_in_at", "2017-10-10 21:20:43.298910"], ["sign_in_count", 4], ["updated_at", "2017-10-11 04:57:50.649925"], ["id", 174]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-camilo-miguelangelborja.c9users.io/
+Completed 302 Found in 205ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-11 04:57:50 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (8.7ms)
+Completed 200 OK in 116ms (Views: 113.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-11 04:57:51 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (20.2ms)
+Completed 200 OK in 113ms (Views: 110.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 04:58:02 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (5.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+Completed 200 OK in 242ms (Views: 239.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:00:59 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (5.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+Completed 200 OK in 103ms (Views: 101.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 05:01:04 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (5.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 160ms (Views: 158.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:01:20 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (8.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+Completed 200 OK in 180ms (Views: 177.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:01:27 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (5.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+Completed 200 OK in 172ms (Views: 170.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 05:02:00 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (5.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 148ms (Views: 146.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 181.130.112.86 at 2017-10-11 05:02:07 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (10.6ms)
+  Rendered cars/new.html.erb within layouts/user-layout (12.6ms)
+Completed 200 OK in 262ms (Views: 259.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:02:13 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (5.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+Completed 200 OK in 187ms (Views: 185.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 05:02:40 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (5.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 251ms (Views: 249.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/editar_perfil" for 190.84.108.15 at 2017-10-11 05:05:25 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#editar_perfil as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering home/editar_perfil.html.erb within layouts/user-layout
+  Rendered home/editar_perfil.html.erb within layouts/user-layout (5.1ms)
+Completed 200 OK in 143ms (Views: 140.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 190.84.108.15 at 2017-10-11 05:05:32 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (6.1ms)
+Completed 200 OK in 123ms (Views: 120.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/inicio" for 190.84.108.15 at 2017-10-11 05:05:32 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (13.6ms)
+Completed 200 OK in 119ms (Views: 116.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/routes" for 190.84.108.15 at 2017-10-11 05:05:58 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/index.html.erb within layouts/user-layout (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 195ms (Views: 193.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 05:08:43 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (5.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 230ms (Views: 228.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 05:09:17 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (5.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 230ms (Views: 228.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:12:39 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (6.7ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (61.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+Completed 200 OK in 324ms (Views: 297.1ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 05:14:29 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (7.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (62.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 2434ms (Views: 2409.2ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/usuario/mis-vehiculos/6" for 190.84.108.15 at 2017-10-11 05:14:38 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCar Load (5.7ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering cars/show.html.erb within layouts/user-layout
+  Rendered cars/show.html.erb within layouts/user-layout (32.7ms)
+Completed 200 OK in 377ms (Views: 360.3ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 05:14:53 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.7ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (54.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+Completed 200 OK in 280ms (Views: 271.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:23:50 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (3.9ms)[0m  [1m[34mSELECT "cars".* FROM "cars"[0m
+  Rendered cars/index.html.erb within layouts/user-layout (50.6ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+Completed 200 OK in 456ms (Views: 441.0ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:26:04 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (53.2ms)
+Completed 200 OK in 353ms (Views: 274.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 05:26:38 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 176]]
+  Rendered cars/index.html.erb within layouts/user-layout (2.7ms)
+Completed 200 OK in 281ms (Views: 157.2ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 05:27:15 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (8.8ms)
+  Rendered cars/new.html.erb within layouts/user-layout (10.3ms)
+Completed 200 OK in 161ms (Views: 140.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 05:28:52 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nQhZHG5Wnekqbe+76kMpR8PR7dgfJnSlYqmqQQUY9Qf1+vYDE5QNFn6CnZa7yshQwV4zdcCjyoLxgUpddWaaow==", "car"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007f1f38f5c5e0 @tempfile=#<Tempfile:/tmp/RackMultipart20171011-12524-16giesp.jpg>, @original_filename="lambo.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"car[image]\"; filename=\"lambo.jpg\"\r\nContent-Type: image/jpeg\r\n">, "image_cache"=>"", "placa"=>"VHI 546", "tipo"=>"Carro", "modelo"=>"2013", "marca"=>"Lamborghini", "color"=>"Negro", "capacidad"=>"2", "id_user"=>"176"}, "commit"=>"Crear"}
+Unpermitted parameter: :image_cache
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "cars" ("placa", "tipo", "modelo", "color", "capacidad", "created_at", "updated_at", "id_user", "image", "marca") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["placa", "VHI 546"], ["tipo", "Carro"], ["modelo", "2013"], ["color", "Negro"], ["capacidad", 2], ["created_at", "2017-10-11 05:28:52.718895"], ["updated_at", "2017-10-11 05:28:52.718895"], ["id_user", 176], ["image", "lambo.jpg"], ["marca", "Lamborghini"]]
+  [1m[35m (16.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-camilo-miguelangelborja.c9users.io/usuario/mis-vehiculos/11
+Completed 302 Found in 35ms (ActiveRecord: 18.6ms)
+
+
+Started GET "/usuario/mis-vehiculos/11" for 190.84.108.15 at 2017-10-11 05:28:52 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering cars/show.html.erb within layouts/user-layout
+  Rendered cars/show.html.erb within layouts/user-layout (4.9ms)
+Completed 200 OK in 150ms (Views: 143.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 190.84.108.15 at 2017-10-11 05:28:57 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 176]]
+  Rendered cars/index.html.erb within layouts/user-layout (3.3ms)
+Completed 200 OK in 130ms (Views: 126.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:40:29 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (6.7ms)
+Completed 200 OK in 134ms (Views: 130.2ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mCar Load (3.5ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cars"[0m
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 181.130.112.86 at 2017-10-11 05:41:50 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (135.8ms)
+  Rendered cars/new.html.erb within layouts/user-layout (151.8ms)
+Completed 200 OK in 648ms (Views: 619.9ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-11 05:46:10 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (2736.4ms)
+Completed 200 OK in 4433ms (Views: 4185.5ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-11 05:46:16 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (105.4ms)
+Completed 200 OK in 446ms (Views: 441.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/mis-veh%C3%ADculos" for 181.130.112.86 at 2017-10-11 05:47:06 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/usuario/mis-veh%C3%ADculos"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-11 05:47:16 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (43.0ms)
+Completed 200 OK in 198ms (Views: 194.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:47:19 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (17.8ms)
+Completed 200 OK in 187ms (Views: 182.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:49:05 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (6.8ms)
+Completed 200 OK in 147ms (Views: 144.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:49:17 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (24.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (1.8ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (27.2ms)
+Completed 200 OK in 447ms (Views: 410.0ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:49:45 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (11.0ms)
+Completed 200 OK in 328ms (Views: 322.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:53:43 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (610.2ms)
+Completed 200 OK in 747ms (Views: 743.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuario/mis-vehiculos/crear-vehiculo" for 190.84.108.15 at 2017-10-11 05:54:16 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#new as HTML
+  Rendering cars/new.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered cars/_form.html.erb (19.1ms)
+  Rendered cars/new.html.erb within layouts/user-layout (20.4ms)
+Completed 200 OK in 243ms (Views: 240.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/mis-vehiculos/7" for 181.130.112.86 at 2017-10-11 05:54:31 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCar Load (1.3ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/show.html.erb within layouts/user-layout
+  Rendered cars/show.html.erb within layouts/user-layout (6.3ms)
+Completed 200 OK in 148ms (Views: 142.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/usuario/mis-vehiculos/7/editar" for 181.130.112.86 at 2017-10-11 05:54:39 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering cars/edit.html.erb within layouts/user-layout
+  Rendered cars/edit.html.erb within layouts/user-layout (10.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+Completed 200 OK in 690ms (Views: 688.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:54:49 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (282.5ms)
+Completed 200 OK in 417ms (Views: 413.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos/7" for 181.130.112.86 at 2017-10-11 05:54:54 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/show.html.erb within layouts/user-layout
+  Rendered cars/show.html.erb within layouts/user-layout (7.9ms)
+Completed 200 OK in 314ms (Views: 302.4ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:55:04 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (6.3ms)
+Completed 200 OK in 110ms (Views: 107.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:55:44 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (5.7ms)
+Completed 200 OK in 259ms (Views: 255.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/usuario/mis-vehiculos" for 181.130.112.86 at 2017-10-11 05:55:54 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CarsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering cars/index.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 174]]
+  Rendered cars/index.html.erb within layouts/user-layout (5.3ms)
+Completed 200 OK in 133ms (Views: 130.1ms | ActiveRecord: 0.7ms)
+
+

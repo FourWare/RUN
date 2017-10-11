@@ -17,7 +17,7 @@
         <div class="col-md-12">
           <div class="text-center">
             <% if @car.image.present? == false %>
-              <%= image_tag("default-avatar.jpg", width: '250', height: '250', class: 'image-circle') %>
+              <%= image_tag("default-car.jpg", width: '250', height: '250', class: 'image-circle') %>
             <% else %>
               <%= image_tag(@car.image, width: '250', height: '250', class: 'image-circle') %>
             <% end %>
