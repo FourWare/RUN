@@ -1,29 +1,105 @@
-<p id="notice"><%= notice %></p>
+</br>
+<div class="container" style="background-color: rgba(0,0,0,0.7)">
+    <h2 style="text-align: center;">Mis vehículos</h2>
+  	<hr>
+  <%= form_with(model: @car) do |f| %>
+	  <div class="row">
+        <div class="col-md-12">
+          <div class="text-center">
+            <% if @car.image.present? == false %>
+              <%= image_tag("default-avatar.jpg", width: '550', height: '300', class: 'image-circle') %>
+            <% else %>
+              <%= image_tag(@car.image, width: '550', height: '300', class: 'image-circle') %>
+            <% end %>
+          </div>
+        </div>
+        
+        <div class="col-md-12 personal-info">
+          <hr>
+          <h3>Información del vehículo</h3>
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-2 control-label"></br>Dueño:</label>
+                <br></br>
+                <%= f.text_field :name, class: "form-control", id: 'usernameRegister', value: @id_user.name, autofocus: true, type: 'text', readonly: true, style: "text-align: center" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-2 control-label"></br>Email:</label>
+                <br></br>
+                <%= f.text_field :email, class: "form-control", id: 'usernameRegister', value: @id_user.email, autofocus: true, type: 'text', readonly: true, style: "text-align: center" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-2 control-label"></br>Placa:</label>
+                <br></br>
+                <%= f.text_field :placa, class: "form-control", id: 'usernameRegister', value: @car.placa, autofocus: true, type: 'text', readonly: true, style: "text-align: center" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-2 control-label"></br>Tipo:</label>
+                <br></br>
+                <%= f.text_field :tipo, class: "form-control", id: 'usernameRegister', value: @car.tipo, autofocus: true, type: 'text', readonly: true, style: "text-align: center" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-2 control-label"></br>Marca:</label>
+                <br></br>
+                <%= f.text_field :marca, class: "form-control", id: 'usernameRegister', value: @car.marca, autofocus: true, type: 'text', readonly: true, style: "text-align: center" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-2 control-label"></br>Modelo:</label>
+                <br></br>
+                <%= f.text_field :modelo, class: "form-control", id: 'usernameRegister', value: @car.modelo, autofocus: true, type: 'text', readonly: true, style: "text-align: center" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-2 control-label"></br>Color:</label>
+                <br></br>
+                <%= f.text_field :color, class: "form-control", id: 'usernameRegister', value: @car.color, autofocus: true, type: 'text', readonly: true, style: "text-align: center" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-2 control-label"></br>Capacidad:</label>
+                <br></br>
+                <%= f.text_field :capacidad, class: "form-control", id: 'usernameRegister', value: @car.capacidad, autofocus: true, type: 'text', readonly: true, style: "text-align: center" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-3">
+              </div>
+              <div class="col-lg-3">
+                <%= link_to edit_car_path(@car) do %>
+                  <button id="submitRegister" class="btn btn-primary btn-lg" type='submit' display='inline-block' style="width: 100%;" >Editar</button>
+                <% end %>
+              </div>
+              <div class="col-lg-3">
+                <%= link_to cars_path do %>
+                  <%= f.submit "Volver", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style: "width: 100%;" %>
+                <% end %>
+              </div>
+              <div class="col-lg-3">
+              </div>
+            </div>
+          </form>
+        </div>
+    </div>
+  <% end %>
+  <hr>
+</div>
 
-<p>
-  <strong>Placa:</strong>
-  <%= @car.placa %>
-</p>
 
-<p>
-  <strong>Tipo:</strong>
-  <%= @car.tipo %>
-</p>
 
-<p>
-  <strong>Modelo:</strong>
-  <%= @car.modelo %>
-</p>
 
-<p>
-  <strong>Color:</strong>
-  <%= @car.color %>
-</p>
 
-<p>
-  <strong>Capacidad:</strong>
-  <%= @car.capacidad %>
-</p>
 
-<%= link_to 'Edit', edit_car_path(@car) %> |
-<%= link_to 'Back', cars_path %>
+

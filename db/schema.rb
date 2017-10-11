@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010203217) do
+ActiveRecord::Schema.define(version: 20171010223704) do
 
   create_table "cars", force: :cascade do |t|
     t.string "placa"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20171010203217) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "id_user"
+    t.string "image"
+    t.string "marca"
   end
 
 # Could not dump table "routes" because of following StandardError

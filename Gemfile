@@ -8,6 +8,7 @@ end
 #gemas mapas
 gem 'gmaps4rails'
 gem 'geocoder'
+
 # Gema para login
 gem 'devise'
 
@@ -17,10 +18,6 @@ gem 'faker'
 # Gema para Bootstrap
 gem 'bootstrap-sass'
 gem 'bootstrap-social-rails'
-
-gem 'gmaps4rails'
-
-gem 'geocoder'
 
 # Gema para iconos y fuentes
 gem 'font-awesome-sass', '~> 4.4.0'
@@ -38,6 +35,7 @@ gem 'mail_form'
 
 # Gema para cargar archivos
 gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
