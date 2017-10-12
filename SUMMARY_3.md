@@ -1,3 +1,5 @@
+## URL de Heroku: https://runappunal.herokuapp.com/
+
 ## Mejoras del sprint 2
 
 Miguel Angel Borja:
@@ -53,3 +55,4 @@ Santiago Márquez:
 * Calificación de pasajeros y conductores.
 * Implementación de Geocoding para la búsqueda de direcciones en google maps.
 * Implementación de filtros en el buscador de rutas.
+* Configuración login con google
