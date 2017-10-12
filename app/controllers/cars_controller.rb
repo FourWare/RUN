@@ -6,6 +6,7 @@ class CarsController < ApplicationController
   # GET /cars.json
   def index
     @cars = Car.where(:user_id => current_user.id).all
+    @countCars = Car.where(:user_id => current_user.id).count
     render :layout => 'user-layout'
   end
 

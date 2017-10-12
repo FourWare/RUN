@@ -6,6 +6,7 @@ class RoutesController < ApplicationController
   # GET /routes.json
   def index
     @routes = Route.where.not(:id_user => current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    @countRoutes = Route.where.not(:id_user => current_user.id).count
     render :layout => 'user-layout'
   end
 
@@ -13,6 +14,11 @@ class RoutesController < ApplicationController
   # GET /routes/1.json
   def show
     @extraInfoRoute = Car.joins(:user).where(:placa => @route.car).uniq
+    @join1 = Car.joins(:user).where(:marca => "Renault").uniq
+    @join2 = Car.joins(:user).where(:color => "Gris").uniq
+    @join3 = Car.joins(:user).where(:capacidad => 4).uniq
+    @join4 = Car.joins(:user).where(:tipo => "Carro").uniq
+    @join5 = Car.joins(:user).where(:tipo => "Moto").count
     render :layout => 'user-layout'
   end
 
@@ -71,6 +77,7 @@ class RoutesController < ApplicationController
   
   def show_my_routes
     @routes = Route.where(:id_user => current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    @countMyRoutes = Route.where(:id_user => current_user.id).count
     render :layout => 'user-layout'
   end
 

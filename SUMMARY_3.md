@@ -52,3 +52,4 @@ Santiago Márquez:
 * Ayuda de usuario (guia de crear eventos,buscar rutas,etc).
 * Calificación de pasajeros y conductores.
 * Implementación de Geocoding para la búsqueda de direcciones en google maps.
+* Implementación de filtros en el buscador de rutas.

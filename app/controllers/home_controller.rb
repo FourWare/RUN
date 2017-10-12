@@ -27,6 +27,7 @@ class HomeController < ApplicationController
   
   def editar_perfil
     @app = "RunApp"
+    @image = User.where(:id => current_user.id).uniq
     render :layout => 'user-layout'
   end
 end
