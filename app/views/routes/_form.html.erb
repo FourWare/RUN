@@ -26,14 +26,15 @@
               </div>
             </div>
             <br></br>
+            </br>
             <div class="form-group">
               <div class="col-lg-12">
                 <label class="col-lg-4 control-label">Descripción:</label>
                 <%= form.text_field :description, class: "form-control", id: :route_description, autofocus: true, type: 'text', required: "" %>
               </div>
             </div>
-            <!--<br></br>-->
             <br></br>
+            </br>
             <div class="form-group">
               <div class="col-lg-12">
                 <label class="col-lg-4 control-label">Costo:</label>
@@ -41,10 +42,11 @@
               </div>
             </div>
             <br></br>
+            </br>
             <div class="form-group">
               <div class="col-lg-12">
                 <label class="col-lg-4 control-label">Elige tu vehículo:</label>
-                <select name="route[car]" class="selectpicker show-tick" style="background-color: white; color: black; width: 30%; height: 100%;", required: "">
+                <select name="route[car]" style="background-color: white; color: black; width: 200px; height: 30px; display: block; border-radius: 5px;", required: "">
                   <option value=" " style="color: black;"></option>
                   <% @myCars.each do |car| %>
                     <option value=<%= car.placa %> style="color: black;"><%= car.placa %></option>

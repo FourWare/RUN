@@ -1,5 +1,4 @@
 * +/- Correo de confirmación de registro
-* Assets del mapa underscore
 * Ver detalles mapa
 * Booleano para borrar carro
 * Botón unirse a ruta
