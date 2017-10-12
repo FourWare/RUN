@@ -1,5 +1,6 @@
 class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /routes
   # GET /routes.json
@@ -24,6 +25,7 @@ class RoutesController < ApplicationController
 
   # GET /routes/1/edit
   def edit
+    @myCars = Car.where(:user_id => current_user.id)
     render :layout => 'user-layout'
   end
 

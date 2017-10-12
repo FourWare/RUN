@@ -48,51 +48,55 @@
     <div class="col-md-8 personal-info">
       <form class="form-horizontal" role="form">
         <% @extraInfoRoute.each do |info| %>
-          <div class="form-group">
-            <div class="col-lg-6">
-              <label class="col-lg-6 control-label" style="text-align: left;"></br>Placa:</label>
-              <br></br>
-              <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.placa %></textarea>
-            </div>
-            <div class="col-lg-6">
-              <label class="col-lg-6 control-label" style="text-align: left;"></br>Tipo:</label>
-              <br></br>
-              <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.tipo %></textarea>
-            </div>
-            <div class="col-lg-6">
-              <label class="col-lg-6 control-label" style="text-align: left;"></br>Marca:</label>
-              <br></br>
-              <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.marca %></textarea>
-            </div>
-            <div class="col-lg-6">
-              <label class="col-lg-6 control-label" style="text-align: left;"></br>Modelo:</label>
-              <br></br>
-              <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.modelo %></textarea>
-            </div>
-            <div class="col-lg-6">
-              <label class="col-lg-6 control-label" style="text-align: left;"></br>Color:</label>
-              <br></br>
-              <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.color %></textarea>
-            </div>
-            <div class="col-lg-6">
-              <label class="col-lg-6 control-label" style="text-align: left;"></br>Capacidad:</label>
-              <br></br>
-              <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.capacidad %></textarea>
-            </div>
-          </div>  
+          <% if info.placa == @route.car %>
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-6 control-label" style="text-align: left;"></br>Placa:</label>
+                <br></br>
+                <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.placa %></textarea>
+              </div>
+              <div class="col-lg-6">
+                <label class="col-lg-6 control-label" style="text-align: left;"></br>Tipo:</label>
+                <br></br>
+                <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.tipo %></textarea>
+              </div>
+              <div class="col-lg-6">
+                <label class="col-lg-6 control-label" style="text-align: left;"></br>Marca:</label>
+                <br></br>
+                <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.marca %></textarea>
+              </div>
+              <div class="col-lg-6">
+                <label class="col-lg-6 control-label" style="text-align: left;"></br>Modelo:</label>
+                <br></br>
+                <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.modelo %></textarea>
+              </div>
+              <div class="col-lg-6">
+                <label class="col-lg-6 control-label" style="text-align: left;"></br>Color:</label>
+                <br></br>
+                <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.color %></textarea>
+              </div>
+              <div class="col-lg-6">
+                <label class="col-lg-6 control-label" style="text-align: left;"></br>Capacidad:</label>
+                <br></br>
+                <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.capacidad %></textarea>
+              </div>
+            </div>  
+          <% end %>
         <% end %>
       </form>
     </div>
     <div class="col-md-4 personal-info">
       <br></br>
       <% @extraInfoRoute.each do |info| %>
-        <div class="text-center">
-          <% if info.image.present? == false %>
-            <%= image_tag("default-car.jpg", width: '100%', height: '250', class: 'image-circle') %>
-          <% else %>
-            <%= image_tag(info.image, width: '550', height: '300', class: 'image-circle') %>
-          <% end %>
-        </div>
+        <% if info.placa == @route.car %>
+          <div class="text-center">
+            <% if info.image.present? == false %>
+              <%= image_tag("default-car.jpg", width: '100%', height: '250', class: 'image-circle') %>
+            <% else %>
+              <%= image_tag(info.image, width: '100%', height: '250', class: 'image-circle') %>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
