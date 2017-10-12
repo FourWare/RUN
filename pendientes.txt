@@ -1,4 +1,3 @@
 * +/- Correo de confirmación de registro
-* Ver detalles mapa
 * Booleano para borrar carro
 * Botón unirse a ruta
