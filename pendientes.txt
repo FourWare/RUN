@@ -1,3 +1,5 @@
 * +/- Correo de confirmación de registro
-* Areglar landing page de admin
-* Funcionalidad de vehículo, antes debe estar logueado
+* Assets del mapa underscore
+* Ver detalles mapa
+* Booleano para borrar carro
+* Botón unirse a ruta
