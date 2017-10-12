@@ -3,86 +3,69 @@
 
 <div class="container" style="background-color: rgba(0,0,0,0.7)">
   <div class="row">
-    <div class="col-md-12 personal-info">
-      <hr>
-      <h3>Información de la ruta</h3>
+    <h3>Información de la ruta</h3>
+    <div class="col-md-6 personal-info">
       <form class="form-horizontal" role="form">
         <div class="form-group">
-          <div class="col-lg-6">
-            <label class="col-lg-6 control-label" style="text-align: left;"></br>Creador:</label>
-            <br></br>
-            <input class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center" value=<%= User.find(@route.id_user).nick %>>
-          </div>
-          <div class="col-lg-6">
-            <label class="col-lg-3 control-label" style="text-align: left;"></br>Costo($):</label>
-            <br></br>
-            <input class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center" value=<%= @route.cost %> >
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-lg-6" style="text-align: right;">
+          <div class="col-lg-12" style="text-align: right;">
             <label class="col-lg-2 control-label" style="text-align: left;"></br>Título:</label>
             <br></br>
-            <input class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center" value=<%= @route.title %>>
+            <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= @route.title %></textarea>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-12">
             <label class="col-lg-2 control-label" style="text-align: left;"></br>Descripción:</label>
             <br></br>
-            <textarea rows="2" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%;" ><%= @route.description %></textarea>
+            <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= @route.description %></textarea>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="col-lg-6">
-            <label class="col-lg-3 control-label" style="text-align: left;"></br>Latitud origen:</label>
+          <div class="col-lg-12">
+            <label class="col-lg-6 control-label" style="text-align: left;"></br>Creador:</label>
             <br></br>
-            <input class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center" value=<%= @route.from_lat %>>
+            <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= User.find(@route.id_user).nick %></textarea>
           </div>
-          <div class="col-lg-6">
-            <label class="col-lg-4 control-label" style="text-align: left;"></br>Longitud origen:</label>
+          <div class="col-lg-12">
+            <label class="col-lg-3 control-label" style="text-align: left;"></br>Costo($):</label>
             <br></br>
-            <input class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center" value=<%= @route.from_lng %> >
+            <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= @route.cost %></textarea>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="col-lg-6">
-            <label class="col-lg-3 control-label" style="text-align: left;"></br>Latitud destino:</label>
-            <br></br>
-            <input class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center" value=<%= @route.to_lat %>>
-          </div>
-          <div class="col-lg-6">
-            <label class="col-lg-4 control-label" style="text-align: left;"></br>Longitud destino:</label>
-            <br></br>
-            <input class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center" value=<%= @route.to_lng %> >
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-lg-6">
-            <label class="col-lg-6 control-label" style="text-align: left;"></br>Puntos de recorrido:</label>
-            <br></br>
-            <input class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center" value=<%= @route.waypoints %>>
-          </div>
-          <div class="col-lg-6">
+          <div class="col-lg-12">
             <label class="col-lg-3 control-label" style="text-align: left;"></br>Salida:</label>
             <br></br>
-            <input class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center" value=<%= @route.departure %> >
-          </div>
-        </div>
-              <hr>
-
-        <div class="form-group">
-          <div class="col-lg-4">
-          </div>
-          <div class="col-lg-4">
-            <%= link_to routes_path do %>
-              <button id="submitRegister" class="btn btn-primary btn-lg" type='submit' display='inline-block' style="width: 100%;">Volver</button>
-            <% end %>
-          </div>
-          <div class="col-lg-4">
+            <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= @route.departure %></textarea>
           </div>
         </div>
       </form>
     </div>
+    <div class="col-md-6 personal-info">
+      
+      Aquí va el mapaaaa!!!!
+      
+      
+    </div>
   </div>
+  <hr>
+  <div class="row">
+    <h3>Información del vehículo</h3>
+    <div class="col-md-6 personal-info">
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <%= @extraInfoRoute.placa %>
+        </div>  
+      </form>
+    </div>
+    <div class="col-md-6 personal-info">
+      
+    </div>
+  </div>
+  <hr>
+  <div class="form-group">
+      <div class="col-lg-4">
+      </div>
+      <div class="col-lg-4">
+        <%= link_to "/" do %>
+          <button id="submitRegister" class="btn btn-primary btn-lg" type='submit' display='inline-block' style="width: 100%; white-space: normal;">Volver al menú</button>
+        <% end %>
+      </div>
+      <div class="col-lg-4">
+      </div>
+    </div>
 </div>
-
-<%= link_to 'Back', routes_path %>

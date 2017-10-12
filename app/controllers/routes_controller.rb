@@ -11,6 +11,7 @@ class RoutesController < ApplicationController
   # GET /routes/1
   # GET /routes/1.json
   def show
+    @extraInfoRoute = Car.joins(:user).where(:id_user => current_user.id)
     render :layout => 'user-layout'
   end
 

@@ -6081,3 +6081,2106 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 93ms (Views: 90.6ms | ActiveRecord: 0.4ms)
 
 
+  [1m[36mRoute Load (2.9ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/routes/new" for 181.130.112.86 at 2017-10-11 23:09:42 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/new.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 1]]
+  Rendered routes/_form.html.erb (1244.5ms)
+  Rendered routes/new.html.erb within layouts/user-layout (1246.8ms)
+Completed 200 OK in 2632ms (Views: 2575.6ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/routes" for 181.130.112.86 at 2017-10-11 23:11:02 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UXX8MlfQ4ySo6r2lJbK/nyCuElsjb5RhpVH/VHoCP3At9tJ7gc7qzCRCdBiaw9JGPfxRDwM8SRSc0U3jVVAZLg==", "route"=>{"title"=>"Universidad - Calle 26 ", "description"=>"Esta ruta va desde la universidad hasta la calle 26", "cost"=>"1900", "car"=>"BFU-628", "departure(3i)"=>"11", "departure(2i)"=>"10", "departure(1i)"=>"2017", "departure(4i)"=>"23", "departure(5i)"=>"09", "from_lat"=>"4.634896599999999", "from_lng"=>"-74.08221349999997", "to_lat"=>"4.6329576", "to_lng"=>"-74.08640029999998", "waypoints"=>"[]", "id_user"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "routes" ("title", "description", "from_lat", "from_lng", "to_lat", "to_lng", "waypoints", "departure", "cost", "created_at", "updated_at", "id_user", "car") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Universidad - Calle 26 "], ["description", "Esta ruta va desde la universidad hasta la calle 26"], ["from_lat", 4.634896599999999], ["from_lng", -74.08221349999997], ["to_lat", 4.6329576], ["to_lng", -74.08640029999998], ["waypoints", "[]"], ["departure", "2017-10-11 23:09:00"], ["cost", 1900.0], ["created_at", "2017-10-11 23:11:02.961831"], ["updated_at", "2017-10-11 23:11:02.961831"], ["id_user", 1], ["car", "BFU-628"]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-miguelangelborja-1.c9users.io/routes/15
+Completed 302 Found in 54ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/routes/15" for 181.130.112.86 at 2017-10-11 23:11:03 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+Started GET "/usuario/mis-rutas" for 181.130.112.86 at 2017-10-11 23:11:03 +0000
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.7ms)
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 605ms (Views: 599.7ms | ActiveRecord: 0.9ms)
+
+
+Processing by RoutesController#show_my_routes as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show_my_routes.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id_user" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["id_user", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/show_my_routes.html.erb within layouts/user-layout (153.0ms)
+Completed 200 OK in 1600ms (Views: 1562.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/routes" for 181.130.112.86 at 2017-10-11 23:11:10 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE ("routes"."id_user" != ?) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["id_user", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered routes/index.html.erb within layouts/user-layout (15.7ms)
+Completed 200 OK in 425ms (Views: 421.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-11 23:11:13 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (174.4ms)
+Completed 200 OK in 610ms (Views: 596.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-11 23:11:14 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (14.4ms)
+Completed 200 OK in 265ms (Views: 261.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/mis-rutas" for 181.130.112.86 at 2017-10-11 23:11:20 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show_my_routes as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show_my_routes.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id_user" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["id_user", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/show_my_routes.html.erb within layouts/user-layout (3.0ms)
+Completed 200 OK in 424ms (Views: 420.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/15" for 181.130.112.86 at 2017-10-11 23:11:28 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 277ms (Views: 274.6ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mRoute Load (2.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35mSQL (12.9ms)[0m  [1m[31mDELETE FROM "routes"[0m
+Started GET "/routes/15" for 181.130.112.86 at 2017-10-11 23:12:33 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+Completed 404 Not Found in 21ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Route with 'id'=15):
+  
+app/controllers/routes_controller.rb:77:in `set_route'
+Started GET "/routes" for 181.130.112.86 at 2017-10-11 23:12:37 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE ("routes"."id_user" != ?) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["id_user", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/index.html.erb within layouts/user-layout (2.5ms)
+Completed 200 OK in 469ms (Views: 435.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-11 23:12:41 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (5.4ms)
+Completed 200 OK in 584ms (Views: 87.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-11 23:12:42 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (74.7ms)
+Completed 200 OK in 197ms (Views: 163.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-11 23:13:36 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (7.2ms)
+Completed 200 OK in 126ms (Views: 123.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/routes" for 181.130.112.86 at 2017-10-11 23:15:16 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE ("routes"."id_user" != ?) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["id_user", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/index.html.erb within layouts/user-layout (1.7ms)
+Completed 200 OK in 147ms (Views: 144.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes" for 181.130.112.86 at 2017-10-11 23:15:20 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE ("routes"."id_user" != ?) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["id_user", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/index.html.erb within layouts/user-layout (3.0ms)
+Completed 200 OK in 124ms (Views: 115.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/routes" for 181.130.112.86 at 2017-10-11 23:16:14 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE ("routes"."id_user" != ?) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["id_user", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/index.html.erb within layouts/user-layout (1.8ms)
+Completed 200 OK in 87ms (Views: 83.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-11 23:17:40 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (4.8ms)
+Completed 200 OK in 444ms (Views: 83.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-11 23:17:41 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (8.9ms)
+Completed 200 OK in 200ms (Views: 197.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/routes/new" for 181.130.112.86 at 2017-10-11 23:17:46 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/new.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id_user" = ?[0m  [["id_user", 1]]
+  Rendered routes/_form.html.erb (23.0ms)
+  Rendered routes/new.html.erb within layouts/user-layout (24.7ms)
+Completed 200 OK in 144ms (Views: 120.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/routes" for 181.130.112.86 at 2017-10-11 23:18:10 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qQMx/2xQV+vP/Pr6ycUyw4we7ltXFeER0qbwrbpoU/DVgB+2uk5eA0NUM0d2tF8akUytD3dGPGTrJkIalTp1rg==", "route"=>{"title"=>"Mi primera ruta", "description"=>"Esta es la primera ruta que creo", "cost"=>"2000", "car"=>"CZY-908", "departure(3i)"=>"11", "departure(2i)"=>"10", "departure(1i)"=>"2017", "departure(4i)"=>"23", "departure(5i)"=>"17", "from_lat"=>"4.634896599999999", "from_lng"=>"-74.08221349999997", "to_lat"=>"4.6342856", "to_lng"=>"-74.07783510000002", "waypoints"=>"[]", "id_user"=>"1"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "routes" ("title", "description", "from_lat", "from_lng", "to_lat", "to_lng", "waypoints", "departure", "cost", "created_at", "updated_at", "id_user", "car") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Mi primera ruta"], ["description", "Esta es la primera ruta que creo"], ["from_lat", 4.634896599999999], ["from_lng", -74.08221349999997], ["to_lat", 4.6342856], ["to_lng", -74.07783510000002], ["waypoints", "[]"], ["departure", "2017-10-11 23:17:00"], ["cost", 2000.0], ["created_at", "2017-10-11 23:18:10.329905"], ["updated_at", "2017-10-11 23:18:10.329905"], ["id_user", 1], ["car", "CZY-908"]]
+Started GET "/usuario/mis-rutas" for 181.130.112.86 at 2017-10-11 23:18:10 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (30.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-miguelangelborja-1.c9users.io/routes/16
+Completed 302 Found in 51ms (ActiveRecord: 32.3ms)
+
+
+Processing by RoutesController#show_my_routes as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show_my_routes.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id_user" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["id_user", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/show_my_routes.html.erb within layouts/user-layout (4.3ms)
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:18:10 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (3.0ms)
+Completed 200 OK in 168ms (Views: 162.8ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 89.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:18:47 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 123ms (Views: 121.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:19:02 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 76.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:19:11 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 103ms (Views: 100.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-11 23:19:19 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (9.3ms)
+Completed 200 OK in 241ms (Views: 237.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-11 23:19:20 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (11.9ms)
+Completed 200 OK in 256ms (Views: 252.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/usuario/mis-rutas" for 181.130.112.86 at 2017-10-11 23:19:25 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show_my_routes as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show_my_routes.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id_user" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["id_user", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/show_my_routes.html.erb within layouts/user-layout (2.5ms)
+Completed 200 OK in 208ms (Views: 204.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:19:33 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 167ms (Views: 165.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:19:50 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 77.3ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mRoute Load (1.6ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:21:19 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (31.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 587ms (Views: 548.7ms | ActiveRecord: 3.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:21:50 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (24.0ms)
+  [1m[36mUser Load (32.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 347ms (Views: 283.9ms | ActiveRecord: 34.7ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:21:57 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 171ms (Views: 169.0ms | ActiveRecord: 0.7ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:22:39 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (3.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 161ms (Views: 158.1ms | ActiveRecord: 0.7ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:23:18 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 201ms (Views: 199.3ms | ActiveRecord: 0.7ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:23:40 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 95ms (Views: 92.4ms | ActiveRecord: 0.8ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:23:51 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (3.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 153ms (Views: 150.6ms | ActiveRecord: 0.9ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:24:12 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 250ms (Views: 247.8ms | ActiveRecord: 0.6ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:24:31 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 79.9ms | ActiveRecord: 0.6ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:24:42 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 83ms (Views: 81.4ms | ActiveRecord: 0.5ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:25:12 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 190ms (Views: 188.0ms | ActiveRecord: 0.6ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:27:07 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (3.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 148ms (Views: 145.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:27:18 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 95ms (Views: 93.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:27:28 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 177ms (Views: 174.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:28:51 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (4.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 251.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:29:03 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 235ms (Views: 233.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-11 23:29:08 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (5.6ms)
+Completed 200 OK in 551ms (Views: 101.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-11 23:29:09 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (12.1ms)
+Completed 200 OK in 94ms (Views: 90.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/mis-rutas" for 181.130.112.86 at 2017-10-11 23:29:15 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show_my_routes as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show_my_routes.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id_user" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["id_user", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/show_my_routes.html.erb within layouts/user-layout (3.0ms)
+Completed 200 OK in 87ms (Views: 77.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:29:20 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 181ms (Views: 179.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:32:54 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 94.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:33:17 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 87ms (Views: 85.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:35:25 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1322.7ms)
+Completed 500 Internal Server Error in 1326ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `route' for #<#<Class:0x007fdc3c236b88>:0x007fdc3cf8c508>
+Did you mean?  @route
+               _routes
+               @_routes):
+    23:           <div class="col-lg-6" style="text-align: right;">
+    24:             <label class="col-lg-2 control-label" style="text-align: left;"></br>Título:</label>
+    25:             <br></br>
+    26:             <input type="text" name="firstname" value=<%= route.title %>>
+    27:             <input class="form-control" id='usernameRegister' type='text' style="text-align: center" value = <%= @route.title %> >
+    28:           </div>
+    29:           <div class="col-lg-6">
+  
+app/views/routes/show.html.erb:26:in `_app_views_routes_show_html_erb__935095743531271947_70291946223800'
+app/controllers/routes_controller.rb:14:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:35:36 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (3.9ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (5.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 324ms (Views: 314.9ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:36:54 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (4.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 217ms (Views: 208.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:37:18 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (4.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 161ms (Views: 158.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:37:35 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 150ms (Views: 147.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:38:13 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (5.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 313ms (Views: 309.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:38:27 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (3.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 160ms (Views: 157.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:38:54 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (99.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 230ms (Views: 227.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:39:12 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (3.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 222ms (Views: 218.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:39:23 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 112ms (Views: 110.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:40:37 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 132ms (Views: 129.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:41:50 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 116ms (Views: 113.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:42:41 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (3.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 272ms (Views: 265.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:43:17 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 87ms (Views: 85.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:44:19 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (15.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 115ms (Views: 112.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:45:49 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (8.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 350ms (Views: 346.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:46:38 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 152ms (Views: 150.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:46:57 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 125ms (Views: 122.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:47:14 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 152ms (Views: 150.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:47:46 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 73.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:47:59 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 90ms (Views: 87.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:48:24 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 239ms (Views: 236.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:48:57 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 215ms (Views: 212.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:49:37 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (3.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 221ms (Views: 218.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:51:59 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 183ms (Views: 180.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:52:27 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 86ms (Views: 84.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:53:21 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 210ms (Views: 207.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:53:44 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (10.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 204ms (Views: 201.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:54:35 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (3.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 183ms (Views: 180.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:54:55 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 153ms (Views: 150.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:55:59 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 200ms (Views: 198.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:58:49 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (3.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 205ms (Views: 202.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-11 23:59:51 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 122ms (Views: 120.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:02:59 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 95ms (Views: 93.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:03:46 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 210ms (Views: 207.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:05:13 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 100ms (Views: 98.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:06:07 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 157ms (Views: 155.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:06:26 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 86ms (Views: 84.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:16:06 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 3.8ms)
+
+
+  
+NameError (uninitialized constant RoutesController::Category):
+  
+app/controllers/routes_controller.rb:14:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:16:19 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 2.7ms)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'User' to association named 'cars'; perhaps you misspelled it?):
+  
+app/controllers/routes_controller.rb:15:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:17:14 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 2.2ms)
+
+
+  
+NameError (uninitialized constant RoutesController::Cars):
+  
+app/controllers/routes_controller.rb:15:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:17:24 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 217ms (ActiveRecord: 3.9ms)
+
+
+  
+RuntimeError (unknown class: Class):
+  
+app/controllers/routes_controller.rb:15:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:20:04 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 224ms (ActiveRecord: 3.1ms)
+
+
+  
+RuntimeError (unknown class: Class):
+  
+app/controllers/routes_controller.rb:15:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:23:22 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'User' to association named 'cars'; perhaps you misspelled it?):
+  
+app/controllers/routes_controller.rb:15:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:25:25 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (34.3ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::Template::Error (Can't join 'User' to association named 'cars'; perhaps you misspelled it?):
+    48:     <div class="col-md-6 personal-info">
+    49:       <form class="form-horizontal" role="form">
+    50:         <div class="form-group">
+    51:           <%= @extraInfoRoute.each do |info| %>
+    52:             <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.modelo %></textarea>
+    53:           <% end %>
+    54:         </div>  
+  
+app/views/routes/show.html.erb:51:in `_app_views_routes_show_html_erb__935095743531271947_70291871244340'
+app/controllers/routes_controller.rb:16:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:28:05 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (42.7ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (Can't join 'User' to association named 'cars'; perhaps you misspelled it?):
+    48:     <div class="col-md-6 personal-info">
+    49:       <form class="form-horizontal" role="form">
+    50:         <div class="form-group">
+    51:           <%= @extraInfoRoute.each do |info| %>
+    52:             <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.modelo %></textarea>
+    53:           <% end %>
+    54:         </div>  
+  
+app/views/routes/show.html.erb:51:in `_app_views_routes_show_html_erb__2435646596934043086_33333260'
+app/controllers/routes_controller.rb:16:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:28:50 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (25.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 575ms (Views: 545.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:29:08 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 265ms (Views: 262.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:30:04 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (27.2ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Can't join 'User' to association named 'cars'; perhaps you misspelled it?):
+    48:     <div class="col-md-6 personal-info">
+    49:       <form class="form-horizontal" role="form">
+    50:         <div class="form-group">
+    51:           <%= @extraInfoRoute.placa %>
+    52:             
+    53:         </div>  
+    54:       </form>
+  
+app/views/routes/show.html.erb:51:in `_app_views_routes_show_html_erb__2435646596934043086_70128942376400'
+app/controllers/routes_controller.rb:16:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:30:44 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.9ms)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'User' to association named 'cars'; perhaps you misspelled it?):
+  
+app/controllers/routes_controller.rb:15:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:32:03 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 2.2ms)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'User' to association named 'car'; perhaps you misspelled it?):
+  
+app/controllers/routes_controller.rb:15:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:33:16 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 2.3ms)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'User' to association named 'car'; perhaps you misspelled it?):
+  
+app/controllers/routes_controller.rb:15:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:33:29 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "cars" ON "cars"."user_id" = "users"."id" WHERE "users"."id_user" = ?[0m  [["id_user", 1]]
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 2.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.id_user: SELECT "users".* FROM "users" INNER JOIN "cars" ON "cars"."user_id" = "users"."id" WHERE "users"."id_user" = ?):
+  
+app/controllers/routes_controller.rb:15:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:35:24 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "cars" ON "cars"."user_id" = "users"."id" WHERE "users"."id_user" = ?[0m  [["id_user", 1]]
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 2.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.id_user: SELECT "users".* FROM "users" INNER JOIN "cars" ON "cars"."user_id" = "users"."id" WHERE "users"."id_user" = ?):
+  
+app/controllers/routes_controller.rb:15:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:35:35 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "cars" ON "cars"."user_id" = "users"."id" WHERE "users"."id_user" = ?[0m  [["id_user", 1]]
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 3.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.id_user: SELECT "users".* FROM "users" INNER JOIN "cars" ON "cars"."user_id" = "users"."id" WHERE "users"."id_user" = ?):
+  
+app/controllers/routes_controller.rb:15:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:36:15 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "cars" ON "cars"."user_id" = "users"."id" WHERE "users"."id_user" = ? LIMIT ?[0m  [["id_user", 1], ["LIMIT", 11]]
+  Rendered routes/show.html.erb within layouts/user-layout (18.0ms)
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `placa' for #<User::ActiveRecord_Relation:0x007f90583e4050>):
+    48:     <div class="col-md-6 personal-info">
+    49:       <form class="form-horizontal" role="form">
+    50:         <div class="form-group">
+    51:           <%= @extraInfoRoute.placa %>
+    52:             
+    53:         </div>  
+    54:       </form>
+  
+app/views/routes/show.html.erb:51:in `_app_views_routes_show_html_erb__2435646596934043086_70128966196300'
+app/controllers/routes_controller.rb:16:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:36:31 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.7ms)
+Completed 200 OK in 169ms (Views: 119.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:36:40 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (1.6ms)
+Completed 200 OK in 86ms (Views: 82.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:36:48 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "cars" ON "cars"."user_id" = "users"."id" WHERE "users"."id_user" = ? LIMIT ?[0m  [["id_user", 1], ["LIMIT", 11]]
+  Rendered routes/show.html.erb within layouts/user-layout (10.2ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `nick' for #<User::ActiveRecord_Relation:0x007f904ce808f8>):
+    48:     <div class="col-md-6 personal-info">
+    49:       <form class="form-horizontal" role="form">
+    50:         <div class="form-group">
+    51:           <%= @extraInfoRoute.nick %>
+    52:             
+    53:         </div>  
+    54:       </form>
+  
+app/views/routes/show.html.erb:51:in `_app_views_routes_show_html_erb__2435646596934043086_70128871093980'
+app/controllers/routes_controller.rb:16:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:38:43 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."id_user" = ? LIMIT ?[0m  [["id_user", 1], ["LIMIT", 11]]
+  Rendered routes/show.html.erb within layouts/user-layout (7.8ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `placa' for #<Car::ActiveRecord_Relation:0x007f905094daf8>):
+    48:     <div class="col-md-6 personal-info">
+    49:       <form class="form-horizontal" role="form">
+    50:         <div class="form-group">
+    51:           <%= @extraInfoRoute.placa %>
+    52:             
+    53:         </div>  
+    54:       </form>
+  
+app/views/routes/show.html.erb:51:in `_app_views_routes_show_html_erb__2435646596934043086_70128901955260'
+app/controllers/routes_controller.rb:16:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:38:53 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (3.0ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Car' to association named 'users'; perhaps you misspelled it?):
+    48:     <div class="col-md-6 personal-info">
+    49:       <form class="form-horizontal" role="form">
+    50:         <div class="form-group">
+    51:           <%= @extraInfoRoute.placa %>
+    52:             
+    53:         </div>  
+    54:       </form>
+  
+app/views/routes/show.html.erb:51:in `_app_views_routes_show_html_erb__2435646596934043086_70129035261820'
+app/controllers/routes_controller.rb:16:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:39:10 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."id_user" = ? LIMIT ?[0m  [["id_user", 1], ["LIMIT", 11]]
+  Rendered routes/show.html.erb within layouts/user-layout (7.8ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 3.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `placa' for #<Car::ActiveRecord_Relation:0x007f90605189a0>):
+    48:     <div class="col-md-6 personal-info">
+    49:       <form class="form-horizontal" role="form">
+    50:         <div class="form-group">
+    51:           <%= @extraInfoRoute.placa %>
+    52:             
+    53:         </div>  
+    54:       </form>
+  
+app/views/routes/show.html.erb:51:in `_app_views_routes_show_html_erb__2435646596934043086_70129033966280'
+app/controllers/routes_controller.rb:16:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:40:34 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.7ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."id_user" = ? LIMIT ?[0m  [["id_user", 1], ["LIMIT", 11]]
+  Rendered routes/show.html.erb within layouts/user-layout (12.3ms)
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `placa' for #<Car::ActiveRecord_Relation:0x007f9060e3cf18>):
+    48:     <div class="col-md-6 personal-info">
+    49:       <form class="form-horizontal" role="form">
+    50:         <div class="form-group">
+    51:           <%= @extraInfoRoute.placa %>
+    52:             
+    53:         </div>  
+    54:       </form>
+  
+app/views/routes/show.html.erb:51:in `_app_views_routes_show_html_erb__2435646596934043086_70129038746520'
+app/controllers/routes_controller.rb:16:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:40:52 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."id_user" = ?[0m  [["id_user", 1]]
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 3.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: cars.user_id: SELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."id_user" = ?):
+  
+app/controllers/routes_controller.rb:15:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:41:35 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (45.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 239ms (Views: 135.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:41:54 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (23.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 163ms (Views: 134.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:42:09 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (5.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 298ms (Views: 294.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:43:49 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (21.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 123ms (Views: 94.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:44:23 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  Rendered routes/show.html.erb within layouts/user-layout (1.3ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 2.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/routes/show.html.erb:51: syntax error, unexpected =>, expecting keyword_end
+er.append=  @extraInfoRoute =>
+                              ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:53: unknown regexp options - fr
+/home/ubuntu/workspace/app/views/routes/show.html.erb:54: syntax error, unexpected '<'
+    </div>
+     ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:57: unknown regexp options - dv
+/home/ubuntu/workspace/app/views/routes/show.html.erb:58: syntax error, unexpected '<'
+  </div>
+   ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:62: unknown regexp options - dv
+/home/ubuntu/workspace/app/views/routes/show.html.erb:63: syntax error, unexpected '<'
+      <div class="col-lg-4">
+       ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:64: syntax error, unexpected '<'
+        <%= link_to "/" do @output_buff
+         ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:73: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/routes/show.html.erb:51: syntax error, unexpected =>, expecting keyword_end
+app/views/routes/show.html.erb:53: unknown regexp options - fr
+app/views/routes/show.html.erb:54: syntax error, unexpected '<'
+app/views/routes/show.html.erb:57: unknown regexp options - dv
+app/views/routes/show.html.erb:58: syntax error, unexpected '<'
+app/views/routes/show.html.erb:62: unknown regexp options - dv
+app/views/routes/show.html.erb:63: syntax error, unexpected '<'
+app/views/routes/show.html.erb:64: syntax error, unexpected '<'
+app/views/routes/show.html.erb:73: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/routes_controller.rb:16:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:44:36 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (2.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 116ms (Views: 114.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:44:45 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.6ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered routes/show.html.erb within layouts/user-layout (33.8ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `placa' for #<Car::ActiveRecord_Relation:0x007f9054ed2f10>):
+    48:     <div class="col-md-6 personal-info">
+    49:       <form class="form-horizontal" role="form">
+    50:         <div class="form-group">
+    51:           <%= @extraInfoRoute.placa %>
+    52:         </div>  
+    53:       </form>
+    54:     </div>
+  
+app/views/routes/show.html.erb:51:in `_app_views_routes_show_html_erb__2435646596934043086_70128938398000'
+app/controllers/routes_controller.rb:16:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:46:11 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE (id_user > 55)[0m
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: cars.user_id: SELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE (id_user > 55)):
+  
+app/controllers/routes_controller.rb:15:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:46:53 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."id_user" = ?[0m  [["id_user", nil]]
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 2.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: cars.user_id: SELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."id_user" = ?):
+  
+app/controllers/routes_controller.rb:15:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:47:06 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 250ms (ActiveRecord: 1.3ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<RoutesController:0x007f90609065d0>):
+  
+app/controllers/routes_controller.rb:15:in `show'
+Started GET "/routes/16" for 181.130.112.86 at 2017-10-12 00:47:19 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."id_user" = ?[0m  [["id_user", 1]]
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 4.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: cars.user_id: SELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."id_user" = ?):
+  
+app/controllers/routes_controller.rb:15:in `show'
+  [1m[36mCar Load (4.2ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (13.0ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCar Load (0.6ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."id_user" = ? LIMIT ?[0m  [["id_user", 2], ["LIMIT", 11]]
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE (id_user > 2) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id_user" = ? LIMIT ?[0m  [["id_user", 77], ["LIMIT", 11]]
+  [1m[36mCar Load (0.6ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCar Load (0.7ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" WHERE "cars"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" INNER JOIN "cars_users" ON "cars_users"."car_id" = "cars"."id" INNER JOIN "users" ON "users"."id" = "cars_users"."user_id" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" INNER JOIN "cars_users" ON "cars_users"."car_id" = "cars"."id" INNER JOIN "users" ON "users"."id" = "cars_users"."user_id" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT  "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" LIMIT ?[0m  [["LIMIT", 11]]
