@@ -11,13 +11,13 @@ class RoutesController < ApplicationController
   # GET /routes/1
   # GET /routes/1.json
   def show
-    @extraInfoRoute = Car.joins(:user).where(:id_user => current_user.id)
+    @extraInfoRoute = Car.joins(:user).where(:user_id => current_user.id)
     render :layout => 'user-layout'
   end
 
   # GET /routes/new
   def new
-    @myCars = Car.where(:id_user => current_user.id)
+    @myCars = Car.where(:user_id => current_user.id)
     @route = Route.new
     render :layout => 'user-layout'
   end
