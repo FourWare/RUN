@@ -11,7 +11,7 @@
     <br>
     <div class="carousel-inner">
       <div class="item active">
-        <%= image_tag("bienvenido.png", alt: 'Bienvenidos',style: "width:100%; height: 550px !important;") %>
+        <%= image_tag("bienvenido.png", alt: 'Bienvenido',style: "width:100%; height: 550px !important;") %>
       </div>
       <div class="item">
         <%= image_tag("carousel1.png", alt: 'Crear evento',style: "width:100%; height: 550px !important;") %>
@@ -83,11 +83,11 @@
       <h3 style="text-align: center;">Buscador de rutas</h2>
       <hr>
       <div class="w3l-login form">
-        <%= link_to "/#" do %>
+        <%= link_to "/usuario/mis-rutas" do %>
           <button id="submitRegister" class="btn btn-primary btn-lg" style="border: solid white; color: white; width: 50%;">Mis rutas</button>
         <% end %>
         </br>
-        <%= link_to "/routes" do %>
+        <%= link_to "/rutas" do %>
           <button id="submitRegister" class="btn btn-primary btn-lg" style="border: solid white; color: white; width: 50%;">Otras rutas</button>
         <% end %>
       </div>

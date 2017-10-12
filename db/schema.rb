@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010223704) do
+ActiveRecord::Schema.define(version: 20171012011441) do
 
   create_table "cars", force: :cascade do |t|
     t.string "placa"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20171010223704) do
     t.integer "capacidad"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "id_user"
     t.string "image"
     t.string "marca"
+    t.integer "user_id"
   end
 
 # Could not dump table "routes" because of following StandardError
@@ -41,10 +41,10 @@ ActiveRecord::Schema.define(version: 20171010223704) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
     t.string "profile_image"
     t.boolean "email_confirmed", default: false
     t.string "confirm_token"
+    t.string "name"
     t.string "nick"
     t.string "career"
     t.datetime "date_of_birth"

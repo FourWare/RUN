@@ -1,10 +1,11 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.where(:id_user => current_user.id).all
+    @cars = Car.where(:user_id => current_user.id).all
     render :layout => 'user-layout'
   end
 
@@ -74,6 +75,6 @@ class CarsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def car_params
-      params.require(:car).permit(:placa, :tipo, :modelo, :marca, :color, :capacidad, :image, :id_user)
+      params.require(:car).permit(:placa, :tipo, :modelo, :marca, :color, :capacidad, :image, :user_id)
     end
 end

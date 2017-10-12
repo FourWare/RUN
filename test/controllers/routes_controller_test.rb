@@ -45,4 +45,10 @@ class RoutesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to routes_url
   end
+  
+  test "should get show_my_routes" do
+    get routes_show_my_routes_url
+    assert_response :success
+  end
+
 end
