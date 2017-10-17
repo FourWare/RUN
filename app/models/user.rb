@@ -59,7 +59,4 @@ class User < ApplicationRecord
   def self.profileImage(user_id)
     User.where(:id => user_id).uniq
   end
-  
-  
-  
 end

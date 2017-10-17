@@ -14,12 +14,11 @@ class RoutesController < ApplicationController
   # GET /routes/1.json
   def show
     @extraInfoRoute = Route.extraInfoRoute(@route.car)
+    @findByBrand = Route.findByBrand("Renault")
+    @findByColor = Route.findByColor("Gris")
+    @findByCapacity = Route.findByCapacity(4)
+    @findByType = Route.findByType("carro")
     
-    @join1 = Car.joins(:user).where(:marca => "Renault").uniq
-    @join2 = Car.joins(:user).where(:color => "Gris").uniq
-    @join3 = Car.joins(:user).where(:capacidad => 4).uniq
-    @join4 = Car.joins(:user).where(:tipo => "Carro").uniq
-    @join5 = Car.joins(:user).where(:tipo => "Moto").count
     render :layout => 'user-layout'
   end
 

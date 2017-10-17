@@ -23,4 +23,20 @@ class Route < ApplicationRecord
     def self.myCars(user_id)
         Car.where(:user_id => user_id).all
     end
+    
+    def self.findByColor(color)
+        Car.joins(:user).where(:color => color).uniq
+    end
+    
+    def self.findByBrand(marca)
+        Car.joins(:user).where(:marca => marca).uniq
+    end 
+    
+    def self.findByCapacity(capacidad)
+        Car.joins(:user).where(:capacidad => capacidad).uniq
+    end 
+    
+    def self.findByType(tipo)
+        Car.joins(:user).where(:tipo => tipo).uniq
+    end
 end
