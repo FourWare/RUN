@@ -40,26 +40,39 @@
                 <%= f.text_field :placa, class: "form-control", id: 'usernameRegister', autofocus: true, type: 'text', required: "" %>
               </div>
             </div>
-            <div class="form-group">
-              <div class="col-lg-6">
+            <div class="col-lg-6 form-group">
+              <div class="col-lg-6 form-group">
                 <label class="col-lg-2 control-label"></br>Tipo:</label>
                 <br></br>
-                <%= f.text_field :tipo, class: "form-control", id: 'usernameRegister', autofocus: true, type: 'text', required: "" %>
-               
+                
+                <%= f.select :modelo,options_for_select(["Moto","Carro"]),
+                :class => "form-control date-select",
+                :id =>'usernameRegister',
+                :autofocus => true, :type=> 'text', :required=>"",:width=>"50%"
+                %>
+                
               </div>
-            
-              
-            
-              
-              
-              
-              
             </div>
             <div class="form-group">
               <div class="col-lg-6">
                 <label class="col-lg-2 control-label"></br>Modelo:</label>
                 <br></br>
-                <%= f.text_field :modelo, class: "form-control", id: 'usernameRegister', autofocus: true, type: 'text', required: "" %>
+                
+                
+					        		<%= f.date_select :modelo,
+					        		{ :order => [:year],:start_year => Time.now.year, 
+  								    	:end_year => 1950, 
+  									    :prompt => {year: 'Modelo'}},
+  									    
+  									    {
+  									     :class => "form-control date-select",
+  									    :id =>'usernameRegister',
+  									    :autofocus => true,
+  									    :type=> 'text', :required=>"",:width=>"100%"}
+  								 	  %>
+								 	
+			      			
+                
               </div>
             </div>
             <div class="form-group">
