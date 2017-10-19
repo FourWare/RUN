@@ -104,6 +104,8 @@
         <%= form.hidden_field :id_user, :value => current_user.id %>
         
         <div class="col-md-6 personal-info">
+          <input type="text" name="address" id="address">
+          <button type="button" id="geocode" onclick="geocodeAddress()">Find!</button>
           <div id="wraper" >
             <div id="mapEventCreate" style='width: 550px; height: 400px;'></div>
           </div>
