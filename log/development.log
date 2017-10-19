@@ -1714,3 +1714,15 @@ Processing by RoutesController#new as HTML
 Completed 200 OK in 91ms (Views: 88.8ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/rutas/new" for 190.157.217.119 at 2017-10-19 10:55:47 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering routes/new.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."user_id" = ?[0m  [["user_id", 174]]
+  Rendered routes/_form.html.erb (457.3ms)
+  Rendered routes/new.html.erb within layouts/user-layout (459.9ms)
+Completed 200 OK in 887ms (Views: 816.6ms | ActiveRecord: 3.1ms)
+
+
