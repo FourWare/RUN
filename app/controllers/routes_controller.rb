@@ -5,33 +5,32 @@ class RoutesController < ApplicationController
   # GET /routes
   # GET /routes.json
   def index
-    @routes = Route.where.not(:id_user => current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
-    @countRoutes = Route.where.not(:id_user => current_user.id).count
+    @routes = Route.otherRoutes(current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    @countRoutes = Route.countRoutes(current_user.id)
     render :layout => 'user-layout'
   end
 
   # GET /routes/1
   # GET /routes/1.json
   def show
-    @extraInfoRoute = Car.joins(:user).where(:placa => @route.car).uniq
-    @join1 = Car.joins(:user).where(:marca => "Renault").uniq
-    @join2 = Car.joins(:user).where(:color => "Gris").uniq
-    @join3 = Car.joins(:user).where(:capacidad => 4).uniq
-    @join4 = Car.joins(:user).where(:tipo => "Carro").uniq
-    @join5 = Car.joins(:user).where(:tipo => "Moto").count
+    @extraInfoRoute = Route.extraInfoRoute(@route.car)
+    @findByBrand = Route.findByBrand("Renault")
+    @findByColor = Route.findByColor("Gris")
+    @findByCapacity = Route.findByCapacity(4)
+    @findByType = Route.findByType("carro")
     render :layout => 'user-layout'
   end
 
   # GET /routes/new
   def new
-    @myCars = Car.where(:user_id => current_user.id)
+    @myCars = Route.myCars(current_user.id)
     @route = Route.new
     render :layout => 'user-layout'
   end
 
   # GET /routes/1/edit
   def edit
-    @myCars = Car.where(:user_id => current_user.id)
+    @myCars = Route.myCars(current_user.id)
     render :layout => 'user-layout'
   end
 
@@ -76,8 +75,8 @@ class RoutesController < ApplicationController
   end
   
   def show_my_routes
-    @routes = Route.where(:id_user => current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
-    @countMyRoutes = Route.where(:id_user => current_user.id).count
+    @routes = Route.myRoutes(current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    @countMyRoutes = Route.countMyRoutes(current_user.id)
     render :layout => 'user-layout'
   end
 

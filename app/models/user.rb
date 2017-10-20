@@ -53,4 +53,10 @@ class User < ApplicationRecord
     self.confirm_token = nil
     save!(:validate => false)
   end
+  
+  ##### queries
+  def self.profileImage(user_id)
+    User.where(:id => user_id).uniq
+  end
+  
 end
