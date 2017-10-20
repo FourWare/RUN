@@ -4,6 +4,18 @@ class Route < ApplicationRecord
         Route.where.not(:id_user => user_id)
     end
     
+    def self.filterSearch(option, search, user_id)
+        if (search != "" and search != " ")
+            if(option == "cost")
+                where(["cost = ? and id_user = ?", search, user_id])    
+            else
+                where(["id_user = ?", user_id]).all
+            end
+        else
+            where(["id_user = ?", user_id]).all
+        end
+    end
+    
     def self.myRoutes(user_id)
         Route.where(:id_user => user_id)
     end

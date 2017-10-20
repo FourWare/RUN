@@ -1,4 +1,4 @@
-function search() {
+function a(){
     var val = $('#searchSelect').val();
     if(val != "all"){
         $("#searchDiv").slideDown("slow");
@@ -53,11 +53,5 @@ function searchAction(variable){
                 }
             }       
         }   
-    }
-    else if($('#searchSelect').val() == "cost"){
-        alert(variable);
-    }
-    else{
-        console.log(" bbbasasda");
     }
 }

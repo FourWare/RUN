@@ -75,7 +75,8 @@ class RoutesController < ApplicationController
   end
   
   def show_my_routes
-    @routes = Route.myRoutes(current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    @routes = Route.filterSearch(params[:filterSelect], params[:search], current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    #@routes = Route.myRoutes(current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
     @countMyRoutes = Route.countMyRoutes(current_user.id)
     render :layout => 'user-layout'
   end
