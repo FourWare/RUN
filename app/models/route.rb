@@ -1,4 +1,6 @@
 class Route < ApplicationRecord
+    belongs_to :car
+    
     ##### queries
     def self.otherRoutes(user_id)
         Route.where.not(:id_user => user_id)

@@ -13,7 +13,7 @@ class RoutesController < ApplicationController
   # GET /routes/1
   # GET /routes/1.json
   def show
-    @extraInfoRoute = Route.extraInfoRoute(@route.car)
+    @extraInfoRoute = Car.joins(:user).where(:placa => @route.car).uniq # Route.extraInfoRoute(@route.car)
     @findByBrand = Route.findByBrand("Renault")
     @findByColor = Route.findByColor("Gris")
     @findByCapacity = Route.findByCapacity(4)
