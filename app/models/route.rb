@@ -39,4 +39,8 @@ class Route < ApplicationRecord
     def self.findByType(tipo)
         Car.joins(:user).where(:tipo => tipo).uniq
     end
+    
+    def self.findByCost(costo)
+        Route.where(:cost => costo)
+    end
 end

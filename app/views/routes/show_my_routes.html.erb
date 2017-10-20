@@ -23,8 +23,8 @@
           <button class="btn btn-default" type="button" onclick="search()"><span class="glyphicon glyphicon-search" style="width: 50%; font-size: 100%;"></span></button>
         </div>
         <div class="row" id="searchDiv" style="display: none;">
-          <input type="text" id="searchInput" title="Escribe tu búsqueda" autofocus style="width: 50%; color: black;">
-          <button class="btn btn-default" type="button" onclick="searchAction()" style="background: lightgreen;">
+          <input type="text" id="searchInput" title="Escribe tu búsqueda" autofocus style="width: 50%; color: black;" >
+          <button class="btn btn-default" type="button" style="background: lightgreen;" onclick="searchAction('<%= Route.findByCost(2000) %>')">
             <span class="glyphicon glyphicon-ok" style="width: 100%; font-size: 100%;"></span>
           </button>
           <br></br>
