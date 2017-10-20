@@ -1244,3 +1244,22 @@ Completed 200 OK in 80ms (Views: 77.2ms | ActiveRecord: 0.6ms)
   [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."color" = ?[0m  [["color", "Gris"]]
   [1m[36mCar Load (0.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."capacidad" = ?[0m  [["capacidad", 4]]
   [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."tipo" = ?[0m  [["tipo", "Moto"]]
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-20 23:01:09 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mCar Load (0.9ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."marca" = ?[0m  [["marca", "Renault"]]
+  [1m[36mCar Load (1.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."color" = ?[0m  [["color", "Gris"]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."capacidad" = ?[0m  [["capacidad", 4]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."tipo" = ?[0m  [["tipo", "Carro"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."tipo" = ?[0m  [["tipo", "Moto"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (6.9ms)
+Completed 200 OK in 697ms (Views: 561.1ms | ActiveRecord: 6.3ms)
+
+
