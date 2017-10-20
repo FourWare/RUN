@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171012011441) do
+ActiveRecord::Schema.define(version: 20171020231455) do
 
   create_table "cars", force: :cascade do |t|
     t.string "placa"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20171012011441) do
   end
 
 # Could not dump table "routes" because of following StandardError
-#   Unknown type 'json' for column 'waypoints'
+#   Unknown type '' for column 'waypoints'
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

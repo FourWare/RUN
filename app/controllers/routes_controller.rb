@@ -13,7 +13,7 @@ class RoutesController < ApplicationController
   # GET /routes/1
   # GET /routes/1.json
   def show
-    @extraInfoRoute = Car.joins(:user).where(:placa => @route.car).uniq # Route.extraInfoRoute(@route.car)
+    @extraInfoRoute = Route.extraInfoRoute(@route.car_placa)
     @findByBrand = Route.findByBrand("Renault")
     @findByColor = Route.findByColor("Gris")
     @findByCapacity = Route.findByCapacity(4)
@@ -89,6 +89,6 @@ class RoutesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def route_params
-      params.require(:route).permit(:title, :description, :from_lat, :from_lng, :to_lat, :to_lng, :waypoints, :departure, :cost, :id_user, :car)
+      params.require(:route).permit(:title, :description, :from_lat, :from_lng, :to_lat, :to_lng, :waypoints, :departure, :cost, :id_user, :car_placa)
     end
 end
