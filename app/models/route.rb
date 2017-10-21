@@ -8,8 +8,18 @@ class Route < ApplicationRecord
     
     def self.filterSearch(option, search, user_id)
         if (search != "" and search != " ")
-            if(option == "cost")
-                where(["cost = ? and id_user = ?", search, user_id])    
+            if(option == "type")
+                where(:car_placa => Car.where(:tipo => search).select(:placa)).where(:id_user => user_id)
+            elsif(option == "brand")
+                where(:car_placa => Car.where(:marca => search).select(:placa)).where(:id_user => user_id)
+            elsif(option == "color")
+                where(:car_placa => Car.where(:color => search).select(:placa)).where(:id_user => user_id)
+            elsif(option == "capacity")
+                where(:car_placa => Car.where(:capacidad => search).select(:placa)).where(:id_user => user_id)
+            elsif(option == "date")
+                where('departure LIKE ?', '%' + search + '%').where(:id_user => user_id)
+            elsif(option == "cost")
+                where(["cost = ? and id_user = ?", search, user_id])
             else
                 where(["id_user = ?", user_id]).all
             end
@@ -36,25 +46,5 @@ class Route < ApplicationRecord
     
     def self.myCars(user_id)
         Car.where(:user_id => user_id).all
-    end
-    
-    def self.findByColor(color)
-        Car.joins(:user).where(:color => color).uniq
-    end
-    
-    def self.findByBrand(marca)
-        Car.joins(:user).where(:marca => marca).uniq
-    end 
-    
-    def self.findByCapacity(capacidad)
-        Car.joins(:user).where(:capacidad => capacidad).uniq
-    end 
-    
-    def self.findByType(tipo)
-        Car.joins(:user).where(:tipo => tipo).uniq
-    end
-    
-    def self.findByCost(costo)
-        Route.where(:cost => costo)
     end
 end

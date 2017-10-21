@@ -17,16 +17,21 @@
               ['Marca del vehículo', "brand"],
               ['Color del vehículo', "color"],
               ['Capacidad del vehículo', "capacity"],
-              ['Fecha de creación', "date"],
+              ['Fecha', "date"],
               ['Costo', "cost"],
               ['Palabra clave', "keyWord"]],
               params[:filterSelect]),
               { class: "btn dropdown-toggle bs-placeholder btn-default", id: "searchSelect", style: "width: 50%; font-size: 100%;", :onchange => "a();" }) %>
           </div>
-          </br>
-          <div class="row" id="searchDiv" style="display: none;">
-              <%= text_field_tag :search, params[:search], type: "text", id: "searchInput", title: "Escribe tu búsqueda", style: "width: 50%; color: black;" %>
-              <%= submit_tag "Buscar", class: "btn btn-default", style: "background: lightgreen;" %>
+          <div class="row" id="searchDiv">
+            <%= text_field_tag :search, params[:search], id: "searchInput", title: "Escribe tu búsqueda", style: "width: 50%; color: black;" %>
+            <%= select_tag(:search, options_for_select(
+              [['Carro', "car"], 
+              ['Moto', "motorcycle"],
+              ['Otro', "other"]],
+              params[:search]),
+              { class: "btn dropdown-toggle bs-placeholder btn-default", id: "searchInputSelect", style: "width: 50%; color: black; display: none;"}) %>
+            <%= submit_tag "Buscar", class: "btn btn-default", style: "background: lightgreen;" %>
             </br>
           </div>
         <% end %>

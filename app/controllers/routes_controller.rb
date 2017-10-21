@@ -14,10 +14,6 @@ class RoutesController < ApplicationController
   # GET /routes/1.json
   def show
     @extraInfoRoute = Route.extraInfoRoute(@route.car_placa)
-    @findByBrand = Route.findByBrand("Renault")
-    @findByColor = Route.findByColor("Gris")
-    @findByCapacity = Route.findByCapacity(4)
-    @findByType = Route.findByType("carro")
     render :layout => 'user-layout'
   end
 
@@ -76,7 +72,6 @@ class RoutesController < ApplicationController
   
   def show_my_routes
     @routes = Route.filterSearch(params[:filterSelect], params[:search], current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
-    #@routes = Route.myRoutes(current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
     @countMyRoutes = Route.countMyRoutes(current_user.id)
     render :layout => 'user-layout'
   end
