@@ -3286,3 +3286,2037 @@ Completed 200 OK in 194ms (Views: 190.0ms | ActiveRecord: 0.8ms)
 
 
   [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 19:58:45 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  Rendered routes/show.html.erb within layouts/user-layout (2.4ms)
+Completed 500 Internal Server Error in 183ms (ActiveRecord: 4.1ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/routes/show.html.erb:68: syntax error, unexpected =>, expecting keyword_end
+ze; @route.spaces_available => @route.spaces_available - 1 ;
+                              ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:370: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/routes/show.html.erb:68: syntax error, unexpected =>, expecting keyword_end
+app/views/routes/show.html.erb:370: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 19:58:57 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (306.4ms)
+Completed 500 Internal Server Error in 313ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `route' for #<#<Class:0x00000004968eb8>:0x0000000363ed88>
+Did you mean?  @route
+               _routes
+               @_routes):
+    64:           <% if @route.id_user != current_user.id %>
+    65:             - 
+    66:             <% if @route.spaces_available > 0 %>
+    67:               <%= link_to route do %>
+    68:                 <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="<% @route.spaces_available = @route.spaces_available - 1 %>">Unirme a esta ruta</button>
+    69:               <% end %>
+    70:             <% else %>
+  
+app/views/routes/show.html.erb:67:in `_app_views_routes_show_html_erb__3286932193989007385_28433860'
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 19:59:37 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (4.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Integer into String):
+    64:           <% if @route.id_user != current_user.id %>
+    65:             - 
+    66:             <% if @route.spaces_available > 0 %>
+    67:               <%= link_to "/rutas/" + @route.id do %>
+    68:                 <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="<% @route.spaces_available = @route.spaces_available - 1 %>">Unirme a esta ruta</button>
+    69:               <% end %>
+    70:             <% else %>
+  
+app/views/routes/show.html.erb:67:in `+'
+app/views/routes/show.html.erb:67:in `_app_views_routes_show_html_erb__3286932193989007385_38361160'
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 19:59:47 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (4.6ms)
+Completed 200 OK in 464ms (Views: 459.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 19:59:53 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (6.1ms)
+Completed 200 OK in 419ms (Views: 303.8ms | ActiveRecord: 3.7ms)
+
+
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-10-22 20:02:00.967478"], ["id", 1]]
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 4], ["updated_at", "2017-10-22 20:02:17.286370"], ["id", 1]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:03:01 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  Rendered routes/show.html.erb within layouts/user-layout (4.8ms)
+Completed 500 Internal Server Error in 141ms (ActiveRecord: 3.5ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/routes/show.html.erb:68: syntax error, unexpected ';', expecting ')'
+@route.spaces_available -  1 ;@output_buffer.safe_append='">
+                              ^):
+  
+app/views/routes/show.html.erb:68: syntax error, unexpected ';', expecting ')'
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:03:12 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-10-22 20:03:13.230237"], ["id", 1]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (26.7ms)
+Completed 200 OK in 681ms (Views: 534.5ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:03:18 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 2], ["updated_at", "2017-10-22 20:03:18.591381"], ["id", 1]]
+  [1m[35m (173.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (183.0ms)
+Completed 200 OK in 451ms (Views: 271.9ms | ActiveRecord: 175.3ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:04:45 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 1], ["updated_at", "2017-10-22 20:04:45.824590"], ["id", 1]]
+  [1m[35m (138.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (148.3ms)
+Completed 200 OK in 272ms (Views: 127.0ms | ActiveRecord: 140.5ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:04:48 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 0], ["updated_at", "2017-10-22 20:04:48.809540"], ["id", 1]]
+  [1m[35m (14.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (156.0ms)
+Completed 200 OK in 261ms (Views: 240.7ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:05:11 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (4.0ms)
+Completed 200 OK in 113ms (Views: 108.7ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 4], ["updated_at", "2017-10-22 20:05:35.258194"], ["id", 1]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:05:51 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-10-22 20:05:51.592204"], ["id", 1]]
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (23.4ms)
+Completed 200 OK in 575ms (Views: 443.7ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:05:56 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 2], ["updated_at", "2017-10-22 20:05:56.379735"], ["id", 1]]
+  [1m[35m (16.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (29.3ms)
+Completed 200 OK in 463ms (Views: 249.7ms | ActiveRecord: 22.0ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:06:11 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 1], ["updated_at", "2017-10-22 20:06:11.215544"], ["id", 1]]
+  [1m[35m (147.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (154.3ms)
+Completed 200 OK in 254ms (Views: 101.4ms | ActiveRecord: 148.9ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:06:29 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 0], ["updated_at", "2017-10-22 20:06:29.234295"], ["id", 1]]
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (143.4ms)
+Completed 200 OK in 274ms (Views: 258.4ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:06:43 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (3.9ms)
+Completed 200 OK in 105ms (Views: 99.9ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 4], ["updated_at", "2017-10-22 20:06:59.279408"], ["id", 1]]
+  [1m[35m (92.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserInRouteToRoute (20171022202206)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "routes" ADD "users_in_route" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171022202206"]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mRoute Load (1.8ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoute Load (2.8ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-22 20:26:07 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (339.2ms)
+Completed 200 OK in 498ms (Views: 455.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/rutas/new" for 181.130.112.86 at 2017-10-22 20:26:10 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."user_id" = ?[0m  [["user_id", 176]]
+  Rendering routes/new.html.erb within layouts/user-layout
+  Rendered routes/_form.html.erb (11.1ms)
+  Rendered routes/new.html.erb within layouts/user-layout (12.9ms)
+Completed 200 OK in 221ms (Views: 131.7ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/rutas" for 181.130.112.86 at 2017-10-22 20:27:55 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LJIgll4gXLULkuRObwY7jMqRVkD4kLRmiDfwRhb4LOccroRVWycv7W5QdZL8fmTGplfb+kyU76gJrLaYSN43hw==", "route"=>{"title"=>"Universidad - Calle 25B", "description"=>"Esta ruta comienza en la universidad y termina en la calle 25B con carrera 37", "cost"=>"1500", "car_placa"=>"aaa-333", "spaces_available"=>"4", "departure"=>"2017-11-03T11:00", "from_lat"=>"4.6357741", "from_lng"=>"-74.08387069999998", "to_lat"=>"4.630846900000001", "to_lng"=>"-74.08658960000002", "waypoints"=>"[]", "id_user"=>"176", "users_in_route"=>""}, "address"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "routes" ("title", "description", "from_lat", "from_lng", "to_lat", "to_lng", "waypoints", "departure", "cost", "created_at", "updated_at", "id_user", "car_placa", "spaces_available", "users_in_route") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Universidad - Calle 25B"], ["description", "Esta ruta comienza en la universidad y termina en la calle 25B con carrera 37"], ["from_lat", 4.6357741], ["from_lng", -74.08387069999998], ["to_lat", 4.630846900000001], ["to_lng", -74.08658960000002], ["waypoints", "[]"], ["departure", "2017-11-03 11:00:00"], ["cost", 1500.0], ["created_at", "2017-10-22 20:27:55.942007"], ["updated_at", "2017-10-22 20:27:55.942007"], ["id_user", 176], ["car_placa", "aaa-333"], ["spaces_available", 4], ["users_in_route", ""]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-camilo-miguelangelborja.c9users.io/rutas/4
+Completed 302 Found in 104ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-22 20:27:56 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (8.8ms)
+Completed 200 OK in 108ms (Views: 105.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rutas/4" for 181.130.112.86 at 2017-10-22 20:27:56 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "aaa-333"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (98.6ms)
+Completed 200 OK in 293ms (Views: 244.7ms | ActiveRecord: 2.1ms)
+
+
+  [1m[36mRoute Load (1.8ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "routes" SET "users_in_route" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["users_in_route", ""], ["updated_at", "2017-10-22 20:29:00.197020"], ["id", 1]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "routes" SET "users_in_route" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["users_in_route", ""], ["updated_at", "2017-10-22 20:29:00.209644"], ["id", 2]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "routes" SET "users_in_route" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["users_in_route", ""], ["updated_at", "2017-10-22 20:29:00.222757"], ["id", 3]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Started GET "/rutas/4" for 181.130.112.86 at 2017-10-22 20:34:02 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "aaa-333"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (237.1ms)
+Completed 200 OK in 561ms (Views: 414.2ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:34:14 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-10-22 20:34:14.212319"], ["id", 1]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (21.0ms)
+Completed 200 OK in 399ms (Views: 282.5ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:34:19 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 2], ["updated_at", "2017-10-22 20:34:19.972196"], ["id", 1]]
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (24.4ms)
+Completed 200 OK in 162ms (Views: 143.7ms | ActiveRecord: 13.7ms)
+
+
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 4], ["updated_at", "2017-10-22 20:35:36.440770"], ["id", 1]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:36:02 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-10-22 20:36:02.800792"], ["id", 1]]
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (29.7ms)
+Completed 200 OK in 702ms (Views: 529.1ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:36:29 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 2], ["updated_at", "2017-10-22 20:36:29.660014"], ["id", 1]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (23.7ms)
+Completed 200 OK in 562ms (Views: 311.3ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:36:56 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 1], ["updated_at", "2017-10-22 20:36:56.763374"], ["id", 1]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (24.4ms)
+Completed 200 OK in 242ms (Views: 221.6ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:37:13 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 0], ["updated_at", "2017-10-22 20:37:13.208148"], ["id", 1]]
+  [1m[35m (182.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (193.8ms)
+Completed 200 OK in 328ms (Views: 136.8ms | ActiveRecord: 185.5ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:37:25 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (4.8ms)
+Completed 200 OK in 134ms (Views: 128.5ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 4], ["updated_at", "2017-10-22 20:37:47.822190"], ["id", 1]]
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:38:16 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-10-22 20:38:16.300928"], ["id", 1]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (23.6ms)
+Completed 200 OK in 660ms (Views: 516.5ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:39:15 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (7.4ms)
+Completed 200 OK in 369ms (Views: 225.1ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:39:20 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (3.6ms)
+Completed 200 OK in 109ms (Views: 104.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:39:40 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 2], ["updated_at", "2017-10-22 20:39:40.071365"], ["id", 1]]
+  [1m[35m (96.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (105.3ms)
+Completed 200 OK in 211ms (Views: 108.5ms | ActiveRecord: 98.7ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:40:24 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 1], ["updated_at", "2017-10-22 20:40:24.825292"], ["id", 1]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (140.7ms)
+Completed 200 OK in 236ms (Views: 219.3ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:40:42 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 2], ["updated_at", "2017-10-22 20:40:42.544622"], ["id", 1]]
+  [1m[35m (18.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (27.2ms)
+Completed 200 OK in 130ms (Views: 105.8ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:40:56 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-10-22 20:40:56.639709"], ["id", 1]]
+  [1m[35m (141.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (148.9ms)
+Completed 200 OK in 254ms (Views: 107.8ms | ActiveRecord: 142.9ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:41:05 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 4], ["updated_at", "2017-10-22 20:41:05.748638"], ["id", 1]]
+  [1m[35m (18.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (28.9ms)
+Completed 200 OK in 142ms (Views: 116.7ms | ActiveRecord: 20.3ms)
+
+
+Started GET "/rutas/1" for 181.130.112.86 at 2017-10-22 20:43:00 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "CZY-908"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-10-22 20:43:00.823603"], ["id", 1]]
+  [1m[35m (135.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (142.9ms)
+Completed 200 OK in 242ms (Views: 99.9ms | ActiveRecord: 137.3ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-22 20:44:04 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (8.4ms)
+Completed 200 OK in 126ms (Views: 123.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rutas" for 181.130.112.86 at 2017-10-22 20:44:08 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE ("routes"."id_user" != ?)[0m  [["id_user", 176]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user != 176)[0m
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user != 176) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/index.html.erb within layouts/user-layout (12.0ms)
+Completed 200 OK in 322ms (Views: 154.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:44:11 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 2], ["updated_at", "2017-10-22 20:44:11.382692"], ["id", 3]]
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (27.0ms)
+Completed 200 OK in 197ms (Views: 172.8ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:44:25 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 1], ["updated_at", "2017-10-22 20:44:25.338889"], ["id", 3]]
+  [1m[35m (30.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (45.4ms)
+Completed 200 OK in 180ms (Views: 142.9ms | ActiveRecord: 32.8ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:45:09 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 2], ["updated_at", "2017-10-22 20:45:09.958178"], ["id", 3]]
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (19.9ms)
+Completed 200 OK in 151ms (Views: 135.9ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:45:14 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-10-22 20:45:14.926650"], ["id", 3]]
+  [1m[35m (31.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (40.8ms)
+Completed 200 OK in 141ms (Views: 104.1ms | ActiveRecord: 33.6ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:45:18 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 4], ["updated_at", "2017-10-22 20:45:18.846725"], ["id", 3]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (18.9ms)
+Completed 200 OK in 230ms (Views: 214.1ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:46:23 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 5], ["updated_at", "2017-10-22 20:46:23.317494"], ["id", 3]]
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (21.5ms)
+Completed 200 OK in 134ms (Views: 117.9ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:46:32 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 4], ["updated_at", "2017-10-22 20:46:32.769178"], ["id", 3]]
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (21.0ms)
+Completed 200 OK in 123ms (Views: 106.9ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:47:57 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-10-22 20:47:57.060660"], ["id", 3]]
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (105.4ms)
+Completed 200 OK in 203ms (Views: 185.9ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:50:51 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 2], ["updated_at", "2017-10-22 20:50:51.995869"], ["id", 3]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (18.0ms)
+Completed 200 OK in 266ms (Views: 250.9ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:51:08 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 1], ["updated_at", "2017-10-22 20:51:08.441335"], ["id", 3]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (124.7ms)
+Completed 200 OK in 234ms (Views: 218.1ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:51:30 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 4], ["updated_at", "2017-10-22 20:51:30.218188"], ["id", 3]]
+  [1m[35m (147.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (155.6ms)
+Completed 200 OK in 251ms (Views: 97.9ms | ActiveRecord: 149.4ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:51:33 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (6.3ms)
+Completed 200 OK in 103ms (Views: 98.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:52:17 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-10-22 20:52:17.759659"], ["id", 3]]
+  [1m[35m (18.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (28.3ms)
+Completed 200 OK in 131ms (Views: 107.6ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:52:25 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 4], ["updated_at", "2017-10-22 20:52:25.583654"], ["id", 3]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (196.0ms)
+Completed 200 OK in 312ms (Views: 294.4ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:53:31 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  Rendered routes/show.html.erb within layouts/user-layout (2.1ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/routes/show.html.erb:67: syntax error, unexpected =>, expecting keyword_end
+ze; @route.spaces_available => @route.spaces_available -  1)
+                              ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:67: syntax error, unexpected ')', expecting keyword_end
+ @route.spaces_available -  1) ;@output_buffer.safe_append='
+                              ^):
+  
+app/views/routes/show.html.erb:67: syntax error, unexpected =>, expecting keyword_end
+app/views/routes/show.html.erb:67: syntax error, unexpected ')', expecting keyword_end
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:53:42 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  Rendered routes/show.html.erb within layouts/user-layout (2.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/routes/show.html.erb:67: syntax error, unexpected ')', expecting keyword_end
+ @route.spaces_available -  1) ;@output_buffer.safe_append='
+                              ^):
+  
+app/views/routes/show.html.erb:67: syntax error, unexpected ')', expecting keyword_end
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:55:27 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  Rendered routes/show.html.erb within layouts/user-layout (3.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/routes/show.html.erb:68: syntax error, unexpected '<'
+n_to "Click me!", :action => <% @route.spaces_available = @r
+                              ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:68: syntax error, unexpected '=', expecting ')'
+> <% @route.spaces_available = @route.spaces_available -  1)
+                              ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:68: syntax error, unexpected ')', expecting keyword_end
+route.spaces_available -  1) );@output_buffer.safe_append=' 
+                              ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:84: syntax error, unexpected keyword_do_block, expecting keyword_end
+       @extraInfoRoute.each do |info| 
+                              ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:369: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/routes/show.html.erb:68: syntax error, unexpected '<'
+app/views/routes/show.html.erb:68: syntax error, unexpected '=', expecting ')'
+app/views/routes/show.html.erb:68: syntax error, unexpected ')', expecting keyword_end
+app/views/routes/show.html.erb:84: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/routes/show.html.erb:369: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:55:46 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  Rendered routes/show.html.erb within layouts/user-layout (1.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/routes/show.html.erb:68: syntax error, unexpected '>'
+utput_buffer.safe_append='" %>  
+                              ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:70: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+nd='              <button type="button" class="btn btn-defau
+                              ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:70: syntax error, unexpected keyword_class, expecting ')'
+   <button type="button" class="btn btn-default" style="back
+                              ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:70: syntax error, unexpected tIDENTIFIER, expecting ')'
+ class="btn btn-default" style="background: gray; color: whi
+                              ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:70: syntax error, unexpected tIDENTIFIER, expecting ')'
+: gray; color: white" disabled>Unirme a esta ruta</button>
+                              ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:70: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+olor: white" disabled>Unirme a esta ruta</button>
+                              ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:73: unknown regexp options - dv
+/home/ubuntu/workspace/app/views/routes/show.html.erb:74: syntax error, unexpected '<'
+      </div>
+       ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:75: unknown regexp options - br
+/home/ubuntu/workspace/app/views/routes/show.html.erb:76: syntax error, unexpected '<'
+      <div id="mapShow" style=\'width
+       ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:76: syntax error, unexpected tIDENTIFIER, expecting ')'
+      <div id="mapShow" style=\'width: 100%; height: 400px;
+                             ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:84: syntax error, unexpected keyword_do_block, expecting ')'
+       @extraInfoRoute.each do |info| 
+                              ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:119: syntax error, unexpected keyword_end, expecting ')'
+         end 
+            ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:124: syntax error, unexpected keyword_do_block, expecting ')'
+       @extraInfoRoute.each do |info| 
+                              ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:134: syntax error, unexpected keyword_end, expecting ')'
+       end 
+          ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:369: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/ubuntu/workspace/app/views/routes/show.html.erb:371: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/routes/show.html.erb:68: syntax error, unexpected '>'
+app/views/routes/show.html.erb:70: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/routes/show.html.erb:70: syntax error, unexpected keyword_class, expecting ')'
+app/views/routes/show.html.erb:70: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/routes/show.html.erb:70: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/routes/show.html.erb:70: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/routes/show.html.erb:73: unknown regexp options - dv
+app/views/routes/show.html.erb:74: syntax error, unexpected '<'
+app/views/routes/show.html.erb:75: unknown regexp options - br
+app/views/routes/show.html.erb:76: syntax error, unexpected '<'
+app/views/routes/show.html.erb:76: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/routes/show.html.erb:84: syntax error, unexpected keyword_do_block, expecting ')'
+app/views/routes/show.html.erb:119: syntax error, unexpected keyword_end, expecting ')'
+app/views/routes/show.html.erb:124: syntax error, unexpected keyword_do_block, expecting ')'
+app/views/routes/show.html.erb:134: syntax error, unexpected keyword_end, expecting ')'
+app/views/routes/show.html.erb:369: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/routes/show.html.erb:371: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:56:23 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  Rendered routes/show.html.erb within layouts/user-layout (2.1ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/views/routes/show.html.erb:67: syntax error, unexpected ')', expecting keyword_end
+ @route.spaces_available -  1) ;@output_buffer.safe_append='
+                              ^):
+  
+app/views/routes/show.html.erb:67: syntax error, unexpected ')', expecting keyword_end
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:56:38 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (4.7ms)
+Completed 200 OK in 189ms (Views: 184.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 20:57:48 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-10-22 20:57:48.233870"], ["id", 3]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (16.6ms)
+Completed 200 OK in 243ms (Views: 229.7ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:01:51 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (753.6ms)
+Completed 500 Internal Server Error in 760ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x000000048aeb08>:0x007fcc8a4fed50>):
+    64:           <% if @route.id_user != current_user.id %>
+    65:             - 
+    66:             <% if @route.spaces_available > 0 %>
+    67:               <%= link_to "/rutas/" + @route.id.to_s, post, :method => @route.update!(spaces_available: @route.spaces_available -  1), :remote=>true %>
+    68:               <%= link_to "/rutas/" + @route.id.to_s do %>
+    69:                 <button type="button" class="btn btn-default" style="background: lightgreen;" action=";">Unirme a esta ruta</button>
+    70:               <% end %>
+  
+app/views/routes/show.html.erb:67:in `_app_views_routes_show_html_erb__2150022608936536037_70258235272420'
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:02:02 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 2], ["updated_at", "2017-10-22 21:02:02.873056"], ["id", 3]]
+  [1m[35m (95.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (114.5ms)
+Completed 200 OK in 260ms (Views: 151.3ms | ActiveRecord: 99.3ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:02:17 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 4], ["updated_at", "2017-10-22 21:02:17.632569"], ["id", 3]]
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (133.1ms)
+Completed 200 OK in 231ms (Views: 214.8ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:02:21 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (9.2ms)
+Completed 200 OK in 175ms (Views: 170.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:02:56 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (8.3ms)
+Completed 200 OK in 253ms (Views: 247.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rutas/3?method=true" for 181.130.112.86 at 2017-10-22 21:03:03 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as JS
+  Parameters: {"method"=>"true", "id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (7.6ms)
+Completed 200 OK in 215ms (Views: 210.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:05:10 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (6.9ms)
+Completed 200 OK in 196ms (Views: 104.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:05:27 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (8.4ms)
+Completed 200 OK in 242ms (Views: 134.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/rutas/3?method=updateSpacesAvailable" for 181.130.112.86 at 2017-10-22 21:05:36 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as JS
+  Parameters: {"method"=>"updateSpacesAvailable", "id"=>"3"}
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (31.3ms)
+Completed 200 OK in 199ms (Views: 187.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:06:00 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (2.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.9ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (111.7ms)
+Completed 200 OK in 955ms (Views: 843.8ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/rutas/3?onclick=updateSpacesAvailable" for 181.130.112.86 at 2017-10-22 21:06:23 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as JS
+  Parameters: {"onclick"=>"updateSpacesAvailable", "id"=>"3"}
+  [1m[36mRoute Load (15.9ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (24.8ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (192.1ms)
+Completed 200 OK in 4661ms (Views: 1162.3ms | ActiveRecord: 175.1ms)
+
+
+Started GET "/" for 190.84.108.15 at 2017-10-22 21:08:09 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (173.7ms)
+Completed 200 OK in 1521ms (Views: 285.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 190.84.108.15 at 2017-10-22 21:08:24 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qEXnHaxvJdZZWYxqmlSCRny2U0xGTQctnBPlCm3GzMcOPO1VhoAAqILnrDLRpw0wimqgl8XYGY5IACK4IkeoAQ==", "user"=>{"email"=>"crcruedaal@unal.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "crcruedaal@unal.edu.co"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 215ms (ActiveRecord: 0.6ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qEXnHaxvJdZZWYxqmlSCRny2U0xGTQctnBPlCm3GzMcOPO1VhoAAqILnrDLRpw0wimqgl8XYGY5IACK4IkeoAQ==", "user"=>{"email"=>"crcruedaal@unal.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 275ms (Views: 136.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 190.84.108.15 at 2017-10-22 21:08:30 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"77z4ZRjouzxz+FBiJOLSZ7JSGFIp4lEtMZVbSYEXa2tJxfItMgeeQqhGcDpvEV0RRI7riap3T47lhpz7zpYPrQ==", "user"=>{"email"=>"crcruedaal@unal.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "crcruedaal@unal.edu.co"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-10-22 21:08:31.186331"], ["last_sign_in_at", "2017-10-22 18:29:10.984723"], ["current_sign_in_ip", "190.84.108.15"], ["last_sign_in_ip", "181.130.112.86"], ["sign_in_count", 5], ["updated_at", "2017-10-22 21:08:31.187933"], ["id", 176]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-camilo-miguelangelborja.c9users.io/
+Completed 302 Found in 223ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/" for 190.84.108.15 at 2017-10-22 21:08:31 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (5.1ms)
+Completed 200 OK in 107ms (Views: 104.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/inicio" for 190.84.108.15 at 2017-10-22 21:08:32 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (12.6ms)
+Completed 200 OK in 135ms (Views: 132.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rutas" for 190.84.108.15 at 2017-10-22 21:08:48 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE ("routes"."id_user" != ?)[0m  [["id_user", 176]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user != 176)[0m
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user != 176) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/index.html.erb within layouts/user-layout (118.0ms)
+Completed 200 OK in 362ms (Views: 343.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/rutas/3" for 190.84.108.15 at 2017-10-22 21:08:58 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (6.2ms)
+Completed 200 OK in 127ms (Views: 122.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/rutas/3" for 190.84.108.15 at 2017-10-22 21:09:14 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (5.7ms)
+Completed 200 OK in 116ms (Views: 111.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rutas/3" for 190.84.108.15 at 2017-10-22 21:09:18 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (5.2ms)
+Completed 200 OK in 108ms (Views: 103.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/rutas/3" for 190.84.108.15 at 2017-10-22 21:09:21 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (5.0ms)
+Completed 200 OK in 216ms (Views: 211.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:09:34 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (7.6ms)
+Completed 200 OK in 216ms (Views: 211.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/rutas/3" for 190.84.108.15 at 2017-10-22 21:09:36 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (4.8ms)
+Completed 200 OK in 113ms (Views: 109.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/rutas/3" for 190.84.108.15 at 2017-10-22 21:10:32 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (11.5ms)
+Completed 200 OK in 144ms (Views: 137.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/rutas/3" for 190.84.108.15 at 2017-10-22 21:12:35 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (11.8ms)
+Completed 200 OK in 186ms (Views: 179.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rutas/3" for 190.84.108.15 at 2017-10-22 21:12:38 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (5.7ms)
+Completed 200 OK in 159ms (Views: 154.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rutas/3" for 190.84.108.15 at 2017-10-22 21:15:04 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (1.0ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (18.0ms)
+Completed 200 OK in 438ms (Views: 279.9ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:17:04 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/rutas/3" for 190.84.108.15 at 2017-10-22 21:17:04 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (42.4ms)
+Completed 500 Internal Server Error in 281ms (ActiveRecord: 6.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `updateSpacesAvailable' for #<Class:0x007fcc7cc2b9d8>):
+    65:             - 
+    66:             <% if @route.spaces_available > 0 %>
+    67:               <%= link_to "/rutas/" + @route.id.to_s do %>
+    68:                 <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="<% Route.updateSpacesAvailable(@route.id) %>">Unirme a esta ruta</button>
+    69:               <% end %>
+    70:             <% else %>
+    71:               <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+  
+app/views/routes/show.html.erb:68:in `block in _app_views_routes_show_html_erb__2150022608936536037_70258234899360'
+app/views/routes/show.html.erb:67:in `_app_views_routes_show_html_erb__2150022608936536037_70258234899360'
+app/controllers/routes_controller.rb:25:in `show'
+  Rendered routes/show.html.erb within layouts/user-layout (135.5ms)
+Completed 500 Internal Server Error in 321ms (ActiveRecord: 6.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `updateSpacesAvailable' for #<Class:0x007fcc7c79b468>):
+    65:             - 
+    66:             <% if @route.spaces_available > 0 %>
+    67:               <%= link_to "/rutas/" + @route.id.to_s do %>
+    68:                 <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="<% Route.updateSpacesAvailable(@route.id) %>">Unirme a esta ruta</button>
+    69:               <% end %>
+    70:             <% else %>
+    71:               <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+  
+app/views/routes/show.html.erb:68:in `block in _app_views_routes_show_html_erb__2150022608936536037_38003960'
+app/views/routes/show.html.erb:67:in `_app_views_routes_show_html_erb__2150022608936536037_38003960'
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas/3" for 190.84.108.15 at 2017-10-22 21:17:04 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (155.8ms)
+Completed 500 Internal Server Error in 319ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `updateSpacesAvailable' for #<Class:0x007fcc7c79b468>):
+    65:             - 
+    66:             <% if @route.spaces_available > 0 %>
+    67:               <%= link_to "/rutas/" + @route.id.to_s do %>
+    68:                 <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="<% Route.updateSpacesAvailable(@route.id) %>">Unirme a esta ruta</button>
+    69:               <% end %>
+    70:             <% else %>
+    71:               <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+  
+app/views/routes/show.html.erb:68:in `block in _app_views_routes_show_html_erb__2150022608936536037_39654060'
+app/views/routes/show.html.erb:67:in `_app_views_routes_show_html_erb__2150022608936536037_39654060'
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas/3" for 190.84.108.15 at 2017-10-22 21:17:06 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (24.1ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `updateSpacesAvailable' for #<Class:0x007fcc7c79b468>):
+    65:             - 
+    66:             <% if @route.spaces_available > 0 %>
+    67:               <%= link_to "/rutas/" + @route.id.to_s do %>
+    68:                 <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="<% Route.updateSpacesAvailable(@route.id) %>">Unirme a esta ruta</button>
+    69:               <% end %>
+    70:             <% else %>
+    71:               <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+  
+app/views/routes/show.html.erb:68:in `block in _app_views_routes_show_html_erb__2150022608936536037_70258118682360'
+app/views/routes/show.html.erb:67:in `_app_views_routes_show_html_erb__2150022608936536037_70258118682360'
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas/3" for 190.84.108.15 at 2017-10-22 21:17:06 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (27.1ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `updateSpacesAvailable' for #<Class:0x007fcc7c79b468>):
+    65:             - 
+    66:             <% if @route.spaces_available > 0 %>
+    67:               <%= link_to "/rutas/" + @route.id.to_s do %>
+    68:                 <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="<% Route.updateSpacesAvailable(@route.id) %>">Unirme a esta ruta</button>
+    69:               <% end %>
+    70:             <% else %>
+    71:               <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+  
+app/views/routes/show.html.erb:68:in `block in _app_views_routes_show_html_erb__2150022608936536037_70258048552240'
+app/views/routes/show.html.erb:67:in `_app_views_routes_show_html_erb__2150022608936536037_70258048552240'
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas" for 190.84.108.15 at 2017-10-22 21:17:13 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE ("routes"."id_user" != ?)[0m  [["id_user", 176]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user != 176)[0m
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (1.0ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user != 176) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/index.html.erb within layouts/user-layout (99.9ms)
+Completed 200 OK in 234ms (Views: 226.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/rutas" for 190.84.108.15 at 2017-10-22 21:17:13 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE ("routes"."id_user" != ?)[0m  [["id_user", 176]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user != 176)[0m
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user != 176) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/index.html.erb within layouts/user-layout (13.6ms)
+Completed 200 OK in 144ms (Views: 131.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/rutas/3" for 190.84.108.15 at 2017-10-22 21:17:18 +0000
+Cannot render console from 190.84.108.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (95.7ms)
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `updateSpacesAvailable' for #<Class:0x007fcc7c79b468>):
+    65:             - 
+    66:             <% if @route.spaces_available > 0 %>
+    67:               <%= link_to "/rutas/" + @route.id.to_s do %>
+    68:                 <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="<% Route.updateSpacesAvailable(@route.id) %>">Unirme a esta ruta</button>
+    69:               <% end %>
+    70:             <% else %>
+    71:               <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+  
+app/views/routes/show.html.erb:68:in `block in _app_views_routes_show_html_erb__2150022608936536037_70258124408840'
+app/views/routes/show.html.erb:67:in `_app_views_routes_show_html_erb__2150022608936536037_70258124408840'
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:18:02 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (27.2ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `updateSpacesAvailable' for #<Class:0x007fcc7cc2b9d8>):
+    65:             - 
+    66:             <% if @route.spaces_available > 0 %>
+    67:               <%= link_to "/rutas/" + @route.id.to_s do %>
+    68:                 <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="<%= Route.updateSpacesAvailable(@route.id) %>">Unirme a esta ruta</button>
+    69:               <% end %>
+    70:             <% else %>
+    71:               <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+  
+app/views/routes/show.html.erb:68:in `block in _app_views_routes_show_html_erb__2150022608936536037_70258117797080'
+app/views/routes/show.html.erb:67:in `_app_views_routes_show_html_erb__2150022608936536037_70258117797080'
+app/controllers/routes_controller.rb:25:in `show'
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:19:36 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (460.7ms)
+Completed 500 Internal Server Error in 571ms (ActiveRecord: 4.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `updateSpacesAvailable' for #<#<Class:0x007fcc7c696838>:0x007fcc7c694768>):
+    65:             - 
+    66:             <% if @route.spaces_available > 0 %>
+    67:               <%= link_to "/rutas/" + @route.id.to_s do %>
+    68:                 <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="<% updateSpacesAvailable(@route.id) %>">Unirme a esta ruta</button>
+    69:               <% end %>
+    70:             <% else %>
+    71:               <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+  
+app/views/routes/show.html.erb:68:in `block in _app_views_routes_show_html_erb__2150022608936536037_70258118645720'
+app/views/routes/show.html.erb:67:in `_app_views_routes_show_html_erb__2150022608936536037_70258118645720'
+app/controllers/routes_controller.rb:28:in `show'
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:19:55 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (30.6ms)
+Completed 500 Internal Server Error in 181ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `updateSpacesAvailable' for #<Class:0x007fcc7d7f9378>):
+    65:             - 
+    66:             <% if @route.spaces_available > 0 %>
+    67:               <%= link_to "/rutas/" + @route.id.to_s do %>
+    68:                 <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="<% Route.updateSpacesAvailable(@route.id) %>">Unirme a esta ruta</button>
+    69:               <% end %>
+    70:             <% else %>
+    71:               <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+  
+app/views/routes/show.html.erb:68:in `block in _app_views_routes_show_html_erb__2150022608936536037_70258127313780'
+app/views/routes/show.html.erb:67:in `_app_views_routes_show_html_erb__2150022608936536037_70258127313780'
+app/controllers/routes_controller.rb:28:in `show'
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:20:57 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (618.0ms)
+Completed 500 Internal Server Error in 627ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `updateSpacesAvailable' for #<#<Class:0x007fcc7c696838>:0x007fcc894de628>):
+    65:             - 
+    66:             <% if @route.spaces_available > 0 %>
+    67:               <%= link_to "/rutas/" + @route.id.to_s do %>
+    68:                 <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="<%= updateSpacesAvailable(@route.id) -%>">Unirme a esta ruta</button>
+    69:               <% end %>
+    70:             <% else %>
+    71:               <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+  
+app/views/routes/show.html.erb:68:in `block in _app_views_routes_show_html_erb__2150022608936536037_70258226732860'
+app/views/routes/show.html.erb:67:in `_app_views_routes_show_html_erb__2150022608936536037_70258226732860'
+app/controllers/routes_controller.rb:28:in `show'
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:21:26 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (35.9ms)
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `updateSpacesAvailable' for #<Class:0x007fcc89b1f0f0>):
+    65:             - 
+    66:             <% if @route.spaces_available > 0 %>
+    67:               <%= link_to "/rutas/" + @route.id.to_s do %>
+    68:                 <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="<%= Route.updateSpacesAvailable(@route.id) -%>">Unirme a esta ruta</button>
+    69:               <% end %>
+    70:             <% else %>
+    71:               <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+  
+app/views/routes/show.html.erb:68:in `block in _app_views_routes_show_html_erb__2150022608936536037_70258230842200'
+app/views/routes/show.html.erb:67:in `_app_views_routes_show_html_erb__2150022608936536037_70258230842200'
+app/controllers/routes_controller.rb:28:in `show'
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:22:52 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (3.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (154.8ms)
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `updateSpacesAvailable' for #<Class:0x007fcc7d7f9378>):
+    65:             - 
+    66:             <% if @route.spaces_available > 0 %>
+    67:               <%= link_to "/rutas/" + @route.id.to_s do %>
+    68:                 <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="<% Route.updateSpacesAvailable(@route.id) %>">Unirme a esta ruta</button>
+    69:               <% end %>
+    70:             <% else %>
+    71:               <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+  
+app/views/routes/show.html.erb:68:in `block in _app_views_routes_show_html_erb__2150022608936536037_70258117295420'
+app/views/routes/show.html.erb:67:in `_app_views_routes_show_html_erb__2150022608936536037_70258117295420'
+app/controllers/routes_controller.rb:28:in `show'
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:25:17 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.6ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (3178.9ms)
+Completed 500 Internal Server Error in 3190ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `id_route' for #<#<Class:0x007fcc89c92388>:0x007fcc800ada08>
+Did you mean?  _routes):
+    165: <script type="text/javascript">
+    166: 
+    167: function updateSpacesAvailable(id_route)
+    168:   <%= Route.find(id_route).update!(spaces_available: 3) %>
+    169: end
+    170:     
+    171: var mapStyle = [
+  
+app/views/routes/show.html.erb:168:in `_app_views_routes_show_html_erb__2150022608936536037_70258149080960'
+app/controllers/routes_controller.rb:28:in `show'
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:25:47 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-10-22 21:25:47.800470"], ["id", 3]]
+  [1m[35m (168.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (184.1ms)
+Completed 200 OK in 312ms (Views: 135.4ms | ActiveRecord: 171.0ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:25:57 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (8.0ms)
+Completed 200 OK in 236ms (Views: 229.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:26:08 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (9.9ms)
+Completed 200 OK in 189ms (Views: 183.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:26:43 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (8.5ms)
+Completed 200 OK in 170ms (Views: 165.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:26:47 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (99.4ms)
+Completed 200 OK in 212ms (Views: 207.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:26:55 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (1.9ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 4], ["updated_at", "2017-10-22 21:26:55.889245"], ["id", 3]]
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (40.9ms)
+Completed 200 OK in 185ms (Views: 162.8ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:27:25 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (11.1ms)
+Completed 200 OK in 167ms (Views: 160.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:27:43 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (1.7ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (21.6ms)
+Completed 200 OK in 169ms (Views: 160.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:27:53 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (4.9ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (24.8ms)
+Completed 200 OK in 202ms (Views: 188.3ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:28:01 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (2.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-10-22 21:28:01.193149"], ["id", 3]]
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (43.9ms)
+Completed 200 OK in 218ms (Views: 189.3ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/rutas/3" for 181.130.112.86 at 2017-10-22 21:28:18 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (148.7ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 176], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "BFU-628"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 4], ["updated_at", "2017-10-22 21:28:18.784685"], ["id", 3]]
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendered routes/show.html.erb within layouts/user-layout (36.6ms)
+Completed 200 OK in 326ms (Views: 154.9ms | ActiveRecord: 163.4ms)
+
+
