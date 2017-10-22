@@ -22,26 +22,20 @@
             <div class="form-group">
               <div class="col-lg-12">
                 <label class="col-lg-4 control-label">Título:</label>
-                <%= form.text_field :title, class: "form-control", id: :route_title, autofocus: true, type: 'text', required: "" %>
-               <br>
+                <div class="input-group col-lg-8">
+                  <span class="input-group-addon glyphicon glyphicon-tags"></span>
+                  <%= form.text_field :title, class: "form-control", id: :route_title, autofocus: true, type: 'text', required: "" %>
+                </div>
+                <br>
               </div>
             </div>
             <br></br>
-            </br>
             <div class="form-group">
               <div class="col-lg-12">
                 <label class="col-lg-4 control-label">Descripción:</label>
-                <%= form.text_field :description, class: "form-control", id: :route_description, autofocus: true, type: 'text', required: "" %>
-              </div>
-            </div>
-            <br></br>
-            </br>
-            <div class="form-group">
-              <div class="col-lg-12">
-                <label class="col-lg-4 control-label">Costo:</label>
-                <div class="input-group col-lg-6">
-                  <span class="input-group-addon">$</span>
-                  <%= form.text_field :cost, class: "form-control", id: :route_cost, type: 'number', min: 100, step: 100, autofocus: true, required: "" %>
+                <div class="input-group col-lg-8">
+                  <span class="input-group-addon glyphicon glyphicon-align-justify"></span>
+                  <%= form.text_area :description, class: "form-control", id: :route_description, autofocus: true, type: 'text', style: "resize: none;", required: "" %>
                 </div>
               </div>
             </div>
@@ -49,20 +43,46 @@
             </br>
             <div class="form-group">
               <div class="col-lg-12">
+                <label class="col-lg-4 control-label">Costo:</label>
+                <div class="input-group col-lg-8">
+                  <span class="input-group-addon glyphicon glyphicon-usd"></span>
+                  <%= form.text_field :cost, class: "form-control", id: :route_cost, type: 'number', min: 100, step: 100, autofocus: true, required: "" %>
+                </div>
+              </div>
+            </div>
+            <br></br>
+            <div class="form-group">
+              <div class="col-lg-12">
                 <label class="col-lg-4 control-label">Elige tu vehículo:</label>
-                <select name="route[car_placa]" style="background-color: white; color: black; width: 200px; height: 30px; display: block; border-radius: 5px;", required: "">
-                  <option value=" " style="color: black;"></option>
-                  <% @myCars.each do |car| %>
-                    <option value=<%= car.placa %> style="color: black;"><%= car.placa %></option>
-                  <% end %>
-                </select>
+                <div class="input-group col-lg-8">
+                  <span class="input-group-addon glyphicon glyphicon-bed"></span>
+                  <select name="route[car_placa]" id="carSelect" style="background-color: white; color: black; width: 100%; height: 30px; display: block; border-radius: 5px;"  required: "">
+                    <option value=" " style="color: black;"></option>
+                    <% @myCars.each do |car| %>
+                      <option value=<%= car.placa %> style="color: black;"><%= car.placa %></option>
+                    <% end %>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <br></br>
+            <div class="form-group">
+              <div class="col-lg-12">
+                <label class="col-lg-4 control-label">Cupos disponibles:</label>
+                <div class="input-group col-lg-8">
+                  <span class="input-group-addon glyphicon glyphicon-user"></span>
+                  <%= form.text_field :spaces_available, class: "form-control", id: :route_spaces_available, type: 'number', min: 1, step: 1, autofocus: true, required: "" %>
+                </div>
               </div>
             </div>
             <br></br>
             <div class="form-group">
               <div class="col-sm-12">
                 <label class="col-lg-4">Salida:</label>
-                <%= form.text_field :departure, class: "form-control col-lg-8", id: :route_departure, type: 'datetime-local', autofocus: true, style: "width: 50%;", required: "" %>
+                <div class="input-group col-lg-8">
+                  <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+                  <%= form.text_field :departure, class: "form-control col-lg-8", id: :route_departure, type: 'datetime-local', autofocus: true, required: "" %>
+                </div>
               </div>
             </div>
             <br></br>
@@ -71,39 +91,36 @@
                 <%= form.hidden_field :from_lat, class: "form-control", id: :route_from_lat, autofocus: true, required: "" %>
               </div>
             </div>
-            <br></br>
             <div class="form-group">
               <div class="col-lg-12">
                 <%= form.hidden_field :from_lng, class: "form-control", id: :route_from_lng, autofocus: true, required: "" %>
               </div>
             </div>
-            <br></br>
             <div class="form-group">
               <div class="col-lg-12">
                 <%= form.hidden_field :to_lat, class: "form-control", id: :route_to_lat, autofocus: true, required: "" %>
               </div>
             </div>
-            <br></br>
             <div class="form-group">
               <div class="col-lg-12">
                 <%= form.hidden_field :to_lng, class: "form-control", id: :route_to_lng, autofocus: true, required: "" %>
               </div>
             </div>
-            <br></br>
             <div class="form-group">
               <div class="col-lg-12">
                 <%= form.hidden_field :waypoints, class: "form-control", id: :route_waypoints, autofocus: true, required: "" %>
               </div>
             </div>
-            <br></br>
           </form>
         </div>
         
         <%= form.hidden_field :id_user, :value => current_user.id %>
-        
+        <%= form.hidden_field :users_in_route, :value => "" %>
+
         <div class="col-md-6 personal-info">
           <div class="col-lg-12" style="text-align: right;">
-            <div class="input-group" style="width: 90%; margin: 0 auto; text-align: left">
+            <div class="input-group" style="width: 100%; margin: 0 auto; text-align: left">
+              <span class="input-group-addon glyphicon glyphicon-globe"></span>
               <input type="text" class="form-control" name="address" id="address" placeholder="Buscar en el mapa...">
               <span class="input-group-btn">
                 <button type="button" class="btn btn-default" id="geocode" onclick="geocodeAddress()" style="background: lightgreen;">Buscar</button>
