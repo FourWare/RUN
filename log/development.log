@@ -1733,3 +1733,81 @@ ActionView::Template::Error (undefined local variable or method `user' for #<#<C
   
 app/views/routes/show.html.erb:119:in `_app_views_routes_show_html_erb__3729090736744189931_70031433793020'
 app/controllers/routes_controller.rb:22:in `show'
+Started GET "/" for 181.130.112.86 at 2017-10-22 05:12:51 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (374.2ms)
+Completed 200 OK in 994ms (Views: 493.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-22 05:12:58 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (189.6ms)
+Completed 200 OK in 898ms (Views: 331.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/home/entrar" for 181.130.112.86 at 2017-10-22 05:13:09 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h/pWyhPT37pVMUuWshgEJvliu7zFKE2q5SlwqvuxTSJReFq2rnwr4b/x/3+U3w22zFaVnlAs/udXCe/ZfRZimQ==", "user"=>{"email"=>"miaborjaac@unal.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "miaborjaac@unal.edu.co"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-10-22 05:13:10.084230"], ["last_sign_in_at", "2017-10-12 20:43:29.953206"], ["sign_in_count", 5], ["updated_at", "2017-10-22 05:13:10.092302"], ["id", 174]]
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-camilo-miguelangelborja.c9users.io/
+Completed 302 Found in 216ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-22 05:13:10 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (10.0ms)
+Completed 200 OK in 216ms (Views: 213.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-22 05:13:11 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (9.3ms)
+Completed 200 OK in 199ms (Views: 196.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rutas/new" for 181.130.112.86 at 2017-10-22 05:13:17 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering routes/new.html.erb within layouts/user-layout
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."user_id" = ?[0m  [["user_id", 174]]
+  Rendered routes/_form.html.erb (45.0ms)
+  Rendered routes/new.html.erb within layouts/user-layout (47.3ms)
+Completed 200 OK in 283ms (Views: 213.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-10-22 05:13:26 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (8.6ms)
+Completed 200 OK in 144ms (Views: 141.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/mis-rutas" for 181.130.112.86 at 2017-10-22 05:13:29 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show_my_routes as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE "routes"."id_user" = ?[0m  [["id_user", 174]]
+  Rendering routes/show_my_routes.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id_user" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["id_user", 174], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/show_my_routes.html.erb within layouts/user-layout (27.5ms)
+Completed 200 OK in 165ms (Views: 156.3ms | ActiveRecord: 1.7ms)
+
+
