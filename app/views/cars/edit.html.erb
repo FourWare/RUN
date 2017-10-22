@@ -44,17 +44,26 @@
               <div class="col-lg-6">
                 <label class="col-lg-2 control-label"></br>Tipo:</label>
                 <br></br>
-                <%= f.text_field :tipo, class: "form-control", id: 'usernameRegister', value: @car.tipo, autofocus: true, type: 'text', required: "" %>
+                <%= f.select(:tipo, options_for_select(
+                    [[@car.tipo, @car.tipo], 
+                      "Carro", 
+                      "Moto"
+                    ]),
+                    { },
+                    { 
+                      id: 'usernameRegister',
+                      class: "btn dropdown-toggle bs-placeholder btn-default",
+                      style: "background-color: white; color: black; display: block; border-radius: 5px;" 
+                    }) %>
               </div>
             </div>
             <div class="form-group">
               <div class="col-lg-6">
                 <label class="col-lg-2 control-label"></br>Modelo:</label>
                 <br></br>
-                <%= f.text_field :modelo, class: "form-control", id: 'usernameRegister', value: @car.modelo, autofocus: true, type: 'text', required: "" %>
+                <%= f.text_field :modelo, class: "form-control", id: 'usernameRegister', value: @car.modelo, autofocus: true, type: 'number', min: 1950, max: Time.current.year + 1, required: "" %>
               </div>
             </div>
-            
             <div class="form-group">
               <div class="col-lg-6">
                 <label class="col-lg-2 control-label"></br>Marca:</label>
@@ -65,7 +74,7 @@
             
             <div class="form-group">
               <div class="col-lg-6">
-                <label class="col-lg-2 control-label">Color:</label>
+                <label class="col-lg-2 control-label"></br>Color:</label>
                 <br></br>
                 <%= f.text_field :color, class: "form-control", id: 'usernameRegister', value: @car.color, autofocus: true, type: 'text', required: "" %>
               </div>
@@ -73,9 +82,9 @@
             
             <div class="form-group">
               <div class="col-lg-6">
-                <label class="col-lg-2 control-label">Capacidad:</label>
+                <label class="col-lg-2 control-label"></br>Capacidad:</label>
                 <br></br>
-                <%= f.text_field :capacidad, class: "form-control", id: 'usernameRegister', value: @car.capacidad, autofocus: true, type: 'text', required: "" %>
+                <%= f.text_field :capacidad, class: "form-control", id: 'usernameRegister', value: @car.capacidad, autofocus: true, type: 'number', min: 1, required: "" %>
               </div>
             </div>
             
