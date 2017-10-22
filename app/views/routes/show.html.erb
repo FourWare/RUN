@@ -47,7 +47,7 @@
     <div class="col-md-8 personal-info">
       <form class="form-horizontal" role="form">
         <% @extraInfoRoute.each do |info| %>
-          <% if info.placa == @route.car %>
+          <% if info.placa == @route.car_placa %>
             <div class="form-group">
               <div class="col-lg-6">
                 <label class="col-lg-6 control-label" style="text-align: left;"></br>Placa:</label>
@@ -87,7 +87,7 @@
     <div class="col-md-4 personal-info">
       <br></br>
       <% @extraInfoRoute.each do |info| %>
-        <% if info.placa == @route.car %>
+        <% if info.placa == @route.car_placa %>
           <div class="text-center">
             <% if info.image.present? == false %>
               <%= image_tag("default-car.jpg", width: '100%', height: '250', class: 'image-circle') %>
@@ -136,19 +136,24 @@
   </div>
   <hr>
   <div class="form-group">
-      <div class="col-lg-4">
+      <div class="col-lg-2">
       </div>
-      <div class="col-lg-4">
-        <%= link_to "/" do %>
-          <button id="submitRegister" class="btn btn-primary btn-lg" type='submit' display='inline-block' style="width: 100%; white-space: normal;">Volver al menú</button>
+      <div class="col-lg-3">
+        <%= link_to "/usuario/inicio" do %>
+          <button id="submitRegister" class="btn btn-primary btn-lg" type='submit' display='inline-block' style="width: 100%; white-space: normal;">Menú principal</button>
         <% end %>
       </div>
-      <div class="col-lg-4">
-        <%= link_to "/" do %>
-          <button id="submitRegister" class="btn btn-primary btn-lg" type='submit' display='inline-block' style="width: 100%; white-space: normal;">Unirme como pasajero </button>
+      <div class="col-lg-3">
+        <%= link_to "/usuario/mis-rutas" do %>
+          <button id="submitRegister" class="btn btn-primary btn-lg" type='submit' display='inline-block' style="width: 100%; white-space: normal;">Mis rutas</button>
         <% end %>
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-3">
+        <%= link_to "/rutas" do %>
+          <button id="submitRegister" class="btn btn-primary btn-lg" type='submit' display='inline-block' style="width: 100%; white-space: normal;">Otras rutas</button>
+        <% end %>
+      </div>
+      <div class="col-lg-1">
       </div>
     </div>
     

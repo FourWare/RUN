@@ -5,15 +5,15 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.where(:user_id => current_user.id).all
-    @countCars = Car.where(:user_id => current_user.id).count
+    @cars = Car.cars(current_user.id)
+    @countCars = Car.countCars(current_user.id)
     render :layout => 'user-layout'
   end
 
   # GET /cars/1
   # GET /cars/1.json
   def show
-    @id_user = User.find(current_user.id)
+    @id_user = Car.user(current_user.id)
     render :layout => 'user-layout'
   end
 

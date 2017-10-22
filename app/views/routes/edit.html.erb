@@ -42,7 +42,7 @@
             <div class="form-group">
               <div class="col-lg-12">
                 <label class="col-lg-4 control-label">Elige tu vehículo:</label>
-                <select name="route[car]" class="selectpicker show-tick" style="background-color: white; color: black; width: 30%; height: 100%;", required: "">
+                <select name="route[car_placa]" class="selectpicker show-tick" style="background-color: white; color: black; width: 30%; height: 100%;", required: "">
                   <option value=" " style="color: black;"></option>
                   <% @myCars.each do |car| %>
                     <option value=<%= car.placa %> style="color: black;"><%= car.placa %></option>

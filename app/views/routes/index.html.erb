@@ -1,7 +1,42 @@
 </br>
 <div class="container table-responsive" style="background-color: lightgray; padding: 1%; width: 60%;">
   <h1 style="color: #155892;">Rutas creadas por otros usuarios</h1>
-  <p style="color: #155892;">Número de rutas: <%= @countRoutes %></p>
+  <p style="color: #155892;">Número de rutas: <%= @countRoutesFilter %></p>
+  <% if @countOtherRoutes >= 2 %>
+    <div class="col-xs-12" style="text-align: center; padding: 0%;">
+      <div class="col-xs-3" style="text-align: left; padding: 0%;">
+      </div>
+      <div class="col-xs-6" style="text-align: center; padding: 0%;">
+        <form action="/rutas" method="get">
+          <div class="row">
+            <%= image_tag("filter.png", alt: 'Filter', class: "mx-auto img-circle", style: "width: 7%;", title: "Realiza tus filtros") %>
+            <%= select_tag(:filterSelect, options_for_select(
+              [['Todo', "all"], 
+              ['Tipo de vehículo', "type"], 
+              ['Marca del vehículo', "brand"],
+              ['Color del vehículo', "color"],
+              ['Capacidad del vehículo', "capacity"],
+              ['Fecha', "date"],
+              ['Costo', "cost"],
+              ['Palabra clave', "keyWord"]],
+              params[:filterSelect]),
+              { class: "btn dropdown-toggle bs-placeholder btn-default", id: "searchSelect", style: "width: 50%; font-size: 100%;", :onchange => "a();" }) %>
+          </div>
+          <div class="row" id="searchDiv">
+            <button type="button" class="btn btn-link" id="btnRestart" style="color: black; font-size: 100%; padding-top: 3%;" onclick="restartSearch();">
+              <span class="glyphicon glyphicon-repeat"></span>
+            </button>
+            <%= text_field_tag :search, params[:search], id: "searchInput", title: "Escribe tu búsqueda", style: "width: 50%; color: black;", disabled: true %>
+            <%= submit_tag "Buscar", class: "btn btn-default", style: "background: lightgreen;" %>
+            </br>
+          </div>
+        </form>
+      </div>
+      <div class="col-xs-3">
+      </div>
+    </div>
+    <br></br>
+  <% end %>
   <table class="table table-striped table-bordered table-hover" style="border: solid black; ">
     <thead style="background-color: #373a3c; color: white;">
       <tr>
@@ -27,9 +62,18 @@
 </div>
 </br>
 
-<%= link_to "/usuario/inicio" do %>
-  <button type="button" id="submitRegister" class="btn btn-primary btn-lg" style="width: 20%; white-space: normal;" display="inline-block">Volver al menú</button>
-<% end %>
+<div class="col-lg-3"></div>
+<div class="col-lg-3">
+  <%= link_to "/usuario/inicio" do %>
+    <button id="submitRegister" class="btn btn-primary btn-lg" type='submit' display='inline-block' style="width: 100%; white-space: normal;">Menú principal</button>
+  <% end %>
+</div>
+<div class="col-lg-3">
+  <%= link_to "/usuario/mis-rutas" do %>
+    <button id="submitRegister" class="btn btn-primary btn-lg" type='submit' display='inline-block' style="width: 100%; white-space: normal;">Mis rutas</button>
+  <% end %>
+</div>
+<div class="col-lg-3"></div>
 
 <p id="notice"><%= notice %></p>
 
