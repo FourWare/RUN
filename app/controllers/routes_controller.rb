@@ -34,7 +34,7 @@ class RoutesController < ApplicationController
   # POST /routes.json
   def create
     @route = Route.new(route_params)
-    
+
     respond_to do |format|
       if @route.save
         format.html { redirect_to @route, notice: 'Route was successfully created.' }
@@ -73,6 +73,7 @@ class RoutesController < ApplicationController
   def show_my_routes
     @routes = Route.filterSearch(params[:filterSelect], params[:search], current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
     @countMyRoutes = Route.countMyRoutes(current_user.id)
+    @countRoutesFilter = @routes.count
     render :layout => 'user-layout'
   end
 

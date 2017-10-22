@@ -2,13 +2,13 @@
 
 <div class="container table-responsive" style="background-color: lightgray; padding: 1%; width: 60%; overflow: auto;">
   <h1 style="color: #155892;">Mis rutas</h1>
-  <p style="color: #155892;">Número de rutas: <%= @countMyRoutes %></p>
+  <p style="color: #155892;">Número de rutas: <%= @countRoutesFilter %></p>
   <% if @countMyRoutes >= 2 %>
     <div class="col-xs-12" style="text-align: center; padding: 0%;">
       <div class="col-xs-3" style="text-align: left; padding: 0%;">
       </div>
       <div class="col-xs-6" style="text-align: center; padding: 0%;">
-        <%= form_tag "mis-rutas", method: "get" do %>
+        <form action="/usuario/mis-rutas" method="get">
           <div class="row">
             <%= image_tag("filter.png", alt: 'Filter', class: "mx-auto img-circle", style: "width: 7%;", title: "Realiza tus filtros") %>
             <%= select_tag(:filterSelect, options_for_select(
@@ -24,17 +24,14 @@
               { class: "btn dropdown-toggle bs-placeholder btn-default", id: "searchSelect", style: "width: 50%; font-size: 100%;", :onchange => "a();" }) %>
           </div>
           <div class="row" id="searchDiv">
-            <%= text_field_tag :search, params[:search], id: "searchInput", title: "Escribe tu búsqueda", style: "width: 50%; color: black;" %>
-            <%= select_tag(:search, options_for_select(
-              [['Carro', "car"], 
-              ['Moto', "motorcycle"],
-              ['Otro', "other"]],
-              params[:search]),
-              { class: "btn dropdown-toggle bs-placeholder btn-default", id: "searchInputSelect", style: "width: 50%; color: black; display: none;"}) %>
+            <button type="button" class="btn btn-link" id="btnRestart" style="color: black; font-size: 100%; padding-top: 3%;" onclick="restartSearch();">
+              <span class="glyphicon glyphicon-repeat"></span>
+            </button>
+            <%= text_field_tag :search, params[:search], id: "searchInput", title: "Escribe tu búsqueda", style: "width: 50%; color: black;", disabled: true %>
             <%= submit_tag "Buscar", class: "btn btn-default", style: "background: lightgreen;" %>
             </br>
           </div>
-        <% end %>
+        </form>
       </div>
       <div class="col-xs-3">
       </div>
