@@ -17,6 +17,7 @@
   	<div class="row">
         <div class="col-md-6 personal-info">
           <h3>Información de la nueva ruta</h3>
+          <br></br>
           <form class="form-horizontal" role="form">
             <div class="form-group">
               <div class="col-lg-12">
@@ -38,7 +39,10 @@
             <div class="form-group">
               <div class="col-lg-12">
                 <label class="col-lg-4 control-label">Costo:</label>
-                <%= form.text_field :cost, class: "form-control", id: :route_cost, autofocus: true, required: "" %>
+                <div class="input-group col-lg-6">
+                  <span class="input-group-addon">$</span>
+                  <%= form.text_field :cost, class: "form-control", id: :route_cost, type: 'number', min: 100, step: 100, autofocus: true, required: "" %>
+                </div>
               </div>
             </div>
             <br></br>
@@ -57,14 +61,8 @@
             <br></br>
             <div class="form-group">
               <div class="col-sm-12">
-                <label class="col-lg-12">Salida:</label>
-                </br>
-                <%= form.datetime_select :departure, { 
-			      						:order => [:day, :month, :year], 
-								    	  :start_year => Time.now.year + 1, 
-								    	  :end_year => Time.now.year},
-									      {:class => "form-control date-select", required: "", id: :route_departure}
-								 	%>
+                <label class="col-lg-4">Salida:</label>
+                <%= form.text_field :departure, class: "form-control col-lg-8", id: :route_departure, type: 'datetime-local', autofocus: true, style: "width: 50%;", required: "" %>
               </div>
             </div>
             <br></br>
