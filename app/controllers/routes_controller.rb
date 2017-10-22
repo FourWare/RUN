@@ -5,8 +5,16 @@ class RoutesController < ApplicationController
   # GET /routes
   # GET /routes.json
   def index
-    @routes = Route.otherRoutes(current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
-    @countRoutes = Route.countRoutes(current_user.id)
+    @routes = Route.filterSearchOtherRoutes(params[:filterSelect], params[:search], current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    @countOtherRoutes = Route.countOtherRoutes(current_user.id)
+    @countRoutesFilter = @routes.count
+    render :layout => 'user-layout'
+  end
+  
+  def show_my_routes
+    @routes = Route.filterSearchMyRoutes(params[:filterSelect], params[:search], current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    @countMyRoutes = Route.countMyRoutes(current_user.id)
+    @countRoutesFilter = @routes.count
     render :layout => 'user-layout'
   end
 
@@ -68,13 +76,6 @@ class RoutesController < ApplicationController
       format.html { redirect_to routes_url, notice: 'Route was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-  
-  def show_my_routes
-    @routes = Route.filterSearch(params[:filterSelect], params[:search], current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
-    @countMyRoutes = Route.countMyRoutes(current_user.id)
-    @countRoutesFilter = @routes.count
-    render :layout => 'user-layout'
   end
 
   private

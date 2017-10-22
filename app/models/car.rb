@@ -1,8 +1,7 @@
 class Car < ApplicationRecord
     mount_uploader :image, ImageCarUploader
     belongs_to :user
-    has_many :routes
-    
+
     def self.countCars(user_id)
         Car.where(:user_id => user_id).count
     end
