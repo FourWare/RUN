@@ -4,11 +4,11 @@
 	        <h2 style="text-align: center; font-size: ">Inicia sesión</h2>
 	        <div class="w3l-login form">
 	            <%= form_for(resource, as: resource_name, url: session_path(resource_name), name: "login_form") do |f| %>
-	                <div class="form-sub-w3">
-		                <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
+	                <div class="form-sub-w3 form-group clearfix">
+		                <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', style: "width: 100%", type: 'email', required: "" %>
 		            </div>
 		            <div class="form-sub-w3 form-group clearfix">
-	                    <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
+	                    <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', style: "width: 100%", required: "" %>
 		            </div>
 		            <% if devise_mapping.rememberable? -%>
 		                <div class="check_box">

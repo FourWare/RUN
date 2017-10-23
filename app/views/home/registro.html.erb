@@ -43,15 +43,13 @@
 			      				</div>
 					    	</div>
 					        <div class="row">
-					        	<div class="col-sm-12">
-					            	<div class="form-sub-w3">
-			        					<%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
-			      					</div>
+					        	<div class="col-sm-12 form-sub-w3">
+		        					<%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', style: 'width: 100%;',  type: 'email', required: "" %>
 					            </div>
 					      	</div>
 					        <div class="row">
 					        	<div class="col-sm-12 form-sub-w3">
-					            	<%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
+					            	<%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', style: 'width: 100%;',  required: "" %>
 								    <% if @minimum_password_length %>
 								    	<em style="color: red;">(<%= @minimum_password_length %> characters minimum)</em>
 								    <% end %><br />
@@ -59,7 +57,7 @@
 					        </div>
 					        <div class="row">
 					        	<div class="col-sm-12 form-sub-w3">
-					            	<%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Confirmación contraseña', required: "" %>
+					            	<%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Confirmación contraseña', style: 'width: 100%;',  required: "" %>
 								</div>
 					        </div>
 					        <div class="form-group">

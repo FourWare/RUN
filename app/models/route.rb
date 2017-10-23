@@ -1,5 +1,9 @@
 class Route < ApplicationRecord
+    belongs_to :user  
+    
     ##### queries
+    
+    
     def self.filterSearchOtherRoutes(option, search, user_id)
         if (search != "" and search != " ")
             if(option == "type")
@@ -62,6 +66,10 @@ class Route < ApplicationRecord
     
     def self.extraInfoRoute(placa)
         Car.joins(:user).where(:placa => placa).uniq
+    end
+    
+    def self.extraInfoRouteConductor(id)
+         User.where(:id => id)
     end
     
     def self.myCars(user_id)

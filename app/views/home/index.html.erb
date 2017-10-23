@@ -214,11 +214,11 @@
                 <h2 style="text-align: center; font-size: ">Inicia sesión</h2>
                 <div class="w3l-login form">
                     <%= form_for(resource, as: resource_name, url: session_path(resource_name), name: "login_form") do |f| %>
-                        <div class="form-sub-w3">
-        	                <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
-        	            </div>
-        	            <div class="form-sub-w3 form-group clearfix">
-                            <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
+                        <div class="form-sub-w3 form-group clearfix">
+		                    <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', style: "width: 80%", type: 'email', required: "" %>
+		                </div>
+                        <div class="form-sub-w3 form-group clearfix">
+                            <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', style: "width: 80%", required: "" %>
         	            </div>
         	            <% if devise_mapping.rememberable? -%>
         	                <div class="check_box">
@@ -298,14 +298,12 @@
 					    	</div>
 					        <div class="row">
 					        	<div class="col-sm-12">
-					            	<div class="form-sub-w3">
-			        					<%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
-			      					</div>
+				            	    <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', style: 'width: 80%;',  type: 'email', required: "" %>
 					            </div>
 					      	</div>
 					        <div class="row">
 					        	<div class="col-sm-12 form-sub-w3">
-					            	<%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', required: "" %>
+					            	<%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', style: 'width: 80%;', required: "" %>
 								    <% if @minimum_password_length %>
 								    	<em style="color: red;">(<%= @minimum_password_length %> characters minimum)</em>
 								    <% end %><br />
@@ -313,7 +311,7 @@
 					        </div>
 					        <div class="row">
 					        	<div class="col-sm-12 form-sub-w3">
-					            	<%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Confirmación contraseña', required: "" %>
+					            	<%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Confirmación contraseña', style: 'width: 80%;', required: "" %>
 								</div>
 					        </div>
 					        <div class="form-group">
