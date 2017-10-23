@@ -11,6 +11,8 @@ gem 'geocoder'
 
 #gema para pdf
 gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
 # Gema para login
 gem 'devise'
 
