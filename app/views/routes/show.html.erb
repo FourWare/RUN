@@ -64,9 +64,7 @@
           <% if @route.id_user != current_user.id %>
             - 
             <% if @route.spaces_available > 0 %>
-              <%= link_to "/rutas/" + @route.id.to_s do %>
-                <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="updateSpacesAvailable(<% @route.id %>);">Unirme a esta ruta</button>
-              <% end %>
+              <%= link_to "Unirme a esta ruta", :controller => "routes", :action => "updateSpacesAvailable", :id_route => @route.id, style: "color: lightgreen;"  %>
             <% else %>
               <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
             <% end %>
@@ -157,17 +155,9 @@
       <div class="col-lg-1">
       </div>
     </div>
-    
-    
-    
 </div>
 
 <script type="text/javascript">
-function updateSpacesAvailable(id_route){
-  alert("asdad");
-  <% @route.update(spaces_available: 4) %>
-}
-
 var mapStyle = [
     {
         "featureType": "administrative",

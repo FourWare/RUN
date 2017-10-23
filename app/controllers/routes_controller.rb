@@ -22,11 +22,14 @@ class RoutesController < ApplicationController
   # GET /routes/1.json
   def show
     @extraInfoRoute = Route.extraInfoRoute(@route.car_placa)
-    def updateSpacesAvailable(id_route)
-      Route.find(id_route).update!(spaces_available: 3)
-    end
+    @booleanValue = false
     render :layout => 'user-layout'
   end
+
+  def updateSpacesAvailable
+    Route.find(params[:id_route]).update(spaces_available: Route.find(params[:id_route]).spaces_available + 1)
+  end
+    
 
   # GET /routes/new
   def new

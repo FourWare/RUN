@@ -67,6 +67,4 @@ class Route < ApplicationRecord
     def self.myCars(user_id)
         Car.where(:user_id => user_id).uniq
     end
-    
-    
 end
