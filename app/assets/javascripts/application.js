@@ -18,5 +18,7 @@
 //= require agency.min
 //= require contact_me
 //= require jqBootstrapValidation
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .
 //= require functions

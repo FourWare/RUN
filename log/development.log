@@ -2484,3 +2484,1400 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 111ms (Views: 103.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/rutas/new" for 190.157.217.119 at 2017-10-22 05:04:24 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."user_id" = ?[0m  [["user_id", 174]]
+  Rendering routes/new.html.erb within layouts/user-layout
+  Rendered routes/_form.html.erb (13.8ms)
+  Rendered routes/new.html.erb within layouts/user-layout (17.2ms)
+Completed 200 OK in 974ms (Views: 875.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/usuario/inicio" for 190.157.217.119 at 2017-10-22 05:04:28 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (8.3ms)
+Completed 200 OK in 92ms (Views: 90.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/editar_perfil" for 190.157.217.119 at 2017-10-22 05:04:38 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#editar_perfil as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 174]]
+  Rendering home/editar_perfil.html.erb within layouts/user-layout
+  Rendered home/editar_perfil.html.erb within layouts/user-layout (16.3ms)
+Completed 200 OK in 143ms (Views: 139.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/usuario/contactanos" for 190.157.217.119 at 2017-10-22 05:04:43 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create_contactanos as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/new_contactanos.html.erb within layouts/application
+  Rendered users/new_contactanos.html.erb within layouts/application (458.0ms)
+Completed 200 OK in 1247ms (Views: 534.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 190.157.217.119 at 2017-10-22 05:04:47 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (6.8ms)
+Completed 200 OK in 650ms (Views: 101.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/usuario/inicio" for 190.157.217.119 at 2017-10-22 05:04:48 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (17.8ms)
+Completed 200 OK in 304ms (Views: 301.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rutas" for 190.157.217.119 at 2017-10-22 05:04:56 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE ("routes"."id_user" != ?)[0m  [["id_user", 174]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user != 174)[0m
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user != 174) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/index.html.erb within layouts/user-layout (3.6ms)
+Completed 200 OK in 292ms (Views: 280.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/usuario/mis-rutas" for 190.157.217.119 at 2017-10-22 05:05:01 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show_my_routes as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE "routes"."id_user" = ?[0m  [["id_user", 174]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user = 174)[0m
+  Rendering routes/show_my_routes.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user = 174) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/show_my_routes.html.erb within layouts/user-layout (9.0ms)
+Completed 200 OK in 124ms (Views: 118.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rutas" for 190.157.217.119 at 2017-10-22 05:05:57 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE ("routes"."id_user" != ?)[0m  [["id_user", 174]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user != 174)[0m
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user != 174) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/index.html.erb within layouts/user-layout (2.0ms)
+Completed 200 OK in 105ms (Views: 100.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin" for 190.157.217.119 at 2017-10-22 05:06:14 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/admin"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/usuario/mis-rutas" for 190.157.217.119 at 2017-10-22 05:09:15 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show_my_routes as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE "routes"."id_user" = ?[0m  [["id_user", 174]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user = 174)[0m
+  Rendering routes/show_my_routes.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user = 174) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/show_my_routes.html.erb within layouts/user-layout (21.5ms)
+Completed 200 OK in 137ms (Views: 131.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/usuario/mis-rutas?filterSelect=date&search=&commit=Buscar" for 190.157.217.119 at 2017-10-22 05:09:27 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show_my_routes as HTML
+  Parameters: {"filterSelect"=>"date", "search"=>"", "commit"=>"Buscar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE "routes"."id_user" = ?[0m  [["id_user", 174]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user = 174)[0m
+  Rendering routes/show_my_routes.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user = 174) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/show_my_routes.html.erb within layouts/user-layout (5.2ms)
+Completed 200 OK in 143ms (Views: 138.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/usuario/mis-rutas?filterSelect=type&search=&commit=Buscar" for 190.157.217.119 at 2017-10-22 05:09:30 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show_my_routes as HTML
+  Parameters: {"filterSelect"=>"type", "search"=>"", "commit"=>"Buscar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE "routes"."id_user" = ?[0m  [["id_user", 174]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user = 174)[0m
+  Rendering routes/show_my_routes.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user = 174) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/show_my_routes.html.erb within layouts/user-layout (5.4ms)
+Completed 200 OK in 171ms (Views: 165.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/usuario/mis-rutas?filterSelect=keyWord&search=galerias&commit=Buscar" for 190.157.217.119 at 2017-10-22 05:09:48 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show_my_routes as HTML
+  Parameters: {"filterSelect"=>"keyWord", "search"=>"galerias", "commit"=>"Buscar"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE "routes"."id_user" = ?[0m  [["id_user", 174]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE ((title LIKE '%galerias%' OR description LIKE '%galerias%') AND id_user = 174)[0m
+  Rendering routes/show_my_routes.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE ((title LIKE '%galerias%' OR description LIKE '%galerias%') AND id_user = 174) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/show_my_routes.html.erb within layouts/user-layout (5.2ms)
+Completed 200 OK in 276ms (Views: 268.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/rutas/3" for 190.157.217.119 at 2017-10-22 05:58:41 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRoute Load (0.6ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id" WHERE "cars"."placa" = ?[0m  [["placa", "AAA-11A"]]
+  Rendering routes/show.html.erb within layouts/user-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered routes/show.html.erb within layouts/user-layout (5.8ms)
+Completed 200 OK in 214ms (Views: 143.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/usuario/inicio" for 190.157.217.119 at 2017-10-22 08:02:30 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (10.6ms)
+Completed 200 OK in 110ms (Views: 105.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rutas/new" for 190.157.217.119 at 2017-10-22 08:02:33 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."user_id" = ?[0m  [["user_id", 174]]
+  Rendering routes/new.html.erb within layouts/user-layout
+  Rendered routes/_form.html.erb (3.4ms)
+  Rendered routes/new.html.erb within layouts/user-layout (5.0ms)
+Completed 200 OK in 103ms (Views: 99.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home/logout" for 190.157.217.119 at 2017-10-23 06:17:51 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/home/logout"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 190.157.217.119 at 2017-10-23 06:18:03 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (46.7ms)
+Completed 200 OK in 1235ms (Views: 733.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/usuario/inicio" for 190.157.217.119 at 2017-10-23 06:18:06 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (143.9ms)
+Completed 200 OK in 406ms (Views: 351.7ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/home/logout" for 190.157.217.119 at 2017-10-23 06:18:10 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kRhpbhqqqB01aSjo71pILlRBTdqxBIkIyHjetAWfscR5aHcHfjOqHVPQOEcpAkMTlgOG7q71SxS8+7vHu2z/Dg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://main-project-miavillamilca.c9users.io/
+Completed 302 Found in 366ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 190.157.217.119 at 2017-10-23 06:18:11 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (69.8ms)
+Completed 200 OK in 177ms (Views: 174.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 190.157.217.119 at 2017-10-23 06:18:30 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zjBLFloJrk1NTKTDqjvCuBV9FqrflVZOlhou+SNZa2Chhscinavn9JWJaE9dLlptSZTaIITrub1Ka//8lnOJdQ==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "runappunal@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 176ms (ActiveRecord: 0.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zjBLFloJrk1NTKTDqjvCuBV9FqrflVZOlhou+SNZa2Chhscinavn9JWJaE9dLlptSZTaIITrub1Ka//8lnOJdQ==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 316ms (Views: 168.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 190.157.217.119 at 2017-10-23 06:18:38 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7Bbk9ltj2HeTgA/mK9ItaCc6USiJtBVCZuj5tYL7eXiDoGjCnMGRzktFw2rcx7W9e9OdotLK+rG6mSiwN9GbbQ==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "runappunal@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 163ms (ActiveRecord: 0.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7Bbk9ltj2HeTgA/mK9ItaCc6USiJtBVCZuj5tYL7eXiDoGjCnMGRzktFw2rcx7W9e9OdotLK+rG6mSiwN9GbbQ==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 244ms (Views: 96.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 190.157.217.119 at 2017-10-23 06:18:44 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"646rllBQ2ieJfLPlNT66Qp05aEp8l4rEkApSdzfibMWEOCeil/KTnlG5f2nCKyKXwdCkwCfpZTdMe4NygsiO0A==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "runappunal@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 146ms (ActiveRecord: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"646rllBQ2ieJfLPlNT66Qp05aEp8l4rEkApSdzfibMWEOCeil/KTnlG5f2nCKyKXwdCkwCfpZTdMe4NygsiO0A==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 245ms (Views: 98.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 190.157.217.119 at 2017-10-23 06:18:49 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wR3FEa7BjQ+rvMHkuIIJCE0HjCKph4OW9KJd/XTk66auq0klaWPEtnN5DWhPl5HdEe5AqPL5bGUo04z4wc4Jsw==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "runappunal@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 151ms (ActiveRecord: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wR3FEa7BjQ+rvMHkuIIJCE0HjCKph4OW9KJd/XTk66auq0klaWPEtnN5DWhPl5HdEe5AqPL5bGUo04z4wc4Jsw==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 239ms (Views: 93.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 190.157.217.119 at 2017-10-23 06:20:10 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aPsoj2jyiD0I3FA/v8IUsq+kNAJzqEMqmCDS2TfCp14HTaS7r1DBhNAZnLNI14xn8034iCjWrNlEUQPcguhFSw==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "runappunal@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 146ms (ActiveRecord: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aPsoj2jyiD0I3FA/v8IUsq+kNAJzqEMqmCDS2TfCp14HTaS7r1DBhNAZnLNI14xn8034iCjWrNlEUQPcguhFSw==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 242ms (Views: 97.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 190.157.217.119 at 2017-10-23 06:20:17 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"61vVgmFLYgTSxVNrIyJTGw6tKvxFSJQvH8dgk310aNuE7Vm2pukrvQoAn+fUN8vOUkTmdh42e9zDtrGWyF6Kzg==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "runappunal@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 151ms (ActiveRecord: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"61vVgmFLYgTSxVNrIyJTGw6tKvxFSJQvH8dgk310aNuE7Vm2pukrvQoAn+fUN8vOUkTmdh42e9zDtrGWyF6Kzg==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 254ms (Views: 98.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 190.157.217.119 at 2017-10-23 06:20:23 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YBqzodFKXqfz2BiiQb0xg14eYDqMiGw5GMr8ybfgnhYPrD+VFugXHisd1C62qKlWAvessNf2g8rEuy3MAsp8Aw==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "runappunal@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 147ms (ActiveRecord: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YBqzodFKXqfz2BiiQb0xg14eYDqMiGw5GMr8ybfgnhYPrD+VFugXHisd1C62qKlWAvessNf2g8rEuy3MAsp8Aw==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 241ms (Views: 96.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 190.157.217.119 at 2017-10-23 06:20:29 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o5cGT1jTnpcR2QLo+ZnfpKmI2qny3kFJUkWzWRZL96jMIYp7n3HXLskczmQOjEdx9WEWI6mgrrqONGJco2EVvQ==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "runappunal@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 152ms (ActiveRecord: 0.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o5cGT1jTnpcR2QLo+ZnfpKmI2qny3kFJUkWzWRZL96jMIYp7n3HXLskczmQOjEdx9WEWI6mgrrqONGJco2EVvQ==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 230ms (Views: 84.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 190.157.217.119 at 2017-10-23 06:20:33 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SBlbNc3m3vWZpgiEIekjFRNzUo0wygS4IE1FH6UNTw0nr9cBCkSXTEFjxAjW/LvAT5qeB2u060v8PJQaECetGA==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "runappunal@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 146ms (ActiveRecord: 0.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SBlbNc3m3vWZpgiEIekjFRNzUo0wygS4IE1FH6UNTw0nr9cBCkSXTEFjxAjW/LvAT5qeB2u060v8PJQaECetGA==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 271ms (Views: 94.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 190.157.217.119 at 2017-10-23 06:20:37 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QGWeRJw+qmN62AJGHYX19gZmLnYCxq3JyyLHm5ZEoIIv0xJwW5zj2qIdzsrqkG0jWo/i/Fm4QjoXUxaeI25Clw==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "runappunal@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 150ms (ActiveRecord: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QGWeRJw+qmN62AJGHYX19gZmLnYCxq3JyyLHm5ZEoIIv0xJwW5zj2qIdzsrqkG0jWo/i/Fm4QjoXUxaeI25Clw==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 238ms (Views: 87.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 190.157.217.119 at 2017-10-23 06:20:44 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KcWpwCQKEnJsAD7UgBkmLP93ThMTRn8sYe199/Ot4HlGcyX046hby7TF8lh3DL75o56CmUg4kN+9nKzyRocCbA==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "runappunal@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 151ms (ActiveRecord: 0.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KcWpwCQKEnJsAD7UgBkmLP93ThMTRn8sYe199/Ot4HlGcyX046hby7TF8lh3DL75o56CmUg4kN+9nKzyRocCbA==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 230ms (Views: 83.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 190.157.217.119 at 2017-10-23 06:23:26 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8+zYgi7NcWojQV1bwvKNSEEGh1U61UwrwPhN30P2UoKcWlS26W840/uEkdc15xWdHe9L32Gro9gciZza9tywlw==", "user"=>{"email"=>"miaborjaac@unal.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "miaborjaac@unal.edu.co"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-10-23 06:23:26.792101"], ["last_sign_in_at", "2017-10-22 02:44:54.464799"], ["current_sign_in_ip", "190.157.217.119"], ["last_sign_in_ip", "181.130.112.86"], ["sign_in_count", 8], ["updated_at", "2017-10-23 06:23:26.793839"], ["id", 174]]
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://main-project-miavillamilca.c9users.io/
+Completed 302 Found in 216ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/" for 190.157.217.119 at 2017-10-23 06:23:26 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (6.0ms)
+Completed 200 OK in 105ms (Views: 94.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/inicio" for 190.157.217.119 at 2017-10-23 06:23:27 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (8.3ms)
+Completed 200 OK in 137ms (Views: 107.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/usuario/inicio" for 190.157.217.119 at 2017-10-23 06:23:58 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (9.2ms)
+Completed 200 OK in 100ms (Views: 97.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/admin" for 190.157.217.119 at 2017-10-23 06:24:04 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/usuario/admin"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admin" for 190.157.217.119 at 2017-10-23 06:24:14 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/admin"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admin/home" for 190.157.217.119 at 2017-10-23 06:24:23 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id"[0m
+  Rendering admin/home.html.erb within layouts/admin_layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY name ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendered admin/home.html.erb within layouts/admin_layout (6.5ms)
+Completed 200 OK in 140ms (Views: 103.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/admin/home?page=2" for 190.157.217.119 at 2017-10-23 06:24:36 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#home as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id"[0m
+  Rendering admin/home.html.erb within layouts/admin_layout
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY name ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 10]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendered admin/home.html.erb within layouts/admin_layout (7.4ms)
+Completed 200 OK in 129ms (Views: 94.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin/home?page=3" for 190.157.217.119 at 2017-10-23 06:24:37 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#home as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id"[0m
+  Rendering admin/home.html.erb within layouts/admin_layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY name ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 20]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendered admin/home.html.erb within layouts/admin_layout (4.3ms)
+Completed 200 OK in 100ms (Views: 95.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/home?page=4" for 190.157.217.119 at 2017-10-23 06:24:38 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#home as HTML
+  Parameters: {"page"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id"[0m
+  Rendering admin/home.html.erb within layouts/admin_layout
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY name ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 30]]
+  Rendered admin/home.html.erb within layouts/admin_layout (3.8ms)
+Completed 200 OK in 90ms (Views: 85.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/home?page=3" for 190.157.217.119 at 2017-10-23 06:24:40 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#home as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id"[0m
+  Rendering admin/home.html.erb within layouts/admin_layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY name ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 20]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendered admin/home.html.erb within layouts/admin_layout (4.6ms)
+Completed 200 OK in 96ms (Views: 91.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 06:24:46 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 85ms (Views: 82.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/home?page=3" for 190.157.217.119 at 2017-10-23 06:26:08 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#home as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id"[0m
+  Rendering admin/home.html.erb within layouts/admin_layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY name ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 20]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendered admin/home.html.erb within layouts/admin_layout (4.7ms)
+Completed 200 OK in 100ms (Views: 95.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 06:26:12 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 109ms (Views: 106.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 06:26:29 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 97ms (Views: 94.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 06:27:40 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 132ms (Views: 99.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 07:32:11 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (34.0ms)[0m  [1m[34mSELECT COUNT({:group=>"date(created_at)"}) FROM "routes"[0m
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 42.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: unrecognized token: "{": SELECT COUNT({:group=>"date(created_at)"}) FROM "routes"):
+  
+app/controllers/admin_controller.rb:17:in `statistics'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 07:35:06 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (404.4ms)
+Completed 500 Internal Server Error in 538ms (ActiveRecord: 5.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `bar_chart' for #<#<Class:0x007fafc41f9778>:0x007fafc42078f0>):
+    4:         <h1 style="color: #155892;">Estadisticas</h1>
+    5:         <p style="color: #155892;">Número de usuarios: <%= @countUser %></p>
+    6:         
+    7:         <%= bar_chart @routesCreatedPerDay %>
+    8:         
+    9:     </div>
+   10:     
+  
+app/views/admin/statistics.html.erb:7:in `_app_views_admin_statistics_html_erb___314044170816959873_70196443205740'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 07:37:31 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (519.0ms)
+Completed 500 Internal Server Error in 537ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `bar_chart' for #<#<Class:0x007fafc41f9778>:0x007fafb9a2e318>):
+    4:         <h1 style="color: #155892;">Estadisticas</h1>
+    5:         <p style="color: #155892;">Número de usuarios: <%= @countUser %></p>
+    6:         
+    7:         <%= bar_chart @routesCreatedPerDay %>
+    8:         
+    9:     </div>
+   10:     
+  
+app/views/admin/statistics.html.erb:7:in `_app_views_admin_statistics_html_erb___314044170816959873_70196355293340'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 07:38:39 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (654.6ms)
+Completed 500 Internal Server Error in 664ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `bar_chart' for #<#<Class:0x007fafc41f9778>:0x007fafba8d3f30>):
+    4:         <h1 style="color: #155892;">Estadisticas</h1>
+    5:         <p style="color: #155892;">Número de usuarios: <%= @countUser %></p>
+    6:         
+    7:         <%= bar_chart @routesCreatedPerDay %>
+    8:         
+    9:     </div>
+   10:     
+  
+app/views/admin/statistics.html.erb:7:in `_app_views_admin_statistics_html_erb___314044170816959873_70196362831180'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 07:40:05 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (1330.4ms)
+Completed 500 Internal Server Error in 1554ms (ActiveRecord: 7.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `bar_chart' for #<#<Class:0x007fafbabeceb0>:0x007fafbabe2fc8>):
+    4:         <h1 style="color: #155892;">Estadisticas</h1>
+    5:         <p style="color: #155892;">Número de usuarios: <%= @countUser %></p>
+    6:         
+    7:         <!--<%= bar_chart @routesCreatedPerDay %>-->
+    8:         
+    9:     </div>
+   10:     
+  
+app/views/admin/statistics.html.erb:7:in `_app_views_admin_statistics_html_erb___314044170816959873_70196364536860'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 07:40:13 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (416.1ms)
+Completed 500 Internal Server Error in 423ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `bar_chart' for #<#<Class:0x007fafc41f9778>:0x007fafb05f2dc0>):
+    4:         <h1 style="color: #155892;">Estadisticas</h1>
+    5:         <p style="color: #155892;">Número de usuarios: <%= @countUser %></p>
+    6:         
+    7:         <!--<%= bar_chart @routesCreatedPerDay %>-->
+    8:         
+    9:     </div>
+   10:     
+  
+app/views/admin/statistics.html.erb:7:in `_app_views_admin_statistics_html_erb___314044170816959873_70196277517440'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 07:40:17 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 666ms (ActiveRecord: 4.6ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'chartkick' with type 'application/javascript'
+Checked in these paths: 
+  /home/ubuntu/workspace/app/assets/config
+  /home/ubuntu/workspace/app/assets/fonts
+  /home/ubuntu/workspace/app/assets/images
+  /home/ubuntu/workspace/app/assets/javascripts
+  /home/ubuntu/workspace/app/assets/stylesheets
+  /usr/local/rvm/gems/ruby-2.3.4/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/bootstrap-social-rails-4.12.0/vendor/assets/stylesheets
+  /usr/local/rvm/gems/ruby-2.3.4/gems/gmaps4rails-2.1.2/vendor/assets/javascripts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/actioncable-5.1.3/lib/assets/compiled
+  /usr/local/rvm/gems/ruby-2.3.4/gems/actionview-5.1.3/lib/assets/compiled
+  /usr/local/rvm/gems/ruby-2.3.4/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/ubuntu/workspace/node_modules
+  /usr/local/rvm/gems/ruby-2.3.4/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /usr/local/rvm/gems/ruby-2.3.4/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/bootstrap-sass-3.3.7/assets/fonts
+  /usr/local/rvm/gems/ruby-2.3.4/gems/bootstrap-sass-3.3.7/assets/images
+  /usr/local/rvm/gems/ruby-2.3.4/gems/font-awesome-sass-4.4.0/assets/stylesheets
+  /usr/local/rvm/gems/ruby-2.3.4/gems/font-awesome-sass-4.4.0/assets/fonts):
+     8:     <title><%= @app %></title>
+     9:     
+    10:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    11:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    12:     <%= csrf_meta_tags %>
+    13:     
+    14:     <!-- Bootstrap core CSS -->
+  
+app/assets/javascripts/application.js:24
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___2251907217275552344_70196375318860'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 07:44:27 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (207.4ms)
+Completed 500 Internal Server Error in 218ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `bar_chart' for #<#<Class:0x007fafbabeceb0>:0x007fafba14fed0>):
+    4:         <h1 style="color: #155892;">Estadisticas</h1>
+    5:         <p style="color: #155892;">Número de usuarios: <%= @countUser %></p>
+    6:         
+    7:         <%= bar_chart @routesCreatedPerDay %>
+    8:         
+    9:     </div>
+   10:     
+  
+app/views/admin/statistics.html.erb:7:in `_app_views_admin_statistics_html_erb___314044170816959873_70196359015100'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 07:47:46 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (559.1ms)
+Completed 500 Internal Server Error in 570ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `bar_chart' for #<#<Class:0x007fafbabeceb0>:0x007fafba1c2868>):
+    4:         <h1 style="color: #155892;">Estadisticas</h1>
+    5:         <p style="color: #155892;">Número de usuarios: <%= @countUser %></p>
+    6:         
+    7:         <%= bar_chart @routesCreatedPerDay %>
+    8:         
+    9:     </div>
+   10:     
+  
+app/views/admin/statistics.html.erb:7:in `_app_views_admin_statistics_html_erb___314044170816959873_70196359207640'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 07:52:54 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (616.4ms)
+Completed 500 Internal Server Error in 624ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `bar_chart' for #<#<Class:0x007fafbabeceb0>:0x007fafbaf392f8>):
+    4:         <h1 style="color: #155892;">Estadisticas</h1>
+    5:         <p style="color: #155892;">Número de usuarios: <%= @countUser %></p>
+    6:         
+    7:         <%= bar_chart @routesCreatedPerDay %>
+    8:         
+    9:     </div>
+   10:     
+  
+app/views/admin/statistics.html.erb:7:in `_app_views_admin_statistics_html_erb___314044170816959873_70196366266360'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 07:53:41 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (673.5ms)
+Completed 500 Internal Server Error in 680ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `bar_chart' for #<#<Class:0x007fafbabeceb0>:0x007fafb99123a8>):
+    4:         <h1 style="color: #155892;">Estadisticas</h1>
+    5:         <p style="color: #155892;">Número de usuarios: <%= @countUser %></p>
+    6:         
+    7:         <%= bar_chart @routesCreatedPerDay %>
+    8:         
+    9:     </div>
+   10:     
+  
+app/views/admin/statistics.html.erb:7:in `_app_views_admin_statistics_html_erb___314044170816959873_70196354652000'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 07:54:42 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (235.8ms)
+Completed 500 Internal Server Error in 243ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `bar_chart' for #<#<Class:0x007fafbabeceb0>:0x007fafc4084fa0>):
+    4:         <h1 style="color: #155892;">Estadisticas</h1>
+    5:         <p style="color: #155892;">Número de usuarios: <%= @countUser %></p>
+    6:         
+    7:         <%= bar_chart @routesCreatedPerDay %>
+    8:         
+    9:     </div>
+   10:     
+  
+app/views/admin/statistics.html.erb:7:in `_app_views_admin_statistics_html_erb___314044170816959873_70196442443360'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 07:54:48 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (374.4ms)
+Completed 500 Internal Server Error in 384ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `bar_chart' for #<#<Class:0x007fafc41f9778>:0x007fafb09d53c0>):
+    4:         <h1 style="color: #155892;">Estadisticas</h1>
+    5:         <p style="color: #155892;">Número de usuarios: <%= @countUser %></p>
+    6:         
+    7:         <%= bar_chart @routesCreatedPerDay %>
+    8:         
+    9:     </div>
+   10:     
+  
+app/views/admin/statistics.html.erb:7:in `_app_views_admin_statistics_html_erb___314044170816959873_70196279553940'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 07:56:50 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 3488ms (Views: 3431.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:00:40 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 406ms (Views: 340.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:01:50 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+Completed 500 Internal Server Error in 250ms (ActiveRecord: 2.2ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<AdminController:0x007f8337a48cf8>
+Did you mean?  user_url
+               users_url
+               user_path
+               @users):
+  
+app/controllers/admin_controller.rb:18:in `statistics'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:02:06 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 123ms (Views: 85.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:03:02 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 239ms (Views: 171.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:03:20 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 89ms (Views: 84.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:03:50 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 122ms (Views: 117.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:04:09 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 105ms (Views: 99.9ms | ActiveRecord: 0.9ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:05:51 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 99ms (Views: 94.1ms | ActiveRecord: 0.9ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:06:32 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 249ms (Views: 243.9ms | ActiveRecord: 0.9ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:07:04 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 196ms (Views: 190.4ms | ActiveRecord: 0.9ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admin" for 190.157.217.119 at 2017-10-23 08:07:19 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/admin"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admin/home" for 190.157.217.119 at 2017-10-23 08:07:22 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mCar Load (0.5ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id"[0m
+  Rendering admin/home.html.erb within layouts/admin_layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY name ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendered admin/home.html.erb within layouts/admin_layout (6.8ms)
+Completed 200 OK in 172ms (Views: 129.5ms | ActiveRecord: 1.9ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/underscore-min.map"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.3) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.3) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:07:30 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/application
+  Rendered admin/statistics.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 88ms (Views: 83.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:08:09 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/admin_layout
+  Rendered admin/statistics.html.erb within layouts/admin_layout (0.9ms)
+Completed 200 OK in 148ms (Views: 109.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:09:17 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  Rendering admin/statistics.html.erb within layouts/admin_layout
+  Rendered admin/statistics.html.erb within layouts/admin_layout (1.4ms)
+Completed 200 OK in 203ms (Views: 126.7ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:12:21 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  [1m[35m (21.8ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, STRING(modelo) AS string_modelo FROM "cars" GROUP BY STRING(modelo)[0m
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 24.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: STRING: SELECT COUNT(*) AS count_all, STRING(modelo) AS string_modelo FROM "cars" GROUP BY STRING(modelo)):
+  
+app/controllers/admin_controller.rb:19:in `statistics'
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:13:11 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "cars"."modelo" AS cars_modelo FROM "cars" GROUP BY "cars"."modelo"[0m
+  Rendering admin/statistics.html.erb within layouts/admin_layout
+  Rendered admin/statistics.html.erb within layouts/admin_layout (2.4ms)
+Completed 200 OK in 140ms (Views: 87.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/admin/statistics" for 190.157.217.119 at 2017-10-23 08:13:43 +0000
+Cannot render console from 190.157.217.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "cars"."modelo" AS cars_modelo FROM "cars" GROUP BY "cars"."modelo"[0m
+  Rendering admin/statistics.html.erb within layouts/admin_layout
+  Rendered admin/statistics.html.erb within layouts/admin_layout (1.9ms)
+Completed 200 OK in 301ms (Views: 107.4ms | ActiveRecord: 3.4ms)
+
+

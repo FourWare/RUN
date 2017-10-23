@@ -9,8 +9,13 @@ end
 gem 'gmaps4rails'
 gem 'geocoder'
 
+#gema para pdf
+gem 'wicked_pdf'
 # Gema para login
 gem 'devise'
+
+#gema para graficos
+gem 'chartkick'
 
 # Gema para generación de datos
 gem 'faker'
