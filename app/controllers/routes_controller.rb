@@ -27,9 +27,14 @@ class RoutesController < ApplicationController
   end
 
   def updateSpacesAvailable
-    Route.find(params[:id_route]).update(spaces_available: Route.find(params[:id_route]).spaces_available + 1)
+    if(params[:act] == 'add')
+      Route.find(params[:id_route]).update(users_in_route: Route.find(params[:id_route]).users_in_route + params[:id_user].to_s + ", ")
+      Route.find(params[:id_route]).update(spaces_available: Route.find(params[:id_route]).spaces_available - 1)
+    elsif(params[:act] == 'remove')
+      Route.find(params[:id_route]).update(users_in_route: Route.find(params[:id_route]).users_in_route.sub!(params[:id_user].to_s + ', ', '' ))
+      Route.find(params[:id_route]).update(spaces_available: Route.find(params[:id_route]).spaces_available + 1)
+    end
   end
-    
 
   # GET /routes/new
   def new

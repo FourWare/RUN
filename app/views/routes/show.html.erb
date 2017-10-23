@@ -63,10 +63,14 @@
           <text>Cupos disponibles: <%= @route.spaces_available %></text>
           <% if @route.id_user != current_user.id %>
             - 
-            <% if @route.spaces_available > 0 %>
-              <%= link_to "Unirme a esta ruta", :controller => "routes", :action => "updateSpacesAvailable", :id_route => @route.id, style: "color: lightgreen;"  %>
+            <% if Route.checkUserInRoute(@route, current_user) %>
+              <%= link_to "Salirme de esta ruta", :controller => "routes", :action => "updateSpacesAvailable", :id_route => @route.id, :id_user => current_user.id, :act => 'remove', style: "color: lightgreen;"  %>
             <% else %>
-              <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+              <% if @route.spaces_available > 0 %>
+                <%= link_to "Unirme a esta ruta", :controller => "routes", :action => "updateSpacesAvailable", :id_route => @route.id, :id_user => current_user.id, :act => 'add', style: "color: lightgreen;"  %>
+              <% else %>
+                <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+              <% end %>
             <% end %>
           <% end %>
         </div>
