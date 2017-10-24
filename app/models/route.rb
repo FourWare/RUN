@@ -2,8 +2,6 @@ class Route < ApplicationRecord
     belongs_to :user  
     
     ##### queries
-    
-    
     def self.filterSearchOtherRoutes(option, search, user_id)
         if (search != "" and search != " ")
             if(option == "type")
@@ -52,6 +50,20 @@ class Route < ApplicationRecord
         end
     end
     
+    def self.checkUserInRoute(route, user)
+        Route.find(route).users_in_route.include? (user.to_s + ', ')
+    end
+    
+    def self.addUserToRoute(route, user)
+        Route.find(route).update_attribute(:users_in_route, Route.find(route).users_in_route + user.to_s + ', ')
+        Route.find(route).update_attribute(:spaces_available, Route.find(route).spaces_available - 1)
+    end
+    
+    def self.removeUserToRoute(route, user)
+        Route.find(route).update_attribute(:users_in_route, Route.find(route).users_in_route.remove(user.to_s + ', ', '' ))
+        Route.find(route).update_attribute(:spaces_available, Route.find(route).spaces_available + 1)
+    end
+    
     def self.myRoutes(user_id)
         Route.where(:id_user => user_id)
     end
@@ -74,13 +86,5 @@ class Route < ApplicationRecord
     
     def self.myCars(user_id)
         Car.where(:user_id => user_id).uniq
-    end
-    
-    def self.checkUserInRoute(route, user)
-        if(route.users_in_route.include? user.id.to_s)
-            true
-        else
-            false
-        end
     end
 end
