@@ -19,3 +19,4 @@
 //= require contact_me
 //= require jqBootstrapValidation
 //= require_tree .
+//= require functions

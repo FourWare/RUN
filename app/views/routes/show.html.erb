@@ -69,7 +69,7 @@
           <text>Cupos disponibles: <%= @route.spaces_available %></text>
           <% if @route.id_user != current_user.id %>
             - 
-            <% if Route.checkUserInRoute(@route, current_user) %>
+            <% if Route.checkUserInRoute(@route.id, current_user.id) %>
               <%= link_to "Salirme de esta ruta", 
                 { :controller => "routes", :action => "updateSpacesAvailable", :id_route => @route.id, :id_user => current_user.id, :act => 'remove' },
                 { :style => 'color: black; background-color: #F14040;', :class => 'btn btn-default' }  
