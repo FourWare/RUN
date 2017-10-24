@@ -52,6 +52,12 @@
               <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="margin: 0%; border: none; width: 100%; text-align: center; resize: none;" ><%= @route.departure.strftime('%d %h %Y' + '- %H:%M') %></textarea>
             </div>
           </div>
+          <% if @route.id_user == current_user.id %>
+            </br></br></br>
+            <div class="col-lg-12" style="border: solid white;">
+              <h4>Usuarios unidos a la ruta</h4>
+            </div>
+          <% end %>
         </div>
       </form>
     </div>
