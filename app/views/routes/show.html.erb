@@ -64,10 +64,17 @@
           <% if @route.id_user != current_user.id %>
             - 
             <% if Route.checkUserInRoute(@route, current_user) %>
-              <%= link_to "Salirme de esta ruta", :controller => "routes", :action => "updateSpacesAvailable", :id_route => @route.id, :id_user => current_user.id, :act => 'remove', style: "color: lightgreen;"  %>
+              <%= link_to "Salirme de esta ruta", 
+                { :controller => "routes", :action => "updateSpacesAvailable", :id_route => @route.id, :id_user => current_user.id, :act => 'remove' },
+                { :style => 'color: black; background-color: #F14040;', :class => 'btn btn-default' }  
+              %>
             <% else %>
               <% if @route.spaces_available > 0 %>
-                <%= link_to "Unirme a esta ruta", :controller => "routes", :action => "updateSpacesAvailable", :id_route => @route.id, :id_user => current_user.id, :act => 'add', style: "color: lightgreen;"  %>
+                <%= link_to "Unirme a esta ruta", 
+                  {:controller => "routes", :action => "updateSpacesAvailable", :id_route => @route.id, :id_user => current_user.id, :act => 'add'},
+                  {:style => 'color: black; background-color: lightgreen;', :class => 'btn btn-default'} 
+                %>
+                </button>
               <% else %>
                 <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
               <% end %>

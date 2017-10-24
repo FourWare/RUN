@@ -28,11 +28,15 @@ class RoutesController < ApplicationController
 
   def updateSpacesAvailable
     if(params[:act] == 'add')
-      Route.find(params[:id_route]).update(users_in_route: Route.find(params[:id_route]).users_in_route + params[:id_user].to_s + ", ")
-      Route.find(params[:id_route]).update(spaces_available: Route.find(params[:id_route]).spaces_available - 1)
+      if( (Route.find(params[:id_route]).users_in_route.include? (params[:id_user].to_s + ', ')) == false )
+        Route.find(params[:id_route]).update(users_in_route: Route.find(params[:id_route]).users_in_route + params[:id_user].to_s + ", ")
+        Route.find(params[:id_route]).update(spaces_available: Route.find(params[:id_route]).spaces_available - 1)
+      end
     elsif(params[:act] == 'remove')
-      Route.find(params[:id_route]).update(users_in_route: Route.find(params[:id_route]).users_in_route.sub!(params[:id_user].to_s + ', ', '' ))
-      Route.find(params[:id_route]).update(spaces_available: Route.find(params[:id_route]).spaces_available + 1)
+      if(Route.find(params[:id_route]).users_in_route.include? (params[:id_user].to_s + ', '))
+        Route.find(params[:id_route]).update(users_in_route: Route.find(params[:id_route]).users_in_route.sub!(params[:id_user].to_s + ', ', '' ))
+        Route.find(params[:id_route]).update(spaces_available: Route.find(params[:id_route]).spaces_available + 1)
+      end
     end
   end
 
