@@ -21,8 +21,8 @@ class RoutesController < ApplicationController
   # GET /routes/1
   # GET /routes/1.json
   def show
+    @extraInfoRouteConductor =  Route.extraInfoRouteConductor(@route.id_user)
     @extraInfoRoute = Route.extraInfoRoute(@route.car_placa)
-    @booleanValue = false
     render :layout => 'user-layout'
   end
 

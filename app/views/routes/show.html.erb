@@ -88,6 +88,59 @@
   </div>
   <hr>
   <div class="row">
+    <h3>Información del Conductor</h3>
+    <div class="col-md-8 personal-info">
+      <form class="form-horizontal" role="form">
+        <% @extraInfoRouteConductor.each do |info| %>
+          <% if info.id == @route.id_user %>
+            <div class="form-group">
+              <div class="col-lg-6">
+                <label class="col-lg-6 control-label" style="text-align: left;"></br>Nombre Conductor:</label>
+                <br></br>
+                <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.name %></textarea>
+              </div>
+              <div class="col-lg-6">
+                <label class="col-lg-6 control-label" style="text-align: left;"></br>Email:</label>
+                <br></br>
+                <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.email %></textarea>
+              </div>
+              <div class="col-lg-6">
+                <label class="col-lg-6 control-label" style="text-align: left;"></br>Carrera:</label>
+                <br></br>
+                <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.career %></textarea>
+              </div>
+              <div class="col-lg-6">
+                <label class="col-lg-6 control-label" style="text-align: left;"></br>Teléfono:</label>
+                <br></br>
+                <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="text-align: center; width: 80%; resize: none;" ><%= info.phone %></textarea>
+              </div>
+             
+            </div>  
+          <% end %>
+        <% end %>
+      </form>
+    </div>
+    <div class="col-md-4 personal-info">
+      <br></br>
+      <% @extraInfoRouteConductor.each do |info| %>
+        <% if info.id == @route.id_user %>
+          <div class="text-center">
+            <% if info.avatar.present? == false %>
+              <%= image_tag("default-avatar.jpg", width: '60%', height: '200', class: 'image-circle') %>
+            <% else %>
+              <%= image_tag(info.avatar, width: '60%', height: '200', class: 'image-circle') %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <br><br>
+  <hr>
+  
+  
+  
+  <div class="row">
     <h3>Información del vehículo</h3>
     <div class="col-md-8 personal-info">
       <form class="form-horizontal" role="form">

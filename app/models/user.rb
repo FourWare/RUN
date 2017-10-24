@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   has_many :cars
+  has_many :routes
+  
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
