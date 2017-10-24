@@ -23,11 +23,21 @@ class RoutesController < ApplicationController
   def show
     @extraInfoRouteConductor =  Route.extraInfoRouteConductor(@route.id_user)
     @extraInfoRoute = Route.extraInfoRoute(@route.car_placa)
-    
-    def updateSpacesAvailable(id_route)
-      Route.find(id_route).update!(spaces_available: 3)
-    end
     render :layout => 'user-layout'
+  end
+
+  def updateSpacesAvailable
+    if(params[:act] == 'add')
+      if( (Route.find(params[:id_route]).users_in_route.include? (params[:id_user].to_s + ', ')) == false )
+        Route.find(params[:id_route]).update(users_in_route: Route.find(params[:id_route]).users_in_route + params[:id_user].to_s + ", ")
+        Route.find(params[:id_route]).update(spaces_available: Route.find(params[:id_route]).spaces_available - 1)
+      end
+    elsif(params[:act] == 'remove')
+      if(Route.find(params[:id_route]).users_in_route.include? (params[:id_user].to_s + ', '))
+        Route.find(params[:id_route]).update(users_in_route: Route.find(params[:id_route]).users_in_route.sub!(params[:id_user].to_s + ', ', '' ))
+        Route.find(params[:id_route]).update(spaces_available: Route.find(params[:id_route]).spaces_available + 1)
+      end
+    end
   end
 
   # GET /routes/new

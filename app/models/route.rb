@@ -76,5 +76,11 @@ class Route < ApplicationRecord
         Car.where(:user_id => user_id).uniq
     end
     
-    
+    def self.checkUserInRoute(route, user)
+        if(route.users_in_route.include? user.id.to_s)
+            true
+        else
+            false
+        end
+    end
 end

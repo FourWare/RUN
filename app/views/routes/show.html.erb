@@ -54,6 +54,12 @@
               <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="margin: 0%; border: none; width: 100%; text-align: center; resize: none;" ><%= @route.departure.strftime('%d %h %Y' + '- %H:%M') %></textarea>
             </div>
           </div>
+          <% if @route.id_user == current_user.id %>
+            </br></br></br>
+            <div class="col-lg-12" style="border: solid white;">
+              <h4>Usuarios unidos a la ruta</h4>
+            </div>
+          <% end %>
         </div>
       </form>
     </div>
@@ -65,12 +71,21 @@
           <text>Cupos disponibles: <%= @route.spaces_available %></text>
           <% if @route.id_user != current_user.id %>
             - 
-            <% if @route.spaces_available > 0 %>
-              <%= link_to "/rutas/" + @route.id.to_s do %>
-                <button type="button" class="btn btn-default" style="background: lightgreen;" onclick="updateSpacesAvailable(<% @route.id %>);">Unirme a esta ruta</button>
-              <% end %>
+            <% if Route.checkUserInRoute(@route, current_user) %>
+              <%= link_to "Salirme de esta ruta", 
+                { :controller => "routes", :action => "updateSpacesAvailable", :id_route => @route.id, :id_user => current_user.id, :act => 'remove' },
+                { :style => 'color: black; background-color: #F14040;', :class => 'btn btn-default' }  
+              %>
             <% else %>
-              <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+              <% if @route.spaces_available > 0 %>
+                <%= link_to "Unirme a esta ruta", 
+                  {:controller => "routes", :action => "updateSpacesAvailable", :id_route => @route.id, :id_user => current_user.id, :act => 'add'},
+                  {:style => 'color: black; background-color: lightgreen;', :class => 'btn btn-default'} 
+                %>
+                </button>
+              <% else %>
+                <button type="button" class="btn btn-default" style="background: gray; color: white" disabled>Unirme a esta ruta</button>
+              <% end %>
             <% end %>
           <% end %>
         </div>
@@ -212,17 +227,9 @@
       <div class="col-lg-1">
       </div>
     </div>
-    
-    
-    
 </div>
 
 <script type="text/javascript">
-function updateSpacesAvailable(id_route){
-  alert("asdad");
-  <% @route.update(spaces_available: 4) %>
-}
-
 var mapStyle = [
     {
         "featureType": "administrative",
