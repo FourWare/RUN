@@ -23,6 +23,7 @@ class RoutesController < ApplicationController
   def show
     @extraInfoRouteConductor =  Route.extraInfoRouteConductor(@route.id_user)
     @extraInfoRoute = Route.extraInfoRoute(@route.car_placa)
+    @usersInRoute = Route.usersInRoute(@route.id)
     render :layout => 'user-layout'
   end
 

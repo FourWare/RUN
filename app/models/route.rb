@@ -1,6 +1,4 @@
 class Route < ApplicationRecord
-    belongs_to :user  
-    
     ##### queries
     def self.filterSearchOtherRoutes(option, search, user_id)
         if (search != "" and search != " ")
@@ -62,6 +60,10 @@ class Route < ApplicationRecord
     def self.removeUserToRoute(route, user)
         Route.find(route).update_attribute(:users_in_route, Route.find(route).users_in_route.remove(user.to_s + ', ', '' ))
         Route.find(route).update_attribute(:spaces_available, Route.find(route).spaces_available + 1)
+    end
+    
+    def self.usersInRoute(route)
+        Route.find(route).users_in_route.split(", ")
     end
     
     def self.myRoutes(user_id)
