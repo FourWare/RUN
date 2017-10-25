@@ -114,6 +114,7 @@
           </form>
         </div>
         
+        <p><%= current_user.id %></p>
         <%= form.hidden_field :id_user, :value => current_user.id %>
         <%= form.hidden_field :users_in_route, :value => "" %>
 
