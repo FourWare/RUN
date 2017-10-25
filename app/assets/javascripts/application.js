@@ -14,8 +14,6 @@
 //= require underscore
 //= require rails-ujs
 //= require turbolinks
-//= require Chart.bundle
-//= require chartkick
 //= require agency
 //= require agency.min
 //= require contact_me
