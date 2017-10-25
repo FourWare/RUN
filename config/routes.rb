@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     end
   end
   
-  devise_for :users, :path => 'home', :path_names => { :sign_in => 'entrar', :sign_up => 'registro', :sign_out => 'logout', :edit => 'editar_perfil', :password => 'recuperacion_contrasena', :confirmation => 'verificación',  },
+  devise_for :users, :path => 'home', :path_names => { :sign_in => 'entrar', :sign_up => 'registro', :edit => 'editar_perfil', :password => 'recuperacion_contrasena', :confirmation => 'verificación',  },
             :controllers => { omniauth_callbacks: "sessions" }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
