@@ -18,8 +18,7 @@ Rails.application.routes.draw do
   get '/home/recuperacion_contrasena' => 'home#recuperacion_contrasena'
   get '/home/registro'
   get '/home/entrar'
-  get '/home/salir'
-  
+
   root to: 'home#index'
   
   resources :contacts, only: [:new, :create]
