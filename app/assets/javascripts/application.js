@@ -18,5 +18,6 @@
 //= require agency.min
 //= require contact_me
 //= require jqBootstrapValidation
+//= require chartkick
 //= require_tree .
 //= require functions

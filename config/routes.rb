@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   
   resources :cars, :path => "usuario/mis-vehiculos", :path_names => { :new => 'crear-vehiculo', :edit => 'editar' }
   
+  
   get '/usuario/contactanos' => 'users#create_contactanos'
   get '/usuario/contactanos' => 'users#new_contactanos'
   get '/usuario/editar_perfil' => 'home#editar_perfil'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   get '/usuario/inicio' => 'users#show'
   
   get '/admin/home'
+  get '/admin/statistics'
   
   get '/home/auth/google_oauth2/callback' => 'users#show'
   get '/home/recuperacion_contrasena' => 'home#recuperacion_contrasena'

@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title></title>
+        <%= wicked_pdf_stylesheet_link_tag 'pdf'%>
+        <%= javascript_include_tag "https://www.google.com/jsapi" %>
+       <%= wicked_pdf_javascript_include_tag "chartkick" %>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <%= yield %>
+    </body>
+</html>
