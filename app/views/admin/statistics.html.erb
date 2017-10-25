@@ -5,7 +5,7 @@
         
         <h2 style="color: #155892;">Rutas creadas por dia.</h2>
         
-        <%= line_chart @routesCreatedPerDay %>
+        <%= line_chart @routesCreatedPerDay, legend: true, curve: false, label: "rutas", xtitle: "Dia", ytitle: "Usuarios", title: "Rutas creadas por dia" %>
         
         <h2 style="color: #155892;">Usuarios creados por dia.</h2>
         

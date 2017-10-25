@@ -17,7 +17,7 @@ gem 'wkhtmltopdf-binary'
 gem 'devise'
 
 #gema para graficos
-gem 'chartkick'
+gem "chartkick"
 
 # Gema para generación de datos
 gem 'faker'
