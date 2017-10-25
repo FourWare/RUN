@@ -465,4 +465,15 @@ var myJSON = JSON.stringify(waypnts);
   document.getElementById("route_waypoints").value = myJSON;
   document.getElementById("route_form").submit();
 }
+
+function geocodeAddress() {
+        var address = document.getElementById('address').value;
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            myMap.setCenter(results[0].geometry.location);
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
 </script>
