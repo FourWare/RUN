@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
   resources :cars, :path => "usuario/mis-vehiculos", :path_names => { :new => 'crear-vehiculo', :edit => 'editar' }
   
+  
   get '/usuario/contactanos' => 'users#create_contactanos'
   get '/usuario/contactanos' => 'users#new_contactanos'
   get '/usuario/editar_perfil' => 'home#editar_perfil'
