@@ -20,7 +20,7 @@ class AdminController < ApplicationController
     @app = 'RunApp'
     respond_to do |format|
     format.html {render layout: 'admin_layout' }
-    format.pdf { render template: 'admin/pdf_statistics',pdf:'pdf', layout: 'pdf_statistics.html'}
+    format.pdf { render template: 'admin/pdf_statistics',javascript_delay: 3000, pdf:'pdf', layout: 'pdf_statistics.html'}
   end
   end
 end
