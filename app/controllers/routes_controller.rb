@@ -41,8 +41,9 @@ class RoutesController < ApplicationController
 
   # GET /routes/new
   def new
+    @myCars = Car.where(:user_id => current_user.id)
     @route = Route.new
-    @myCars = Route.myCars(current_user.id)
+    #@myCars = Route.myCars(current_user.id)
     render :layout => 'user-layout'
   end
 
