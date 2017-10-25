@@ -14,7 +14,8 @@ class AdminController < ApplicationController
   def statistics
     @users = User
     @countUser = User.count
-    @routesCreatedPerDay = Route.group("DATE(created_at)").count
+    #@routesCreatedPerDay = Route.group("DATE(created_at)").count
+    @routesCreatedPerDay = Route.group(:created_at).count
     @usersCreatedPerDay = User.group("DATE(created_at)").count
     @carsPerModel = Car.group("modelo").count
     @app = 'RunApp'
