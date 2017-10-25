@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/usuario/inicio' => 'users#show'
   
   get '/admin/home'
+  get '/admin/statistics'
 
   get '/home/auth/google_oauth2/callback' => 'users#show'
   get '/home/recuperacion_contrasena' => 'home#recuperacion_contrasena'

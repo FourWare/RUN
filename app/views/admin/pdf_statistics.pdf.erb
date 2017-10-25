@@ -1,0 +1,13 @@
+<h1 style="color: #155892;">Estadisticas</h1>
+
+<h2 style="color: #155892;">Rutas creadas por dia.</h2>
+
+<%= line_chart @routesCreatedPerDay, legend: true, curve: false%>
+
+<h2 style="color: #155892;">Usuarios creados por dia.</h2>
+
+<%= line_chart @usersCreatedPerDay, legend: true,curve: false, label: "Value" %>
+
+ <h2 style="color: #155892;">Carros por modelo</h2>
+ 
+<%= pie_chart @carsPerModel, library: {pieSliceText:'value-and-percentage'} %>
