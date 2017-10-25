@@ -18,10 +18,6 @@ class AdminController < ApplicationController
     @usersCreatedPerDay = User.group("DATE(created_at)").count
     @carsPerModel = Car.group("modelo").count
     @app = 'RunApp'
-    respond_to do |format|
-      format.html {render layout: 'admin_layout' }
-      format.pdf { render template: 'admin/pdf_statistics',javascript_delay: 3000, pdf:'pdf', layout: 'pdf_statistics.html'}
-    end
     render :layout => 'admin_layout'
   end
 end
