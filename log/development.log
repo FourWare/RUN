@@ -8249,3 +8249,37 @@ Processing by AdminController#home as HTML
 Completed 200 OK in 215ms (Views: 184.4ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/home/entrar" for 181.130.112.86 at 2017-10-26 19:10:23 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#entrar as HTML
+  Rendering home/entrar.html.erb within layouts/entrar
+  Rendered home/entrar.html.erb within layouts/entrar (884.1ms)
+Completed 200 OK in 1038ms (Views: 1027.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/home/entrar" for 181.130.112.86 at 2017-10-26 19:10:35 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Qe87okHnW96Ry6O/z1sJwSDgIDUvEVxtOo1WisL5KNbN1jCENS337Ldza4M4JRfwHGJPsBbbde0NEKLehQxVWw==", "user"=>{"email"=>"runappunal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "runappunal@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-10-26 19:10:35.573055"], ["last_sign_in_at", "2017-10-12 20:40:34.508693"], ["sign_in_count", 8], ["updated_at", "2017-10-26 19:10:35.574726"], ["id", 135]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-miguelangelborja-1.c9users.io/admin/statistics
+Completed 302 Found in 181ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/admin/statistics" for 181.130.112.86 at 2017-10-26 19:10:35 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "cars"."modelo" AS cars_modelo FROM "cars" GROUP BY "cars"."modelo"[0m
+  Rendering admin/statistics.html.erb within layouts/admin_layout
+  Rendered admin/statistics.html.erb within layouts/admin_layout (15.6ms)
+Completed 200 OK in 989ms (Views: 782.2ms | ActiveRecord: 9.4ms)
+
+
