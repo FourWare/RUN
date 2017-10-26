@@ -1,43 +1,56 @@
+<div class="container">
+  <h1 style="color: #155892;">Estadisticas</h1>
+  <div class="row">
+      <table class="table table-striped table-bordered table-hover" style="border: solid black;">
+    <tr>
+      <th style="text-align:center; background-color: #373a3c; color: white;">Descripcion</th>
+      <th style="text-align:center; background-color: #373a3c; color: white;">Valor</th> 
+    </tr>
+    <tr>
+      <td >Vehiculos agregados al sistema</td>
+      <td><%= @countCar%></td>
+    </tr>
+    <tr>
+      <td>Usuarios registrados en el sistema</td>
+      <td><%= @countUser%></td>
+    </tr>
+    <tr>
+      <td>Rutas creadas en el sistema</td>
+      <td><%=@countRoutes%></td>
+    </tr>
+    <tr>
+      <td>Rutas creadas la ultima semana</td>
+      <td><%= @routesLastWeek%></td>
+    </tr>
+  </table>
+  <hr>
+    <div class="item">
+        <h2 style="color: #155892;">Rutas creadas por dia.</h2>
+        </br>
+        <%= line_chart @routesCreatedPerDay, legend: true, curve: false, width: "800px", height: "500px"%>
+    </div>
+    <hr>
+    <div class="item">
+        <h2 style="color: #155892;">Usuarios creados por dia.</h2>
+        <%= line_chart @usersCreatedPerDay, legend: true,curve: false, label: "Value", width: "800px", height: "500px" %>
+    </div>
+    <hr>
+    <div class="item">
+      </br>
+      <h2 style="color: #155892;">Carros por modelo</h2>
+      </br>  
+      <%= pie_chart @carsPerModel, library: {pieSliceText:'value-and-percentage'}, width: "800px", height: "500px" %>
+    </div>
+    <hr>
+    <div class="item">
+      </br>
+      <h2 style="color: #155892;">Vehiculos por tipo</h2>
+      </br>
+      <%= pie_chart @carsPerType, title: "Tipo de vehiculos usados", library: {pieSliceText:'value-and-percentage'}, width: "800px", height: "500px" %>
+    </div>
+    <hr>
+    
+  </div>
+</div>
 
-<h1 style="color: #155892;">Estadisticas</h1>
 
-<h2 style="color: #155892;">Tabla de estadisticas.</h2>
-        
-<table class="table table-striped table-bordered table-hover" style="border: solid black;">
-  <tr>
-    <th style="text-align:center; background-color: #373a3c; color: white;">Descripcion</th>
-    <th style="text-align:center; background-color: #373a3c; color: white;">Valor</th> 
-  </tr>
-  <tr>
-    <td >Vehiculos agregados al sistema</td>
-    <td><%= @countCar%></td>
-  </tr>
-  <tr>
-    <td>Usuarios registrados en el sistema</td>
-    <td><%= @countUser%></td>
-  </tr>
-  <tr>
-    <td>Rutas creadas en el sistema</td>
-    <td><%=@countRoutes%></td>
-  </tr>
-  <tr>
-    <td>Rutas creadas la ultima semana</td>
-    <td><%= @routesLastWeek%></td>
-  </tr>
-</table>
-
-<h2 style="color: #155892;">Rutas creadas por dia.</h2>
-
-<%= line_chart @routesCreatedPerDay, legend: true, curve: false%>
-
-<h2 style="color: #155892;">Usuarios creados por dia.</h2>
-
-<%= line_chart @usersCreatedPerDay, legend: true,curve: false, label: "Value" %>
-
-<h2 style="color: #155892;">Carros por modelo</h2>
-
-<%= pie_chart @carsPerModel, library: {pieSliceText:'value-and-percentage'} %>
-
-<h2 style="color: #155892;">Vehiculos por tipo</h2>
-     
-<%= pie_chart @carsPerType, title: "Tipo de vehiculos usados", library: {pieSliceText:'value-and-percentage'} %>
