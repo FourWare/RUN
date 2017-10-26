@@ -29,6 +29,6 @@ Santiago Marquez:
 
 * Atributo booleano para vehículo, para que no se elimine totalmente de los registros (solo activo o inactivo).
 * Edición de mis rutas.
-* Calificación de pasajeros y conductores.
 * Configuración login con google.
+* Calificación de pasajeros y conductores.
 * Comunicación por correo entre conductor y pasajeros.
