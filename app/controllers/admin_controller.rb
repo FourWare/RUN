@@ -12,15 +12,18 @@ class AdminController < ApplicationController
   end
   
   def statistics
-    @users = User
     @countUser = User.count
-    @routesCreatedPerDay = Route.group("DATE(created_at)").count
-    @usersCreatedPerDay = User.group("DATE(created_at)").count
-    @carsPerModel = Car.group("modelo").count
+    @countRoutes = Route.count
+    @countCar = Car.count
+    @routesLastWeek = Route.createdLastWeek
+    @routesCreatedPerDay = Route.createdPerDay
+    @usersCreatedPerDay = User.createdPerDay
+    @carsPerModel = Car.carsPerYear
+    @carsPerType = Car.perType
     @app = 'RunApp'
     respond_to do |format|
     format.html {render layout: 'admin_layout' }
-    format.pdf { render template: 'admin/pdf_statistics',javascript_delay: 3000, pdf:'pdf', layout: 'pdf_statistics.html'}
+    format.pdf { render template: 'admin/pdf_statistics',javascript_delay: 3000, pdf:'pdf', layout: 'pdf_statistics.html',header: { right: '[page] of [topage]'}}
   end
   end
 end
