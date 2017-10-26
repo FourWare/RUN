@@ -12,11 +12,14 @@ class AdminController < ApplicationController
   end
   
   def statistics
-    @users = User
     @countUser = User.count
-    @routesCreatedPerDay = Route.group("DATE(created_at)").count
-    @usersCreatedPerDay = User.group("DATE(created_at)").count
-    @carsPerModel = Car.group("modelo").count
+    @countRoutes = Route.count
+    @countCar = Car.count
+    @routesLastWeek = Route.createdLastWeek
+    @routesCreatedPerDay = Route.createdPerDay
+    @usersCreatedPerDay = User.createdPerDay
+    @carsPerModel = Car.carsPerYear
+    @carsPerType = Car.perType
     @app = 'RunApp'
     respond_to do |format|
     format.html {render layout: 'admin_layout' }
