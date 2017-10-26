@@ -14610,3 +14610,47 @@ Processing by RoutesController#index as HTML
 Completed 200 OK in 96ms (Views: 90.8ms | ActiveRecord: 1.3ms)
 
 
+Started GET "/admin/statistics" for 181.130.112.86 at 2017-10-26 19:13:53 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "cars"."modelo" AS cars_modelo FROM "cars" GROUP BY "cars"."modelo"[0m
+  Rendering admin/statistics.html.erb within layouts/admin_layout
+  Rendered admin/statistics.html.erb within layouts/admin_layout (3.1ms)
+Completed 200 OK in 594ms (Views: 509.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/admin/statistics.pdf" for 181.130.112.86 at 2017-10-26 19:14:02 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as PDF
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "cars"."modelo" AS cars_modelo FROM "cars" GROUP BY "cars"."modelo"[0m
+***************WICKED***************
+  Rendering admin/pdf_statistics.pdf.erb within layouts/pdf_statistics.html
+  Rendered admin/pdf_statistics.pdf.erb within layouts/pdf_statistics.html (0.8ms)
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data pdf.pdf (1.9ms)
+Completed 200 OK in 5447ms (Views: 1.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/statistics" for 181.130.112.86 at 2017-10-26 19:15:10 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "cars"."modelo" AS cars_modelo FROM "cars" GROUP BY "cars"."modelo"[0m
+  Rendering admin/statistics.html.erb within layouts/admin_layout
+  Rendered admin/statistics.html.erb within layouts/admin_layout (2.2ms)
+Completed 200 OK in 408ms (Views: 248.5ms | ActiveRecord: 2.7ms)
+
+
