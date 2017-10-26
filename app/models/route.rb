@@ -67,4 +67,12 @@ class Route < ApplicationRecord
     def self.myCars(user_id)
         Car.where(:user_id => user_id).uniq
     end
+    
+    def self.createdPerDay()
+        Route.group("DATE(created_at)").count
+    end
+    
+    def self.createdLastWeek()
+        Route.where('created_at >= ?', 1.week.ago).count
+    end
 end
