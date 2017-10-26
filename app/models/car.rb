@@ -13,4 +13,12 @@ class Car < ApplicationRecord
     def self.user(user_id)
         User.find(user_id)
     end
+    
+    def self.carsPerYear()
+        Car.group("modelo").count
+    end
+    
+    def self.perType()
+        Car.group("tipo").count
+    end
 end

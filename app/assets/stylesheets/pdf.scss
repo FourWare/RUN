@@ -1,3 +1,15 @@
-.body{
+h1{
     text-align: center;
 }
+h2{
+    text-align: center;
+}
+td,th{
+    text-align: center;
+}
+table, tr, td, th, tbody, thead, tfoot{
+    page-break-inside: avoid !important;
+}
+div.alwaysbreak { page-break-before: always; }
+div.nobreak:before { clear:both; }
+div.nobreak { page-break-inside: avoid; }
