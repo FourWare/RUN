@@ -6659,3 +6659,125 @@ Processing by AdminController#statistics as HTML
 Completed 200 OK in 408ms (Views: 248.5ms | ActiveRecord: 2.7ms)
 
 
+Started GET "/" for 181.130.112.86 at 2017-10-26 19:35:31 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 135], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (40.1ms)
+Completed 200 OK in 1183ms (Views: 705.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/home" for 181.130.112.86 at 2017-10-26 19:35:34 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id"[0m
+  Rendering admin/home.html.erb within layouts/admin_layout
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY name ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendered admin/home.html.erb within layouts/admin_layout (23.2ms)
+Completed 200 OK in 375ms (Views: 282.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/admin/statistics" for 181.130.112.86 at 2017-10-26 19:35:38 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cars"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (created_at >= '2017-10-19 19:35:38.950657')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "cars"."modelo" AS cars_modelo FROM "cars" GROUP BY "cars"."modelo"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "cars"."tipo" AS cars_tipo FROM "cars" GROUP BY "cars"."tipo"[0m
+  Rendering admin/statistics.html.erb within layouts/admin_layout
+  Rendered admin/statistics.html.erb within layouts/admin_layout (11.6ms)
+Completed 200 OK in 304ms (Views: 266.3ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/admin/statistics.pdf" for 181.130.112.86 at 2017-10-26 19:35:43 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as PDF
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cars"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (created_at >= '2017-10-19 19:35:43.963531')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "cars"."modelo" AS cars_modelo FROM "cars" GROUP BY "cars"."modelo"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "cars"."tipo" AS cars_tipo FROM "cars" GROUP BY "cars"."tipo"[0m
+***************WICKED***************
+  Rendering admin/pdf_statistics.pdf.erb within layouts/pdf_statistics.html
+  Rendered admin/pdf_statistics.pdf.erb within layouts/pdf_statistics.html (2.8ms)
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data pdf.pdf (1.7ms)
+Completed 200 OK in 4644ms (Views: 1.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-10-26 19:40:37 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 135], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (38.0ms)
+Completed 200 OK in 931ms (Views: 474.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/home" for 181.130.112.86 at 2017-10-26 19:40:39 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id"[0m
+  Rendering admin/home.html.erb within layouts/admin_layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY name ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendered admin/home.html.erb within layouts/admin_layout (7.3ms)
+Completed 200 OK in 426ms (Views: 322.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/admin/statistics" for 181.130.112.86 at 2017-10-26 19:40:42 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cars"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (created_at >= '2017-10-19 19:40:42.544676')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "cars"."modelo" AS cars_modelo FROM "cars" GROUP BY "cars"."modelo"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "cars"."tipo" AS cars_tipo FROM "cars" GROUP BY "cars"."tipo"[0m
+  Rendering admin/statistics.html.erb within layouts/admin_layout
+  Rendered admin/statistics.html.erb within layouts/admin_layout (95.0ms)
+Completed 200 OK in 523ms (Views: 473.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/admin/statistics.pdf" for 181.130.112.86 at 2017-10-26 19:40:46 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#statistics as PDF
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cars"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (created_at >= '2017-10-19 19:40:46.196401')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "routes" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, DATE(created_at) AS date_created_at FROM "users" GROUP BY DATE(created_at)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "cars"."modelo" AS cars_modelo FROM "cars" GROUP BY "cars"."modelo"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, "cars"."tipo" AS cars_tipo FROM "cars" GROUP BY "cars"."tipo"[0m
+***************WICKED***************
+  Rendering admin/pdf_statistics.pdf.erb within layouts/pdf_statistics.html
+  Rendered admin/pdf_statistics.pdf.erb within layouts/pdf_statistics.html (1.4ms)
+  Rendering text template
+  Rendered text template (0.0ms)
+Sent data pdf.pdf (1.7ms)
+Completed 200 OK in 4403ms (Views: 1.4ms | ActiveRecord: 1.8ms)
+
+
