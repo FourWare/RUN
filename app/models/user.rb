@@ -58,4 +58,8 @@ class User < ApplicationRecord
   def self.profileImage(user_id)
     User.where(:id => user_id).uniq
   end
+  
+  def self.createdPerDay()
+    User.group("DATE(created_at)").count
+  end
 end
