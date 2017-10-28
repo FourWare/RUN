@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/usuario/editar_perfil' => 'home#editar_perfil'
   get '/usuario/crear_evento' => 'users#eventCreate'
   get '/usuario/inicio' => 'users#show'
+  get '/usuario/perfil' => 'users#publicProfile'
   
   get '/admin/home'
   

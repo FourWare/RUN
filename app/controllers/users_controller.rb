@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     @app = "RunApp"
     render :layout => 'user-layout'
   end
+  def publicProfile
+    
+    render :layout => 'user-layout'
+  end
   
   def mainPage
   end

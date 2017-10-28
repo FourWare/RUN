@@ -1,6 +1,5 @@
 class Route < ApplicationRecord
-    belongs_to :user  
-    
+   
     ##### queries
     def self.filterSearchOtherRoutes(option, search, user_id)
         if (search != "" and search != " ")
@@ -87,4 +86,15 @@ class Route < ApplicationRecord
     def self.myCars(user_id)
         Car.where(:user_id => user_id).uniq
     end
+    @count = 0;
+    def self.updateRating(route_id, rating)
+        @count = @count+1
+        if (Route.find(route_id).rating == nil)
+            Route.find(route_id).rating =0
+        end
+        Route.find(route_id).update_attribute(:rating, (Route.find(route_id).rating + rating)/count)
+    end
+    
+    
+    
 end
