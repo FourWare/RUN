@@ -12,21 +12,51 @@ Rails.application.routes.draw do
   devise_for :users, :path => 'home', :path_names => { :sign_in => 'entrar', :sign_up => 'registro', :sign_out => 'logout', :edit => 'editar_perfil', :password => 'recuperacion_contrasena', :confirmation => 'verificación',  },
             :controllers => { omniauth_callbacks: "sessions" }
 
-  get '/usuario/updateSpacesAvailable' => 'routes#updateSpacesAvailable'
-  get '/usuario/mis-rutas' => 'routes#show_my_routes'
-  get '/usuario/contactanos' => 'users#create_contactanos'
-  get '/usuario/contactanos' => 'users#new_contactanos'
-  get '/usuario/editar_perfil' => 'home#editar_perfil'
-  get '/usuario/crear_evento' => 'users#eventCreate'
-  get '/usuario/inicio' => 'users#show'
+  #get '/usuario/updateSpacesAvailable' => 'routes#updateSpacesAvailable'
+  #get '/usuario/mis-rutas' => 'routes#show_my_routes'
+  #get '/usuario/contactanos' => 'users#create_contactanos'
+  #get '/usuario/contactanos' => 'users#new_contactanos'
+  #get '/usuario/editar_perfil' => 'home#editar_perfil'
+  #get '/usuario/crear_evento' => 'users#eventCreate'
+  #get '/usuario/inicio' => 'users#show'
   
-  get '/admin/home'
-  get '/admin/statistics'
+  resources :usuario, except: [:index, :create, :new, :edit, :show, :update, :destroy] do
+    collection do
+      get 'contactanos' => 'users#create_contactanos' 
+      get 'contactanos' => 'users#new_contactanos'
+      get 'inicio' => 'users#show'
+      get 'crear_evento' => 'users#eventCreate'
+      get 'editar_perfil' => 'home#editar_perfil'
+      get 'mis-rutas' => 'routes#show_my_routes'
+      get 'updateSpacesAvailable' => 'routes#updateSpacesAvailable'
+    end
+  end
+  
+  resources :admin, except: [:index, :create, :new, :edit, :show, :update, :destroy] do
+    collection do
+      get 'home', 'statistics'
+    end
+  end
+  
+  resources :home, except: [:index, :create, :new, :edit, :show, :update, :destroy] do
+    collection do
+      get 'auth/google_oauth2/callback' => 'users#show'
+      get 'recuperacion_contrasena', 'registro', 'entrar'
+    end
+  end
 
-  get '/home/auth/google_oauth2/callback' => 'users#show'
-  get '/home/recuperacion_contrasena' => 'home#recuperacion_contrasena'
-  get '/home/registro'
-  get '/home/entrar'
   root to: 'home#index'
 
 end
+
+
+
+
+
+#get '/admin/home'
+#get '/admin/statistics'
+
+#get '/home/auth/google_oauth2/callback' => 'users#show'
+#get '/home/recuperacion_contrasena' => 'home#recuperacion_contrasena'
+#get '/home/registro'
+#get '/home/entrar'
