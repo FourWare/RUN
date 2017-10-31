@@ -89,3 +89,79 @@ function restartSearch(){
         }
     }
 }
+
+/* -------------- Funciones para las calificaciones de ruta ---------------- */
+
+function ratingEffect(star, option){
+    if(option == "over"){
+        if(star == "star1")
+            $("#star1").css('background-color', "#F3C921");
+        else if(star == "star2"){
+            $("#star1").css('background-color', "#F3C921");
+            $("#star2").css('background-color', "#F3C921");
+        }
+        else if(star == "star3"){
+            $("#star1").css('background-color', "#F3C921");
+            $("#star2").css('background-color', "#F3C921");
+            $("#star3").css('background-color', "#F3C921");
+        }
+        else if(star == "star4"){
+            $("#star1").css('background-color', "#F3C921");
+            $("#star2").css('background-color', "#F3C921");
+            $("#star3").css('background-color', "#F3C921");
+            $("#star4").css('background-color', "#F3C921");
+        }
+        else if(star == "star5"){
+            $("#star1").css('background-color', "#F3C921");
+            $("#star2").css('background-color', "#F3C921");
+            $("#star3").css('background-color', "#F3C921");
+            $("#star4").css('background-color', "#F3C921");
+            $("#star5").css('background-color', "#F3C921");
+        }
+    }else if(option == "out"){
+        if(star == "star1")
+            $("#star1").css('background-color', "lightgray");
+        else if(star == "star2"){
+            $("#star1").css('background-color', "lightgray");
+            $("#star2").css('background-color', "lightgray");
+        }
+        else if(star == "star3"){
+            $("#star1").css('background-color', "lightgray");
+            $("#star2").css('background-color', "lightgray");
+            $("#star3").css('background-color', "lightgray");
+        }
+        else if(star == "star4"){
+            $("#star1").css('background-color', "lightgray");
+            $("#star2").css('background-color', "lightgray");
+            $("#star3").css('background-color', "lightgray");
+            $("#star4").css('background-color', "lightgray");
+        }
+        else if(star == "star5"){
+            $("#star1").css('background-color', "lightgray");
+            $("#star2").css('background-color', "lightgray");
+            $("#star3").css('background-color', "lightgray");
+            $("#star4").css('background-color', "lightgray");
+            $("#star5").css('background-color', "lightgray");
+        }
+    }
+}
+
+function star1Action(){
+    $('#myRatingText').html('1 <small>/5</small>');
+}
+
+function star2Action(){
+    $('#myRatingText').html('2 <small>/5</small>');
+}
+
+function star3Action(){
+    $('#myRatingText').html('3 <small>/5</small>');
+}
+
+function star4Action(){
+    $('#myRatingText').html('4 <small>/5</small>');
+}
+
+function star5Action(){
+    $('#myRatingText').html('5 <small>/5</small>');
+}

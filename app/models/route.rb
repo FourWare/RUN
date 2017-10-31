@@ -97,4 +97,15 @@ class Route < ApplicationRecord
     def self.createdLastWeek()
         Route.where('created_at >= ?', 1.week.ago).count
     end
+    
+    @count = 0
+    def self.addRatingToRoute(id, rat)
+        @count +=1
+        if(Route.find(id).rating == nil)
+            Route.find(id).update_attribute(:rating, 0.0)
+        end 
+        aux = (Route.find(id).rating + rat.to_s.to_f) / count
+        Route.find(id).update_attribute(:rating, aux)
+    end
+    
 end
