@@ -237,27 +237,38 @@
   			<div class="rating-block">
   				<h4>Tu calificación</h4>
   				<h2 class="bold padding-bottom-7" id="myRatingText">- <small>/ 5</small></h2>
-  				<div id="ratingBtn">
-  				  <button type="button" class="btn btn-default btn-sm" id="star1" aria-label="Left Align" onmouseover="ratingEffect('star1', 'over');" onmouseout="ratingEffect('star1', 'out');" onclick="addUserRating(); star1Action();">
-    				  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    				</button>
-    				<button type="button" class="btn btn-default btn-sm" id="star2" aria-label="Left Align" onmouseover="ratingEffect('star2', 'over');" onmouseout="ratingEffect('star2', 'out');" onclick="addUserRating(); star2Action();">
-    				  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    				</button>
-    				<button type="button" class="btn btn-default btn-sm" id="star3" aria-label="Left Align" onmouseover="ratingEffect('star3', 'over');" onmouseout="ratingEffect('star3', 'out');" onclick="addUserRating(); star3Action();">
-    				  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    				</button>
-    				<button type="button" class="btn btn-default btn-sm" id="star4" aria-label="Left Align" onmouseover="ratingEffect('star4', 'over');" onmouseout="ratingEffect('star4', 'out');" onclick="addUserRating(); star4Action();">
-    				  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    				</button>
-    				<button type="button" class="btn btn-default btn-sm" id="star5" aria-label="Left Align" onmouseover="ratingEffect('star5', 'over');" onmouseout="ratingEffect('star5', 'out');" onclick="addUserRating(); star5Action();">
-    				  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-    				</button>
-  				</div>
-  				<div id="ratingSaved" style="display: none; color: lightgreen;">
-  				  <p>Calificación guardada.</p>
-  				  <button class="btn btn-danger" onclick="ratingCancel();">Cancelar</button>
-  				</div>
+  				<% if Route.checkUserInRatingRoute(@route, current_user) %>
+  				  <div id="ratingSaved" style="color: lightgreen;">
+    				  <p>Calificación guardada.</p>
+    				  <%= link_to "Cancelar", 
+                { :controller => "routes", :action => "updateRatings", :route => @route, :user => current_user, :act => 'remove' },
+                { :class => "btn btn-danger" }  
+              %>
+    				</div>
+    			<% else %>
+    			  <div id="ratingBtn">
+    				  <%= link_to raw('<span class="glyphicon glyphicon-star" aria-hidden="true"></span>'), 
+                { :controller => "routes", :action => "updateRatings", :route => @route, :user => current_user, :value => '1', :act => 'add' },
+                { :type => "button", :class => "btn btn-default btn-sm", :id => "star1" }  
+              %>
+              <%= link_to raw('<span class="glyphicon glyphicon-star" aria-hidden="true"></span>'), 
+                { :controller => "routes", :action => "updateRatings", :route => @route, :user => current_user, :value => '2', :act => 'add' },
+                { :type => "button", :class => "btn btn-default btn-sm", :id => "star2" }  
+              %>
+              <%= link_to raw('<span class="glyphicon glyphicon-star" aria-hidden="true"></span>'), 
+                { :controller => "routes", :action => "updateRatings", :route => @route, :user => current_user, :value => '3', :act => 'add' },
+                { :type => "button", :class => "btn btn-default btn-sm", :id => "star3" }  
+              %>
+              <%= link_to raw('<span class="glyphicon glyphicon-star" aria-hidden="true"></span>'), 
+                { :controller => "routes", :action => "updateRatings", :route => @route, :user => current_user, :value => '4', :act => 'add' },
+                { :type => "button", :class => "btn btn-default btn-sm", :id => "star4" }  
+              %>
+              <%= link_to raw('<span class="glyphicon glyphicon-star" aria-hidden="true"></span>'), 
+                { :controller => "routes", :action => "updateRatings", :route => @route, :user => current_user, :value => '5', :act => 'add' },
+                { :type => "button", :class => "btn btn-default btn-sm", :id => "star5" }  
+              %>
+    				</div>
+    			<% end %>
   			</div>
   			</br>
   			<div>
@@ -329,37 +340,6 @@
   		</div>			
     </div>
 	</div>
-  
-  <% if false %>
-  
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <div class="col-lg-6">
-          <label class="col-lg-6 control-label" style="text-align: left;">Calificación actual:</label>
-          <div class="input-group col-lg-6">
-            <span class="input-group-addon glyphicon glyphicon-star" style="background-color: lightgreen"></span>
-            <textarea rows="1" class="form-control" id='usernameRegister' type='text' readonly='true' style="margin: 0%; border: none; width: 100%; text-align: center; resize: none;" ><%= @route.rating %></textarea>
-          </div>
-        </div>
-        <br></br>
-        </br>
-        <div class="col-lg-6">
-          <label class="col-lg-6 control-label" style="text-align: left;">Tu calificación:</label>
-          <div class="input-group col-lg-6">
-            <span class="input-group-addon glyphicon glyphicon-star" style="background-color: lightgreen"></span>
-            <%= form_with(model: @route,local: true) do |f| %>
-              <%= f.text_field :rating, class: "form-control", type: 'number', min: 1,max: 5, step: 1, autofocus: true, required: "" %>
-            <%end%>
-          </div>
-        </div>
-        <%= button_tag "Enviar", type: "submit", id: "submitRegister", class: "btn btn-primary btn-lg", style: "width: 100%;", onclick: Route.addRatingToRoute(@route.id,:rating); %>
-      </div>
-      
-    </div>
-  </div>
-  
-  <% end %>
   <hr>
   <div class="form-group">
       <div class="col-lg-2">

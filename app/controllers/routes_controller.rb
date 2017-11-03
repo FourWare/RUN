@@ -38,6 +38,16 @@ class RoutesController < ApplicationController
       end
     end
   end
+  
+  def updateRatings
+    @ruta = params[:route]
+    if(params[:act] == "add")
+      @mensaje = "Estoy agregando calificación"
+      Route.updateRatingsInRoute(params[:route], params[:user], params[:value])
+    elsif(params[:act] == "remove")
+      @mensaje = "Estoy borrando calificación"
+    end
+  end
 
   # GET /routes/new
   def new

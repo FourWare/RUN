@@ -98,4 +98,22 @@ class Route < ApplicationRecord
         Route.where('created_at >= ?', 1.week.ago).count
     end
    
+    def self.updateRatingsInRoute(route, user, value)
+        Route.find(route).update_attribute(:userRating, user.to_s + ":" + value.to_s + ", ")
+        if(value == '1')
+            Route.find(route).update_attribute(:ratings, "1-0-0-0-0")
+        elsif(value == '2')
+            Route.find(route).update_attribute(:ratings, "0-1-0-0-0")
+        elsif(value == '3')
+            Route.find(route).update_attribute(:ratings, "0-0-1-0-0")
+        elsif(value == '4')
+            Route.find(route).update_attribute(:ratings, "0-0-0-1-0")
+        elsif(value == '5')
+            Route.find(route).update_attribute(:ratings, "0-0-0-0-1")
+        end
+    end
+    
+    def self.checkUserInRatingRoute(route, user)
+        Route.find(route.id).userRating.split(":").include? user.id.to_s
+    end
 end

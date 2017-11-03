@@ -91,6 +91,43 @@ function restartSearch(){
 }
 
 /* -------------- Funciones para las calificaciones de ruta ---------------- */
+$(document).ready(function() {
+  $("#star1").on("mouseover", function() {
+    ratingEffect("star1", "over")
+  });
+  $("#star1").on("mouseout", function() {
+    ratingEffect("star1", "out")
+  });
+  
+  $("#star2").on("mouseover", function() {
+    ratingEffect("star2", "over")
+  });
+  $("#star2").on("mouseout", function() {
+    ratingEffect("star2", "out")
+  });
+  
+  $("#star3").on("mouseover", function() {
+    ratingEffect("star3", "over")
+  });
+  $("#star3").on("mouseout", function() {
+    ratingEffect("star3", "out")
+  });
+  
+  $("#star4").on("mouseover", function() {
+    ratingEffect("star4", "over")
+  });
+  $("#star4").on("mouseout", function() {
+    ratingEffect("star4", "out")
+  });
+  
+  $("#star5").on("mouseover", function() {
+    ratingEffect("star5", "over")
+  });
+  $("#star5").on("mouseout", function() {
+    ratingEffect("star5", "out")
+  });
+});
+
 function ratingEffect(star, option){
     if(option == "over"){
         if(star == "star1")
@@ -111,19 +148,18 @@ function ratingEffect(star, option){
             $("#star4").css('background-color', "#F3C921");
         }
         else if(star == "star5"){
-            $("button[id^='star']").css('background-color', "#F3C921");
+            $("#star1").css('background-color', "#F3C921");
+            $("#star2").css('background-color', "#F3C921");
+            $("#star3").css('background-color', "#F3C921");
+            $("#star4").css('background-color', "#F3C921");
+            $("#star5").css('background-color', "#F3C921");
         }
     }else if(option == "out"){
-        if(star == "star1" )
-            $("button[id^='star']").css('background-color', "lightgray");
-        else if(star == "star2")
-            $("button[id^='star']").css('background-color', "lightgray");
-        else if(star == "star3")
-            $("button[id^='star']").css('background-color', "lightgray");
-        else if(star == "star4")
-            $("button[id^='star']").css('background-color', "lightgray");
-        else if(star == "star5")
-            $("button[id^='star']").css('background-color', "lightgray");
+        $("#star1").css('background-color', "lightgray");
+        $("#star2").css('background-color', "lightgray");
+        $("#star3").css('background-color', "lightgray");
+        $("#star4").css('background-color', "lightgray");
+        $("#star5").css('background-color', "lightgray");
     }
 }
 

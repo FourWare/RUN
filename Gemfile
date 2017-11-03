@@ -44,6 +44,9 @@ gem 'mail_form'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 
+# Gema de jquery
+gem 'jquery-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use Puma as the app server
