@@ -1,28 +1,6 @@
 class Route < ApplicationRecord
     ##### queries
     def self.filterSearchOtherRoutes(keyword, cost, date, capacity, type, brand, user_id)
-        # if (search != "" and search != " ")
-        #     if(option == "type")
-        #         where(:car_placa => Car.where(:tipo => search.capitalize).select(:placa)).where.not(:id_user => user_id)
-        #     elsif(option == "brand")
-        #         where(:car_placa => Car.where(:marca => search.capitalize).select(:placa)).where.not(:id_user => user_id)
-        #     elsif(option == "color")
-        #         where(:car_placa => Car.where(:color => search.capitalize).select(:placa)).where.not(:id_user => user_id)
-        #     elsif(option == "capacity")
-        #         where(:car_placa => Car.where(:capacidad => search).select(:placa)).where.not(:id_user => user_id)
-        #     elsif(option == "date")
-        #         where('departure LIKE ?', '%' + search + '%').where.not(:id_user => user_id)
-        #     elsif(option == "cost")
-        #         where(["cost = ? and id_user != ?", search, user_id])
-        #     elsif(option == "keyWord")
-        #         where(["(title LIKE ? OR description LIKE ?) AND id_user != ?", '%' + search + '%', '%' + search + '%', user_id])
-        #     else
-        #         where(["id_user != ?", user_id]).all
-        #     end
-        # else
-        #     where(["id_user != ?", user_id]).all
-        # end
-        
         results = Route.where(["id_user != ?", user_id]).all
         results = results.where(["(title LIKE ? OR description LIKE ?) AND id_user != ?", '%' + keyword + '%', '%' + keyword + '%', user_id]) if keyword.present?#keyword
         results = results.where(:car_placa => Car.where(:marca => brand.capitalize).select(:placa)).where.not(:id_user => user_id) if brand.present?#brand
