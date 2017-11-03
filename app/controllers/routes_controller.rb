@@ -4,15 +4,22 @@ class RoutesController < ApplicationController
 
   # GET /routes
   # GET /routes.json
+  def index1
+    @routes = Route.othersRoutes.paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    @countOtherRoutes = Route.countOtherRoutes(current_user.id)
+    @countRoutesFilter = @routes.count
+  end
+  
   def index
-    @routes = Route.filterSearchOtherRoutes(params[:filterSelect], params[:search], current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    #@routes = Route.othersRoutes(current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    @routes = Route.filterSearchOtherRoutes(params[:sKeyWord], params[:sCost],params[:sDate],params[:sCapacity],params[:sType],params[:sBrand], current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
     @countOtherRoutes = Route.countOtherRoutes(current_user.id)
     @countRoutesFilter = @routes.count
     render :layout => 'user-layout'
   end
   
   def show_my_routes
-    @routes = Route.filterSearchMyRoutes(params[:filterSelect], params[:search], current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
+    @routes = Route.filterSearchMyRoutes(params[:sKeyWord], params[:sCost],params[:sDate],params[:sCapacity],params[:sType],params[:sBrand], current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
     @countMyRoutes = Route.countMyRoutes(current_user.id)
     @countRoutesFilter = @routes.count
     render :layout => 'user-layout'
