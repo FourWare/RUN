@@ -1,5 +1,6 @@
 class Route < ApplicationRecord
-    ##### queries
+    #------------------------- queries ------------------------- #
+    
     def self.filterSearchOtherRoutes(option, search, user_id)
         if (search != "" and search != " ")
             if(option == "type")
@@ -98,22 +99,35 @@ class Route < ApplicationRecord
         Route.where('created_at >= ?', 1.week.ago).count
     end
    
-    def self.updateRatingsInRoute(route, user, value)
-        Route.find(route).update_attribute(:userRating, user.to_s + ":" + value.to_s + ", ")
-        if(value == '1')
-            Route.find(route).update_attribute(:ratings, "1-0-0-0-0")
-        elsif(value == '2')
-            Route.find(route).update_attribute(:ratings, "0-1-0-0-0")
-        elsif(value == '3')
-            Route.find(route).update_attribute(:ratings, "0-0-1-0-0")
-        elsif(value == '4')
-            Route.find(route).update_attribute(:ratings, "0-0-0-1-0")
-        elsif(value == '5')
-            Route.find(route).update_attribute(:ratings, "0-0-0-0-1")
+    # -------------------- Funciones para la calificación de ruta ------------------------------------- #
+    
+    def self.checkUserInRatingRoute(route, user)
+        Route.find(route).userRating.split(", ").include? user.to_s
+    end
+   
+    def self.addRatingsInRoute(route, user, value)
+        if(value == '1' or value == '2' or value == '3' or value == '4' or value == '5')
+            Route.find(route).update_attribute(:userRating, Route.find(route).userRating + user.to_s + ", ")
+            Route.find(route).update_attribute(:ratings, Route.find(route).ratings + value + ", ")
         end
     end
     
-    def self.checkUserInRatingRoute(route, user)
-        Route.find(route.id).userRating.split(":").include? user.id.to_s
+    def self.removeRatingsInRoute(route, user)
+        userRatingSplit = Route.find(route).userRating.split(", ")
+        ratingsSplit = Route.find(route).ratings.split(", ")
+        userIndex = userRatingSplit.index(user.to_s)
+        userRatingSplit.delete_at(userIndex)
+        ratingsSplit.delete_at(userIndex)
+        newUserRating = ""
+        newRatings = ""
+        userRatingSplit.each do |a|
+            newUserRating = newUserRating + a + ", "
+        end
+        ratingsSplit.each do |b|
+            newRatings = newRatings + b + ", "
+        end
+        
+        Route.find(route).update_attribute(:userRating, newUserRating)
+        Route.find(route).update_attribute(:ratings, newRatings)
     end
 end

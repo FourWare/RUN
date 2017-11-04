@@ -41,11 +41,12 @@ class RoutesController < ApplicationController
   
   def updateRatings
     @ruta = params[:route]
-    if(params[:act] == "add")
+    if(params[:act] == "add" and (Route.checkUserInRatingRoute(params[:route], params[:user]) == false))
       @mensaje = "Estoy agregando calificación"
-      Route.updateRatingsInRoute(params[:route], params[:user], params[:value])
-    elsif(params[:act] == "remove")
+      Route.addRatingsInRoute(params[:route], params[:user], params[:value])
+    elsif(params[:act] == "remove" and Route.checkUserInRatingRoute(params[:route], params[:user]))
       @mensaje = "Estoy borrando calificación"
+      Route.removeRatingsInRoute(params[:route], params[:user])
     end
   end
 

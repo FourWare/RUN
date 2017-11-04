@@ -237,7 +237,7 @@
   			<div class="rating-block">
   				<h4>Tu calificación</h4>
   				<h2 class="bold padding-bottom-7" id="myRatingText">- <small>/ 5</small></h2>
-  				<% if Route.checkUserInRatingRoute(@route, current_user) %>
+  				<% if Route.checkUserInRatingRoute(@route.id, current_user.id) %>
   				  <div id="ratingSaved" style="color: lightgreen;">
     				  <p>Calificación guardada.</p>
     				  <%= link_to "Cancelar", 
@@ -249,23 +249,23 @@
     			  <div id="ratingBtn">
     				  <%= link_to raw('<span class="glyphicon glyphicon-star" aria-hidden="true"></span>'), 
                 { :controller => "routes", :action => "updateRatings", :route => @route, :user => current_user, :value => '1', :act => 'add' },
-                { :type => "button", :class => "btn btn-default btn-sm", :id => "star1" }  
+                { :type => "button", :class => "btn btn-default btn-sm", :id => "star1", :onmouseover => "ratingEffect('star1', 'over');", :onmouseout => "ratingEffect('star1', 'out');" }  
               %>
               <%= link_to raw('<span class="glyphicon glyphicon-star" aria-hidden="true"></span>'), 
                 { :controller => "routes", :action => "updateRatings", :route => @route, :user => current_user, :value => '2', :act => 'add' },
-                { :type => "button", :class => "btn btn-default btn-sm", :id => "star2" }  
+                { :type => "button", :class => "btn btn-default btn-sm", :id => "star2", :onmouseover => "ratingEffect('star2', 'over');", :onmouseout => "ratingEffect('star2', 'out');" }  
               %>
               <%= link_to raw('<span class="glyphicon glyphicon-star" aria-hidden="true"></span>'), 
                 { :controller => "routes", :action => "updateRatings", :route => @route, :user => current_user, :value => '3', :act => 'add' },
-                { :type => "button", :class => "btn btn-default btn-sm", :id => "star3" }  
+                { :type => "button", :class => "btn btn-default btn-sm", :id => "star3", :onmouseover => "ratingEffect('star3', 'over');", :onmouseout => "ratingEffect('star3', 'out');" }  
               %>
               <%= link_to raw('<span class="glyphicon glyphicon-star" aria-hidden="true"></span>'), 
                 { :controller => "routes", :action => "updateRatings", :route => @route, :user => current_user, :value => '4', :act => 'add' },
-                { :type => "button", :class => "btn btn-default btn-sm", :id => "star4" }  
+                { :type => "button", :class => "btn btn-default btn-sm", :id => "star4", :onmouseover => "ratingEffect('star4', 'over');", :onmouseout => "ratingEffect('star4', 'out');" }  
               %>
               <%= link_to raw('<span class="glyphicon glyphicon-star" aria-hidden="true"></span>'), 
                 { :controller => "routes", :action => "updateRatings", :route => @route, :user => current_user, :value => '5', :act => 'add' },
-                { :type => "button", :class => "btn btn-default btn-sm", :id => "star5" }  
+                { :type => "button", :class => "btn btn-default btn-sm", :id => "star5", :onmouseover => "ratingEffect('star5', 'over');", :onmouseout => "ratingEffect('star5', 'out');" }  
               %>
     				</div>
     			<% end %>
