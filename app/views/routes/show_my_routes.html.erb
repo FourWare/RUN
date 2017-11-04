@@ -1,5 +1,4 @@
 </br>
-
 <div class="container table-responsive" style="background-color: lightgray; padding: 1%; width: 60%; overflow: auto;">
   <h1 style="color: #155892;">Mis rutas</h1>
   <p style="color: #155892;">Número de rutas: <%= @countRoutesFilter %></p>
@@ -11,23 +10,16 @@
         <form action="/usuario/mis-rutas" method="get">
           <div class="row">
             <%= image_tag("filter.png", alt: 'Filter', class: "mx-auto img-circle", style: "width: 7%;", title: "Realiza tus filtros") %>
-            <%= select_tag(:filterSelect, options_for_select(
-              [['Todo', "all"], 
-              ['Tipo de vehículo', "type"], 
-              ['Marca del vehículo', "brand"],
-              ['Color del vehículo', "color"],
-              ['Capacidad del vehículo', "capacity"],
-              ['Fecha', "date"],
-              ['Costo', "cost"],
-              ['Palabra clave', "keyWord"]],
-              params[:filterSelect]),
-              { class: "btn dropdown-toggle bs-placeholder btn-default", id: "searchSelect", style: "width: 50%; font-size: 100%;", :onchange => "a();" }) %>
+            
           </div>
           <div class="row" id="searchDiv">
-            <button type="button" class="btn btn-link" id="btnRestart" style="color: black; font-size: 100%; padding-top: 3%;" onclick="restartSearch();">
-              <span class="glyphicon glyphicon-repeat"></span>
-            </button>
-            <%= text_field_tag :search, params[:search], id: "searchInput", title: "Escribe tu búsqueda", style: "width: 50%; color: black;", disabled: true %>
+            <%= text_field_tag :sKeyWord, params[:sKeyWord], id: "searchInputKeyword", title: "Busca por palabra clave", style: "width: 50%; color: black;",placeholder: "Palabra clave, ej: unal", disabled: false %>
+            <%= text_field_tag :sCost, params[:sCost], id: "searchInputCost", title: "Busca por costo", style: "width: 50%; color: black;",placeholder: "buscar por costo, ej: 1000", disabled: false %>
+            <%= text_field_tag :sDate, params[:sDate],type: "date", id: "searchInputDate", title: "Busca por palabra clave", style: "width: 50%; color: black;", disabled: false %>
+            <%= text_field_tag :sCapacity, params[:sCapacity], id: "searchInputCapacity", title: "Busca por capacidad del vehiculo", style: "width: 50%; color: black;",placeholder: "capacidad del vehiculo, ej: 2", disabled: false %>
+            <%= text_field_tag :sType, params[:sType], id: "searchInputType", title: "Busca por tipo de vehiculo", style: "width: 50%; color: black;",placeholder: "tipo de vehiculo, ej: carro", disabled: false %>
+            <%= text_field_tag :sBrand, params[:sBrand], id: "searchInputBrand", title: "Busca por marca de vehiculo", style: "width: 50%; color: black;",placeholder: "Marca de vehiculo, ej: renault", disabled: false %>
+            
             <%= submit_tag "Buscar", class: "btn btn-default", style: "background: lightgreen;" %>
             </br>
           </div>
