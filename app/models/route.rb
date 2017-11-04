@@ -130,4 +130,25 @@ class Route < ApplicationRecord
         Route.find(route).update_attribute(:userRating, newUserRating)
         Route.find(route).update_attribute(:ratings, newRatings)
     end
+    
+    def self.getMyRating(route, user)
+        userRatingSplit = Route.find(route).userRating.split(", ")
+        ratingsSplit = Route.find(route).ratings.split(", ")
+        userIndex = userRatingSplit.index(user.to_s)
+        if(userIndex == nil)
+            return "-"
+        else
+            return ratingsSplit[userIndex]
+        end
+    end
+    
+    def self.countUsersRating(route)
+        userRatingSplit = Route.find(route).userRating.split(", ")
+        return userRatingSplit.size
+    end
+    
+    def self.countStars(route, option)
+        ratingsSplit = Route.find(route).ratings.split(", ")
+        return ratingsSplit.count(option.to_s)
+    end
 end

@@ -24,6 +24,18 @@ class RoutesController < ApplicationController
     @extraInfoRouteConductor =  Route.extraInfoRouteConductor(@route.id_user)
     @extraInfoRoute = Route.extraInfoRoute(@route.car_placa)
     @usersInRoute = Route.usersInRoute(@route.id)
+    @myRating = Route.getMyRating(@route.id, current_user.id)
+    @countUsersRating = Route.countUsersRating(@route.id)
+    @countStar1 = Route.countStars(@route.id, 1)
+    @countStar2 = Route.countStars(@route.id, 2)
+    @countStar3 = Route.countStars(@route.id, 3)
+    @countStar4 = Route.countStars(@route.id, 4)
+    @countStar5 = Route.countStars(@route.id, 5)
+    @barWidth1 = (@countStar1*100)/@countUsersRating
+    @barWidth2 = (@countStar2*100)/@countUsersRating
+    @barWidth3 = (@countStar3*100)/@countUsersRating
+    @barWidth4 = (@countStar4*100)/@countUsersRating
+    @barWidth5 = (@countStar5*100)/@countUsersRating
     render :layout => 'user-layout'
   end
 
@@ -42,10 +54,8 @@ class RoutesController < ApplicationController
   def updateRatings
     @ruta = params[:route]
     if(params[:act] == "add" and (Route.checkUserInRatingRoute(params[:route], params[:user]) == false))
-      @mensaje = "Estoy agregando calificación"
       Route.addRatingsInRoute(params[:route], params[:user], params[:value])
     elsif(params[:act] == "remove" and Route.checkUserInRatingRoute(params[:route], params[:user]))
-      @mensaje = "Estoy borrando calificación"
       Route.removeRatingsInRoute(params[:route], params[:user])
     end
   end
