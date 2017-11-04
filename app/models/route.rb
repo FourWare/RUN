@@ -1,5 +1,6 @@
 class Route < ApplicationRecord
-    ##### queries
+    #------------------------- queries ------------------------- #
+    
     def self.filterSearchOtherRoutes(option, search, user_id)
         if (search != "" and search != " ")
             if(option == "type")
@@ -96,5 +97,58 @@ class Route < ApplicationRecord
     
     def self.createdLastWeek()
         Route.where('created_at >= ?', 1.week.ago).count
+    end
+   
+    # -------------------- Funciones para la calificación de ruta ------------------------------------- #
+    
+    def self.checkUserInRatingRoute(route, user)
+        Route.find(route).userRating.split(", ").include? user.to_s
+    end
+   
+    def self.addRatingsInRoute(route, user, value)
+        if(value == '1' or value == '2' or value == '3' or value == '4' or value == '5')
+            Route.find(route).update_attribute(:userRating, Route.find(route).userRating + user.to_s + ", ")
+            Route.find(route).update_attribute(:ratings, Route.find(route).ratings + value + ", ")
+        end
+    end
+    
+    def self.removeRatingsInRoute(route, user)
+        userRatingSplit = Route.find(route).userRating.split(", ")
+        ratingsSplit = Route.find(route).ratings.split(", ")
+        userIndex = userRatingSplit.index(user.to_s)
+        userRatingSplit.delete_at(userIndex)
+        ratingsSplit.delete_at(userIndex)
+        newUserRating = ""
+        newRatings = ""
+        userRatingSplit.each do |a|
+            newUserRating = newUserRating + a + ", "
+        end
+        ratingsSplit.each do |b|
+            newRatings = newRatings + b + ", "
+        end
+        
+        Route.find(route).update_attribute(:userRating, newUserRating)
+        Route.find(route).update_attribute(:ratings, newRatings)
+    end
+    
+    def self.getMyRating(route, user)
+        userRatingSplit = Route.find(route).userRating.split(", ")
+        ratingsSplit = Route.find(route).ratings.split(", ")
+        userIndex = userRatingSplit.index(user.to_s)
+        if(userIndex == nil)
+            return "-"
+        else
+            return ratingsSplit[userIndex]
+        end
+    end
+    
+    def self.countUsersRating(route)
+        userRatingSplit = Route.find(route).userRating.split(", ")
+        return userRatingSplit.size
+    end
+    
+    def self.countStars(route, option)
+        ratingsSplit = Route.find(route).ratings.split(", ")
+        return ratingsSplit.count(option.to_s)
     end
 end
