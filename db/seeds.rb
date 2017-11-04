@@ -9,20 +9,3 @@
 Carreras = ["Ingeniería Sistemas y Computación", "Ingeniería eléctrica", "Ingeniería mecánica", "Medicina", 
                 "Artes plásticas", "Música", "Agronomía", "Derecho", "Ciencias económicas", "Biología"]
 
-30.times do
-    user = User.new
-    
-    name = Faker::Name.first_name
-    lastname = Faker::Name.last_name
-    nick = name + rand(1..999).to_s
-    
-    user.assign_attributes({ 
-        :name => name + lastname, 
-        :nick => nick, 
-        :career => Carreras.sample,
-        :date_of_birth => Faker::Date.birthday(15, 50),
-        :email => nick + '@unal.edu.co', 
-        :password => '123456' 
-    })
-    user.save!
-end

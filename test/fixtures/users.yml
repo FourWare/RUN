@@ -4,7 +4,15 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+
+one: 
+ email: camilo@unal.edu.co
+ email_confirmed: True
+ name: camilo
+ nick: Crcruerua
+ career: "sistemas"
+ date_of_birth: DateTime.new(1990,2,3,4,5,6)
+ uid: 20039
 # column: value
 #
 two: {}

@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  placa: MyString
-  tipo: MyString
-  modelo: MyString
-  color: MyString
+  placa: Vh1
+  tipo: moto
+  modelo: 1995
+  color: rojo
   capacidad: 1
 
 two:
-  placa: MyString
-  tipo: MyString
-  modelo: MyString
-  color: MyString
+  placa: we
+  tipo: MySwetring
+  modelo: MySwetring
+  color: MyStriweewng
   capacidad: 1

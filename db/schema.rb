@@ -20,13 +20,30 @@ ActiveRecord::Schema.define(version: 20171028210345) do
     t.integer "capacidad"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "id_user"
     t.string "image"
     t.string "marca"
-    t.integer "user_id"
   end
 
-# Could not dump table "routes" because of following StandardError
-#   Unknown type '' for column 'waypoints'
+  create_table "routes", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.float "from_lat"
+    t.float "from_lng"
+    t.float "to_lat"
+    t.float "to_lng"
+    t.string "waypoints"
+    t.datetime "departure"
+    t.float "cost"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "id_user"
+    t.string "car_placa"
+    t.boolean "activa"
+    t.integer "spaces_available"
+    t.string "users_in_route"
+    t.float "rating"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -41,10 +58,10 @@ ActiveRecord::Schema.define(version: 20171028210345) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
     t.string "profile_image"
     t.boolean "email_confirmed", default: false
     t.string "confirm_token"
+    t.string "name"
     t.string "nick"
     t.string "career"
     t.datetime "date_of_birth"
