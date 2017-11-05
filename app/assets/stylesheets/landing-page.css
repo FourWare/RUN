@@ -18,7 +18,7 @@ body, h1, h2, h3, h4, h5, h6 {
   padding-bottom: 50px;
   text-align: center;
   color: white;
-  background: url(cyt2.jpg) no-repeat center center;
+  background: url(as4.jpg) no-repeat center center;
   background-size: cover;
 }
 
@@ -211,6 +211,7 @@ footer {
     line-height: 40px;
     text-transform: none;
     font-family: 'Helvetica Neue', Helvetica;
+    color: white;
     text-transform: uppercase; }
   footer ul.quicklinks {
     font-size: 90%;
@@ -218,6 +219,7 @@ footer {
     margin-bottom: 0;
     text-transform: none;
     font-family: 'Helvetica Neue', Helvetica;
+    color:white;
     text-transform: uppercase; }
 
 p.copyright {
