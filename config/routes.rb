@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       get 'editar_perfil' => 'home#editar_perfil'
       get 'mis-rutas' => 'routes#show_my_routes'
       get 'updateSpacesAvailable' => 'routes#updateSpacesAvailable'
+      get 'actualización-de-calificaciones' => 'routes#updateRatings'
+      get 'actualización-de-comentarios' => 'routes#updateComments'
     end
   end
   

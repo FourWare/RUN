@@ -17,6 +17,9 @@
 //= require agency
 //= require agency.min
 //= require contact_me
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap.min
 //= require jqBootstrapValidation
 //= require chartkick
 //= require_tree .

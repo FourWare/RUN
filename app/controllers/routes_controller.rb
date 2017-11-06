@@ -24,6 +24,19 @@ class RoutesController < ApplicationController
     @extraInfoRouteConductor =  Route.extraInfoRouteConductor(@route.id_user)
     @extraInfoRoute = Route.extraInfoRoute(@route.car_placa)
     @usersInRoute = Route.usersInRoute(@route.id)
+    @myRating = Route.getMyRating(@route.id, current_user.id)
+    @countUsersRating = Route.countUsersRating(@route.id)
+    @countStar1 = Route.countStars(@route.id, 1)
+    @countStar2 = Route.countStars(@route.id, 2)
+    @countStar3 = Route.countStars(@route.id, 3)
+    @countStar4 = Route.countStars(@route.id, 4)
+    @countStar5 = Route.countStars(@route.id, 5)
+    @barWidth1 = (@countStar1*100)/@countUsersRating
+    @barWidth2 = (@countStar2*100)/@countUsersRating
+    @barWidth3 = (@countStar3*100)/@countUsersRating
+    @barWidth4 = (@countStar4*100)/@countUsersRating
+    @barWidth5 = (@countStar5*100)/@countUsersRating
+    @commentsSplit = Route.commentsSplit(@route.id)
     render :layout => 'user-layout'
   end
 
@@ -37,6 +50,22 @@ class RoutesController < ApplicationController
         Route.removeUserToRoute(params[:id_route], params[:id_user])
       end
     end
+  end
+  
+  def updateRatings
+    @ruta = params[:route]
+    if(params[:act] == "add" and (Route.checkUserInRatingRoute(params[:route], params[:user]) == false))
+      Route.addRatingsInRoute(params[:route], params[:user], params[:value])
+    elsif(params[:act] == "remove" and Route.checkUserInRatingRoute(params[:route], params[:user]))
+      Route.removeRatingsInRoute(params[:route], params[:user])
+    end
+  end
+  
+  def updateComments
+    if( Route.isNotCommentNil((params[:route][:last_comment]).to_s) )
+      Route.updateComments(params[:routeId], current_user.id, params[:route][:last_comment])
+    end
+    redirect_to controller: 'routes', action: 'show', id: params[:routeId]
   end
 
   # GET /routes/new
@@ -100,6 +129,6 @@ class RoutesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def route_params
-      params.require(:route).permit(:title, :description, :from_lat, :from_lng, :to_lat, :to_lng, :waypoints, :departure, :cost, :id_user, :car_placa, :spaces_available, :users_in_route)
+      params.require(:route).permit(:title, :description, :from_lat, :from_lng, :to_lat, :to_lng, :waypoints, :departure, :cost, :id_user, :car_placa, :spaces_available, :users_in_route, :comments)
     end
 end
