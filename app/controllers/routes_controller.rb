@@ -36,6 +36,7 @@ class RoutesController < ApplicationController
     @barWidth3 = (@countStar3*100)/@countUsersRating
     @barWidth4 = (@countStar4*100)/@countUsersRating
     @barWidth5 = (@countStar5*100)/@countUsersRating
+    @commentsSplit = Route.commentsSplit(@route.id)
     render :layout => 'user-layout'
   end
 
@@ -58,6 +59,13 @@ class RoutesController < ApplicationController
     elsif(params[:act] == "remove" and Route.checkUserInRatingRoute(params[:route], params[:user]))
       Route.removeRatingsInRoute(params[:route], params[:user])
     end
+  end
+  
+  def updateComments
+    if( Route.isNotCommentNil((params[:route][:last_comment]).to_s) )
+      Route.updateComments(params[:routeId], current_user.id, params[:route][:last_comment])
+    end
+    redirect_to controller: 'routes', action: 'show', id: params[:routeId]
   end
 
   # GET /routes/new
@@ -121,6 +129,6 @@ class RoutesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def route_params
-      params.require(:route).permit(:title, :description, :from_lat, :from_lng, :to_lat, :to_lng, :waypoints, :departure, :cost, :id_user, :car_placa, :spaces_available, :users_in_route)
+      params.require(:route).permit(:title, :description, :from_lat, :from_lng, :to_lat, :to_lng, :waypoints, :departure, :cost, :id_user, :car_placa, :spaces_available, :users_in_route, :comments)
     end
 end

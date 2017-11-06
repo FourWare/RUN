@@ -151,4 +151,18 @@ class Route < ApplicationRecord
         ratingsSplit = Route.find(route).ratings.split(", ")
         return ratingsSplit.count(option.to_s)
     end
+
+    # -------------------- Funciones para los comentarios de ruta ------------------------------------- #
+    
+    def self.isNotCommentNil(comment)
+        (comment.count("a-zA-Z") > 0) ? true : false
+    end
+    
+    def self.updateComments(route, user, comment)
+        Route.find(route).update_attribute(:comments,  "//commentA1B2C3//" + user.to_s + "//A1B2C3//" + comment + + "//A1B2C3//" + Time.now.strftime("%d/%m/%Y") +  Route.find(route).comments )
+    end
+    
+    def self.commentsSplit(route)
+        Route.find(route).comments.split("//commentA1B2C3//")
+    end
 end

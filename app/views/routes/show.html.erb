@@ -349,43 +349,46 @@
         <div class="tab-content">
           <div class="tab-pane active" id="comments-logout">                
             <ul class="media-list">
-              <li class="media">
-                <img class="media-object pull-left img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg" alt="profile">
-                <div class="media-body">
-                  <div class="well well-lg">
-                  </div>              
-                </div>
-              </li>
-              <li class="media">
-                <img class="media-object pull-left img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg" alt="profile">
-                <div class="media-body">
-                  <div class="well well-lg">
-                  </div>              
-                </div>
-              </li>
-              <li class="media">
-                <img class="media-object pull-left img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg" alt="profile">
-                <div class="media-body">
-                  <div class="well well-lg">
-                  </div>              
-                </div>
-              </li>
+              <% @commentsSplit.each do |comment| %>
+                <% if comment != "" %>
+                  <% c = comment.split("//A1B2C3//") %>
+                  <li class="media">
+                    <% if (User.find(c[0].to_i).avatar.present? == false) %>
+                      <%= image_tag("default-avatar.jpg", class: "media-object pull-left img-circle", alt: "profile", style: "margin: 1%; padding: 0%;") %>
+                    <% else %>
+                      <%= image_tag(User.find(c[0].to_i).avatar, class: "media-object pull-left", height: 50, alt: "profile", style: "margin: 1%; padding: 0%;") %>
+                    <% end %>
+                    <div class="media-body">
+                      <div class="well well-lg" style="color: black; text-align: left; padding-top: 10px;">
+                        <div class="col-xs-6" style="text-align: left; padding: 0%;"><h4><%= User.find(c[0].to_i).nick %></h4></div>
+                        <div class="col-xs-6" style="text-align: right; padding: 0%;"><h5><%= c[2] %></h4></div>
+                        <br></br></br>
+                        <p class="media-comment">
+                          <%= c[1] %>
+                        </p>
+                      </div>              
+                    </div>
+                  </li>
+                <% end %>
+              <% end %>
             </ul> 
           </div>
           <div class="tab-pane" id="add-comment-disabled">
-            <form action="#" method="post" class="form-horizontal" id="commentForm" role="form"> 
+            <%= form_for @route, :url => { :controller => "routes", :action => "updateComments" }, :html => { :method => :get } do |form| %>
               <div class="form-group">
                 <label for="email" class="col-sm-2 control-label">Comentario</label>
                 <div class="col-sm-10">
-                  <textarea class="form-control" name="addComment" id="addComment" rows="5" maxlength="200"></textarea>
+                  <%= form.text_area :last_comment, class: "form-control", id: "addComment", rows: "3", maxlength: "100", value: "" %>
+                  <%= hidden_field_tag 'routeId', @route.id %>
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">                    
-                  <button class="btn btn-success btn-circle text-uppercase" type="submit" id="submitComment"><span class="glyphicon glyphicon-send"></span> Comentar</button>
+                  </br>
+                  <%= form.submit "Comentar", :class => "btn btn-success btn-circle text-uppercase", :type => "submit", :id => "submitComment" %>
                 </div>
-              </div>            
-            </form>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
