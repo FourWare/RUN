@@ -31,11 +31,19 @@ class RoutesController < ApplicationController
     @countStar3 = Route.countStars(@route.id, 3)
     @countStar4 = Route.countStars(@route.id, 4)
     @countStar5 = Route.countStars(@route.id, 5)
-    @barWidth1 = (@countStar1*100)/@countUsersRating
-    @barWidth2 = (@countStar2*100)/@countUsersRating
-    @barWidth3 = (@countStar3*100)/@countUsersRating
-    @barWidth4 = (@countStar4*100)/@countUsersRating
-    @barWidth5 = (@countStar5*100)/@countUsersRating
+    if(@countUsersRating != 0)
+      @barWidth1 = (@countStar1*100)/@countUsersRating
+      @barWidth2 = (@countStar2*100)/@countUsersRating
+      @barWidth3 = (@countStar3*100)/@countUsersRating
+      @barWidth4 = (@countStar4*100)/@countUsersRating
+      @barWidth5 = (@countStar5*100)/@countUsersRating
+    else
+      @barWidth1 = 0
+      @barWidth2 = 0
+      @barWidth3 = 0
+      @barWidth4 = 0
+      @barWidth5 = 0
+    end
     @commentsSplit = Route.commentsSplit(@route.id)
     render :layout => 'user-layout'
   end
