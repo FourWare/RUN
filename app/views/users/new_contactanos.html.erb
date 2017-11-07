@@ -24,7 +24,7 @@
     
   </head>
 
-  <body style="background-image: url(/assets/background-user.jpg);">
+  <body>
     <nav class="navbar navbar-inverse bg-light navbar-fixed-top" style="background-color: black;">
       <div class="container">
         <div class="navbar-header">
@@ -55,7 +55,8 @@
                     <% end %>
                   </li>
                 <% end %>
-                <li> <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+                <li> <%= link_to "Salir", destroy_user_session_path, method: :get, :class => 'navbar-link'  %></li>  
+                
             </ul>
         </div>
       </div>
@@ -106,22 +107,22 @@
     </section>
     
     <!-- Footer -->
-    <footer style="position: relative; bottom: -15%;  background-color: rgba(255, 255, 255, 0.8);">
+    <footer style="position: relative; bottom: -15%;  background-color: rgba(0,0,0,0.5);">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
+                    <span class="copyright" style="color:white">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li class="list-inline-item">
-                            <a href="http://unal.edu.co/" target="_blank">Universidad Nacional de Colombia</a>
+                            <a href="http://unal.edu.co/" target="_blank" style="color:white">Universidad Nacional de Colombia</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li class="list-inline-item" style="color:black;">
+                        <li class="list-inline-item" style="color:white;">
                             <% if user_signed_in? %>
                                 <strong  style="text-transform: capitalize;"><%= current_user.name %> (<%= current_user.provider %>)</strong> |
                                 <%= link_to 'Editar perfil', "/usuario/editar_perfil", :class => 'navbar-link' %> |
