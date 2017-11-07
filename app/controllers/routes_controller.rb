@@ -7,14 +7,14 @@ class RoutesController < ApplicationController
   def index
     @routes = Route.filterSearchOtherRoutes(params[:filterSelect], params[:search], current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
     @countOtherRoutes = Route.countOtherRoutes(current_user.id)
-    @countRoutesFilter = @routes.count
+    @countRoutesFilter = Route.countRoutes(@routes)
     render :layout => 'user-layout'
   end
   
   def show_my_routes
     @routes = Route.filterSearchMyRoutes(params[:filterSelect], params[:search], current_user.id).paginate(:page => params[:page], per_page: 10).order('created_at DESC')
     @countMyRoutes = Route.countMyRoutes(current_user.id)
-    @countRoutesFilter = @routes.count
+    @countRoutesFilter = Route.countRoutes(@routes)
     render :layout => 'user-layout'
   end
 
@@ -137,6 +137,7 @@ class RoutesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def route_params
-      params.require(:route).permit(:title, :description, :from_lat, :from_lng, :to_lat, :to_lng, :waypoints, :departure, :cost, :id_user, :car_placa, :spaces_available, :users_in_route, :comments)
+      params.require(:route).permit(:title, :description, :from_lat, :from_lng, :to_lat, :to_lng, :waypoints, :departure, :cost, :id_user, 
+                                    :car_placa, :spaces_available, :users_in_route, :ratings, :userRating, :comments)
     end
 end

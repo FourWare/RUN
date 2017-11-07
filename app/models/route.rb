@@ -98,6 +98,10 @@ class Route < ApplicationRecord
     def self.createdLastWeek()
         Route.where('created_at >= ?', 1.week.ago).count
     end
+    
+    def self.countRoutes(routes)
+        routes.count
+    end
    
     # -------------------- Funciones para la calificación de ruta ------------------------------------- #
     

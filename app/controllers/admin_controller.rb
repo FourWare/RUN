@@ -5,16 +5,16 @@ class AdminController < ApplicationController
     #@users = User.paginate(page: params[:page], per_page: 10)
     #@users = User.where(:career => 'Medicina').paginate(:page => params[:page]).order('name ASC')
     @users = User.paginate(:page => params[:page], per_page: 10).order('name ASC')
-    @countUser = User.count
-    @countCarsUser = Car.joins(:user).uniq
+    @countUser = User.countUsers()
+    @countCarsUser = Car.carJoinUser()
     @app = 'RunApp'
     render :layout => 'admin_layout'
   end
   
   def statistics
-    @countUser = User.count
-    @countRoutes = Route.count
-    @countCar = Car.count
+    @countUser = User.countUsers()
+    @countRoutes = Route.countRoutes(Route.all)
+    @countCar = Car.totalCars()
     @routesLastWeek = Route.createdLastWeek
     @routesCreatedPerDay = Route.createdPerDay
     @usersCreatedPerDay = User.createdPerDay
