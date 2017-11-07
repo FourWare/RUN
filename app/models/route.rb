@@ -50,7 +50,9 @@ class Route < ApplicationRecord
     end
     
     def self.checkUserInRoute(route, user)
-        Route.find(route).users_in_route.include? (user.to_s + ', ')
+        a = Route.find(route).users_in_route
+        b = a.split(", ")
+        b.include? (user.to_s)
     end
     
     def self.addUserToRoute(route, user)
@@ -59,7 +61,14 @@ class Route < ApplicationRecord
     end
     
     def self.removeUserToRoute(route, user)
-        Route.find(route).update_attribute(:users_in_route, Route.find(route).users_in_route.remove(user.to_s + ', ', '' ))
+        a = Route.find(route).users_in_route
+        b = a.split(", ")
+        b.delete_at(b.index(user.to_s))
+        c = ""
+        b.each do |u|
+            c = c + u + ", "
+        end
+        Route.find(route).update_attribute(:users_in_route, c)
         Route.find(route).update_attribute(:spaces_available, Route.find(route).spaces_available + 1)
     end
     
