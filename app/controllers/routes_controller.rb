@@ -45,6 +45,7 @@ class RoutesController < ApplicationController
       @barWidth5 = 0
     end
     @commentsSplit = Route.commentsSplit(@route.id)
+    @averageRating = Route.averageRating(@route.id)
     render :layout => 'user-layout'
   end
 
@@ -58,6 +59,7 @@ class RoutesController < ApplicationController
         Route.removeUserToRoute(params[:id_route], params[:id_user])
       end
     end
+    redirect_to controller: 'routes', action: 'show', id: params[:id_route]
   end
   
   def updateRatings
@@ -67,6 +69,7 @@ class RoutesController < ApplicationController
     elsif(params[:act] == "remove" and Route.checkUserInRatingRoute(params[:route], params[:user]))
       Route.removeRatingsInRoute(params[:route], params[:user])
     end
+    redirect_to controller: 'routes', action: 'show', id: params[:route]
   end
   
   def updateComments
