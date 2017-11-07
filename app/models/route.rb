@@ -164,6 +164,19 @@ class Route < ApplicationRecord
         ratingsSplit = Route.find(route).ratings.split(", ")
         return ratingsSplit.count(option.to_s)
     end
+    
+    def self.averageRating(route)
+        numUsersRating = countUsersRating(route)
+        if(numUsersRating != 0)
+            a = 0
+            Route.find(route).ratings.split(", ").each do |r|
+                a += r.to_f
+            end
+            return ((a/numUsersRating).round(1)).to_s
+        else
+            return "-"
+        end
+    end
 
     # -------------------- Funciones para los comentarios de ruta ------------------------------------- #
     
