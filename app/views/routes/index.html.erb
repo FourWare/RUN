@@ -1,30 +1,81 @@
 </br>
-<div class="container table-responsive" style="background-color: lightgray; padding: 1%; width: 60%;">
+<div class="container table" style="background-color: lightgray; padding: 1%; width: 60%;">
   <h1 style="color: #155892;">Rutas creadas por otros usuarios</h1>
   <p style="color: #155892;">Número de rutas: <%= @countRoutesFilter %></p>
   <% if @countOtherRoutes >= 2 %>
     <div class="col-xs-12" style="text-align: center; padding: 0%;">
       <div class="col-xs-3" style="text-align: left; padding: 0%;">
       </div>
-      <div class="col-xs-6" style="text-align: center; padding: 0%;">
-        <form action="/rutas" method="get">
+      <div class="col-xs-12" style="text-align: center; padding: 0%;">
+        <form action="/rutas" <method="get">
+          
+          
+          
+          </br>
           <div class="row">
             <%= image_tag("filter.png", alt: 'Filter', class: "mx-auto img-circle", style: "width: 7%;", title: "Realiza tus filtros") %>
-            
           </div>
-          <div class="row" id="searchDiv">
-            <%= text_field_tag :sKeyWord, params[:sKeyWord], id: "searchInputKeyword", title: "Busca por palabra clave", style: "width: 50%; color: black;",placeholder: "Palabra clave, ej: unal", disabled: false %>
+
+          <div class="table" id="searchDiv" style=" tabcontent:display: none; padding: 6px 12px; topright: float: right; cursor: pointer; font-size: 20px; background-color: rgba(0,0,0,0.5)">
+              <h2>Selecciona las opciónes que quieras para filtrar la busqueda:</h2>
+              
+              <button class="tablinks" onclick="openSearch(event, 'Palabra clave')" style="border: 1px solid black; background-color: darkgray">Palabra clave</button>
+              <button class="tablinks" onclick="openSearch(event, 'Costo')" style="border: 1px solid black; background-color: darkgray">Costo</button>
+              <button class="tablinks" onclick="openSearch(event, 'Fecha')" style="border: 1px solid black; background-color: darkgray">Fecha</button>
+              <button class="tablinks" onclick="openSearch(event, 'Capacidad')" style="border: 1px solid black; background-color: darkgray">Capacidad</button>
+              <button class="tablinks" onclick="openSearch(event, 'Vehiculo')" style="border: 1px solid black; background-color: darkgray">Tipo de vehiculo</button>
+              <button class="tablinks" onclick="openSearch(event, 'Marca')" style="border: 1px solid black; background-color: darkgray">Marca</button>
+          
+          </div>  
+            
+          <div class="tabcontent">
+            <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+            <%= text_field_tag :sKeyWord, params[:sKeyWord], id: "searchInputKeyword", title: "Busca por palabra clave", style: "width: 50%; color: black;",placeholder: "Palabra clave, ej: unal", disabled: true %>
+          </div>
+          
+          <div class="tabcontent">
+            <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
             <%= text_field_tag :sCost, params[:sCost], id: "searchInputCost", title: "Busca por costo", style: "width: 50%; color: black;",placeholder: "buscar por costo, ej: 1000", disabled: false %>
-            <%= text_field_tag :sDate, params[:sDate],type: "date", id: "searchInputDate", title: "Busca por palabra clave", style: "width: 50%; color: black;", disabled: false %>
-            <%= text_field_tag :sCapacity, params[:sCapacity], id: "searchInputCapacity", title: "Busca por capacidad del vehiculo", style: "width: 50%; color: black;",placeholder: "capacidad del vehiculo, ej: 2", disabled: false %>
-            <%= text_field_tag :sType, params[:sType], id: "searchInputType", title: "Busca por tipo de vehiculo", style: "width: 50%; color: black;",placeholder: "tipo de vehiculo, ej: carro", disabled: false %>
-            <%= text_field_tag :sBrand, params[:sBrand], id: "searchInputBrand", title: "Busca por marca de vehiculo", style: "width: 50%; color: black;",placeholder: "Marca de vehiculo, ej: renault", disabled: false %>
-
-            <%= submit_tag "Buscar", class: "btn btn-default", style: "background: lightgreen;" %>
-
-            
-            </br>
           </div>
+          
+          <div class="tabcontent">
+            <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+            <%= text_field_tag :sDate, params[:sDate],type: "date", id: "searchInputDate", title: "Busca por palabra clave", style: "width: 50%; color: black;", disabled: false %>
+          </div>
+          
+          <div class="tabcontent">
+            <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+            <%= text_field_tag :sCapacity, params[:sCapacity], id: "searchInputCapacity", title: "Busca por capacidad del vehiculo", style: "width: 50%; color: black;",placeholder: "capacidad del vehiculo, ej: 2", disabled: false %>
+          </div>
+          
+          <div class="tabcontent">
+            <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+            <%= text_field_tag :sType, params[:sType], id: "searchInputType", title: "Busca por tipo de vehiculo", style: "width: 50%; color: black;",placeholder: "tipo de vehiculo, ej: carro", disabled: false %>
+          </div>
+          
+          <div class="tabcontent">
+            <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+            <%= text_field_tag :sBrand, params[:sBrand], id: "searchInputBrand", title: "Busca por marca de vehiculo", style: "width: 50%; color: black;",placeholder: "Marca de vehiculo, ej: renault", disabled: false %>
+          </div>
+          
+          <%= submit_tag "Buscar", class: "btn btn-default", style: "background: lightgreen;" %>
+          
+          <script>
+          function openSearch(w) {
+              var i, tabcontent;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                  tabcontent[i].style.display = "none";
+              }
+              document.getElementById(keyWord).style.display = "block";
+              evt.currentTarget.className += " active";
+          }
+          
+         
+          </script>
+        
+          
+          
         </form>
       </div>
       <div class="col-xs-3">
@@ -56,6 +107,71 @@
   </table>
 </div>
 </br>
+
+
+
+
+
+<div class="table" id="searchDiv" style=" tabcontent:display: none; padding: 6px 12px; topright: float: right; cursor: pointer; font-size: 20px; background-color: rgba(0,0,0,0.5)">
+              <h2>Selecciona las opciónes que quieras para filtrar la busqueda:</h2>
+              
+              <button class="tablinks" onclick="openSearch(event, 'Palabra clave')" style="border: 1px solid black; background-color: darkgray">Palabra clave</button>
+              <button class="tablinks" onclick="openSearch(event, 'Costo')" style="border: 1px solid black; background-color: darkgray">Costo</button>
+              <button class="tablinks" onclick="openSearch(event, 'Fecha')" style="border: 1px solid black; background-color: darkgray">Fecha</button>
+              <button class="tablinks" onclick="openSearch(event, 'Capacidad')" style="border: 1px solid black; background-color: darkgray">Capacidad</button>
+              <button class="tablinks" onclick="openSearch(event, 'Vehiculo')" style="border: 1px solid black; background-color: darkgray">Tipo de vehiculo</button>
+              <button class="tablinks" onclick="openSearch(event, 'Marca')" style="border: 1px solid black; background-color: darkgray">Marca</button>
+          
+          </div>  
+            
+          <div class="tabcontent">
+            <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+            <%= text_field_tag :sKeyWord, params[:sKeyWord], id: "searchInputKeyword", title: "Busca por palabra clave", style: "width: 50%; color: black;",placeholder: "Palabra clave, ej: unal", disabled: true %>
+          </div>
+          
+          <div class="tabcontent">
+            <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+            <%= text_field_tag :sCost, params[:sCost], id: "searchInputCost", title: "Busca por costo", style: "width: 50%; color: black;",placeholder: "buscar por costo, ej: 1000", disabled: false %>
+          </div>
+          
+          <div class="tabcontent">
+            <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+            <%= text_field_tag :sDate, params[:sDate],type: "date", id: "searchInputDate", title: "Busca por palabra clave", style: "width: 50%; color: black;", disabled: false %>
+          </div>
+          
+          <div class="tabcontent">
+            <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+            <%= text_field_tag :sCapacity, params[:sCapacity], id: "searchInputCapacity", title: "Busca por capacidad del vehiculo", style: "width: 50%; color: black;",placeholder: "capacidad del vehiculo, ej: 2", disabled: false %>
+          </div>
+          
+          <div class="tabcontent">
+            <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+            <%= text_field_tag :sType, params[:sType], id: "searchInputType", title: "Busca por tipo de vehiculo", style: "width: 50%; color: black;",placeholder: "tipo de vehiculo, ej: carro", disabled: false %>
+          </div>
+          
+          <div class="tabcontent">
+            <span onclick="this.parentElement.style.display='none'" class="topright">x</span>
+            <%= text_field_tag :sBrand, params[:sBrand], id: "searchInputBrand", title: "Busca por marca de vehiculo", style: "width: 50%; color: black;",placeholder: "Marca de vehiculo, ej: renault", disabled: false %>
+          </div>
+          
+          <%= submit_tag "Buscar", class: "btn btn-default", style: "background: lightgreen;" %>
+          
+          <script>
+          function openSearch(w) {
+              var i, tabcontent;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                  tabcontent[i].style.display = "none";
+              }
+              document.getElementById(keyWord).style.display = "block";
+              evt.currentTarget.className += " active";
+          }
+          
+         
+          </script>
+
+
+
 
 <div class="col-lg-3"></div>
 <div class="col-lg-3">
