@@ -1,0 +1,85 @@
+Started GET "/" for 181.130.112.86 at 2017-11-08 22:56:57 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 135], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (27.8ms)
+Completed 200 OK in 1113ms (Views: 643.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/home" for 181.130.112.86 at 2017-11-08 22:57:01 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mCar Load (0.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id"[0m
+  Rendering admin/home.html.erb within layouts/admin_layout
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY name ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendered admin/home.html.erb within layouts/admin_layout (22.7ms)
+Completed 200 OK in 893ms (Views: 714.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/home/logout" for 181.130.112.86 at 2017-11-08 22:57:07 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DpkhRcWRYN6ffFnw0Hp2Snx2qdua9ZnpSNZbM5SpshypYbCeUrx9jLcdby4Jdj3J0YQy8dXs/73XrXwD8mnqnA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-miguelangelborja-1.c9users.io/
+Completed 302 Found in 35ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-11-08 22:57:07 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (113.0ms)
+Completed 200 OK in 375ms (Views: 373.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/entrar" for 181.130.112.86 at 2017-11-08 22:57:16 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t08wiUxBtWarbUKduwy7NHlNNO48fNvNDa+OlmRNwFsLKsrHqNwYKVm/5VJ+cLDctDZzUzryI+8W/eRRyoSh2Q==", "user"=>{"email"=>"miaborjaac@unal.edu.co", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "miaborjaac@unal.edu.co"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-11-08 22:57:16.907353"], ["last_sign_in_at", "2017-11-03 01:40:09.087946"], ["current_sign_in_ip", "181.130.112.86"], ["sign_in_count", 28], ["updated_at", "2017-11-08 22:57:16.909413"], ["id", 174]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://run-app-miguelangelborja-1.c9users.io/
+Completed 302 Found in 539ms (ActiveRecord: 9.7ms)
+
+
+Started GET "/" for 181.130.112.86 at 2017-11-08 22:57:17 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (4.7ms)
+Completed 200 OK in 83ms (Views: 81.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-11-08 22:57:18 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (7.7ms)
+Completed 200 OK in 95ms (Views: 92.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/usuario/mis-rutas" for 181.130.112.86 at 2017-11-08 22:57:22 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show_my_routes as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE "routes"."id_user" = ?[0m  [["id_user", 174]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user = 174)[0m
+  Rendering routes/show_my_routes.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user = 174) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user = 174)[0m
+  Rendered routes/show_my_routes.html.erb within layouts/user-layout (23.4ms)
+Completed 200 OK in 125ms (Views: 113.9ms | ActiveRecord: 1.8ms)
+
+
