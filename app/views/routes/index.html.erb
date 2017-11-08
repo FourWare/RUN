@@ -1,38 +1,39 @@
 </br>
-<div class="container table-responsive" style="background-color: lightgray; padding: 1%; width: 60%;">
-  <h1 style="color: #155892;">Rutas creadas por otros usuarios</h1>
-  <p style="color: #155892;">Número de rutas: <%= @countRoutesFilter %></p>
+<div class="container table" style="background-color:rgba(0,0,0,0.8); padding: 1%; width: 60%;">
+  <h1 style="color: white;">Rutas creadas por otros usuarios</h1>
+  <p style="color: white;">Número de rutas: <%= @countRoutesFilter %></p>
   <% if @countOtherRoutes >= 2 %>
     <div class="col-xs-12" style="text-align: center; padding: 0%;">
-      <div class="col-xs-3" style="text-align: left; padding: 0%;">
+      <div class="col-xs-1" style="text-align: left; padding: 0%;">
       </div>
-      <div class="col-xs-6" style="text-align: center; padding: 0%;">
-        <form action="/rutas" method="get">
-          <div class="row">
-            <%= image_tag("filter.png", alt: 'Filter', class: "mx-auto img-circle", style: "width: 7%;", title: "Realiza tus filtros") %>
-            
+      <form action="/rutas" method="get">
+        <div class="col-xs-10" style="text-align: center; padding: 0%;">
+          <div class="col-xs-6">
+            <%= text_field_tag :sKeyWord, params[:sKeyWord], id: "searchInputKeyword", title: "Busca por palabra clave", style: "width: 100%; color: black;",placeholder: "Palabra clave, ej: unal", disabled: false %>
+          </div>
+          <div class="col-xs-6">
+            <%= text_field_tag :sDate, params[:sDate],type: "date", id: "searchInputDate", title: "Busca por fecha", style: "width: 100%; color: black;", disabled: false %>
           </div>
           <div class="row" id="searchDiv">
-            <%= text_field_tag :sKeyWord, params[:sKeyWord], id: "searchInputKeyword", title: "Busca por palabra clave", style: "width: 50%; color: black;",placeholder: "Palabra clave, ej: unal", disabled: false %>
             <%= text_field_tag :sCost, params[:sCost], id: "searchInputCost", title: "Busca por costo", style: "width: 50%; color: black;",placeholder: "buscar por costo, ej: 1000", disabled: false %>
-            <%= text_field_tag :sDate, params[:sDate],type: "date", id: "searchInputDate", title: "Busca por palabra clave", style: "width: 50%; color: black;", disabled: false %>
             <%= text_field_tag :sCapacity, params[:sCapacity], id: "searchInputCapacity", title: "Busca por capacidad del vehiculo", style: "width: 50%; color: black;",placeholder: "capacidad del vehiculo, ej: 2", disabled: false %>
             <%= text_field_tag :sType, params[:sType], id: "searchInputType", title: "Busca por tipo de vehiculo", style: "width: 50%; color: black;",placeholder: "tipo de vehiculo, ej: carro", disabled: false %>
             <%= text_field_tag :sBrand, params[:sBrand], id: "searchInputBrand", title: "Busca por marca de vehiculo", style: "width: 50%; color: black;",placeholder: "Marca de vehiculo, ej: renault", disabled: false %>
-
+            </br>  
+            <button type="button" class="btn btn-link" id="btnRestart" style="color: black; font-size: 100%; padding-top: 3%;" onclick="restartSearch();">
+              <span class="glyphicon glyphicon-repeat"></span>
+            </button>
             <%= submit_tag "Buscar", class: "btn btn-default", style: "background: lightgreen;" %>
-
-            
             </br>
           </div>
-        </form>
-      </div>
-      <div class="col-xs-3">
+        </div>
+      </form>
+      <div class="col-xs-1">
       </div>
     </div>
     <br></br>
   <% end %>
-  <table class="table table-striped table-bordered table-hover" style="border: solid black; ">
+  <table class="table table-striped table-bordered table-hover" style="border: solid gray; ">
     <thead style="background-color: #373a3c; color: white;">
       <tr>
         <th style="text-align:center;">Ruta</th>
