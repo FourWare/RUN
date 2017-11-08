@@ -25,7 +25,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse bg-light navbar-fixed-top" style="background-color: black;">
+    <nav class="navbar navbar-inverse bg-light navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" onclick="document.getElementById('myNavBar').style.display='inline-block'">
@@ -37,7 +37,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavBar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/usuario/contactanos">Contáctanos</a></li>
+                <li class="active"><a href="/usuario/contactanos" style="background-color: black;">Contáctanos</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right" style="width: 30%;">
                 <% if current_user.avatar.present? == false %>
