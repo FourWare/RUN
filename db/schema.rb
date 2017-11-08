@@ -56,4 +56,27 @@ ActiveRecord::Schema.define(version: 20171102011837) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  
+create_table "routes", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.float "from_lat"
+    t.float "from_lng"
+    t.float "to_lat"
+    t.float "to_lng"
+    t.string "waypoints"
+    t.datetime "departure"
+    t.float "cost"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "id_user"
+    t.string "car_placa"
+    t.boolean "activa"
+    t.integer "spaces_available"
+    t.string "users_in_route"
+    t.string "ratings"
+    t.string "userRating"
+    
+  end
+
 end
