@@ -1,5 +1,6 @@
 .media .media-object { 
-    max-width: 10%; 
+    max-width: 10%;
+    border-radius: 100%;
 }
 .media-body { 
     position: relative; 
@@ -14,6 +15,11 @@
     max-height: 220px;
     overflow-y: auto;
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+.media-comment {
+    text-align: left;
+    margin: 0%;
 }
 
 textarea {

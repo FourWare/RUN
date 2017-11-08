@@ -70,4 +70,8 @@ class User < ApplicationRecord
   def self.createdPerDay()
     User.group("DATE(created_at)").count
   end
+  
+  def self.countUsers()
+    User.count
+  end
 end

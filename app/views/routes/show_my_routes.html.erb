@@ -51,6 +51,7 @@
           <td style="text-align:left; color: black; padding-top: 1%; padding-left: 3%">
             <h2 style="text-align:left;"><%= route.title %></h1>
             <p><b>Descripción:</b> <%= route.description %></p>
+            <p><b>Creado hace</b> <%= distance_of_time_in_words(route.created_at, Time.now) %></p>
           </td>
           <td style="text-align:center; color: black;">
             </br></br>

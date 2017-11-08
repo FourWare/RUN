@@ -21,4 +21,12 @@ class Car < ApplicationRecord
     def self.perType()
         Car.group("tipo").count
     end
+    
+    def self.carJoinUser()
+        Car.joins(:user).uniq
+    end
+    
+    def self.totalCars()
+        Car.count
+    end
 end

@@ -50,7 +50,9 @@ class Route < ApplicationRecord
     end
     
     def self.checkUserInRoute(route, user)
-        Route.find(route).users_in_route.include? (user.to_s + ', ')
+        a = Route.find(route).users_in_route
+        b = a.split(", ")
+        b.include? (user.to_s)
     end
     
     def self.addUserToRoute(route, user)
@@ -59,7 +61,14 @@ class Route < ApplicationRecord
     end
     
     def self.removeUserToRoute(route, user)
-        Route.find(route).update_attribute(:users_in_route, Route.find(route).users_in_route.remove(user.to_s + ', ', '' ))
+        a = Route.find(route).users_in_route
+        b = a.split(", ")
+        b.delete_at(b.index(user.to_s))
+        c = ""
+        b.each do |u|
+            c = c + u + ", "
+        end
+        Route.find(route).update_attribute(:users_in_route, c)
         Route.find(route).update_attribute(:spaces_available, Route.find(route).spaces_available + 1)
     end
     
@@ -97,6 +106,10 @@ class Route < ApplicationRecord
     
     def self.createdLastWeek()
         Route.where('created_at >= ?', 1.week.ago).count
+    end
+    
+    def self.countRoutes(routes)
+        routes.count
     end
    
     # -------------------- Funciones para la calificación de ruta ------------------------------------- #
@@ -150,5 +163,32 @@ class Route < ApplicationRecord
     def self.countStars(route, option)
         ratingsSplit = Route.find(route).ratings.split(", ")
         return ratingsSplit.count(option.to_s)
+    end
+    
+    def self.averageRating(route)
+        numUsersRating = countUsersRating(route)
+        if(numUsersRating != 0)
+            a = 0
+            Route.find(route).ratings.split(", ").each do |r|
+                a += r.to_f
+            end
+            return ((a/numUsersRating).round(1)).to_s
+        else
+            return "-"
+        end
+    end
+
+    # -------------------- Funciones para los comentarios de ruta ------------------------------------- #
+    
+    def self.isNotCommentNil(comment)
+        (comment.count("a-zA-Z") > 0) ? true : false
+    end
+    
+    def self.updateComments(route, user, comment)
+        Route.find(route).update_attribute(:comments,  "//commentA1B2C3//" + user.to_s + "//A1B2C3//" + comment + + "//A1B2C3//" + Time.now.strftime("%d/%m/%Y") +  Route.find(route).comments )
+    end
+    
+    def self.commentsSplit(route)
+        Route.find(route).comments.split("//commentA1B2C3//")
     end
 end
