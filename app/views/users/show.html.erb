@@ -1,4 +1,4 @@
-<div class="container" style="width:93%; padding: 0%;" style="max-width: 100%; height: 550px !important;">
+<div class="container" style="width:80%; padding: 0%;" style="max-width: 100%; height: 550px !important;">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -10,19 +10,19 @@
     <!-- Wrapper for slides -->
     <br>
     <div class="carousel-inner">
-      <div class="item active">
+      <div class="item active" style=" border: solid black;">
         <%= image_tag("bienvenido.png", alt: 'Bienvenido',style: "width:100%; height: 550px !important;") %>
       </div>
-      <div class="item">
+      <div class="item" style=" border: solid black;">
         <%= image_tag("carousel1.png", alt: 'Crear evento',style: "width:100%; height: 550px !important;") %>
       </div>
-      <div class="item">
+      <div class="item" style=" border: solid black;">
         <%= image_tag("carousel4.png", alt: 'Crear evento',style: "width:100%; height: 550px !important;") %>
       </div>
-      <div class="item">
+      <div class="item" style=" border: solid black;">
         <%= image_tag("carousel2.png", alt: 'Buscar evento',style: "width:100%; height: 550px !important;") %>
       </div>
-      <div class="item">
+      <div class="item" style=" border: solid black;">
         <%= image_tag("carousel3.png", alt: 'Vehiculos',style: "width:100%; height: 550px !important;") %>
       </div>
      
@@ -55,7 +55,7 @@
           <% end %>
         </div>
         <vr>
-        <div class="col-lg-4" style="background-color: rgba(0,0,0,0.3)">
+        <div class="col-lg-4" style="background-color: rgba(0,0,0,0.3);">
          <br>
           <%= image_tag("icon-event-create.png", class: "img-circle", alt: "Mis vehículos", width: "140", height: "140") %>
           <h2>Crear ruta</h2>
@@ -64,7 +64,7 @@
             <button id="submitRegister" class="btn btn-primary btn-lg" style="border: solid white; color: white;">Crear</button>
           <% end %>
         </div>
-        <div class="col-lg-4" style="background-color: rgba(0,0,0,0.3)">
+        <div class="col-lg-4" style="background-color: rgba(0,0,0,0.3);">
           <br>
           <%= image_tag("icon-event-search.png", class: "img-circle", alt: "Mis vehículos", width: "140", height: "140") %>
           <h2>Buscar ruta</h2>

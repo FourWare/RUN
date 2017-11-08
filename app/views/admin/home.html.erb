@@ -1,9 +1,9 @@
 <% if current_user.email == 'runappunal@gmail.com' %>
     <br></br>
-    <div class="container" style="background-color: lightgray; padding: 1%;">
-        <h1 style="color: #155892;">Usuarios</h1>
-        <p style="color: #155892;">Número de usuarios: <%= @countUser %></p>
-        <table class="table table-striped table-bordered table-hover" style="border: solid black;">
+    <div class="container table" style="background-color: rgba(0,0,0,0.8); padding: 1%;">
+        <h1 style="color: white;">Usuarios</h1>
+        <p style="color: white;">Número de usuarios: <%= @countUser %></p>
+        <table class="table table-striped table-bordered table-hover" style="border: solid gray;">
             <thead style="background-color: #373a3c; color: white;">
                 <tr>
                     <th style="text-align:center;">Name</th>
@@ -17,18 +17,18 @@
             <tbody>
                 <% @users.each do |user| %>
                     <tr>
-                        <td><%= user.name %></td>
-                        <td style="text-align:center;"><%= user.nick %></td>
-                        <td style="text-align:center;"><%= user.career %></td>
-                        <td style="text-align:center;"><%= user.date_of_birth %></td>
-                        <td style="text-align:center;"><%= user.email %></td>
+                        <td style="color: black"><%= user.name %></td>
+                        <td style="text-align:center; color: black"><%= user.nick %></td>
+                        <td style="text-align:center; color: black"><%= user.career %></td>
+                        <td style="text-align:center; color: black"><%= user.date_of_birth %></td>
+                        <td style="text-align:center; color: black"><%= user.email %></td>
                         <% count = 0 %>
                         <% @countCarsUser.each do |c| %>
                             <% if c.user_id == user.id %>
                                 <% count = count + 1 %>
                             <% end %>
                         <% end %>
-                        <td style="text-align:center;"><%= count %></td>
+                        <td style="text-align:center; color: black"><%= count %></td>
                     </tr>
                 <% end %>
             </tbody>
