@@ -1,6 +1,6 @@
 </br>
-<div class="container" style="background-color: rgba(0,0,0,0.7)">
-  <h2 style="text-align: center;">Mis vehículos asd</h2>
+<div class="container" style="background-color: rgba(0,0,0,0.5)">
+  <h2 style="text-align: center;">Mis vehículos</h2>
   <hr>
   <%= form_with(model: @car,local: true) do |f| %>
 	  <% if @car.errors.any? %>
@@ -92,7 +92,7 @@
               <div class="col-lg-3">
               </div>
               <div class="col-lg-3">
-                  <%= f.submit "Actuaizar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style:"width: 100%;"%>
+                  <%= f.submit "Actualizar", id: "submitRegister", class: "btn btn-primary btn-lg", type: 'submit', display: 'inline-block', style:"width: 100%;"%>
               </div>
               <div class="col-lg-3">
                 <%= link_to cars_path do %>
