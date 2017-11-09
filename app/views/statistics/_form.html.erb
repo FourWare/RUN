@@ -1,42 +1,46 @@
-<%= form_with(model: statistic, local: true) do |form| %>
-  <% if statistic.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(statistic.errors.count, "error") %> prohibited this statistic from being saved:</h2>
-
-      <ul>
-      <% statistic.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+  <h2 style="text-align: center;">Crear estadística</h2>
+  <hr>
+  <div class="row">
+    <%= form_with(model: statistic, local: true) do |form| %>
+      <% if statistic.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(statistic.errors.count, "error") %> prohibited this statistic from being saved:</h2>
+    
+          <ul>
+          <% statistic.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :routes_per_day %>
-    <%= form.number_field :routes_per_day, id: :statistic_routes_per_day %>
+    
+      <div class="field">
+        <%= form.label :routes_per_day %>
+        <%= form.number_field :routes_per_day, id: :statistic_routes_per_day %>
+      </div>
+    
+      <div class="field">
+        <%= form.label :users_created_per_day %>
+        <%= form.number_field :users_created_per_day, id: :statistic_users_created_per_day %>
+      </div>
+    
+      <div class="field">
+        <%= form.label :cars_per_day %>
+        <%= form.number_field :cars_per_day, id: :statistic_cars_per_day %>
+      </div>
+    
+      <div class="field">
+        <%= form.label :bikes_per_day %>
+        <%= form.number_field :bikes_per_day, id: :statistic_bikes_per_day %>
+      </div>
+    
+      <div class="field">
+        <%= form.label :users_in_routes_per_day %>
+        <%= form.number_field :users_in_routes_per_day, id: :statistic_users_in_routes_per_day %>
+      </div>
+    
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= form.label :users_created_per_day %>
-    <%= form.number_field :users_created_per_day, id: :statistic_users_created_per_day %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cars_per_day %>
-    <%= form.number_field :cars_per_day, id: :statistic_cars_per_day %>
-  </div>
-
-  <div class="field">
-    <%= form.label :bikes_per_day %>
-    <%= form.number_field :bikes_per_day, id: :statistic_bikes_per_day %>
-  </div>
-
-  <div class="field">
-    <%= form.label :users_in_routes_per_day %>
-    <%= form.number_field :users_in_routes_per_day, id: :statistic_users_in_routes_per_day %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
