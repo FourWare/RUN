@@ -89,3 +89,25 @@ function restartSearch(){
         }
     }
 }
+
+
+function restartSearch(){
+    $("#searchInputKeyword").val("");
+    $("#searchInputDate").val("");
+    $("#searchInputCost").val("");
+    $("#searchInputCapacity").val("");
+    $("#searchInputType").val("");
+    $("#searchInputBrand").val("");
+}
+
+function activateAdvancedSearch(){
+    $("#searchDiv").show(1000);
+    $("#deactivateAdvSearchBtn").show();
+    $("#activateAdvSearchBtn").hide();
+}
+
+function deactivateAdvancedSearch(){
+    $("#searchDiv").hide(1000);
+    $("#deactivateAdvSearchBtn").hide();
+    $("#activateAdvSearchBtn").show();
+}
