@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :statistics
   resources :routes, :path => "rutas"
   resources :cars, :path => "usuario/mis-vehiculos", :path_names => { :new => 'crear-vehiculo', :edit => 'editar' }
   resources :contacts, only: [:new, :create]

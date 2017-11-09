@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20171105042542) do
+=======
+ActiveRecord::Schema.define(version: 20171109083637) do
+>>>>>>> 9bd1f2ec37198d35162024fb4084ef1295d26f95
 
   create_table "cars", force: :cascade do |t|
     t.string "placa"
@@ -25,8 +29,38 @@ ActiveRecord::Schema.define(version: 20171105042542) do
     t.integer "user_id"
   end
 
+<<<<<<< HEAD
 # Could not dump table "routes" because of following StandardError
 #   Unknown type '' for column 'waypoints'
+=======
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string "locked_by"
+    t.string "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
+# Could not dump table "routes" because of following StandardError
+#   Unknown type '' for column 'waypoints'
+
+  create_table "statistics", force: :cascade do |t|
+    t.integer "routes_per_day"
+    t.integer "users_created_per_day"
+    t.integer "cars_per_day"
+    t.integer "bikes_per_day"
+    t.integer "users_in_routes_per_day"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+>>>>>>> 9bd1f2ec37198d35162024fb4084ef1295d26f95
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
