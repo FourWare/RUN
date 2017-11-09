@@ -71,12 +71,11 @@ class User < ApplicationRecord
     User.group("DATE(created_at)").count
   end
   
-<<<<<<< HEAD
   def self.countUsers()
     User.count
-=======
+  end
+  
   def self.createdPerDay2()
     User.where("DATE(created_at) = ?", Date.today-1).count
->>>>>>> 9bd1f2ec37198d35162024fb4084ef1295d26f95
   end
 end
