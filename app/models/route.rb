@@ -19,7 +19,7 @@ class Route < ApplicationRecord
         results = results.where(["cost <= ? and id_user = ?", cost, user_id]) if cost.present?#cost /
         results = results.where(:car_placa => Car.where(:capacidad => capacity).select(:placa)).where(:id_user => user_id) if capacity.present?#capacity /
         results = results.where(:car_placa => Car.where(:tipo => type.capitalize).select(:placa)).where(:id_user => user_id) if type.present? #tipo de vehiculo /
-        results = results.where('departure LIKE ?', '%' + date + '%').where(:id_user => user_id) if date.present? #fecha /
+        results = results.where('departure BETWEEN ? AND ?', DateTime.parse(date), DateTime.parse(date)+1).where(:id_user => user_id) if date.present? #fecha /
         return results
     end
     
