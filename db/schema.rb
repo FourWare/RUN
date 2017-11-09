@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171023195720) do
+ActiveRecord::Schema.define(version: 20171109083637) do
 
   create_table "cars", force: :cascade do |t|
     t.string "placa"
@@ -20,25 +20,37 @@ ActiveRecord::Schema.define(version: 20171023195720) do
     t.integer "capacidad"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "id_user"
     t.string "image"
     t.string "marca"
+    t.integer "user_id"
   end
 
-  create_table "routes", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.float "from_lat"
-    t.float "from_lng"
-    t.float "to_lat"
-    t.float "to_lng"
-    t.string "waypoints"
-    t.datetime "departure"
-    t.float "cost"
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string "locked_by"
+    t.string "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
+# Could not dump table "routes" because of following StandardError
+#   Unknown type '' for column 'waypoints'
+
+  create_table "statistics", force: :cascade do |t|
+    t.integer "routes_per_day"
+    t.integer "users_created_per_day"
+    t.integer "cars_per_day"
+    t.integer "bikes_per_day"
+    t.integer "users_in_routes_per_day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "id_user"
-    t.string "car_placa"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,10 +66,10 @@ ActiveRecord::Schema.define(version: 20171023195720) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.string "profile_image"
     t.boolean "email_confirmed", default: false
     t.string "confirm_token"
-    t.string "name"
     t.string "nick"
     t.string "career"
     t.datetime "date_of_birth"

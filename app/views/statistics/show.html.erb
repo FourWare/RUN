@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Routes per day:</strong>
+  <%= @statistic.routes_per_day %>
+</p>
+
+<p>
+  <strong>Users created per day:</strong>
+  <%= @statistic.users_created_per_day %>
+</p>
+
+<p>
+  <strong>Cars per day:</strong>
+  <%= @statistic.cars_per_day %>
+</p>
+
+<p>
+  <strong>Bikes per day:</strong>
+  <%= @statistic.bikes_per_day %>
+</p>
+
+<p>
+  <strong>Users in routes per day:</strong>
+  <%= @statistic.users_in_routes_per_day %>
+</p>
+
+<%= link_to 'Edit', edit_statistic_path(@statistic) %> |
+<%= link_to 'Back', statistics_path %>

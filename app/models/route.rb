@@ -90,8 +90,21 @@ class Route < ApplicationRecord
         Car.where(:user_id => user_id).uniq
     end
     
-    def self.createdPerDay()
-        Route.group("DATE(created_at)").count
+    def self.routesPerDay()
+        Route.group("DATE(departure) = ?", Date.today-1).count
+    end
+    
+    def self.routesPerDay2()
+        Route.where("DATE(departure) = ?", Date.today-1).count
+    end
+    
+    def self.usersInRoutes()
+        total = 0
+        routes = Route.where("DATE(departure) = ?", Date.today-1)
+        routes.each do |x|
+            total += x.users_in_route.split(",").size
+        end
+        return total
     end
     
     def self.createdLastWeek()
