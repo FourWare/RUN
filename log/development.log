@@ -1,0 +1,121 @@
+Started GET "/" for 181.130.112.86 at 2017-11-09 02:03:13 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/home-layout (69.2ms)
+Completed 200 OK in 1172ms (Views: 747.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/usuario/inicio" for 181.130.112.86 at 2017-11-09 02:03:17 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/user-layout
+  Rendered users/show.html.erb within layouts/user-layout (430.1ms)
+Completed 200 OK in 896ms (Views: 764.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rutas" for 181.130.112.86 at 2017-11-09 02:03:23 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE ("routes"."id_user" != ?)[0m  [["id_user", 174]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user != 174)[0m
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user != 174) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 178], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 178], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 178], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 179], ["LIMIT", 1]]
+  Rendered routes/index.html.erb within layouts/user-layout (45.9ms)
+Completed 200 OK in 269ms (Views: 251.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/rutas?sKeyWord=&sDate=&sCost=&sCapacity=&sType=&sBrand=mazda&commit=Buscar" for 181.130.112.86 at 2017-11-09 02:03:32 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  Parameters: {"sKeyWord"=>"", "sDate"=>"", "sCost"=>"", "sCapacity"=>"", "sType"=>"", "sBrand"=>"mazda", "commit"=>"Buscar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE ("routes"."id_user" != ?)[0m  [["id_user", 174]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user != 174) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."marca" = ?) AND ("routes"."id_user" != ?)[0m  [["marca", "Mazda"], ["id_user", 174]]
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user != 174) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."marca" = ?) AND ("routes"."id_user" != ?) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["marca", "Mazda"], ["id_user", 174], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered routes/index.html.erb within layouts/user-layout (6.8ms)
+Completed 200 OK in 132ms (Views: 111.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/rutas?sKeyWord=&sDate=&sCost=&sCapacity=&sType=&sBrand=mazda&commit=Buscar" for 181.130.112.86 at 2017-11-09 02:04:42 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoutesController#index as HTML
+  Parameters: {"sKeyWord"=>"", "sDate"=>"", "sCost"=>"", "sCapacity"=>"", "sType"=>"", "sBrand"=>"mazda", "commit"=>"Buscar"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE ("routes"."id_user" != ?)[0m  [["id_user", 174]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user != 174) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."marca" = ?) AND ("routes"."id_user" != ?)[0m  [["marca", "Mazda"], ["id_user", 174]]
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.6ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user != 174) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."marca" = ?) AND ("routes"."id_user" != ?) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["marca", "Mazda"], ["id_user", 174], ["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 178], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 178], ["LIMIT", 1]]
+  Rendered routes/index.html.erb within layouts/user-layout (332.9ms)
+Completed 200 OK in 555ms (Views: 455.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/rutas?sKeyWord=&sDate=&sCost=&sCapacity=5&sType=&sBrand=mazda&commit=Buscar" for 181.130.112.86 at 2017-11-09 02:04:54 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  Parameters: {"sKeyWord"=>"", "sDate"=>"", "sCost"=>"", "sCapacity"=>"5", "sType"=>"", "sBrand"=>"mazda", "commit"=>"Buscar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE ("routes"."id_user" != ?)[0m  [["id_user", 174]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user != 174) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."marca" = ?) AND ("routes"."id_user" != ?) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."capacidad" = ?) AND ("routes"."id_user" != ?)[0m  [["marca", "Mazda"], ["id_user", 174], ["capacidad", 5], ["id_user", 174]]
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user != 174) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."marca" = ?) AND ("routes"."id_user" != ?) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."capacidad" = ?) AND ("routes"."id_user" != ?) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["marca", "Mazda"], ["id_user", 174], ["capacidad", 5], ["id_user", 174], ["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 178], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 178], ["LIMIT", 1]]
+  Rendered routes/index.html.erb within layouts/user-layout (5.2ms)
+Completed 200 OK in 208ms (Views: 202.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/rutas?sKeyWord=&sDate=&sCost=&sCapacity=5&sType=&sBrand=mazda&commit=Buscar" for 181.130.112.86 at 2017-11-09 02:04:58 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  Parameters: {"sKeyWord"=>"", "sDate"=>"", "sCost"=>"", "sCapacity"=>"5", "sType"=>"", "sBrand"=>"mazda", "commit"=>"Buscar"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE ("routes"."id_user" != ?)[0m  [["id_user", 174]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user != 174) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."marca" = ?) AND ("routes"."id_user" != ?) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."capacidad" = ?) AND ("routes"."id_user" != ?)[0m  [["marca", "Mazda"], ["id_user", 174], ["capacidad", 5], ["id_user", 174]]
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user != 174) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."marca" = ?) AND ("routes"."id_user" != ?) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."capacidad" = ?) AND ("routes"."id_user" != ?) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["marca", "Mazda"], ["id_user", 174], ["capacidad", 5], ["id_user", 174], ["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 178], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 178], ["LIMIT", 1]]
+  Rendered routes/index.html.erb within layouts/user-layout (222.7ms)
+Completed 200 OK in 383ms (Views: 333.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/rutas?sKeyWord=&sDate=2017-11-11&sCost=&sCapacity=5&sType=&sBrand=mazda&commit=Buscar" for 181.130.112.86 at 2017-11-09 02:05:04 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#index as HTML
+  Parameters: {"sKeyWord"=>"", "sDate"=>"2017-11-11", "sCost"=>"", "sCapacity"=>"5", "sType"=>"", "sBrand"=>"mazda", "commit"=>"Buscar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE ("routes"."id_user" != ?)[0m  [["id_user", 174]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user != 174) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."marca" = ?) AND ("routes"."id_user" != ?) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."capacidad" = ?) AND ("routes"."id_user" != ?) AND (departure LIKE '%2017-11-11%') AND ("routes"."id_user" != ?)[0m  [["marca", "Mazda"], ["id_user", 174], ["capacidad", 5], ["id_user", 174], ["id_user", 174]]
+  Rendering routes/index.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user != 174) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."marca" = ?) AND ("routes"."id_user" != ?) AND "routes"."car_placa" IN (SELECT "cars"."placa" FROM "cars" WHERE "cars"."capacidad" = ?) AND ("routes"."id_user" != ?) AND (departure LIKE '%2017-11-11%') AND ("routes"."id_user" != ?) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["marca", "Mazda"], ["id_user", 174], ["capacidad", 5], ["id_user", 174], ["id_user", 174], ["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 178], ["LIMIT", 1]]
+  Rendered routes/index.html.erb within layouts/user-layout (4.7ms)
+Completed 200 OK in 119ms (Views: 114.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/usuario/mis-rutas" for 181.130.112.86 at 2017-11-09 02:05:42 +0000
+Cannot render console from 181.130.112.86! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RoutesController#show_my_routes as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 174], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE "routes"."id_user" = ?[0m  [["id_user", 174]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user = 174)[0m
+  Rendering routes/show_my_routes.html.erb within layouts/user-layout
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE (id_user = 174) ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE (id_user = 174)[0m
+  Rendered routes/show_my_routes.html.erb within layouts/user-layout (7.2ms)
+Completed 200 OK in 269ms (Views: 264.4ms | ActiveRecord: 0.9ms)
+
+
