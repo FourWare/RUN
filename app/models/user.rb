@@ -74,4 +74,8 @@ class User < ApplicationRecord
   def self.countUsers()
     User.count
   end
+  
+  def self.createdPerDay2()
+    User.where("DATE(created_at) = ?", Date.today-1).count
+  end
 end

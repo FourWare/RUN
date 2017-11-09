@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106210822) do
+ActiveRecord::Schema.define(version: 20171109083637) do
 
   create_table "cars", force: :cascade do |t|
     t.string "placa"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20171106210822) do
 
 # Could not dump table "routes" because of following StandardError
 #   Unknown type '' for column 'waypoints'
+
+  create_table "statistics", force: :cascade do |t|
+    t.integer "routes_per_day"
+    t.integer "users_created_per_day"
+    t.integer "cars_per_day"
+    t.integer "bikes_per_day"
+    t.integer "users_in_routes_per_day"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

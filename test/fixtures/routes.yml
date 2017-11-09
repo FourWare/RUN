@@ -1,7 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  id: 1
+  title: "esta es laruta 1"
   description: MyString
   from_lat: 1.5
   from_lng: 1.5
@@ -10,9 +11,13 @@ one:
   waypoints: 
   departure: 2017-10-04 19:55:29
   cost: 1.5
+  users_in_route: ""
+  spaces_available: 4
+  id_user: 1
 
 two:
-  title: MyString
+  id: 2
+  title: "esta es laruta 2"
   description: MyString
   from_lat: 1.5
   from_lng: 1.5
@@ -21,3 +26,21 @@ two:
   waypoints: 
   departure: 2017-10-04 19:55:29
   cost: 1.5
+  users_in_route: ""
+  spaces_available: 4
+  id_user: 1
+
+three:
+  id: 3
+  title: "esta es laruta 3"
+  description: MyString
+  from_lat: 1.5
+  from_lng: 1.5
+  to_lat: 1.5
+  to_lng: 1.5
+  waypoints: 
+  departure: 2017-10-04 19:55:29
+  cost: 1.5
+  users_in_route: ""
+  spaces_available: 4
+  id_user: 3
