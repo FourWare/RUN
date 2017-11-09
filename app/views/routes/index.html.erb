@@ -4,28 +4,73 @@
   <p style="color: white;">Número de rutas: <%= @countRoutesFilter %></p>
   <% if @countOtherRoutes >= 2 %>
     <div class="col-xs-12" style="text-align: center; padding: 0%;">
+      <div class="page-header" style="margin-left: 10%; margin-right: 10%; text-align: left;">
+        <h4>
+          <%= image_tag("filter.png", alt: 'Filter', class: "mx-auto img-circle", style: "width: 3%;", title: "Realiza tus filtros") %>
+          Búsqueda personalizada
+        </h4>      
+      </div>
       <div class="col-xs-1" style="text-align: left; padding: 0%;">
       </div>
       <form action="/rutas" method="get">
         <div class="col-xs-10" style="text-align: center; padding: 0%;">
-          <div class="col-xs-6">
-            <%= text_field_tag :sKeyWord, params[:sKeyWord], id: "searchInputKeyword", title: "Busca por palabra clave", style: "width: 100%; color: black;",placeholder: "Palabra clave, ej: unal", disabled: false %>
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="form-group" style="text-align: left;">
+                <label class="filter-col" for="pref-search">Palabra clave:</label>
+                <%= text_field_tag :sKeyWord, params[:sKeyWord], class: "form-control input-sm", id: "searchInputKeyword", title: "Busca por palabra clave", style: "width: 100%; color: black;",placeholder: "Ej: unal, universidad, Suba", disabled: false %>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="col-xs-9">
+                <div class="form-group" style="text-align: left;">
+                  <label class="filter-col" for="pref-search">Fecha:</label>
+                  <%= text_field_tag :sDate, params[:sDate], class: "form-control input-sm", type: "date", id: "searchInputDate", title: "Busca por fecha", style: "width: 100%; color: black;", disabled: false %>
+                </div>
+              </div>
+              </br>
+              <div class="col-xs-3">
+                <button type="button" class="btn btn-success" id="activateAdvSearchBtn" onclick="activateAdvancedSearch();" title="Búsqueda avanzada">
+                  <span class="glyphicon glyphicon-plus"></span>
+                </button>
+                <button type="button" class="btn btn-danger" id="deactivateAdvSearchBtn" onclick="deactivateAdvancedSearch();" style="display: none;" title="Ocultar la búsqueda avanzada">
+                  <span class="glyphicon glyphicon-minus"></span>
+                </button>
+              </div>
+            </div>
           </div>
-          <div class="col-xs-6">
-            <%= text_field_tag :sDate, params[:sDate],type: "date", id: "searchInputDate", title: "Busca por fecha", style: "width: 100%; color: black;", disabled: false %>
-          </div>
-          <div class="row" id="searchDiv">
-            <%= text_field_tag :sCost, params[:sCost], id: "searchInputCost", title: "Busca por costo", style: "width: 50%; color: black;",placeholder: "buscar por costo, ej: 1000", disabled: false %>
-            <%= text_field_tag :sCapacity, params[:sCapacity], id: "searchInputCapacity", title: "Busca por capacidad del vehiculo", style: "width: 50%; color: black;",placeholder: "capacidad del vehiculo, ej: 2", disabled: false %>
-            <%= text_field_tag :sType, params[:sType], id: "searchInputType", title: "Busca por tipo de vehiculo", style: "width: 50%; color: black;",placeholder: "tipo de vehiculo, ej: carro", disabled: false %>
-            <%= text_field_tag :sBrand, params[:sBrand], id: "searchInputBrand", title: "Busca por marca de vehiculo", style: "width: 50%; color: black;",placeholder: "Marca de vehiculo, ej: renault", disabled: false %>
+          <div class="row" id="searchDiv" style="display: none;">
+            <div class="col-xs-6">
+              <div class="form-group" style="text-align: left;">
+                <label class="filter-col" for="pref-search">Costo:</label>
+                <%= text_field_tag :sCost, params[:sCost], class: "form-control input-sm", type: "number", min: 100, step: 100, id: "searchInputCost", title: "Busca por costo", style: "width: 100%; color: black;",placeholder: "Ej: 1000, 2000, 1500", disabled: false %>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="form-group" style="text-align: left;">
+                <label class="filter-col" for="pref-search">Capacidad:</label>
+                <%= text_field_tag :sCapacity, params[:sCapacity], class: "form-control input-sm", id: "searchInputCapacity", type: "number", min: 1, max: 10, step: 1, title: "Busca por capacidad del vehiculo", style: "width: 100%; color: black;", placeholder: "Ej: 1, 2, 3", disabled: false %>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="form-group" style="text-align: left;">
+                <label class="filter-col" for="pref-search">Tipo de vehículo:</label>
+                <%= text_field_tag :sType, params[:sType], class: "form-control input-sm", id: "searchInputType", title: "Busca por tipo de vehiculo", style: "width: 100%; color: black;", placeholder: "Ej: Carro, Moto", disabled: false %>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="form-group" style="text-align: left;">
+                <label class="filter-col" for="pref-search">Marca de vehículo:</label>
+                <%= text_field_tag :sBrand, params[:sBrand], class: "form-control input-sm", id: "searchInputBrand", title: "Busca por marca de vehiculo", style: "width: 100%; color: black;", placeholder: "Ej: Renault, Chevrolet", disabled: false %>
+              </div>
+            </div>
             </br>  
-            <button type="button" class="btn btn-link" id="btnRestart" style="color: black; font-size: 100%; padding-top: 3%;" onclick="restartSearch();">
-              <span class="glyphicon glyphicon-repeat"></span>
-            </button>
-            <%= submit_tag "Buscar", class: "btn btn-default", style: "background: lightgreen;" %>
-            </br>
           </div>
+          <button type="button" class="btn btn-link" id="btnRestart" style="color: white; font-size: 100%; padding-top: 3%;" onclick="restartSearch();">
+            <span class="glyphicon glyphicon-repeat"></span>
+          </button>
+          <%= submit_tag "Buscar", class: "btn btn-default", style: "background: lightgreen;" %>
+          </br>
         </div>
       </form>
       <div class="col-xs-1">
