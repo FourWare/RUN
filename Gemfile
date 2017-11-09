@@ -9,6 +9,9 @@ end
 gem 'gmaps4rails'
 gem 'geocoder'
 
+#gema para delayed jobs
+gem 'delayed_job_active_record'
+
 #gema para pdf
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
