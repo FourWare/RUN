@@ -8906,3 +8906,117 @@ CarTest: test_test_JoinCars
 ---------------------------
   [1m[36mCar Load (0.2ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id"[0m
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (3.1ms)[0m  [1m[31mDELETE FROM "routes"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("id", "title", "description", "from_lat", "from_lng", "to_lat", "to_lng", "waypoints", "departure", "cost", "users_in_route", "spaces_available", "id_user", "created_at", "updated_at") VALUES (1, 'esta es laruta 1', 'MyString', 1.5, 1.5, 1.5, 1.5, NULL, '2017-10-04 19:55:29', 1.5, '', 4, 1, '2017-11-09 13:34:37.516287', '2017-11-09 13:34:37.516287')[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("id", "title", "description", "from_lat", "from_lng", "to_lat", "to_lng", "waypoints", "departure", "cost", "users_in_route", "spaces_available", "id_user", "created_at", "updated_at") VALUES (2, 'esta es laruta 2', 'MyString', 1.5, 1.5, 1.5, 1.5, NULL, '2017-10-04 19:55:29', 1.5, '', 4, 1, '2017-11-09 13:34:37.516287', '2017-11-09 13:34:37.516287')[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "routes" ("id", "title", "description", "from_lat", "from_lng", "to_lat", "to_lng", "waypoints", "departure", "cost", "users_in_route", "spaces_available", "id_user", "created_at", "updated_at") VALUES (3, 'esta es laruta 3', 'MyString', 1.5, 1.5, 1.5, 1.5, NULL, '2017-10-04 19:55:29', 1.5, '', 4, 3, '2017-11-09 13:34:37.516287', '2017-11-09 13:34:37.516287')[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id", "email", "email_confirmed", "name", "nick", "career", "date_of_birth", "uid", "created_at", "updated_at") VALUES (1, 'camilo@unal.edu.co', 't', 'camilo', 'Crcruerua', 'sistemas', 'DateTime.new(1990,2,3,4,5,6)', '20039', '2017-11-09 13:34:37.526962', '2017-11-09 13:34:37.526962')[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id", "email", "email_confirmed", "name", "nick", "career", "date_of_birth", "uid", "created_at", "updated_at") VALUES (2, 'pedro@unal.edu.co', 't', 'camilo', 'Crcruerua', 'sistemas', 'DateTime.new(1990,2,3,4,5,6)', '20039', '2017-11-09 13:34:37.526962', '2017-11-09 13:34:37.526962')[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "cars"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "cars" ("id", "placa", "tipo", "modelo", "color", "capacidad", "created_at", "updated_at") VALUES (1, 'MyString', 'MyString', 'MyString', 'MyString', 1, '2017-11-09 13:34:37.533519', '2017-11-09 13:34:37.533519')[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "cars" ("id", "placa", "tipo", "modelo", "color", "capacidad", "created_at", "updated_at") VALUES (2, 'MyString', 'MyString', 'MyString', 'MyString', 1, '2017-11-09 13:34:37.533519', '2017-11-09 13:34:37.533519')[0m
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------
+CarTest: test_test_JoinCars
+---------------------------
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" INNER JOIN "users" ON "users"."id" = "cars"."user_id"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------
+CarTest: test_test_totalCars
+----------------------------
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cars"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+RouteTest: test_Test_addUserToRoute
+-----------------------------------
+  [1m[36mRoute Load (3.0ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "routes" SET "users_in_route" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["users_in_route", "1, "], ["updated_at", "2017-11-09 13:34:37.618080"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-11-09 13:34:37.623884"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+RouteTest: test_Test_checkUserInRoute
+-------------------------------------
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "routes" SET "users_in_route" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["users_in_route", "25, "], ["updated_at", "2017-11-09 13:34:37.628091"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-11-09 13:34:37.630237"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+RouteTest: test_Test_removeUserToRoute
+--------------------------------------
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "routes" SET "users_in_route" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["users_in_route", "23, "], ["updated_at", "2017-11-09 13:34:37.634032"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-11-09 13:34:37.636276"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "routes" SET "users_in_route" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["users_in_route", "23, 24, "], ["updated_at", "2017-11-09 13:34:37.638471"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 2], ["updated_at", "2017-11-09 13:34:37.643494"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "routes" SET "users_in_route" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["users_in_route", "23, "], ["updated_at", "2017-11-09 13:34:37.645676"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "routes" SET "spaces_available" = ?, "updated_at" = ? WHERE "routes"."id" = ?[0m  [["spaces_available", 3], ["updated_at", "2017-11-09 13:34:37.647816"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+RouteTest: test_Test_countMyRoutes
+----------------------------------
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE "routes"."id_user" = ?[0m  [["id_user", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+RouteTest: test_Test_countOtherRoutes
+-------------------------------------
+  [1m[36mRoute Load (0.1ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "routes" WHERE ("routes"."id_user" != ?)[0m  [["id_user", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
