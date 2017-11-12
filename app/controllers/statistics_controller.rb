@@ -8,9 +8,6 @@ class StatisticsController < ApplicationController
     StatsJob.set(wait: 15.seconds).perform_later()
     render :layout => 'user-layout'
   end
-  
-
-    
 
   # GET /statistics/1
   # GET /statistics/1.json
