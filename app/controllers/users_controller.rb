@@ -43,4 +43,9 @@ class UsersController < ApplicationController
       redirect_to root_url
     end
   end
+  
+  def public_profile
+    @a = params[:username]
+    @user = User.find_by_nick(params[:username])
+  end
 end

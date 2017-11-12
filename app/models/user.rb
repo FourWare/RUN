@@ -89,6 +89,10 @@ class User < ApplicationRecord
     User.find(user_id).email
   end
   
+  def self.getNick(user_id)
+    User.find(user_id).nick
+  end
+  
   def self.createdPerDay()
     User.group("DATE(created_at)").count
   end

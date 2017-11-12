@@ -19,6 +19,10 @@ Rails.application.routes.draw do
     end
   end
   
+  as :user do
+    get '/:username', to: 'users#public_profile'
+  end
+  
   resources :admin, except: [:index, :create, :new, :edit, :show, :update, :destroy] do
     collection do
       get 'home', 'statistics'
