@@ -1,4 +1,51 @@
-<h1>Users#public_profile</h1>
-<p>Find me in app/views/users/public_profile.html.erb</p>
-
-<p style="background-color: black; color: white;">Bienvenido <%= @user.name %></p>
+<br></br>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 col-md-12 user-details">
+            <div class="user-image">
+                <% if @user.avatar.present? == false %>
+                    <%= image_tag("default-avatar.jpg", width: 100, height: 100, alt: @user.name, title: @user.name, class: "img-circle") %>
+                <% else %>
+                    <%= image_tag(@user.avatar, alt: @user.name, width: 100, height: 100, title: @user.name, class: "img-circle") %>
+                <% end %>
+                
+            </div>
+            <div class="user-info-block">
+                <div class="user-heading">
+                    <h3><%= @user.name %></h3>
+                    <br></br>
+                </div>
+                <ul class="navigation">
+                    <li class="active">
+                        <a data-toggle="tab" href="#information">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#settings">
+                            <span class="glyphicon glyphicon-signal"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#email">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="user-body">
+                    <div class="tab-content">
+                        <div id="information" class="tab-pane active">
+                            <h4>Información de la cuenta</h4>
+                        </div>
+                        <div id="settings" class="tab-pane">
+                            <h4>Actividad en RunApp</h4>
+                        </div>
+                        <div id="email" class="tab-pane">
+                            <h4>Dejar Comentario</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>

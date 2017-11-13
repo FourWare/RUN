@@ -47,5 +47,6 @@ class UsersController < ApplicationController
   def public_profile
     @a = params[:username]
     @user = User.find_by_nick(params[:username])
+    render :layout => 'public_profile_layout'
   end
 end
