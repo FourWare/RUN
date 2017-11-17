@@ -1,3 +1,9 @@
 * +/- Correo de confirmación de registro
 * Booleano para borrar carro
 * Botón unirse a ruta
+
+validaciones:
+
+* nick único
+* placa carro
+* 

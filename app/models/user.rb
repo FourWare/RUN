@@ -104,4 +104,53 @@ class User < ApplicationRecord
   def self.createdPerDay2()
     User.where("DATE(created_at) = ?", Date.today-1).count
   end
+  
+  def self.countVehiclesUser(user)
+    Car.where(:user_id => User.find_by_nick(user).id).size
+  end
+  
+  def self.countRoutesUser(user)
+    Route.where(:id_user => User.find_by_nick(user).id).size
+  end
+  
+  def self.countPassengersUser(user)
+    a = Route.where(:id_user => User.find_by_nick(user).id)
+    count = 0
+    if a.size > 0
+      a.each do |b|
+        count +=  b.users_in_route.split(", ").size
+      end
+    end
+    count
+  end
+  
+  def self.expensivePriceUser(user)
+    a = Route.where(:id_user => User.find_by_nick(user).id)
+    if a.size > 0
+      price = 0
+      a.each do |b|
+        price = b.cost if b.cost > price
+      end
+      '%.0f' % price
+    else
+      "-"
+    end
+  end
+  
+  def self.cheapPriceUser(user)
+    a = Route.where(:id_user => User.find_by_nick(user).id)
+    if a.size > 0
+      price = 10000000
+      a.each do |b|
+        price = b.cost if b.cost < price
+      end
+      '%.0f' % price
+    else
+      "-"
+    end
+  end
+  
+  def self.userCreatedAt(user)
+    User.find_by_nick(user).created_at.strftime("%d-%m-%Y")
+  end
 end

@@ -9,6 +9,7 @@
 .navigation li a {padding: 20px 30px; float: left; width: 100%; color: #fff;}
 .navigation li.active a {background: #428BCA; color: rgba(255, 255, 255, 1);}
 .user-info-block .user-body {float: left; padding: 5%; width: 100%; border: 1px solid #428BCA;}
-.tab-content {border: 1px solid #428BCA;}
+.tab-content {border: 1px solid #428BCA; max-height:  none;}
 .user-body .tab-content > div {float: left; width: 100%;}
 .user-body .tab-content h4 {width: 100%; margin: 10px 0; color: #fff;}
+#pCardData span {font-size: 50px;}

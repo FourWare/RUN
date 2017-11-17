@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, :only => [:new_contactanos, :create_contactanos, :show, :eventCreate]
+  before_action :authenticate_user!, :only => [:new_contactanos, :create_contactanos, :show, :eventCreate, :public_profile]
   
   def show
     @app = "RunApp"
@@ -45,8 +45,13 @@ class UsersController < ApplicationController
   end
   
   def public_profile
-    @a = params[:username]
     @user = User.find_by_nick(params[:username])
+    @countVehiclesUser = User.countVehiclesUser(params[:username])
+    @countRoutesUser = User.countRoutesUser(params[:username])
+    @countPassengersUser = User.countPassengersUser(params[:username])
+    @expensivePriceUser = User.expensivePriceUser(params[:username])
+    @cheapPriceUser = User.cheapPriceUser(params[:username])
+    @userCreatedAt = User.userCreatedAt(params[:username])
     render :layout => 'public_profile_layout'
   end
 end
