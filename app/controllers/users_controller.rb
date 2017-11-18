@@ -52,6 +52,9 @@ class UsersController < ApplicationController
     @expensivePriceUser = User.expensivePriceUser(params[:username])
     @cheapPriceUser = User.cheapPriceUser(params[:username])
     @userCreatedAt = User.userCreatedAt(params[:username])
+    @countStars = User.countStars(params[:username])
+    @barWidths = User.barWidths(@countStars)
+    @totalScore = User.totalScore(@countStars)
     render :layout => 'public_profile_layout'
   end
 end

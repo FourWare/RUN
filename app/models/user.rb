@@ -153,4 +153,41 @@ class User < ApplicationRecord
   def self.userCreatedAt(user)
     User.find_by_nick(user).created_at.strftime("%d-%m-%Y")
   end
+  
+  def self.countStars(user)
+    allRoutes = Route.where(:id_user => User.find_by_nick(user).id)
+    c1 = 0
+    c2 = 0
+    c3 = 0
+    c4 = 0
+    c5 = 0
+    if allRoutes.size > 0
+      allRoutes.each do |a|
+         c1 += Route.countStars(a.id, 1)
+         c2 += Route.countStars(a.id, 2)
+         c3 += Route.countStars(a.id, 3)
+         c4 += Route.countStars(a.id, 4)
+         c5 += Route.countStars(a.id, 5)
+      end
+    end
+    return [c1, c2, c3, c4, c5, c1 + c2 + c3 + c4 + c5]
+  end
+  
+  def self.barWidths(stars)
+    totalStars = stars[0].to_i + stars[1].to_i + stars[2].to_i + stars[3].to_i + stars[4].to_i
+    if totalStars > 0
+      w1 = stars[0]*100/totalStars
+      w2 = stars[1]*100/totalStars
+      w3 = stars[2]*100/totalStars
+      w4 = stars[3]*100/totalStars
+      w5 = stars[4]*100/totalStars
+      return [w1, w2, w3, w4, w5]
+    else
+      return [0, 0, 0, 0, 0]
+    end
+  end
+  
+  def self.totalScore(stars)
+    return '%.1f' % ((stars[0]*1.0 + stars[1]*2.0 + stars[2]*3.0 + stars[3]*4.0 + stars[4]*5.0)/stars[5])
+  end
 end
