@@ -108,7 +108,7 @@
                   <td style="text-align:center; color: black;"><%= User.getName(user.to_i) %></td>
                   <td style="text-align:center; color: black;"><%= User.getEmail(user.to_i) %></td>
                   <td style="text-align:center; color: black;">
-                    <a href="#">Ver perfil</a>
+                    <%= link_to "Ver Perfil", "/" + User.getNick(user.to_i) %>
                   </td>
                   <td style="text-align:center; color: black;">
                     <a href="#">Enviar correo</a>

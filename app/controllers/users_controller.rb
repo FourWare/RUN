@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, :only => [:new_contactanos, :create_contactanos, :show, :eventCreate]
+  before_action :authenticate_user!, :only => [:new_contactanos, :create_contactanos, :show, :eventCreate, :public_profile]
   
   def show
     @app = "RunApp"
@@ -42,5 +42,19 @@ class UsersController < ApplicationController
       flash[:alert] = "Error: El usuario no existe."
       redirect_to root_url
     end
+  end
+  
+  def public_profile
+    @user = User.find_by_nick(params[:username])
+    @countVehiclesUser = User.countVehiclesUser(params[:username])
+    @countRoutesUser = User.countRoutesUser(params[:username])
+    @countPassengersUser = User.countPassengersUser(params[:username])
+    @expensivePriceUser = User.expensivePriceUser(params[:username])
+    @cheapPriceUser = User.cheapPriceUser(params[:username])
+    @userCreatedAt = User.userCreatedAt(params[:username])
+    @countStars = User.countStars(params[:username])
+    @barWidths = User.barWidths(@countStars)
+    @totalScore = User.totalScore(@countStars)
+    render :layout => 'public_profile_layout'
   end
 end
