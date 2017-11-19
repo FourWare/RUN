@@ -111,30 +111,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright" style="color:white">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li class="list-inline-item">
                             <a href="http://unal.edu.co/" target="_blank" style="color:white">Universidad Nacional de Colombia</a>
+                            <br>
+                            <span class="copyright" style="color:white, text-align: center">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
+
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li class="list-inline-item" style="color:white;">
-                            <% if user_signed_in? %>
-                                <strong  style="text-transform: capitalize;"><%= current_user.name %> (<%= current_user.provider %>)</strong> |
-                                <%= link_to 'Editar perfil', "/usuario/editar_perfil", :class => 'navbar-link' %> |
-                                <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-                            <% else %>
-                                <li class="nav-item"><button class="btn btn-default" onclick="document.getElementById('myModal').style.display='block'">Entrar</button></li>
-                                &middot;
-                                <li class="nav-item"><button class="btn btn-default" onclick="document.getElementById('myModal2').style.display='block'">Registrarme</button></li>
-                            <% end %>
-                        </li>
-                    </ul>
-                </div>
+                
             </div>
         </div>
     </footer>
