@@ -28,7 +28,7 @@
 }
 
 .close{
-	font-size: 5vh;
+	font-size: 4vh;
 	color: red; 
     opacity: 1;
     transition:0.5s all;
@@ -41,6 +41,16 @@
 .close:hover{
 	color: #F18888; 
     opacity: 1;
+}
+
+#myModal2 {
+	overflow-y: auto; 
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+#myModalRegister {
+	width: 100%; 
+	background-color: rgba(0, 0, 0, 0.9);
 }
 
 #myModalRegister > h2{

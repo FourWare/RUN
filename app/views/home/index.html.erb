@@ -177,7 +177,7 @@
                         <li class="list-inline-item">
                             <a href="http://unal.edu.co/" target="_blank" style="color: white">Universidad Nacional de Colombia</a>
                             <br>
-                            <span class="copyright">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
+                            <span class="copyright" style="color: white; font-size: 80%;">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
                         </li>
                     </ul>
                 </div>
@@ -186,41 +186,44 @@
         </div>
     </footer>
     
-    <div id="myModal" class="modal" role="dialog" style="overflow-y: auto; background-color: rgba(0, 0, 0, 0.7);">
+    <div id="myModal" class="modal" role="dialog">
         <div class="modal-dialog">
-            <div class="wthree-form" id="myModalRegister" style="width: 80%; background-color: rgba(0, 0, 0, 0.9);">
+            <div class="wthree-form" id="myModalRegister" style="width: 100%; background-color: rgba(0, 0, 0, 0.9);">
                 <button type="button btn-lg" class="close">
                     <span class="close glyphicon glyphicon-remove-sign" onclick="document.getElementById('myModal').style.display='none'"></span>
                 </button>
-                <h2 style="text-align: center; font-size: ">Inicia sesión</h2>
+                <h2 style="text-align: center;">Inicia sesión</h2>
                 <div class="w3l-login form">
                     <%= form_for(resource, as: resource_name, url: session_path(resource_name), name: "login_form") do |f| %>
                         <div class="form-sub-w3 form-group clearfix">
-		                    <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', style: "width: 80%", type: 'email', required: "" %>
+		                    <%= f.email_field :email, class: "form-control", id: 'usernameRegister', autofocus: true, placeholder: 'Correo', style: "height: 20; width: 100%; margin: 5% 0% 0% 0%;", type: 'email', required: "" %>
 		                </div>
-                        <div class="form-sub-w3 form-group clearfix">
-                            <%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', style: "width: 80%", required: "" %>
-        	            </div>
-        	            <% if devise_mapping.rememberable? -%>
-        	                <div class="check_box">
-        	                    <%= f.check_box :remember_me, id: 'checkboxRegister', type: 'checkbox', class: 'checkbox', style: "display: inline-block;" %>
-        	                    <%= f.label :__recordarme, style: "color: white;" %>
-        	                </div>
-        	            <% end -%>
-        	            <div class="actions submit-agileits">
-        	                <%= f.submit "Entrar", id: "submitRegister", class: "btn btn-success btn-lg", type: 'submit' %>
-        				</div>
+		                <div class="form-sub-w3 form-group clearfix">
+		                    <%= f.password_field :password, autocomplete: "off", class: "form-control", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', style: "height: 20; width: 100%; margin: 5% 0% 0% 0%;", required: "" %>
+		                </div>
+                        <% if devise_mapping.rememberable? -%>
+            	            <div class="check_box">
+            	                <%= f.check_box :remember_me, id: 'checkboxRegister', type: 'checkbox', class: 'checkbox', style: "display: inline-block;" %>
+            	                <%= f.label :__recordarme, style: "color: white;" %>
+            	            </div>
+            	        <% end -%>
+            	        <div class="actions submit-agileits">
+            	            <%= f.submit "Entrar", id: "submitRegister", class: "btn btn-success btn-lg", type: 'submit' %>
+            			</div>    
                     <% end %>
                     <hr>
 	                <div class="devise-links">
-    	            	<%= link_to user_facebook_omniauth_authorize_path do %>
-    	            	    <button class="btn btn-facebook" style="width: 50%"><%= image_tag("facebook-login.ico", width: '25', height: '25', alt: 'facebook', class: "logo", align: "left") %> Facebook</button>
-    	            	<% end %>
-    	            	<br></br>
-    	            	<%= link_to "/home/auth/google_oauth2" do %>
-    	            	    <button class="btn btn-google" style="width: 50%"><%= image_tag("google-login.ico", width: '25', height: '25', alt: 'facebook', class: "logo", align: "left") %> Google</button>
-    	            	<% end %>
-    	            	<br></br>
+	                    <div class="col-lg-6">
+        	            	<%= link_to user_facebook_omniauth_authorize_path do %>
+        	            	    <button class="btn btn-facebook" style="width: 100%"><%= image_tag("facebook-login.ico", width: '25', height: '25', alt: 'facebook', class: "logo", align: "left") %> Facebook</button>
+        	            	<% end %>
+        	            </div>
+        	            <div class="col-lg-6">
+        	            	<%= link_to "/home/auth/google_oauth2" do %>
+        	            	    <button class="btn btn-google" style="width: 100%"><%= image_tag("google-login.ico", width: '25', height: '25', alt: 'facebook', class: "logo", align: "left") %> Google</button>
+        	            	<% end %>
+        	            </div>
+    	            	</br>
     	            	<%= link_to "¿Eres nuevo en RunApp? Regístrate", new_registration_path(resource_name) %><br />
     		          	<%= link_to "¿Olvidaste tu contraseña?", "/home/recuperacion_contrasena" %><br />
         	        </div>
@@ -229,41 +232,38 @@
     	</div>
     </div>
     
-    <div id="myModal2" class="modal" role="dialog" style="overflow-y: auto; background-color: rgba(0, 0, 0, 0.7);">
+    <div id="myModal2" class="modal" role="dialog">
         <div class="modal-dialog">
-            <div class="wthree-form" id="myModalRegister" style="width: 100%; background-color: rgba(0, 0, 0, 0.9);">
+            <div class="wthree-form" id="myModalRegister">
                 <button type="button btn-lg" class="close">
                     <span class="close glyphicon glyphicon-remove-sign" onclick="document.getElementById('myModal2').style.display='none'"></span>
                 </button>
             
-                <h2 style="text-align: center; font-size: ">Regístrate</h2>
+                <h2 style="text-align: center;">Regístrate</h2>
 		        <div class="w3l-login form">
 					<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :multipart => true) do |f| %>
 				    	<%= devise_error_messages! %>
 				    	<br></br>
 				    	<div class="form-sub-w3">
-				    		<div class="row">
+				    		<div class="row" style="padding: 0% 5%;">
 					    		<div class="col-sm-12 text-center">
-						        	<em style="color: white; display: block;">Si deseas, escoge tu foto de perfil.</em>
+						        	<em style="color: white; display: block; font-size: 90%;">Si deseas, escoge tu foto de perfil.</em>
 						            <%= f.label :avatar, class: "carrier-wave-field" do %>
-							    		<%= f.file_field :avatar, title: "Please choose file" %>
+							    		<%= f.file_field :avatar, title: "Por favor escoja el archivo", style: "width: 100%;" %>
 		    							<%= f.hidden_field :avatar_cache %>
 		    						<% end %>
 						       	</div>
-					     	</div>
-					     	<div class="row">
-    							<div class="col-sm-6 form-sub-w3">
-					        		<%= f.text_field :name, id: 'usernameRegister', autofocus: true, placeholder: 'Nombre', type: 'text', required: "", style: "width: 100%;" %>
+						       	<br></br>
+						       	<div class="col-sm-12 form-sub-w3 form-group clearfix">
+		                            <%= f.text_field :name, class: "form-control", id: 'usernameRegister', autofocus: true, placeholder: 'Nombre', type: 'text', style: "height: 20; width: 100%; margin: 5% 0% 0% 0%;", required: "" %>
+		                        </div>
+						       	<div class="col-sm-6 form-sub-w3 form-group clearfix">
+			      					<%= f.text_field :nick, class: "form-control", id: 'usernameRegister', autofocus: true, placeholder: 'Nick', type: 'text', style: "height: 20; width: 100%; margin: 5% 0% 0% 0%;", required: "" %>
 			      				</div>
-			      				<div class="col-sm-6 form-sub-w3">
-			      					<%= f.text_field :nick, id: 'usernameRegister', autofocus: true, placeholder: 'Nick', type: 'text', required: "", style: "width: 100%;" %>
+					      		<div class="col-sm-6 form-sub-w3 form-group clearfix">
+					        		<%= f.text_field :career, class: "form-control", id: 'usernameRegister', autofocus: true, placeholder: 'Carrera', type: 'text', style: "height: 20; width: 100%; margin: 5% 0% 0% 0%;", required: "" %>
 			      				</div>
-					      	</div>
-					     	<div class="row">
-					      		<div class="col-sm-6 form-sub-w3">
-					        		<%= f.text_field :career, id: 'usernameRegister', autofocus: true, placeholder: 'Carrera', type: 'text', required: "", style: "width: 100%;" %>
-			      				</div>
-					        	<div class="col-sm-6 form-sub-w3">
+					        	<div class="col-sm-12 form-sub-w3 form-group clearfix">
 					        		<em style="color: white; display: block;">Fecha de nacimiento</em>
 			      					<%= f.date_select :date_of_birth, { 
 			      						:order => [:day, :month, :year], 
@@ -277,24 +277,20 @@
 								 	<br></br>
 			      				</div>
 					    	</div>
-					        <div class="row">
-					        	<div class="col-sm-12">
-				            	    <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', style: 'width: 80%;',  type: 'email', required: "" %>
+					        	<div class="col-sm-12 form-sub-w3 form-group clearfix">
+				            	    <%= f.email_field :email, class: "form-control", id: 'usernameRegister', autofocus: true, placeholder: 'Correo', style: "height: 20; width: 100%; margin: 5% 0% 0% 0%;",  type: 'email', required: "" %>
 					            </div>
-					      	</div>
-					        <div class="row">
-					        	<div class="col-sm-12 form-sub-w3">
-					            	<%= f.password_field :password, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', style: 'width: 80%;', required: "" %>
+					        	<div class="col-sm-6 form-sub-w3 form-group clearfix">
+					            	<%= f.password_field :password, class: "form-control", autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Contraseña', style: "height: 20; width: 100%; margin: 5% 0% 0% 0%;", required: "" %>
 								    <% if @minimum_password_length %>
 								    	<em style="color: red;">(<%= @minimum_password_length %> characters minimum)</em>
-								    <% end %><br />
+								    <% end %>
 					            </div>
-					        </div>
-					        <div class="row">
-					        	<div class="col-sm-12 form-sub-w3">
-					            	<%= f.password_field :password_confirmation, autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Confirmación contraseña', style: 'width: 80%;', required: "" %>
+					        	<div class="col-sm-6 form-sub-w3 form-group clearfix">
+					            	<%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off", type: 'password', id: 'passwordRegister', placeholder: 'Confirmación contraseña', style: "height: 20; width: 100%; margin: 5% 0% 0% 0%;", required: "" %>
 								</div>
-					        </div>
+					     	</div>
+					     	    
 					        <div class="form-group">
 					        	<hr>
 					            <div class="actions submit-agileits">
