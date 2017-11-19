@@ -26,7 +26,7 @@
       </tr>
     </table>
     <h2 style="color: white;">Rutas creadas por dia.</h2>
-    <%= line_chart @routesCreatedPerDay, legend: true, curve: false, label: "rutas", xtitle: "Dia", ytitle: "Usuarios", title: "Rutas creadas por dia" %>
+    <%= line_chart @routesCreatedPerDay, legend: true, curve: true, label: "rutas", xtitle: "Dia", ytitle: "Rutas", title: "Rutas creadas por dia" %>
     <h2 style="color: white;">Usuarios creados por dia.</h2>
     <%= line_chart @usersCreatedPerDay, legend: true,curve: false, label: "Usuarios", xtitle: "Dia", ytitle: "Usuarios", title: "Usuarios creados por dia"%>
     <h2 style="color: white;">Vehiculos por modelo</h2>
