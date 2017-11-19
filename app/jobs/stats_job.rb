@@ -3,10 +3,10 @@ class StatsJob < ApplicationJob
 
   def perform(*args)
     # Do something later
-    @routes = Route.routesPerDay2
-    @users = User.createdPerDay2
-    @cars = 1
-    @bikes = 1
+    @routes = Route.routesYesterday
+    @users = User.createdYesterday
+    @cars = Route.carsUsedYesterday
+    @bikes = Route.bikesUsedYesterday
     @usersInRoutes = Route.usersInRoutes
     
     stats = Statistic.new
