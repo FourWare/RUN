@@ -78,13 +78,39 @@ class Route < ApplicationRecord
         Car.where(:user_id => user_id).uniq
     end
     
-    def self.routesPerDay()
-        Route.group("DATE(departure) = ?", Date.today-1).count
+    def self.createdPerDay()
+        Route.group("DATE(created_at)").count
     end
     
-    def self.routesPerDay2()
+    def self.routesYesterday()
         Route.where("DATE(departure) = ?", Date.today-1).count
     end
+    
+    def self.carsUsedYesterday()
+        aux = ""
+        totalCars = 0
+        routes = Route.where("DATE(departure) = ?", Date.today-1)
+        routes.each do |x|
+           if (Car.find_by_placa(x.car_placa).tipo == "Carro")
+               totalCars += 1
+           end
+        end
+        return totalCars
+    end
+    
+    def self.bikesUsedYesterday()
+        aux = ""
+        totalBikes = 0
+        routes = Route.where("DATE(departure) = ?", Date.today-1)
+        routes.each do |x|
+           if (Car.find_by_placa(x.car_placa).tipo == "Moto")
+               totalBikes += 1
+           end
+        end
+        return totalBikes
+    end
+    
+    
     
     def self.usersInRoutes()
         total = 0
