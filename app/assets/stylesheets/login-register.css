@@ -6,3 +6,16 @@ body {
   background: url('asd1.jpg') center center;
   background-size: cover;
 }
+
+#error_explanation > h2 {
+  font-size: 150%;
+}
+
+#error_explanation > ul{
+  text-align: left;
+}
+
+#error_explanation > li {
+  color: red;
+  font-size: 10px;
+}
