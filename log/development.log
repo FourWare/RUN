@@ -22688,3 +22688,52 @@ puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
 puma (3.10.0) lib/puma/server.rb:437:in `process_client'
 puma (3.10.0) lib/puma/server.rb:301:in `block in run'
 puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 168.176.55.16 at 2017-11-20 14:27:26 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (470.4ms)
+Completed 200 OK in 1281ms (Views: 636.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/home/entrar" for 168.176.55.16 at 2017-11-20 14:28:23 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#entrar as HTML
+  Rendering home/entrar.html.erb within layouts/entrar
+  Rendered home/entrar.html.erb within layouts/entrar (465.0ms)
+Completed 200 OK in 591ms (Views: 580.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/home/registro" for 168.176.55.16 at 2017-11-20 14:28:26 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#registro as HTML
+  Rendering home/registro.html.erb within layouts/registro
+  Rendered home/registro.html.erb within layouts/registro (4.8ms)
+Completed 200 OK in 114ms (Views: 112.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/entrar" for 168.176.55.16 at 2017-11-20 14:28:28 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#entrar as HTML
+  Rendering home/entrar.html.erb within layouts/entrar
+  Rendered home/entrar.html.erb within layouts/entrar (6.7ms)
+Completed 200 OK in 169ms (Views: 168.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 168.176.55.16 at 2017-11-20 14:28:30 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (21.2ms)
+Completed 200 OK in 123ms (Views: 114.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 168.176.55.16 at 2017-11-20 14:29:44 +0000
+Cannot render console from 168.176.55.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/home-layout
+  Rendered home/index.html.erb within layouts/home-layout (25.7ms)
+Completed 200 OK in 116ms (Views: 113.8ms | ActiveRecord: 0.0ms)
+
+
