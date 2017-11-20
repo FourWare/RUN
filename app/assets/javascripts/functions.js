@@ -1,7 +1,3 @@
-function navBar(){
-    $( "#myNavBar" ).slideToggle();
-}
-
 function a(){
     var val = $('#searchSelect').val();
     if(val != "all"){
