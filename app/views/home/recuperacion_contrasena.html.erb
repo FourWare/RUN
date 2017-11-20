@@ -1,13 +1,13 @@
 <div class="container" style="overflow-y: auto;" >
     <div class="modal-dialog">
         <div class="wthree-form" id="myModalRegister" style="width: 100%; background-color: rgba(0, 0, 0, 0.9)">
-		    <h2 style="text-align: center; font-size: ">Recupera tu contraseña</h2>
+		    <h2 style="text-align: center; padding-top: 0%;">Recupera tu contraseña</h2>
 		    <div class="w3l-login form">
 		        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
                     <%= devise_error_messages! %>
-                    <div class="form-sub-w3">
-	                    <%= f.email_field :email, id: 'usernameRegister', autofocus: true, placeholder: 'Correo', type: 'email', required: "" %>
-	                </div>
+                    <div class="col-sm-12 form-sub-w3 form-group clearfix">
+				            <%= f.email_field :email, class: "form-control", id: 'usernameRegister', autofocus: true, placeholder: 'Correo', style: "height: 20; width: 100%; margin: 5% 0% 0% 0%;",  type: 'email', required: "" %>
+					    </div>
                     <div class="actions submit-agileits">
 	                    <%= f.submit "Recuperar", id: "submitRegister", class: "btn btn-success btn-lg", type: 'submit' %>
 	                </div>
@@ -20,3 +20,4 @@
 		</div>
     </div>
 </div>
+</br>
