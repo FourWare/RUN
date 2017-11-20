@@ -25,13 +25,21 @@
     <!-- Custom styles for this template -->
     <link src="stylesheets/landing-page.css" rel="stylesheet">
     <link src="stylesheets/modalStyle.css" rel="stylesheet">
+    <script type="text/javascript">
+      function navBar(){
+        if(document.getElementById('myNavBar').style.display == 'inline-block')
+          document.getElementById('myNavBar').style.display = 'none';
+        else
+          document.getElementById('myNavBar').style.display='inline-block'
+      }
+    </script>
   </head>
 
   <body>
     <nav class="navbar navbar-inverse bg-light navbar-fixed-top" style="background-color: black;">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" onclick="b();">
+          <button type="button" class="navbar-toggle collapsed" onclick="navBar();">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
@@ -110,12 +118,5 @@
     <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/jquery/jquery.min.js"></script>
     <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/popper/popper.min.js"></script>
     <script href="https://blackrockdigital.github.io/startbootstrap-landing-page/vendor/bootstrap/js/bootstrap.min.js"></script>
-    
-    <script type="text/javascript">
-      function b(){
-        $( "#myNavBar" ).slideToggle();
-      }
-    </script>
-    
   </body>
 </html>
