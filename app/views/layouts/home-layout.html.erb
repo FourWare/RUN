@@ -32,7 +32,7 @@
     <nav class="navbar navbar-inverse bg-light navbar-fixed-top" style="background-color: black;">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" onclick="document.getElementById('myNavBar').style.display='inline-block'">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" onclick="document.getElementById('myNavBar').slideToggle();">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
@@ -42,13 +42,13 @@
         <div class="collapse navbar-collapse" id="myNavBar">
           <ul class="nav navbar-nav">
             <li>
-              <a class="nav-lin" href="#servicios" style="color: white;">Servicios</a>
+              <a href="#servicios" style="color: white;">Servicios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#nosotros" style="color: white;">Nosotros</a>
+              <a href="#nosotros" style="color: white;">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contactenos" style="color: white;">Contáctanos</a>
+              <a href="#contactenos" style="color: white;">Contáctanos</a>
             </li>
             
             <% if user_signed_in? %>
@@ -89,8 +89,8 @@
                 <li> <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
               <% end %>
             <% else %>
-              <li class="nav-item" style="margin: 3%;"><button class="btn btn-success" id="btnLoginRegister" onclick="document.getElementById('myModal').style.display='block'">Entrar</button></li>
-              <li class="nav-item" style="margin: 3%;"><button class="btn btn-primary" id="btnLoginRegister" onclick="document.getElementById('myModal2').style.display='block'">Registrarme</button></li>
+              <li class="nav-item" style="margin: 3%; float: center;"><button class="btn btn-success" id="btnLoginRegister" onclick="document.getElementById('myModal').style.display='block'">Entrar</button></li>
+              <li class="nav-item" style="margin: 3%; float: center;"><button class="btn btn-primary" id="btnLoginRegister" onclick="document.getElementById('myModal2').style.display='block'">Registrarme</button></li>
             <% end %>
           </ul>
         </div>

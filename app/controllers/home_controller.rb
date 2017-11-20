@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     @contact = Contact.new(params[:contact])
     @contact.request = request
     if @contact.deliver
-      flash.now[:notice] = 'Thank you for your message. We will contact you soon!'
+      flash.now[:notice] = 'Gracias por tu mensaje. Te contactaremos pronto!'
     end
     render :layout => 'home-layout'
   end
