@@ -25,10 +25,17 @@
     <!-- Custom styles for this template -->
     <link src="stylesheets/landing-page.css" rel="stylesheet">
     <link src="stylesheets/modalStyle.css" rel="stylesheet">
-    
+    <script type="text/javascript">
+      function navBar(){
+        if(document.getElementById('myNavBar').style.display == 'inline-block')
+          document.getElementById('myNavBar').style.display = 'none';
+        else
+          document.getElementById('myNavBar').style.display='inline-block'
+      }
+    </script>
   </head>
 
-  <body>
+  <body style="background: url(as4.jpg) no-repeat center center;">
     <nav class="navbar navbar-inverse bg-light navbar-fixed-top" style="background-color: black;">
       <div class="container">
         <div class="navbar-header">
