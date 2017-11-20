@@ -1,3 +1,9 @@
+$(document).ready(function(){
+    $("#buttonNavBar").on("click", function() {
+        $( "#myNavBar" ).slideToggle();
+    })
+});
+
 function a(){
     var val = $('#searchSelect').val();
     if(val != "all"){
