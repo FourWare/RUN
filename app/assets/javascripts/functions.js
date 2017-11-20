@@ -1,8 +1,6 @@
-$(document).ready(function(){
-    $("#buttonNavBar").on("click", function() {
-        $( "#myNavBar" ).slideToggle();
-    })
-});
+function navBar(){
+    $( "#myNavBar" ).slideToggle();
+}
 
 function a(){
     var val = $('#searchSelect').val();
