@@ -1,4 +1,17 @@
 class Car < ApplicationRecord
+    #----------------------- validaciones para usuarios ----------------------
+    validates :placa, :tipo, :modelo, :marca, :color, :capacidad, presence: true
+    validates :modelo, :capacidad, :numericality => {:only_integer => true, message: "debe ser numérico."}
+    validates_format_of :placa, with: /[A-Z][A-Z][A-Z]-[0-9][0-9][0-9]/, message: 'debe tener un formato como AAA-111 (sin espacios y en mayúsculas).', 
+                            :if => "tipo == 'Carro'"
+    validates_format_of :placa, with: /[A-Z][A-Z][A-Z]-[0-9][0-9][A-Z]/, message: 'debe tener un formato como AAA-11A (sin espacios y en mayúsculas).', 
+                            :if => "tipo == 'Moto'"
+    validates_length_of :placa, :minimum => 7, :maximum => 7, message: 'debe tener un formato correcto.'
+    validates_uniqueness_of :placa, message: 'ya existe en el sistema.'
+    validates :modelo, :length => { :minimum => 4, :maximum => 4, message: 'debe ser un número de 4 dígitos.' }
+    #-------------------------------------------------------------------------
+    
+    
     mount_uploader :image, ImageCarUploader
     belongs_to :user
 

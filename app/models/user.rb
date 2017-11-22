@@ -8,8 +8,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
   
   #----------------------- validaciones para usuarios ----------------------
-  validates_format_of :email, with: /\@unal.edu.co/, message: 'debe ser de la Universidad Nacional de Colombia.'
-  validates_format_of :name, :career, without: /[0-9]+/, message: 'debe ser válido.'
+  validates_format_of :email, with: /[A-Za-z]+@unal.edu.co/, message: 'debe ser de la Universidad Nacional de Colombia.'
+  validates :name, format: { with: /\A[a-zA-ZáéíóúÁÉÍÓÚ ]+\z/, message: "solo permite letras." }
   validates_uniqueness_of :nick, message: 'ya fue tomado.'
   validates :date_of_birth, :career, :name, :nick, presence: true
   #-------------------------------------------------------------------------
