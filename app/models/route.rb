@@ -1,4 +1,11 @@
 class Route < ApplicationRecord
+    #----------------------- validaciones para usuarios ----------------------
+    validates :title, :description, :from_lat, :from_lng, :to_lat, :to_lng, :departure, :cost, :car_placa, 
+                :spaces_available, presence: true
+    validates :cost, :spaces_available, :numericality => {:only_integer => true}
+  #-------------------------------------------------------------------------
+    
+    
     #-------------------------------- queries -------------------------#
     
     def self.filterSearchOtherRoutes(keyword, cost, date, capacity, type, brand, user_id)

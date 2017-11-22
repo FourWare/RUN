@@ -59,6 +59,11 @@ en:
       expired: "has expired, please request a new one"
       not_found: "not found"
       not_locked: "was not locked"
+      taken: "ya existe."
+      blank: "no puede estar en blanco."
+      confirmation: "no coincide con la contraseña."
+      too_short: "es muy corta."
+      blank: "no puede estar en blanco."
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"

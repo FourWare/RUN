@@ -6,9 +6,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
-
+  
+  #----------------------- validaciones para usuarios ----------------------
   validates_format_of :email, with: /\@unal.edu.co/, message: 'debe ser de la Universidad Nacional de Colombia.'
-  validates_uniqueness_of :nick
+  validates_format_of :name, :career, without: /[0-9]+/, message: 'debe ser válido.'
+  validates_uniqueness_of :nick, message: 'ya fue tomado.'
+  validates :date_of_birth, :career, :name, :nick, presence: true
+  #-------------------------------------------------------------------------
 
   before_create :confirmation_token
   after_create :welcome_email
