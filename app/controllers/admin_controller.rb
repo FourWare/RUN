@@ -16,7 +16,7 @@ class AdminController < ApplicationController
     @countRoutes = Route.countRoutes(Route.all)
     @countCar = Car.totalCars()
     @routesLastWeek = Route.createdLastWeek
-    @routesCreatedPerDay = Route.createdPerDay
+    @routesCreatedPerDay = Route.routesPerDay
     @usersCreatedPerDay = User.createdPerDay
     @carsPerModel = Car.carsPerYear
     @carsPerType = Car.perType
