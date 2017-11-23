@@ -2,9 +2,10 @@ class Route < ApplicationRecord
     #----------------------- validaciones para usuarios ----------------------
     validates :title, :description, :from_lat, :from_lng, :to_lat, :to_lng, :departure, :cost, :car_placa, 
                 :spaces_available, presence: true
+    validates :cost, numericality: { greater_than_or_equal_to: 100, message: 'debe ser mayor o igual a $100' }
+    #validate :spaces_available, numericality: { less_than: Car.where(:placa => :car_placa)[0].capacidad, message: "debe ser menor a capacidad de vehículo." }
     validates :cost, :spaces_available, :numericality => {:only_integer => true}
-  #-------------------------------------------------------------------------
-    
+    #-------------------------------------------------------------------------
     
     #-------------------------------- queries -------------------------#
     
