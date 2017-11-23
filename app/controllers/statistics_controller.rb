@@ -4,9 +4,20 @@ class StatisticsController < ApplicationController
   # GET /statistics
   # GET /statistics.json
   def index
-    @statistics = Statistic.all
-    StatsJob.set(wait: 15.seconds).perform_later()
-    render :layout => 'user-layout'
+    @countUsers = User.countUsers()
+    @countRoutes = Route.countRoutes(Route.all)
+    @countVehicles = Car.totalCars()
+    @routesLastWeek = Route.createdLastWeek
+    @routesCreatedPerDay = Statistic.routesAllDays
+    @usersCreatedPerDay = Statistic.usersAllDays
+    @carsUsedPerDay = Statistic.carsAllDays
+    @bikesUsedPerDay = Statistic.bikesAllDays
+    @usersInRoutesPerDay = Statistic.usersInAllRoutes
+    
+    respond_to do |format|
+      format.html {render layout: 'admin_layout' }
+      format.pdf { render template: 'statistics/pdf_statistics',javascript_delay: 3000, pdf:'pdf', layout: 'pdf_statistics.html',header: { right: '[page] of [topage]'}}
+    end
   end
 
   # GET /statistics/1
