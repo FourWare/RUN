@@ -87,7 +87,7 @@ class Route < ApplicationRecord
     end
     
     def self.routesPerDay()
-        Route.group("DATE(created_at) = ?").count
+        Route.group("DATE(created_at)").count
     end
     
     def self.routesYesterday()
