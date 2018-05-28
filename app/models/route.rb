@@ -214,4 +214,14 @@ class Route < ApplicationRecord
     def self.commentsSplit(route)
         Route.find(route).comments.split("//commentA1B2C3//")
     end
+    
+    # ----------------------- Funciones para Cadenas de Markov ---------------------------------------- #
+    def self.spacesProbability(user_id)
+        a = [0, 0, 0, 0, 0]
+        Route.where(:id_user => user_id).all.each do |route|
+            a[route.users_in_route.split(", ").length] = a[route.users_in_route.split(", ").length] + 1
+        end
+        return a
+    end
+    
 end

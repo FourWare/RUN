@@ -27,6 +27,7 @@ class RoutesController < ApplicationController
 
   # GET /routes/1
   # GET /routes/1.json
+  
   def show
     @extraInfoRouteConductor =  Route.extraInfoRouteConductor(@route.id_user)
     @extraInfoRoute = Route.extraInfoRoute(@route.car_placa)
@@ -38,6 +39,46 @@ class RoutesController < ApplicationController
     @countStar3 = Route.countStars(@route.id, 3)
     @countStar4 = Route.countStars(@route.id, 4)
     @countStar5 = Route.countStars(@route.id, 5)
+    
+    #------------------------------------------------------------------------------------------------------------------
+    
+    @spacesProbability = Route.spacesProbability(current_user.id)
+    @z = @spacesProbability
+    @totalA= @spacesProbability.sum.to_f
+    @m = [0.005879880814,	0.0264594669,	0.2116757576,	0.5291894233,	0.2267954714, 0]
+    @matriz = [[0,(@z[1]+@z[2]+@z[3]+@z[4])/@totalA,0,0,0],[0,0,(@z[2]+@z[3]+@z[4])/@totalA,0,0],[0,0,0,(@z[3]+@z[4])/@totalA,0],[0,0,0,0,@z[4]/@totalA],[0,0,0,0.3,0.7]]
+    @matriz[0][0] = 1 - @matriz[0].sum
+    if(@matriz[1].sum<=0.9)
+      @matriz[1][0] = 0.1
+      @matriz[1][1] = 1 - @matriz[1].sum
+    else
+      @matriz[1][0] = 1 - @matriz[1].sum
+    end
+    
+    if(@matriz[2].sum<=0.9)
+      @matriz[2][1] = 0.1
+      @matriz[2][2] = 1 - @matriz[2].sum
+    else
+      @matriz[2][1] = 1 - @matriz[2].sum
+    end
+    
+    if(@matriz[3].sum <=0.8)
+      @matriz[3][2] = 0.2
+      @matriz[3][3] = 1 - @matriz[3].sum
+    else
+      @matriz[3][2] = 1 - @matriz[3].sum
+    end
+
+    @matrix = Matrix[*@matriz] ** 16
+    
+    @i =  4 - @usersInRoute.split(", ").size
+    @toshow = @matrix[4, @i]
+    @toshow = @toshow * 100
+    @toshow = @toshow.round
+    
+    
+    #------------------------------------------------------------------------------------------------------------------
+    
     if(@countUsersRating != 0)
       @barWidth1 = (@countStar1*100)/@countUsersRating
       @barWidth2 = (@countStar2*100)/@countUsersRating
