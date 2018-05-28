@@ -45,7 +45,7 @@ class RoutesController < ApplicationController
     @spacesProbability = Route.spacesProbability(current_user.id)
     @z = @spacesProbability
     @totalA= @spacesProbability.sum.to_f
-    @m = [0.005879880814,	0.0264594669,	0.2116757576,	0.5291894233,	0.2267954714, 0]
+    # @m = [0.005879880814,	0.0264594669,	0.2116757576,	0.5291894233,	0.2267954714, 0]
     @matriz = [[0,(@z[1]+@z[2]+@z[3]+@z[4])/@totalA,0,0,0],[0,0,(@z[2]+@z[3]+@z[4])/@totalA,0,0],[0,0,0,(@z[3]+@z[4])/@totalA,0],[0,0,0,0,@z[4]/@totalA],[0,0,0,0.3,0.7]]
     @matriz[0][0] = 1 - @matriz[0].sum
     if(@matriz[1].sum<=0.9)
@@ -71,11 +71,11 @@ class RoutesController < ApplicationController
 
     @matrix = Matrix[*@matriz] ** 16
     
-    @i =  4 - @usersInRoute.split(", ").size
-    @toshow = @matrix[4, @i]
+    @i =  4 - @usersInRoute.size
+    @toshow = @matrix[0, @i]
     @toshow = @toshow * 100
     @toshow = @toshow.round
-    if(@i == 4)
+    if(@usersInRoute.size == 4)
       @toshow = 0
     end
     
