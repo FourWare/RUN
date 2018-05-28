@@ -75,6 +75,9 @@ class RoutesController < ApplicationController
     @toshow = @matrix[4, @i]
     @toshow = @toshow * 100
     @toshow = @toshow.round
+    if(@i == 4)
+      @toshow = 0
+    end
     
     
     #------------------------------------------------------------------------------------------------------------------
