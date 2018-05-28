@@ -93,31 +93,38 @@
             </div>
             <br><br/>
             <div class="row">
-                <div class="col-lg-3 text-center">
+                <div class="col-lg-4 text-center">
                     <div class="team-member">
                         <%= image_tag("team/borja.png", alt: 'Miguel Angel Borja', class: "mx-auto img-circle") %>
                         <h4 style="color: black;">Miguel Angel Borja</h4>
                         <p class="text-muted" style="color: black;">ScrumMaster</p>
                     </div>
                 </div>
-                <div class="col-lg-3 text-center">
-                    <div class="team-member">
-                        <%= image_tag("team/rueda.png", alt: 'Camilo Rueda', class: "mx-auto img-circle") %>
-                        <h4 style="color: black;">Camilo Rueda</h4>
-                        <p class="text-muted" style="color: black;">Desarrollador</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 text-center">
-                    <div class="team-member">
-                        <%= image_tag("team/smo.jpg", alt: 'Santiago Márquez', class: "mx-auto img-circle") %>
-                        <h4 style="color: black;">Santiago Marquez</h4>
-                        <p class="text-muted" style="color: black;">Desarrollador</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 text-center">
+                <div class="col-lg-4 text-center">
                     <div class="team-member">
                         <%= image_tag("team/villamil.jpg", alt: 'Miguel Villamil', class: "mx-auto img-circle") %>
                         <h4 style="color: black;">Miguel Villamil</h4>
+                        <p class="text-muted" style="color: black;">Desarrollador</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="team-member">
+                        <%= image_tag("team/solano.jpg", alt: 'Jorge Solano', class: "mx-auto img-circle") %>
+                        <h4 style="color: black;">Jorge Solano</h4>
+                        <p class="text-muted" style="color: black;">Desarrollador</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="team-member">
+                        <%= image_tag("team/quintero.jpg", alt: 'David Quintero', class: "mx-auto img-circle") %>
+                        <h4 style="color: black;">David Quintero</h4>
+                        <p class="text-muted" style="color: black;">Desarrollador</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="team-member">
+                        <%= image_tag("team/lopez.jpg", alt: 'Andrés López', class: "mx-auto img-circle") %>
+                        <h4 style="color: black;">Andrés López</h4>
                         <p class="text-muted" style="color: black;">Desarrollador</p>
                     </div>
                 </div>
@@ -177,7 +184,7 @@
                         <li class="list-inline-item">
                             <a href="http://unal.edu.co/" target="_blank" style="color: white">Universidad Nacional de Colombia</a>
                             <br>
-                            <span class="copyright" style="color: white; font-size: 70%;">Copyright &copy; <%= @app %> 2017. All Rights Reserved</span>
+                            <span class="copyright" style="color: white; font-size: 70%;">Copyright &copy; <%= @app %> <%= Date.today.year %>. All Rights Reserved</span>
                         </li>
                     </ul>
                 </div>
