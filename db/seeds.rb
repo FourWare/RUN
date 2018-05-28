@@ -32,7 +32,8 @@ end
 users = ["", "2", "3", "4", "5"]
 
 2.times do
-    uir = rand(0..4)
+    a = rand(0..4)
+    uir = a
     users_in_route = ""
     while uir > 0 do
         users_in_route = users_in_route + users[uir] + ", "
@@ -48,11 +49,11 @@ users = ["", "2", "3", "4", "5"]
         :to_lat => 4.672596299999999, 
         :to_lng => -74.14561170000002, 
         :waypoints => "[]", 
-        :departure => "2018-05-21 11:00:00", 
-        "cost" => "1800",
-        :id_user => 15,
-        :car_placa => "CZY-908", 
-        :spaces_available => 4, 
+        :departure => "2018-05-21 09:00:00", 
+        "cost" => "1900",
+        :id_user => 13,
+        :car_placa => "AAA-123", 
+        :spaces_available => 4 - a, 
         :users_in_route => users_in_route, 
         :ratings => "", 
         :userRating => "", 
@@ -62,7 +63,8 @@ users = ["", "2", "3", "4", "5"]
 end
 
 2.times do
-    uir = rand(0..4)
+    a = rand(0..4)
+    uir = a
     users_in_route = ""
     while uir > 0 do
         users_in_route = users_in_route + users[uir] + ", "
@@ -78,11 +80,11 @@ end
         :to_lat => 4.672596299999999, 
         :to_lng => -74.14561170000002, 
         :waypoints => "[]", 
-        :departure => "2018-05-22 11:00:00", 
-        "cost" => "1800",
-        :id_user => 15,
-        :car_placa => "CZY-908", 
-        :spaces_available => 4, 
+        :departure => "2018-05-22 09:00:00", 
+        "cost" => "1900",
+        :id_user => 13,
+        :car_placa => "AAA-123", 
+        :spaces_available => 4 - a, 
         :users_in_route => users_in_route, 
         :ratings => "", 
         :userRating => "", 
@@ -92,7 +94,8 @@ end
 end
 
 2.times do
-    uir = rand(0..4)
+    a = rand(0..4)
+    uir = a
     users_in_route = ""
     while uir > 0 do
         users_in_route = users_in_route + users[uir] + ", "
@@ -108,11 +111,11 @@ end
         :to_lat => 4.672596299999999, 
         :to_lng => -74.14561170000002, 
         :waypoints => "[]", 
-        :departure => "2018-05-23 11:00:00", 
-        "cost" => "1800",
-        :id_user => 15,
-        :car_placa => "CZY-908", 
-        :spaces_available => 4, 
+        :departure => "2018-05-23 09:00:00", 
+        "cost" => "1900",
+        :id_user => 13,
+        :car_placa => "AAA-123", 
+        :spaces_available => 4 - a, 
         :users_in_route => users_in_route, 
         :ratings => "", 
         :userRating => "", 
@@ -122,7 +125,8 @@ end
 end
 
 2.times do
-    uir = rand(0..4)
+    a = rand(0..4)
+    uir = a
     users_in_route = ""
     while uir > 0 do
         users_in_route = users_in_route + users[uir] + ", "
@@ -138,11 +142,11 @@ end
         :to_lat => 4.672596299999999, 
         :to_lng => -74.14561170000002, 
         :waypoints => "[]", 
-        :departure => "2018-05-24 11:00:00", 
-        "cost" => "1800",
-        :id_user => 15,
-        :car_placa => "CZY-908", 
-        :spaces_available => 4, 
+        :departure => "2018-05-24 09:00:00", 
+        "cost" => "1900",
+        :id_user => 13,
+        :car_placa => "AAA-123", 
+        :spaces_available => 4 - a, 
         :users_in_route => users_in_route, 
         :ratings => "", 
         :userRating => "", 
@@ -152,7 +156,8 @@ end
 end
 
 2.times do
-    uir = rand(0..4)
+    a = rand(0..4)
+    uir = a
     users_in_route = ""
     while uir > 0 do
         users_in_route = users_in_route + users[uir] + ", "
@@ -168,11 +173,11 @@ end
         :to_lat => 4.672596299999999, 
         :to_lng => -74.14561170000002, 
         :waypoints => "[]", 
-        :departure => "2018-05-25 11:00:00", 
-        "cost" => "1800",
-        :id_user => 15,
-        :car_placa => "CZY-908", 
-        :spaces_available => 4, 
+        :departure => "2018-05-25 09:00:00", 
+        "cost" => "1900",
+        :id_user => 13,
+        :car_placa => "AAA-123", 
+        :spaces_available => 4 - a, 
         :users_in_route => users_in_route, 
         :ratings => "", 
         :userRating => "", 
